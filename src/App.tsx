@@ -1,23 +1,26 @@
-import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import HomePage from './pages/Homepage';
-import ContactFormPage from './pages/ContactFormPage';
-import CarouselPage from './pages/CarouselPage';
-import './App.css';
-import AboutUs from './pages/AboutUs';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Food from "./components/Food";
+import Meat from "./components/Meat";
+import Navbar from "./components/Navbar";
+import Veg from "./components/Veg";
+import AboutUs from "./pages/AboutUs";
+import ContactFormPage from "./pages/ContactFormPage";
+import HomePage from "./pages/Homepage";
 
 function App() {
   return (
-    <>
-      <h1 className="homepage-header">Grupp 3</h1>
+    <BrowserRouter>
       <Navbar />
-      <CarouselPage />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/contact-form" element={<ContactFormPage />} />
+        <Route path="/food" element={<Food />} />
+        <Route path="/food/meat" element={<Meat />} />
+        <Route path="/food/veg" element={<Veg />} />
       </Routes>
-    </>
+    </BrowserRouter>
   );
 }
 

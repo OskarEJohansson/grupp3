@@ -2,6 +2,7 @@ Install following external librarys to run project:
 
 npm install axios
 npm install zustand
+npm install slick-carousel
 
 API:
 
