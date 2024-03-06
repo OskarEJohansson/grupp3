@@ -5,8 +5,8 @@ const Navbar = () => {
     return (
         <div className="navbar">
             <ul>
-                <li><Link to="/">Navbar-1</Link></li>
-                <li><Link to="/about-us">Navbar-2</Link></li>
+                <li><Link to="/">Food</Link></li>
+                <li><Link to="/about-us">Beverages</Link></li>
                 <li><Link to="/contact-form">Navbar-3</Link></li>
             </ul>
         </div>
