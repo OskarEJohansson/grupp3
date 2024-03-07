@@ -1,4 +1,4 @@
-import{ useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -11,12 +11,13 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <Link to="/" className="brand-link"><img
-        src='https://trello.com/1/cards/65de1446ad94536b02ad46ce/attachments/65de16933597ddcc58f55a35/previews/65de16943597ddcc58f55aa0/download/loggawhite.png' 
-        alt='Group icon'
-        width="auto"
-        height="100"
-        />
+        <Link to="/" className="brand-link">
+          <img
+            src='https://media.discordapp.net/attachments/1213110126446125117/1214503813306785852/companylogo.png?ex=65f959d1&is=65e6e4d1&hm=75f4b22d314a9030a11ee13c0ad32d1d22fad479cb6cd1f42b43ceab29ad6c8a&=&format=webp&quality=lossless&width=1390&height=464'
+            alt='Group icon'
+            width="auto"
+            height="100"
+          />
         </Link>
         <button onClick={toggleMenu} className="menu-button">
           {isOpen ? 'Close' : 'Menu'}
@@ -29,12 +30,14 @@ const Navbar = () => {
             <Link to="/about-us">Beverages</Link>
           </li>
           <li>
-            <Link to="/contact-form"><img
-                src="https://cdn4.vectorstock.com/i/1000x1000/71/93/black-shopping-cart-icon-on-transparent-background-vector-31557193.jpg"
+            <Link to="/contact-form">
+              <img
+                src="https://t4.ftcdn.net/jpg/01/86/94/37/360_F_186943704_QJkLZaGKmymZuZLPLJrHDMUNpAwuHPjY.jpg"
                 alt="Cart"
-                width="40"
-                height="40"
-              /></Link>
+                width="60"
+                height="60"
+              />
+            </Link>
           </li>
         </ul>
       </div>
