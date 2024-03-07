@@ -13,31 +13,29 @@ The [food categories] to choose from are [Meat] and [Veg].
 
 /* * * TODO * * * /
 
-/* Decide file format for pictures in our objects to set interface type */
+/* 
+
+- Decide file format for pictures in our objects to set interface type.
+- Find out how to store symobles.
+- Design Meat/Veg Button
+- 
+
+
+*/
 
 import { useNavigate } from "react-router-dom";
 
 const Food = () => {
   const navigate = useNavigate();
-  const meat = "Meat";
-  const veg = "Veg";
-
-  const handleMeatClick = () => {
-    navigate("/food/meat");
-  };
-
-  const handleVegClick = () => {
-    navigate("/food/veg");
-  };
 
   return (
     <>
       <div>
-        <button onClick={handleMeatClick}>{meat}</button>
+        <button onClick={() => navigate("/food/meat")}>Meat</button>
       </div>
 
       <div>
-        <button onClick={handleVegClick}> {veg}</button>
+        <button onClick={() => navigate("/food/veg")}>Veg</button>
       </div>
     </>
   );

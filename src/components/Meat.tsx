@@ -1,9 +1,9 @@
 const Meat = () => {
   return (
     <div>
-      <div>Meat 12</div>
-      <div>Meat 22</div>
-      <div>Meat 32</div>
+      <div>Meat 1</div>
+      <div>Meat 2</div>
+      <div>Meat 3</div>
     </div>
   );
 };
