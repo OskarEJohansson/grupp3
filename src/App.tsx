@@ -7,6 +7,7 @@ import Veg from "./components/Veg";
 import AboutUs from "./pages/AboutUs";
 import ContactFormPage from "./pages/ContactFormPage";
 import HomePage from "./pages/Homepage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/food/meat" element={<Meat />} />
         <Route path="/food/veg" element={<Veg />} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }
