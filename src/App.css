@@ -256,3 +256,48 @@ button:hover {
     line-height: 1.5;
     color: #ffffff;
 }
+
+footer {
+    background-color: #000000;
+    color: white;
+    padding: 4rem 1rem;
+}
+
+
+footer a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+
+footer a:hover {
+    color: #cccccc;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content {
+    display: flex;
+    margin-bottom: 4rem;
+}
+
+.footer-column {
+    flex-basis: 200px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.footer-heading {
+    margin-bottom: 1rem;
+}
+
+.footer-text {
+    display: block;
+    width: max-content;
+    padding: 5px 10px;
+    margin: 0 auto;
+}
