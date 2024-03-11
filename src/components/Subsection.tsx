@@ -1,6 +1,4 @@
-import { useNavigate } from "react-router-dom";
 import { SubsectionTypes } from "../types";
-import FetchItem from "./FetchItem";
 
 interface SubsectionInterface {
   subsectionProps: SubsectionTypes;
