@@ -1,24 +1,18 @@
-const Subsection = () => {
-  let title = "Title";
-  let picture = "Picture";
+import { useNavigate } from "react-router-dom";
+import { SubsectionTypes } from "../types";
+import FetchItem from "./FetchItem";
 
+interface SubsectionInterface {
+  subsectionProps: SubsectionTypes;
+}
+
+const Subsection = ({ subsectionProps }: SubsectionInterface) => {
   return (
-    <>
-      <div>
-        <button>
-          {title}
-          <br />
-          {picture}
-          <br />
-        </button>
-      </div>
-      <div>
-        {title}
-        <br />
-        {picture}
-        <br />
-      </div>
-    </>
+    <div>
+      <p>{subsectionProps.title}</p>
+      <a href={`/subsection/food/fetchItem`}>CLICK</a>
+      <br />
+    </div>
   );
 };
 
