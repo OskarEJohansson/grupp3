@@ -8,6 +8,7 @@ import AboutUs from "./pages/AboutUs";
 import ContactFormPage from "./pages/ContactFormPage";
 import HomePage from "./pages/Homepage";
 import Footer from "./components/Footer";
+import Beverages from "./components/Beverages";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/beverages" element={<Beverages />} />
         <Route path="/contact-form" element={<ContactFormPage />} />
         <Route path="/food" element={<Food />} />
         <Route path="/food/meat" element={<Meat />} />
