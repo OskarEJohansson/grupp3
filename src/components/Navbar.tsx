@@ -1,15 +1,33 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
       <div className="navbar-container">
         <Link to="/" className="brand-link">
           <img
@@ -24,13 +42,13 @@ const Navbar = () => {
         </button>
         <ul className={`nav-list ${isOpen ? 'open' : ''}`}>
           <li>
-            <Link to="/food">Food</Link>
+            <Link to="/food-page">Food</Link>
           </li>
           <li>
-            <Link to="/about-us">Beverages</Link>
+            <Link to="/beverage-page">Beverages</Link>
           </li>
           <li>
-            <Link to="/contact-form">
+            <Link to="/cart">
               <img
                 src="https://t4.ftcdn.net/jpg/01/86/94/37/360_F_186943704_QJkLZaGKmymZuZLPLJrHDMUNpAwuHPjY.jpg"
                 alt="Cart"
@@ -38,6 +56,9 @@ const Navbar = () => {
                 height="60"
               />
             </Link>
+          </li>
+          <li>
+            <Link to="/login">Login</Link>
           </li>
         </ul>
       </div>

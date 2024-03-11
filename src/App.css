@@ -44,6 +44,7 @@ body {
 .nav-list {
     list-style: none;
     display: flex;
+    align-items: center;
 }
 
 .nav-list li {
@@ -52,6 +53,7 @@ body {
 
 .nav-list li:last-child {
     margin-right: 0;
+    
 }
 
 .nav-list a {
@@ -61,6 +63,9 @@ body {
 .nav-list li a {
     font-size: 1.2rem;
     font-weight: bold;
+}
+.navbar.navbar-scrolled {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 @media screen and (max-width: 768px) {
@@ -135,21 +140,6 @@ body {
     left: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-}
-
-.homepage-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80px;
-    background-color: #e50914;
-    font-size: 30px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #ffffff;
-    margin-bottom: 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 @media screen and (max-width: 1200px) {
