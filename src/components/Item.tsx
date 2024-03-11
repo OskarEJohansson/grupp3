@@ -20,7 +20,6 @@ The [food categories] to choose from are [Meat] and [Veg].
 - Design Meat/Veg Button
 */
 
-import { useNavigate } from "react-router-dom";
 import Subsection from "./Subsection";
 import { SubsectionTypes } from "../types";
 
