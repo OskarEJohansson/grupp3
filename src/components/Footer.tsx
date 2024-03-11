@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
     return (
-
         <footer>
             <div className="footer-container">
                 <div className="footer-content">
@@ -12,22 +13,23 @@ const Footer = () => {
                         <p className="footer-text">12.00 - 21.00</p>
                     </div>
                     <div className="footer-column">
-                    <h3 className="footer-heading">Contact & booking</h3>
-                        <a href="#" className="footer-link">Contact us</a>
+                        <h3 className="footer-heading">Contact & booking</h3>
+                        {/* Updated link */}
+                        <Link to="/contact-form" className="footer-link">Contact us</Link>
                     </div>
                     <div className="footer-column">
-                    <h3 className="footer-heading">Find us</h3>
+                        <h3 className="footer-heading">Find us</h3>
                         <p className="footer-text">Taste Trail AB</p>
                         <p className="footer-text">Kajplats 18, strandvägen</p>
                         <p className="footer-text">114 56 Stockholm</p>
                     </div>
                 </div>
                 <div className="footer-bottom">
-                        <span className="copyright">&copy; 2024 Taste Trails</span>
+                    <span className="copyright">&copy; 2024 Taste Trails</span>
                 </div>
             </div>
         </footer>
     )
 }
 
-export default Footer
+export default Footer;
