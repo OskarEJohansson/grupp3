@@ -42,10 +42,10 @@ const Navbar = () => {
         </button>
         <ul className={`nav-list ${isOpen ? 'open' : ''}`}>
           <li>
-            <Link to="/food">Food</Link>
+            <Link to="/food-page">Food</Link>
           </li>
           <li>
-            <Link to="/beverages">Beverages</Link>
+            <Link to="/beverage-page">Beverages</Link>
           </li>
           <li>
             <Link to="/cart">
