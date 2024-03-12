@@ -26,5 +26,6 @@ export interface IngredientsTypes {
 export interface SubsectionTypes {
   title: string;
   picture: string;
+  description: string;
   _id: number;
 }
