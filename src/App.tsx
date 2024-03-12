@@ -9,7 +9,7 @@ import HomePage from "./pages/Homepage";
 import Footer from "./components/Footer";
 import BeveragePage from "./pages/BeveragePage";
 import FoodPage from "./pages/FoodPage";
-import Cart from "./pages/Cart";
+import CartPage from "./pages/CartPage";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         <Route path="/beverage-page" element={<BeveragePage />} />
         <Route path="/contact-form" element={<ContactFormPage />} />
         <Route path="/food-page" element={<FoodPage />} />
-        <Route path="/cart" element={<Cart />}></Route>
+        <Route path="/cart" element={<CartPage />}></Route>
       </Routes>
       <Footer/>
     </BrowserRouter>
