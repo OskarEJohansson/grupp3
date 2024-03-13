@@ -1,8 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Meat from "./components/Meat";
 import Navbar from "./components/Navbar";
-import Veg from "./components/Veg";
 import AboutUs from "./pages/AboutUs";
 import ContactFormPage from "./pages/ContactFormPage";
 import HomePage from "./pages/Homepage";
@@ -27,7 +25,7 @@ function App() {
         <Route path="/food-page" element={<FoodPage />} />
         <Route path="/cart" element={<CartPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
-        <Route path={`/${category}`} element={<Category />} />
+        <Route path={`/food-page/${category}`} element={<Category />} />
         <Route path="/about-us" element={<AboutUs />} />
       </Routes>
       <Footer />

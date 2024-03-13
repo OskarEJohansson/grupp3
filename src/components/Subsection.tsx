@@ -11,7 +11,7 @@ const Subsection = ({ subsectionProps }: SubsectionInterface) => {
   const useGlobalState = UseGlobalState((state: any) => state);
 
   const handleOnClick = () => {
-    navigation(`${subsectionProps.title} `);
+    navigation(`/food-page/${subsectionProps.title} `);
     useGlobalState.setCategory(subsectionProps.title);
   };
 
