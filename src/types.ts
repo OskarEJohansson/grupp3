@@ -7,3 +7,11 @@ export interface CardTypes {
   instructions: string[];
   ingredients: [name: string, amount: number, unit: number];
 }
+export interface DrinkTypes{
+  strDrink:string;
+  strDrinkThumb:string;
+  idDrink:string;
+}
+export interface ApiResponse{
+  drinks:DrinkTypes[];
+}
