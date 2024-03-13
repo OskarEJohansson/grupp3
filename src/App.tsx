@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import BeveragePage from "./pages/BeveragePage";
 import FoodPage from "./pages/FoodPage";
 import CartPage from "./pages/CartPage";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/contact-form" element={<ContactFormPage />} />
         <Route path="/food-page" element={<FoodPage />} />
         <Route path="/cart" element={<CartPage />}></Route>
+        <Route path="/login" element={<LoginPage />}></Route>
       </Routes>
       <Footer/>
     </BrowserRouter>
