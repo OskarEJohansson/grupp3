@@ -1,28 +1,24 @@
 import { CardTypes } from "../types";
-import axios from "axios";
 
 interface CardInterface {
   CardProps: CardTypes;
 }
 
-const Card = (CardPropps: CardInterface) => {
-  const foodItem = async () => {
-    const response = await axios.get(
-      "https://sti-java-grupp3-mzba2l.reky.se/recepies"
-    );
-
-    if (response.status === 200) {
-      response.data.map();
-    }
-  };
-
+const Card = ({ CardProps }: CardInterface) => {
   return (
     <>
+      <div>Title: {CardProps.title}</div>
+      <div>Categories: {CardProps.categories}</div>
       <div>
-        <p>Picture</p>
-        <p>Title</p>
-        <p>Symbols</p>
-        <p>Price</p>
+        {CardProps.ingredients.map((object) => {
+          return (
+            <div>
+              <p>Ingredient: {object.name}</p>
+              <p>Amount: {object.amount}</p>
+              <p>Unit: {object.unit}</p>
+            </div>
+          );
+        })}
       </div>
     </>
   );

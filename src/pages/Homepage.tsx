@@ -1,15 +1,21 @@
 import '../App.css';
+import CarouselPage from './CarouselPage';
 
 const HomePage = () => {
     return (
-        <div>
-            <div className="movie-list">
-   
-                {/* {tanken är att denna skapar ett nytt kort för varje maträtt på menyn genom att mappa och ittirera över} */}
-                <p><a href='/newPage'>MenuCard</a></p>
-                
+        <>
+        <section className='home-body-container'>
+            <div className='home-body-content'>
+                <div className='home-column'>
+                    <h1 className="home-heading">Welcome</h1>
+                    <p className="home-text">Most recommended</p>
+                </div>   
             </div>
-        </div>
+        </section>
+        <CarouselPage/>  
+        
+        </>
+       
     );
 }
 
