@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { CardTypes } from "../types";
 
 interface CardInterface {
@@ -5,6 +6,26 @@ interface CardInterface {
 }
 
 const Card = ({ CardProps }: CardInterface) => {
+  const [addedToCart, setAddedToCart] = useState<CardTypes[]>([]);
+
+  const handleOnClick = (object: CardTypes) => {
+    setAddedToCart([...addedToCart, object]);
+  };
+
+  const showCart = () => {
+    return (
+      <>
+        {addedToCart.map((cart) => (
+          <div>{cart.title}</div>
+        ))}
+      </>
+    );
+  };
+
+  useEffect(() => {
+    showCart();
+  }, [addedToCart]);
+
   return (
     <>
       <div>Title: {CardProps.title}</div>
@@ -14,12 +35,13 @@ const Card = ({ CardProps }: CardInterface) => {
           return (
             <div>
               <p>Ingredient: {object.name}</p>
-              <p>Amount: {object.amount}</p>
-              <p>Unit: {object.unit}</p>
             </div>
           );
         })}
       </div>
+      <div>Show Rating * * * * * </div>
+      <button onClick={() => handleOnClick(CardProps)}>Add to cart</button>å
+      <div>{showCart()}</div>
     </>
   );
 };
