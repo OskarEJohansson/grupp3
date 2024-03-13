@@ -18,26 +18,21 @@ The [food categories] to choose from are [Meat] and [Veg].
 - Decide file format for pictures in our objects to set interface type.
 - Find out how to store symobles.
 - Design Meat/Veg Button
-- 
-
-
 */
 
-import { useNavigate } from "react-router-dom";
+import Subsection from "./Subsection";
+import { SubsectionTypes } from "../types";
 
-const Food = () => {
-  const navigate = useNavigate();
+interface itemsInterface {
+  itemProps: SubsectionTypes;
+}
 
+const Item = ({ itemProps }: itemsInterface) => {
   return (
-    <>
-      <div>
-        <button onClick={() => navigate("/food/meat")}>Meat</button>
-      </div>
-
-      <div>
-        <button onClick={() => navigate("/food/veg")}>Veg</button>
-      </div>
-    </>
+    <div>
+      <Subsection key={itemProps._id} subsectionProps={itemProps} />
+    </div>
   );
 };
-export default Food;
+
+export default Item;
