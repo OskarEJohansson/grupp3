@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { SubsectionTypes } from "../types";
-import FetchItem from "./FetchItem";
+import UseGlobalState from "./GlobalState";
 
 interface SubsectionInterface {
   subsectionProps: SubsectionTypes;
@@ -8,15 +8,11 @@ interface SubsectionInterface {
 
 const Subsection = ({ subsectionProps }: SubsectionInterface) => {
   const navigation = useNavigate();
+  const useGlobalState = UseGlobalState((state: any) => state);
 
   const handleOnClick = () => {
-    navigation(`food-page/${subsectionProps.title} `);
-
-    return (
-      <div>
-        <FetchItem />
-      </div>
-    );
+    navigation(`/${subsectionProps.title} `);
+    useGlobalState.setCategory(subsectionProps.title);
   };
 
   return (
