@@ -3,6 +3,16 @@ import { useState } from 'react';
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
 
+
+export const showCart = (showCartProps: any) => {
+  <div>
+    {showCartProps.map((item: any) => (
+      <div>{item.title}</div>
+    ))}
+  </div>;
+  return;
+};
+
   const addToCart = (item) => {
     setCartItems([...cartItems, item]);
   };
