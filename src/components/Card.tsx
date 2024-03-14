@@ -3,28 +3,27 @@ import { CardTypes } from "../types";
 import GlobalState from "./GlobalState";
 
 interface CardInterface {
-  CardProps: CardTypes;
+  article: CardTypes;
 }
 
-
-const Card = ({ CardProps }: CardInterface) => {
+const Card = ({ article }: CardInterface) => {
   const useGlobalState = GlobalState((state: any) => state);
 
   return (
     <>
-      <div>Title: {CardProps.title}</div>
-      <div>Categories: {CardProps.categories}</div>
+      <div>Title: {article.title}</div>
+      <div>Categories: {article.categories}</div>
       <div>
-        {CardProps.ingredients.map((object) => {
+        {article.ingredients.map((object: any, index: number) => {
           return (
-            <div>
+            <div key={index}>
               <p>Ingredient: {object.name}</p>
             </div>
           );
         })}
       </div>
       <div>Show Rating * * * * * </div>
-      <button onClick={() => useGlobalState.addToCart({ CardProps })}>
+      <button onClick={() => useGlobalState.addToCart({ article })}>
         Add to cart
       </button>
     </>

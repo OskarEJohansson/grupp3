@@ -22,8 +22,10 @@ const FetchItem = () => {
 
   return (
     <div>
-      {responseData.map((object) => (
-        <Card key={object._id} CardProps={object} />
+      {responseData.map((object: any, index: number) => (
+        <div key={index}>
+          <Card article={object} />
+        </div>
       ))}
       <br />
     </div>

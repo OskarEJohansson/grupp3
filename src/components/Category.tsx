@@ -7,13 +7,17 @@ import { useEffect, useState } from "react";
 const Category = () => {
   const URL = GlobalState((state) => state.URL);
   const category = GlobalState((state) => state.globalFoodCategory);
-  const [responseData, setResponseData] = useState<CardTypes[]>([]);
+  const [categoryData, setCategoryData] = useState<CardTypes[]>([]);
 
   const FetchCategory = async () => {
-    const response = await axios.get(`${URL}/categories/${category}/recipes`);
+    try {
+      const response = await axios.get(`${URL}/categories/${category}/recipes`);
 
-    if (response.status === 200) {
-      setResponseData(response.data);
+      if (response.status === 200) {
+        setCategoryData(response.data);
+      } else console.log(response.status);
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -23,8 +27,10 @@ const Category = () => {
 
   return (
     <div>
-      {responseData.map((foodItem: CardTypes) => (
-        <Card key={foodItem._id} CardProps={foodItem} />
+      {categoryData.map((article: CardTypes, index: number) => (
+        <div key={index}>
+          <Card article={article} />
+        </div>
       ))}
     </div>
   );
