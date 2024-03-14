@@ -198,10 +198,20 @@ button:hover {
     background-color: #cc0a12;
 }
 
+/* Weird empty space between two of the img, if needs fixing check flexbox*/
 .carousel-container {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
+    max-height: 800px;
+
+}
+
+/* Adjust the img pixle size according to amount of slides */
+.carousel-container-img {
+    min-width: 240px;
+    min-height: 240px;
+
 }
 
 .slick-slide img {
@@ -315,3 +325,29 @@ footer a:hover {
     font-size: 56px;
     font-weight: bolder;
 }
+
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    color: white;
+}
+
+.form-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.form-group {
+    justify-content: center;
+}
+
+
+
+
