@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { create } from "zustand";
+import Cart from "./Cart";
 
 interface GlobalStateInterface {
   globalFoodCategory: string;
   URL: string;
   cart: any[];
+  addToCart: (addItemToCart: any) => void;
 }
-
 
 const GlobalState = create<GlobalStateInterface>((set) => ({
   globalFoodCategory: "",
@@ -19,10 +20,15 @@ const GlobalState = create<GlobalStateInterface>((set) => ({
     }));
   },
 
-  setCart:({item}: any) => {
-    set(() => ({
-      cart: [...item, item]
-    }))
+  setCart: () =>
+    set((state) => ({
+      cart: [...state.cart],
+    })),
+
+  addToCart: (addItemToCart: any) => {
+    set((state) => ({
+      cart: [...state.cart, addItemToCart],
+    }));
   },
 }));
 
