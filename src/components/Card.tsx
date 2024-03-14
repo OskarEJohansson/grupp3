@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { CardTypes } from "../types";
 import GlobalState from "./GlobalState";
 
