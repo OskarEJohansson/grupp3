@@ -1,30 +1,22 @@
 import { useEffect, useState } from "react";
 import { CardTypes } from "../types";
+import GlobalState from "./GlobalState";
 
 interface CardInterface {
   CardProps: CardTypes;
 }
 
 const Card = ({ CardProps }: CardInterface) => {
-  const [addedToCart, setAddedToCart] = useState<CardTypes[]>([]);
-
-  const handleOnClick = (object: CardTypes) => {
-    setAddedToCart([...addedToCart, object]);
-  };
+  const useGlobalState = GlobalState((state: any) => state);
 
   const showCart = () => {
-    return (
-      <>
-        {addedToCart.map((cart) => (
-          <div>{cart.title}</div>
-        ))}
-      </>
-    );
+    return useGlobalState.cart.map((item: any) => <div>{item.title}</div>);
   };
 
   useEffect(() => {
     showCart();
-  }, [addedToCart]);
+    console.log(useGlobalState.cart);
+  }, [useGlobalState.cart]);
 
   return (
     <>
@@ -40,7 +32,13 @@ const Card = ({ CardProps }: CardInterface) => {
         })}
       </div>
       <div>Show Rating * * * * * </div>
-      <button onClick={() => handleOnClick(CardProps)}>Add to cart</button>å
+      <button
+        onClick={() =>
+          useGlobalState.addToCartCart({ CardProps }, console.log(CardProps))
+        }
+      >
+        Add to cart
+      </button>
       <div>{showCart()}</div>
     </>
   );
