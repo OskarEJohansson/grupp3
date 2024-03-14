@@ -5,21 +5,6 @@ import { DrinkTypes, ApiResponse } from "../types";
 const BeveragePage = () => {
   const [selectedType, setSelectedType] = useState("mixed");
   const [drinks, setDrinks] = useState<DrinkTypes[]>([]);
-  const [selectedDrink, setSelectedDrink] = useState("");
- 
-  useEffect(() => {
-    const fetchIngredients = async (id: string) => {
-      const url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?iid=${id}";
-      try {
-        const response = await fetch(url);
-        const data:ApiResponse = await response.json();
-        setSelectedDrink(data.ApiResponse);
-      } catch (error) {
-        console.error("Error fetching ingredients:", error);
-      }
-    };
-    fetchIngredients(selectedDrink);
-  }, [selectedDrink]);
 
   //useEffect fetches drinks data when selectedType changes.
   useEffect(() => {
@@ -28,17 +13,15 @@ const BeveragePage = () => {
       //Using -let- allows me to set the url trough an if()sats on selectedType.
       let url;
       if (type === "alcoholic") {
-        url =
-          "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic";
+        url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic";
       } else if (type === "nonAlcoholic") {
-        url =
-          "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic";
+        url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic";
       } else if (type === "mixed") {
         url = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
       }
       if (url) {
         try {
-          //fetch the data from the API.
+          //fetch the selected data from the API.
           const response = await fetch(url);
           //parse the data(json)
           const data: ApiResponse = await response.json();
@@ -60,14 +43,12 @@ const BeveragePage = () => {
       <div className="alcoholicChoiceBtns">
         <button onClick={() => setSelectedType("mixed")}>Mixed</button>
         <button onClick={() => setSelectedType("alcoholic")}>Alcoholic</button>
-        <button onClick={() => setSelectedType("nonAlcoholic")}>
-          Non alcoholic
-        </button>
+        <button onClick={() => setSelectedType("nonAlcoholic")}>Non alcoholic</button>
       </div>
       <div className="imageContainer">
         {drinks.map((drink, index) => (
           <div key={index}>
-            <button onClick={() => fetchIngredients(drink.idDrink)}>
+            <button>
               <h2>{drink.strDrink}</h2>
               <img src={drink.strDrinkThumb} alt={drink.strDrink} />
             </button>
