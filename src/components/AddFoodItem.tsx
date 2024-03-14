@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { CardTypes } from "../types";
 import "../App.css";
 
-const AddFoodItemPage = () => {
+const AddFoodItem = () => {
     const [foodData, setFoodData] = useState<CardTypes>({
         title: "",
         description: "",
@@ -95,7 +95,7 @@ const AddFoodItemPage = () => {
     );
             };
 
-export default AddFoodItemPage
+export default AddFoodItem;
 
 /* export interface CardTypes {
     title: string;
