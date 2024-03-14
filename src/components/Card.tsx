@@ -6,16 +6,20 @@ interface CardInterface {
   CardProps: CardTypes;
 }
 
+export const showCart = (showCartProps: any) => {
+  <div>
+    {showCartProps.map((item: any) => (
+      <div>{item.title}</div>
+    ))}
+  </div>;
+  return;
+};
+
 const Card = ({ CardProps }: CardInterface) => {
   const useGlobalState = GlobalState((state: any) => state);
 
-  const showCart = () => {
-    return useGlobalState.cart.map((item: any) => <div>{item.title}</div>);
-  };
-
   useEffect(() => {
-    showCart();
-    console.log(useGlobalState.cart);
+    showCart(useGlobalState.cart);
   }, [useGlobalState.cart]);
 
   return (
@@ -32,14 +36,9 @@ const Card = ({ CardProps }: CardInterface) => {
         })}
       </div>
       <div>Show Rating * * * * * </div>
-      <button
-        onClick={() =>
-          useGlobalState.addToCartCart({ CardProps }, console.log(CardProps))
-        }
-      >
+      <button onClick={() => useGlobalState.addToCart({ CardProps })}>
         Add to cart
       </button>
-      <div>{showCart()}</div>
     </>
   );
 };
