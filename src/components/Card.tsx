@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { CardTypes } from "../types";
 import GlobalState from "./GlobalState";
 
@@ -6,21 +6,9 @@ interface CardInterface {
   CardProps: CardTypes;
 }
 
-export const showCart = (showCartProps: any) => {
-  <div>
-    {showCartProps.map((item: any) => (
-      <div>{item.title}</div>
-    ))}
-  </div>;
-  return;
-};
 
 const Card = ({ CardProps }: CardInterface) => {
   const useGlobalState = GlobalState((state: any) => state);
-
-  useEffect(() => {
-    showCart(useGlobalState.cart);
-  }, [useGlobalState.cart]);
 
   return (
     <>

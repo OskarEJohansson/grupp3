@@ -1,29 +1,33 @@
-import { useState } from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import GlobalState from './GlobalState';
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([]);
 
-  const addToCart = (item) => {
+const cart = GlobalState ((state) => state.cart)  
+  
+  
+
+ /*  const addToCart = (item) => {
     setCartItems([...cartItems, item]);
   };
 
   const removeFromCart = (itemToRemove) => {
     setCartItems(cartItems.filter(item => item.id !== itemToRemove.id));
-  };
+  }; */
 
-  return (
+ return (
     <div>
       <h2>Your shopping cart</h2>
       <ul>
-        {cartItems.map(item => (
-          <li key={item.id}>
-            <span>{item.name}</span>
-            <button onClick={() => removeFromCart(item)}>Remove</button>
-          </li>
-        ))}
-      </ul>
+  {cart.map((cartItem: any, index: number) => (
+    <div key={index}>
+      <p>{cartItem.CardProps.title}</p>
     </div>
+  ))}
+</ul>
+</div>
   );
-};
+};  
+
 
 export default Cart;
