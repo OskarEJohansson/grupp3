@@ -23,7 +23,7 @@ const AddFoodItem = () => {
     };
 
     const handleCategoriesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const categories = e.target.value.split(',',).map(category => category.trim());
+        const categories = e.target.value.split(',',).map(categories => categories.trim());
         setFoodData((prevState) => ({
             ...prevState,
             categories: categories,
@@ -31,7 +31,7 @@ const AddFoodItem = () => {
     };
 
     const handleInstructionsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const instructions = e.target.value.split('\n',).map(category => category.trim());
+        const instructions = e.target.value.split('\n',).map(instructions => instructions.trim());
         setFoodData((prevState) => ({
             ...prevState,
             instructions: instructions,
