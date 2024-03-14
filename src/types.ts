@@ -37,3 +37,4 @@ export interface DrinkTypes{
 export interface ApiResponse{
   drinks:DrinkTypes[];
 }
+
