@@ -60,6 +60,9 @@ const Navbar = () => {
           <li>
             <Link to="/login">Login</Link>
           </li>
+          <li>
+            <Link to="/add-food-item-page">Add Food</Link>
+          </li>
         </ul>
       </div>
     </nav>
