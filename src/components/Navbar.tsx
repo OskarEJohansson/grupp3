@@ -63,6 +63,9 @@ const Navbar = () => {
           <li>
             <Link to="/add-food-item-page">Add Food</Link>
           </li>
+          <li>
+            <Link to="/add-comments-page">Add Comment</Link>
+          </li>
         </ul>
       </div>
     </nav>
