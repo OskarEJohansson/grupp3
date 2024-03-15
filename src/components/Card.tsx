@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { useNavigate } from "react-router-dom";
 import { CardTypes } from "../types";
 import GlobalState from "./GlobalState";
 
@@ -8,10 +9,17 @@ interface CardInterface {
 
 const Card = ({ article }: CardInterface) => {
   const useGlobalState = GlobalState((state: any) => state);
+  const navigate = useNavigate();
+
+  const handleOnClick = () => {
+    navigate(`/${article._id}`);
+    useGlobalState.setGlobalArticleId(`${article._id}`);
+    useGlobalState.setGlobalArticle(article);
+  };
 
   return (
     <>
-      <div>Title: {article.title}</div>
+      <div onClick={handleOnClick}>Title: {article.title}</div>
       <div>Categories: {article.categories}</div>
       <div>
         {article.ingredients.map((object: any, index: number) => {

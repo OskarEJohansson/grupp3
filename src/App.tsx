@@ -12,9 +12,13 @@ import LoginPage from "./pages/LoginPage";
 import UseGlobalState from "./components/GlobalState";
 import Category from "./components/Category";
 import AddFoodItemPage from "./pages/AddFoodItemPage";
+import CommentsPage from "./pages/CommentsPage";
+import DetailedCard from "./components/DetaildCard";
 
 function App() {
   const category = UseGlobalState((set) => set.globalFoodCategory);
+  const globalArticleId = UseGlobalState((set) => set.globalArticleId);
+  const globalArticle = UseGlobalState((set) => set.globalArticle);
 
   return (
     <BrowserRouter>
@@ -26,9 +30,14 @@ function App() {
         <Route path="/food-page" element={<FoodPage />} />
         <Route path="/cart" element={<CartPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
+        <Route
+          path={`/${globalArticleId}`}
+          element={<DetailedCard article={globalArticle} />}
+        />
         <Route path={`/${category}`} element={<Category />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/add-food-item-page" element={<AddFoodItemPage />} />
+        <Route path="/add-comments-page" element={<CommentsPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
