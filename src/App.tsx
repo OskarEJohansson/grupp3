@@ -12,6 +12,7 @@ import LoginPage from "./pages/LoginPage";
 import UseGlobalState from "./components/GlobalState";
 import Category from "./components/Category";
 import AddFoodItemPage from "./pages/AddFoodItemPage";
+import CommentsPage from "./pages/commentsPage";
 
 function App() {
   const category = UseGlobalState((set) => set.globalFoodCategory);
@@ -29,6 +30,7 @@ function App() {
         <Route path={`/${category}`} element={<Category />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/add-food-item-page" element={<AddFoodItemPage />} />
+        <Route path="/add-comments-page" element={<CommentsPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
