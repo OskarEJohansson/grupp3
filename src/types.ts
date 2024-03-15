@@ -29,12 +29,11 @@ export interface SubsectionTypes {
   description: string;
   _id: number;
 }
-export interface DrinkTypes{
-  strDrink:string;
-  strDrinkThumb:string;
-  idDrink:string;
+export interface DrinkTypes {
+  strDrink: string;
+  strDrinkThumb: string;
+  idDrink: string;
 }
-export interface ApiResponse{
-  drinks:DrinkTypes[];
+export interface ApiResponse {
+  drinks: DrinkTypes[];
 }
-
