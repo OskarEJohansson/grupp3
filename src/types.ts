@@ -6,12 +6,12 @@ export interface CardTypes {
   imageUrl: string;
   categories: string[];
   instructions: string[];
-  ingredients: [
+  ingredients?: [
     {
       name: string;
       amount: number;
       unit: string;
-      _id: string;
+      _id?: string;
     }
   ];
 }
@@ -20,7 +20,7 @@ export interface IngredientsTypes {
   name: string;
   amount: number;
   unit: string;
-  _id: string;
+  _id?: string;
 }
 
 export interface SubsectionTypes {
@@ -29,12 +29,11 @@ export interface SubsectionTypes {
   description: string;
   _id: number;
 }
-export interface DrinkTypes{
-  strDrink:string;
-  strDrinkThumb:string;
-  idDrink:string;
+export interface DrinkTypes {
+  strDrink: string;
+  strDrinkThumb: string;
+  idDrink: string;
 }
-export interface ApiResponse{
-  drinks:DrinkTypes[];
+export interface ApiResponse {
+  drinks: DrinkTypes[];
 }
-

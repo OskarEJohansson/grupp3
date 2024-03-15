@@ -27,6 +27,9 @@ const Category = () => {
 
   return (
     <div>
+      <div>
+        <h1>See all meals in category: {category}</h1>
+      </div>
       {categoryData.map((article: CardTypes, index: number) => (
         <div key={index}>
           <Card article={article} />

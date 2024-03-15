@@ -20,6 +20,7 @@ const FoodPage = () => {
 
   return (
     <div>
+      <h1>FOOD CATEGORIES</h1>
       {foodSections.map((foodSection) => (
         <Subsection key={foodSection._id} subsectionProps={foodSection} />
       ))}
