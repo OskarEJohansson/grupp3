@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Subsection from "../../components/Food/Subsection";
+import Subsection from "./Components/Food/Subsection";
 
 const CategoryPage = () => {
   const navigate = useNavigate();

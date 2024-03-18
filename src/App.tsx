@@ -12,8 +12,9 @@ import LoginPage from "./pages/LoginPage";
 import UseGlobalState from "./components/GlobalState";
 import AddFoodItemPage from "./pages/AddFoodItemPage";
 import CommentsPage from "./pages/CommentsPage";
-import DetailedCard from "./components/Food/DetaildCard";
+
 import MealPage from "./pages/Food/MealPage";
+import DetailedCard from "./pages/Food/Components/Food/DetaildCard";
 
 function App() {
   const category = UseGlobalState((state) => state.globalCategory);
