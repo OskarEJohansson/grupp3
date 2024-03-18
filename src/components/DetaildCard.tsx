@@ -5,15 +5,14 @@ interface DetailedCardInterface {
 }
 
 const DetailedCard = ({ article }: DetailedCardInterface) => {
-  console.log(article);
   return (
     <div>
       <h1>DETAILED CARD</h1>
       {article && (
         <div>
-          {article.title}
-          {article.categories}
-          {article.description}
+          Title: {article.title} <br />
+          Category: {article.categories} <br />
+          Description: {article.description} <br />
         </div>
       )}
     </div>

@@ -6,7 +6,7 @@ import { CardTypes } from "../types";
 interface GlobalStateInterface {
   globalFoodCategory: string;
   globalArticleId: string;
-  globalArticle: {};
+  globalArticle: object;
   URL: string;
   cart: any[];
   addToCart: (addItemToCart: any) => void;
