@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { CardTypes } from "../types";
 import "../App.css";
-import Category from "./Category";
 
 const AddFoodItem = () => {
     const [foodData, setFoodData] = useState<CardTypes>({
@@ -11,7 +10,7 @@ const AddFoodItem = () => {
         imageUrl: "",
         categories: [],
         instructions: [],
-        ingredients: [{ name: "", amount: 0, unit: "", _id: "" }],
+        ingredients: [{ name: "", amount: 0, unit: ""}],
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -117,52 +116,4 @@ const AddFoodItem = () => {
     );
             };
 
-export default AddFoodItem;
-
-/* const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-        const response = await axios.post("https://sti-java-grupp3-mzba2l.reky.se/swagger", foodData);
-        console.log(response.data);
-    } catch (error) {
-        console.error("Error", error);
-    }
-}; */
-
-  /* const AddFoodItem = () => {
-    const [foodData, setFoodData] = useState({
-        title: "",
-        description: ""
-    });
-
-    const handleChange = (e: any) => {
-        const { name, value } = e.target;
-        setFoodData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
-    };
-
-    const handleSubmit = (e: any) => {
-        e.preventDefault();
-        console.log(foodData);
-    };
-
-    return (
-        <div className="container">
-        <form onSubmit={handleSubmit} className="food-form">
-        <div className="form-group">
-        <label htmlFor="title">Food Title</label>
-        <input type="text" id="title" value={foodData.title} onChange={handleChange} required />
-        </div>
-        <div className="form-group">
-        <label htmlFor="description">Description</label>
-        <textarea id="description" value={foodData.description} onChange={handleChange} required></textarea>
-        </div>
-        <button type="submit">Add Food Item</button>
-        </form>
-        </div>
-    );
-}
-
-export default AddFoodItem; */
+export default AddFoodItem
