@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import { CardTypes } from "../../types";
-import GlobalState from "../GlobalState";
+import GlobalState, {
+  GlobalStateInterface,
+} from "../../../../components/GlobalState";
+import { CardTypes } from "../../../../types";
 
 interface DetailedCardInterface {
   article: CardTypes;
@@ -8,7 +10,7 @@ interface DetailedCardInterface {
 
 const DetailedCard = ({ article }: DetailedCardInterface) => {
   const navigate = useNavigate();
-  const useGlobalState = GlobalState((state) => state);
+  const globalState = GlobalState<GlobalStateInterface>((state) => state);
 
   return (
     <div>
@@ -20,7 +22,7 @@ const DetailedCard = ({ article }: DetailedCardInterface) => {
           Description: {article.description} <br />
         </div>
       )}
-      <button onClick={() => navigate(`/${useGlobalState.globalCategory}`)}>
+      <button onClick={() => navigate(`/${globalState.globalCategory}`)}>
         Back
       </button>
     </div>
