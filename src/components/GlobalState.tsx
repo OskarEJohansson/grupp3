@@ -3,27 +3,38 @@
 import { create } from "zustand";
 import { CardTypes } from "../types";
 
-interface GlobalStateInterface {
-  globalFoodCategory: string;
+export interface GlobalStateInterface {
+  globalCategory: string;
   globalArticleId: string;
-  globalArticle: {};
+  globalArticle: object;
+  globalCategoryData: CardTypes[];
   URL: string;
   cart: any[];
+  setCart: () => void;
+  setCategory: (itemCategory: string) => void;
   addToCart: (addItemToCart: any) => void;
+  setGlobalCategoryData: (categoryData: CardTypes[]) => void;
   setGlobalArticleId: (aritcleId: string) => void;
   setGlobalArticle: (article: CardTypes) => void;
 }
 
 const GlobalState = create<GlobalStateInterface>((set) => ({
-  globalFoodCategory: "",
+  globalCategory: "",
   globalArticleId: "",
   globalArticle: {},
+  globalCategoryData: [],
   URL: "https://sti-java-grupp3-mzba2l.reky.se",
   cart: [],
 
   setCategory: (itemCategory: string) => {
     set(() => ({
-      globalFoodCategory: itemCategory,
+      globalCategory: itemCategory,
+    }));
+  },
+
+  setGlobalCategoryData: (categoryData: CardTypes[]) => {
+    set(() => ({
+      globalCategoryData: categoryData,
     }));
   },
 

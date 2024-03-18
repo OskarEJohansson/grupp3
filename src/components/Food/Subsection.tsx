@@ -1,23 +1,23 @@
 import { useNavigate } from "react-router-dom";
-import { SubsectionTypes } from "../types";
-import UseGlobalState from "./GlobalState";
+import { SubsectionTypes } from "../../types";
+import UseGlobalState from "../GlobalState";
 
 interface SubsectionInterface {
   subsectionProps: SubsectionTypes;
 }
 
 const Subsection = ({ subsectionProps }: SubsectionInterface) => {
-  const navigation = useNavigate();
+  const navigate = useNavigate();
   const useGlobalState = UseGlobalState((state: any) => state);
 
   const handleOnClick = () => {
-    navigation(`/${subsectionProps.title} `);
-    useGlobalState.setCategory(subsectionProps.title);
+    navigate(`/${subsectionProps.category} `);
+    useGlobalState.setCategory(subsectionProps.category);
   };
 
   return (
     <div>
-      <p>{subsectionProps.title}</p>
+      <p>{subsectionProps.category}</p>
       <img
         src={subsectionProps.picture}
         alt={subsectionProps.description}
