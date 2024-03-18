@@ -1,9 +1,10 @@
-import React from 'react'
+import AddFoodItem from '../components/AddFoodItem';
 
 const AddFoodItemPage = () => {
+    
   return (
-    <div>AddFoodItemPage</div>
-  )
+      <AddFoodItem/>
+  );
 }
 
 export default AddFoodItemPage
