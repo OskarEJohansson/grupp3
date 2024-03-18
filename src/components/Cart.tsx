@@ -1,13 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import GlobalState from './GlobalState';
+import GlobalState from "./GlobalState";
 
 const Cart = () => {
+  const cart = GlobalState((state) => state.cart);
 
-const cart = GlobalState ((state) => state.cart)  
-  
-  
-
- /*  const addToCart = (item) => {
+  /*  const addToCart = (item) => {
     setCartItems([...cartItems, item]);
   };
 
@@ -15,19 +12,18 @@ const cart = GlobalState ((state) => state.cart)
     setCartItems(cartItems.filter(item => item.id !== itemToRemove.id));
   }; */
 
- return (
+  return (
     <div>
       <h2>Your shopping cart</h2>
       <ul>
-  {cart.map((cartItem: any, index: number) => (
-    <div key={index}>
-      <p>{cartItem.CardProps.title}</p>
+        {cart.map((cartItem: any, index: number) => (
+          <div key={index}>
+            <p>{cartItem.article.title}</p>
+          </div>
+        ))}
+      </ul>
     </div>
-  ))}
-</ul>
-</div>
   );
-};  
-
+};
 
 export default Cart;

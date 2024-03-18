@@ -186,7 +186,7 @@ textarea {
 button {
     width: 100%;
     padding: 10px;
-    background-color: #e50914;
+   background-color: black;
     color: #ffffff;
     border: none;
     border-radius: 5px;
@@ -195,7 +195,7 @@ button {
 }
 
 button:hover {
-    background-color: #cc0a12;
+    background-color: rgb(122, 122, 122);
 }
 
 /* Weird empty space between two of the img, if needs fixing check flexbox*/
