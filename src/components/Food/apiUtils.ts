@@ -10,8 +10,10 @@ export const FetchCategory = async () => {
     const response = await axios.get(
       `${URL}/categories/${useGlobalState.globalCategory}/recipes`
     );
+    console.log(`${URL}/categories/${useGlobalState.globalCategory}/recipes`);
 
     if (response.status === 200) {
+      console.log(response.data);
       useGlobalState.setGlobalCategoryData(response.data);
     } else console.log(response.status);
   } catch (error) {

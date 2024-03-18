@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { SubsectionTypes } from "../../types";
-import UseGlobalState from "../GlobalState";
+import UseGlobalState, { GlobalStateInterface } from "../GlobalState";
+import { FetchCategory } from "./apiUtils";
 
 interface SubsectionInterface {
   subsectionProps: SubsectionTypes;
@@ -8,11 +9,19 @@ interface SubsectionInterface {
 
 const Subsection = ({ subsectionProps }: SubsectionInterface) => {
   const navigate = useNavigate();
-  const useGlobalState = UseGlobalState((state: any) => state);
+  const useGlobalState = UseGlobalState<GlobalStateInterface>(
+    (state: any) => state
+  );
 
-  const handleOnClick = () => {
+  const handleOnClick = async () => {
     navigate(`/${subsectionProps.category} `);
     useGlobalState.setCategory(subsectionProps.category);
+    try {
+      await FetchCategory();
+    } catch (error) {
+      console.error("Error fetching category data:", error);
+      console.log(error);
+    }
   };
 
   return (
