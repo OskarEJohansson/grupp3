@@ -1,9 +1,16 @@
 import GlobalState, { GlobalStateInterface } from "../GlobalState";
 import { CardTypes } from "../../types";
 import Card from "./Card";
+import { useEffect } from "react";
+import { FetchCategory } from "./apiUtils";
+
 
 const Category = () => {
   const useGlobalState = GlobalState<GlobalStateInterface>((state) => state);
+
+  useEffect(() => {
+    FetchCategory(); 
+  }, [useGlobalState.globalCategory]);
 
   return (
     <div>

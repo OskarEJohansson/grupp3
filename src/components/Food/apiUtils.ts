@@ -1,6 +1,7 @@
 import axios from "axios";
 import GlobalState from "../GlobalState";
 
+
 export const FetchCategory = async () => {
   const URL = GlobalState((state) => state.URL);
 
