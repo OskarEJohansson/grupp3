@@ -1,14 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useNavigate } from "react-router-dom";
-import { CardTypes } from "../types";
-import GlobalState from "./GlobalState";
+import { CardTypes } from "../../types";
+import GlobalState, { GlobalStateInterface } from "../GlobalState";
 
 interface CardInterface {
   article: CardTypes;
 }
 
 const Card = ({ article }: CardInterface) => {
-  const useGlobalState = GlobalState((state: any) => state);
+  const useGlobalState = GlobalState<GlobalStateInterface>(
+    (state: any) => state
+  );
   const navigate = useNavigate();
 
   const handleOnClick = () => {

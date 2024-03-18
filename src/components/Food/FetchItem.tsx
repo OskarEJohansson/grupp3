@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "./Card";
-import { CardTypes } from "../types";
+import { CardTypes } from "../../types";
 
 const FetchItem = () => {
   var [responseData, setResponsdata] = useState<CardTypes[]>([]);
