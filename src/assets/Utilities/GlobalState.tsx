@@ -28,7 +28,8 @@ const GlobalState = create<GlobalStateInterface>((set) => ({
   cart: [],
 
   setCategory: (itemCategory: string) => {
-    set(() => ({
+    set((state) => ({
+      ...state,
       globalCategory: itemCategory,
     }));
   },

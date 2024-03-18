@@ -1,8 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import GlobalState, {
-  GlobalStateInterface,
-} from "../../../../components/GlobalState";
 import { CardTypes } from "../../../../types";
+import GlobalState, { GlobalStateInterface } from "../../../../assets/Utilities/GlobalState";
 
 interface DetailedCardInterface {
   article: CardTypes;

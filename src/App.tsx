@@ -35,7 +35,7 @@ function App() {
           path={`/${globalArticleId}`}
           element={<DetailedCard article={globalArticle} />}
         />
-        <Route path={`/${category}`} element={<MealPage />} />
+        <Route path="/:category" element={<MealPage />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/add-food-item-page" element={<AddFoodItemPage />} />
         <Route path="/add-comments-page" element={<CommentsPage />} />
