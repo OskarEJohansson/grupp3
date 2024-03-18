@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Category from "./Components/Food/Category";
 
+
 const MealPage = () => {
   const navigate = useNavigate();
 

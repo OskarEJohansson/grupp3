@@ -1,16 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import GlobalState from "./GlobalState";
+
+import GlobalState from "../assets/Utilities/GlobalState";
+
 
 const Cart = () => {
   const cart = GlobalState((state) => state.cart);
-
-  /*  const addToCart = (item) => {
-    setCartItems([...cartItems, item]);
-  };
-
-  const removeFromCart = (itemToRemove) => {
-    setCartItems(cartItems.filter(item => item.id !== itemToRemove.id));
-  }; */
 
   return (
     <div>
