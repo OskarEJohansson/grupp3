@@ -10,7 +10,7 @@ export interface GlobalStateInterface {
   globalArticle: object;
   globalCategoryData: CardTypes[];
   URL: string;
-  cart: any[];
+  cart: object[];
   setCart: () => void;
   setCategory: (itemCategory: string) => void;
   addToCart: (addItemToCart: any) => void;

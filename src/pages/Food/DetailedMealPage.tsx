@@ -1,4 +1,4 @@
-import DetailedCard from "./Components/Food/DetaildCard";
+import DetailedCard from "./Components/Food/DetailedCard";
 
 const DetailedMealPage = () => {
   return (
