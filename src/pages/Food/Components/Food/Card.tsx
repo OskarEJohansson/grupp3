@@ -1,9 +1,9 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useNavigate } from "react-router-dom";
 import GlobalState, {
   GlobalStateInterface,
 } from "../../../../assets/Utilities/GlobalState";
 import { CardTypes } from "../../../../types";
+import AddToCartButton from "./AddToCartButton";
 
 interface CardInterface {
   article: CardTypes;
@@ -14,7 +14,7 @@ const Card = ({ article }: CardInterface) => {
   const navigate = useNavigate();
 
   const handleOnClick = () => {
-    navigate(`/${article._id}`);
+    navigate(`/detailedmealpage`);
     globalState.setGlobalArticleId(`${article._id}`);
     globalState.setGlobalArticle(article);
   };
@@ -33,9 +33,8 @@ const Card = ({ article }: CardInterface) => {
         })}
       </div>
       <div>Show Rating * * * * * </div>
-      <button onClick={() => globalState.addToCart({ article })}>
-        Add to cart
-      </button>
+
+      <AddToCartButton article={article} />
     </>
   );
 };
