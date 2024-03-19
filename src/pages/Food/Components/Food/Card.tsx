@@ -1,22 +1,22 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useNavigate } from "react-router-dom";
-import { CardTypes } from "../../types";
-import GlobalState, { GlobalStateInterface } from "../GlobalState";
+import GlobalState, {
+  GlobalStateInterface,
+} from "../../../../assets/Utilities/GlobalState";
+import { CardTypes } from "../../../../types";
 
 interface CardInterface {
   article: CardTypes;
 }
 
 const Card = ({ article }: CardInterface) => {
-  const useGlobalState = GlobalState<GlobalStateInterface>(
-    (state: any) => state
-  );
+  const globalState = GlobalState<GlobalStateInterface>((state: any) => state);
   const navigate = useNavigate();
 
   const handleOnClick = () => {
     navigate(`/${article._id}`);
-    useGlobalState.setGlobalArticleId(`${article._id}`);
-    useGlobalState.setGlobalArticle(article);
+    globalState.setGlobalArticleId(`${article._id}`);
+    globalState.setGlobalArticle(article);
   };
 
   return (
@@ -33,7 +33,7 @@ const Card = ({ article }: CardInterface) => {
         })}
       </div>
       <div>Show Rating * * * * * </div>
-      <button onClick={() => useGlobalState.addToCart({ article })}>
+      <button onClick={() => globalState.addToCart({ article })}>
         Add to cart
       </button>
     </>
