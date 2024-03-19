@@ -19,6 +19,13 @@ const CategoryPage = () => {
       description: "Veg section",
       _id: 2,
     },
+    {
+      category: "fish",
+      picture:
+        "https://www.pixelstalk.net/wp-content/uploads/2016/08/Fresh-hot-delicious-food-wallpaper.jpg",
+      description: "Fish section",
+      _id: 3,
+    },
   ];
 
   return (

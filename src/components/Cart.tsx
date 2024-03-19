@@ -2,20 +2,25 @@
 
 import GlobalState from "../assets/Utilities/GlobalState";
 
-
 const Cart = () => {
   const cart = GlobalState((state) => state.cart);
 
   return (
     <div>
       <h2>Your shopping cart</h2>
-      <ul>
-        {cart.map((cartItem: any, index: number) => (
-          <div key={index}>
-            <p>{cartItem.article.title}</p>
-          </div>
-        ))}
-      </ul>
+
+      {cart.map((cartItem: any, index: number) => (
+        <div key={index} className="movie-list">
+          CartItem: {cartItem.article.title} <br />
+          <img
+            src={cartItem.article.imageUrl}
+            alt="PICTURE OF DISH"
+            width={300}
+          />
+          <div>Price: $$$</div>
+        </div>
+      ))}
+      <button>CHECK OUT</button>
     </div>
   );
 };
