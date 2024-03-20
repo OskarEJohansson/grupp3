@@ -1,18 +1,32 @@
 import React, { useState } from "react";
 import { CardTypes } from "../types";
 import "../App.css";
-import Category from "./Food/Category";
+import axios from "axios";
+
+/* if need to use, use here or in types?
+- would lead to change of useState(instructionFields), handleInstructionsChange, handleAddInstructionField and <div>
+type Instruction = {
+    step: number;
+    instruction: string;
+}; */
 
 const AddFoodItem = () => {
   const [foodData, setFoodData] = useState<CardTypes>({
+    // Must be added to cardTypes timeInMins: 0,
     title: "",
     description: "",
     ratings: [],
     imageUrl: "",
     categories: [],
     instructions: [],
-    ingredients: [{ name: "", amount: 0, unit: "", _id: "" }],
+    ingredients: [{ name: "", amount: 0, unit: "" }],
   });
+
+  const [categoryFields, setCategoryFields] = useState<string[]>([""]);
+
+  const [instructionFields, setInstructionFields] = useState<string[]>([""]);
+
+  const [ingredientFields, setIngredientFields] = useState<string[]>([""]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -24,23 +38,27 @@ const AddFoodItem = () => {
     }));
   };
 
-  const handleCategoriesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const categories = e.target.value
-      .split(",")
-      .map((categories) => categories.trim());
+  const handleCategoriesChange = (
+    index: number, 
+    value: string
+    ) => {
+    const updatedCategories = [...foodData.categories];
+    updatedCategories[index] = value;
     setFoodData((prevState) => ({
       ...prevState,
-      categories: categories,
+      categories: updatedCategories,
     }));
   };
 
-  const handleInstructionsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const instructions = e.target.value
-      .split("\n")
-      .map((instructions) => instructions.trim());
+  const handleInstructionsChange = (
+    index: number,
+    value: string
+    ) => {
+    const updatedInstructions = [...foodData.instructions];
+    updatedInstructions[index] = value;
     setFoodData((prevState) => ({
       ...prevState,
-      instructions: instructions,
+      instructions: updatedInstructions,
     }));
   };
 
@@ -48,19 +66,48 @@ const AddFoodItem = () => {
     index: number,
     field: string,
     value: string
-  ): void => {
+  ) => {
+    const updatedIngredients = [...foodData.ingredients];
+    updatedIngredients[index][field] = value;
     setFoodData((prevData) => ({
       ...prevData,
-      ingredients: prevData.ingredients.map((ingredient, i) =>
-        i === index ? { ...ingredient, [field]: value } : ingredient
-      ),
+      ingredients: updatedIngredients,
     }));
   };
 
+  const handleAddCategoryField = () => {
+    setCategoryFields([...categoryFields, ""]);
+  };
+
+  const handleAddInstructionField = () => {
+    setInstructionFields([...instructionFields, ""]);
+  };
+
+  const handleAddIngredientField = () => {
+    setFoodData((prevData) => ({
+        ...prevData,
+        ingredients: [
+            ...prevData.ingredients,
+            { name: "", amount: 0, unit: "" }
+        ]
+    }));
+};
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+        const response = await axios.post("https://sti-java-grupp3-mzba2l.reky.se/recipes", foodData);
+        console.log(response.data);
+    } catch (error) {
+        console.error("Error", error);
+    }
+};
+
+  /* Can be removed when POST is made sure to work
   const handleSubmit = (e: React.FormEvent): void => {
     e.preventDefault();
     console.log(foodData);
-  };
+  }; */
 
   return (
     <div className="container">
@@ -98,69 +145,77 @@ const AddFoodItem = () => {
         </div>
         <div className="form-group">
           <label htmlFor="categories">Categories</label>
-          <input
-            type="text"
-            id="categories"
-            value={foodData.categories.join(", ")}
-            onChange={handleCategoriesChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="instructions">Instructions</label>
-          <textarea
-            id="instructions"
-            value={foodData.instructions.join("\n")}
-            onChange={handleInstructionsChange}
-          ></textarea>
-        </div>
-        <div className="form-group">
-          <label htmlFor="ratings">Ratings</label>
-          <input
-            type="text"
-            id="ratings"
-            value={foodData.ratings.join(", ")}
-            onChange={(e) =>
-              setFoodData({
-                ...foodData,
-                ratings: e.target.value.split(",").map(Number),
-              })
-            }
-          />
-        </div>
+          {categoryFields.map((_,index) => (
+            <div key={index}>
+                <input 
+                type="text" 
+                value={foodData.categories[index] || ""}
+                onChange={(e) => handleCategoriesChange(index, e.target.value)}
+                />
+            </div>
+          ))}
+          <button type="button" onClick={handleAddCategoryField}>
+            Add another category
+          </button>
+          </div>
+          <div className="form-group">
+          <label htmlFor="instruction">Instructions</label>
+          {instructionFields.map((_,index) => (
+            <div key={index}>
+                <label htmlFor={`step${index + 1}`}>{`Step ${index + 1}:`}</label>
+                <textarea
+                id={`step${index + 1}`}
+                value={foodData.instructions[index] || ""}
+                onChange={(e) => handleInstructionsChange(index, e.target.value)}
+                >
+                </textarea>
+            </div>
+          ))}
+          <button type="button" onClick={handleAddInstructionField}>
+            Add another step
+          </button>
+          </div>
         <div className="form-group">
           <label htmlFor="ingredients">Ingredients</label>
           {foodData.ingredients.map((ingredient, index) => (
             <div key={index}>
+                <br />
+                <label htmlFor={`ingredient${index}`}>
+                    Ingredient {index +1}
+                </label>
               <input
                 type="text"
+                id={`ingredient${index}`}
                 value={String(ingredient.name)}
                 onChange={(e) =>
                   handleIngredientsChange(index, "name", e.target.value)
                 }
               />
+              <label htmlFor={`amount${index}`}>Amount</label>
+              <br />
               <input
                 type="number"
+                id={`amount${index}`}
                 value={ingredient.amount}
                 onChange={(e) =>
                   handleIngredientsChange(index, "amount", e.target.value)
                 }
               />
+              <br />
+              <label htmlFor={`unit${index}`}>Unit</label>
               <input
                 type="text"
+                id={`unit${index}`}
                 value={ingredient.unit}
                 onChange={(e) =>
                   handleIngredientsChange(index, "unit", e.target.value)
                 }
               />
-              <input
-                type="text"
-                value={ingredient._id}
-                onChange={(e) =>
-                  handleIngredientsChange(index, "_id", e.target.value)
-                }
-              />
             </div>
           ))}
+          <button type="button" onClick={handleAddIngredientField}>
+            Add another ingredient
+          </button>
         </div>
         <button type="submit">Add Food Item</button>
       </form>
@@ -169,51 +224,3 @@ const AddFoodItem = () => {
 };
 
 export default AddFoodItem;
-
-/* const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-        const response = await axios.post("https://sti-java-grupp3-mzba2l.reky.se/swagger", foodData);
-        console.log(response.data);
-    } catch (error) {
-        console.error("Error", error);
-    }
-}; */
-
-/* const AddFoodItem = () => {
-    const [foodData, setFoodData] = useState({
-        title: "",
-        description: ""
-    });
-
-    const handleChange = (e: any) => {
-        const { name, value } = e.target;
-        setFoodData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
-    };
-
-    const handleSubmit = (e: any) => {
-        e.preventDefault();
-        console.log(foodData);
-    };
-
-    return (
-        <div className="container">
-        <form onSubmit={handleSubmit} className="food-form">
-        <div className="form-group">
-        <label htmlFor="title">Food Title</label>
-        <input type="text" id="title" value={foodData.title} onChange={handleChange} required />
-        </div>
-        <div className="form-group">
-        <label htmlFor="description">Description</label>
-        <textarea id="description" value={foodData.description} onChange={handleChange} required></textarea>
-        </div>
-        <button type="submit">Add Food Item</button>
-        </form>
-        </div>
-    );
-}
-
-export default AddFoodItem; */

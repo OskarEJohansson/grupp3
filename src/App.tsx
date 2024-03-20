@@ -9,18 +9,13 @@ import BeveragePage from "./pages/BeveragePage";
 import CategoryPage from "./pages/Food/CategoryPage";
 import CartPage from "./pages/CartPage";
 import LoginPage from "./pages/LoginPage";
-import UseGlobalState from "./components/GlobalState";
 import AddFoodItemPage from "./pages/AddFoodItemPage";
 import CommentsPage from "./pages/CommentsPage";
 
 import MealPage from "./pages/Food/MealPage";
-import DetailedCard from "./pages/Food/Components/Food/DetaildCard";
+import DetailedMealPage from "./pages/Food/DetailedMealPage";
 
 function App() {
-  const category = UseGlobalState((state) => state.globalCategory);
-  const globalArticleId = UseGlobalState((state) => state.globalArticleId);
-  const globalArticle = UseGlobalState((state) => state.globalArticle);
-
   return (
     <BrowserRouter>
       <Navbar />
@@ -29,13 +24,10 @@ function App() {
         <Route path="/beverage-page" element={<BeveragePage />} />
         <Route path="/contact-form" element={<ContactFormPage />} />
         <Route path="/food-page" element={<CategoryPage />} />
+        <Route path="/:category" element={<MealPage />} />
+        <Route path="/detailedmealpage" element={<DetailedMealPage />} />
         <Route path="/cart" element={<CartPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
-        <Route
-          path={`/${globalArticleId}`}
-          element={<DetailedCard article={globalArticle} />}
-        />
-        <Route path="/:category" element={<MealPage />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/add-food-item-page" element={<AddFoodItemPage />} />
         <Route path="/add-comments-page" element={<CommentsPage />} />

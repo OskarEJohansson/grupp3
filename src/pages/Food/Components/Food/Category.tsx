@@ -14,9 +14,12 @@ const Category = () => {
       </div>
       {globalState.globalCategoryData.map(
         (article: CardTypes, index: number) => (
-          <div key={index}>
-            <Card article={article} />
-          </div>
+          console.log(article),
+          (
+            <div key={index}>
+              <Card article={article} />
+            </div>
+          )
         )
       )}
     </div>
