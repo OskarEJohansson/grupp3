@@ -11,9 +11,9 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-      <Route path="/food-page/*" element={<FoodRoutes />} />
-      <Route path="/beverage-page/*" element={<BeverageRoutes />} />
-      <Route path="/*" element={<UserRoutes />} />
+        <Route path="/category-page/*" element={<FoodRoutes />} />
+        <Route path="/beverage-page/*" element={<BeverageRoutes />} />
+        <Route path="/*" element={<UserRoutes />} />
       </Routes>
       <Footer />
     </BrowserRouter>
