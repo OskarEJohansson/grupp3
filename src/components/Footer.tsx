@@ -14,7 +14,6 @@ const Footer = () => {
                     </div>
                     <div className="footer-column">
                         <h3 className="footer-heading">Contact & booking</h3>
-                        {/* Updated link */}
                         <Link to="/contact-form" className="footer-link">Contact us</Link>
                         <br /> <br />
                         <Link to= "/about-us" className="footer-link">About us</Link>

@@ -1,5 +1,5 @@
-import '../App.css';
-import CarouselPage from './CarouselPage';
+import '../../App.css';
+import CarouselPage from './components/Carousel';
 
 const HomePage = () => {
     return (
@@ -8,7 +8,6 @@ const HomePage = () => {
             <div className='home-body-content'>
                 <div className='home-column'>
                     <h1 className="home-heading">Welcome</h1>
-                    <p className="home-text">Most recommended</p>
                 </div>   
             </div>
         </section>

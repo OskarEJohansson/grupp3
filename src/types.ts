@@ -23,18 +23,17 @@ export interface IngredientsTypes {
   _id: string;
 }
 
-export interface SubsectionTypes {
-  title: string;
+export interface CategoryTypes {
+  category: string;
   picture: string;
   description: string;
   _id: number;
 }
-export interface DrinkTypes{
-  strDrink:string;
-  strDrinkThumb:string;
-  idDrink:string;
+export interface DrinkTypes {
+  strDrink: string;
+  strDrinkThumb: string;
+  idDrink: string;
 }
-export interface ApiResponse{
-  drinks:DrinkTypes[];
+export interface ApiResponse {
+  drinks: DrinkTypes[];
 }
-
