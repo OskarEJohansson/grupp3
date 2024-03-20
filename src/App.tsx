@@ -12,7 +12,7 @@ import LoginPage from "./pages/LoginPage";
 import UseGlobalState from "./components/GlobalState";
 import Category from "./components/Category";
 import AddFoodItemPage from "./pages/AddFoodItemPage";
-import CommentsPage from "./pages/commentsPage";
+import CommentsPage from "./pages/CommentsPage";
 
 function App() {
   const category = UseGlobalState((set) => set.globalFoodCategory);
