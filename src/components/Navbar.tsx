@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,30 +19,30 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
+    <nav className={`navbar ${isScrolled ? "navbar-scrolled" : ""}`}>
       <div className="navbar-container">
         <Link to="/" className="brand-link">
           <img
-            src='https://media.discordapp.net/attachments/1213110126446125117/1214503813306785852/companylogo.png?ex=65f959d1&is=65e6e4d1&hm=75f4b22d314a9030a11ee13c0ad32d1d22fad479cb6cd1f42b43ceab29ad6c8a&=&format=webp&quality=lossless&width=1390&height=464'
-            alt='Group icon'
+            src="https://media.discordapp.net/attachments/1213110126446125117/1214503813306785852/companylogo.png?ex=65f959d1&is=65e6e4d1&hm=75f4b22d314a9030a11ee13c0ad32d1d22fad479cb6cd1f42b43ceab29ad6c8a&=&format=webp&quality=lossless&width=1390&height=464"
+            alt="Group icon"
             width="auto"
             height="100"
           />
         </Link>
         <button onClick={toggleMenu} className="menu-button">
-          {isOpen ? 'Close' : 'Menu'}
+          {isOpen ? "Close" : "Menu"}
         </button>
-        <ul className={`nav-list ${isOpen ? 'open' : ''}`}>
+        <ul className={`nav-list ${isOpen ? "open" : ""}`}>
           <li>
-            <Link to="/food-page">Food</Link>
+            <Link to="/category-page">Food</Link>
           </li>
           <li>
             <Link to="/beverage-page">Beverages</Link>

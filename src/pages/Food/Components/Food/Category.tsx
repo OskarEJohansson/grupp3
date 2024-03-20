@@ -1,27 +1,31 @@
-import Card from "./Card";
-import { CardTypes } from "../../../../types";
+import { useNavigate } from "react-router-dom";
 import GlobalState, {
   GlobalStateInterface,
 } from "../../../../assets/Utilities/GlobalState";
+import { CategoryTypes } from "../../../../types";
 
-const Category = () => {
+interface CategoryInterface {
+  CategoryProps: CategoryTypes;
+}
+const Category = ({ CategoryProps }: CategoryInterface) => {
+  const navigate = useNavigate();
   const globalState = GlobalState<GlobalStateInterface>((state) => state);
+
+  const handleOnClick = () => {
+    navigate(`${CategoryProps.category} `);
+    globalState.setCategory(CategoryProps.category);
+    globalState.setGlobalCategoryData(globalState.URL, CategoryProps.category);
+  };
 
   return (
     <div>
-      <div>
-        <h1>See all meals in category: {globalState.globalCategory}</h1>
-      </div>
-      {globalState.globalCategoryData.map(
-        (article: CardTypes, index: number) => (
-          console.log(article),
-          (
-            <div key={index}>
-              <Card article={article} />
-            </div>
-          )
-        )
-      )}
+      <p>{CategoryProps.category}</p>
+      <img
+        src={CategoryProps.picture}
+        alt={CategoryProps.description}
+        style={{ maxWidth: "300px" }}
+        onClick={handleOnClick}
+      />
     </div>
   );
 };

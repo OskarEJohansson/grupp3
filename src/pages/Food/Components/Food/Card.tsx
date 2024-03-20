@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import GlobalState, {
   GlobalStateInterface,
 } from "../../../../assets/Utilities/GlobalState";
@@ -14,8 +14,7 @@ const Card = ({ article }: CardInterface) => {
   const navigate = useNavigate();
 
   const handleOnClick = () => {
-    navigate("detailedmealpage");
-    globalState.setGlobalArticleId(`${article._id}`);
+    navigate(`${article.title}`);
     globalState.setGlobalArticle(article);
   };
 
