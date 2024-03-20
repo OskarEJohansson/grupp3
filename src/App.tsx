@@ -15,6 +15,7 @@ function App() {
         <Route path="/category-page/*" element={<FoodRoutes />} />
         <Route path="/beverage-page/*" element={<BeverageRoutes />} />
         <Route path="/*" element={<UserRoutes />} />
+        <Route path="/comments" element={<CommentsPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
