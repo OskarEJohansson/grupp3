@@ -21,19 +21,23 @@ const Card = ({ article }: CardInterface) => {
 
   return (
     <>
-      <div onClick={handleOnClick}>Title: {article.title}</div>
+      <div>Title: {article.title}</div>
+      <img
+        onClick={handleOnClick}
+        src={article.imageUrl}
+        alt="PICTURE OF DISH"
+        width={300}
+      />
       <div>Categories: {article.categories}</div>
       <div>
-        {article.ingredients.map((object: any, index: number) => {
+        {article.ingredients.map((ingredient: any, index: number) => {
           return (
             <div key={index}>
-              <p>Ingredient: {object.name}</p>
+              <p>Ingredient: {ingredient.name}</p>
             </div>
           );
         })}
       </div>
-      <div>Show Rating * * * * * </div>
-
       <AddToCartButton article={article} />
     </>
   );
