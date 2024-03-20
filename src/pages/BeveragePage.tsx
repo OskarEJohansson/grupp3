@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import "../App.css";
-import { DrinkTypes, ApiResponse } from "../types";
+import { DrinkTypes, ApiResponse, DrinkDetails } from "../types";
+import BeverageCard from "../components/BeverageCard";
+import GlobalState,{GlobalStateInterface} from "../components/GlobalState";
+
 
 const BeveragePage = () => {
   const [selectedType, setSelectedType] = useState("mixed");
@@ -40,6 +43,7 @@ const BeveragePage = () => {
   return (
     <div>
       <h1>Beverages</h1>
+      
       <div className="alcoholicChoiceBtns">
         <button onClick={() => setSelectedType("mixed")}>Mixed</button>
         <button onClick={() => setSelectedType("alcoholic")}>Alcoholic</button>

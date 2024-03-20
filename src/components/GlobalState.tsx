@@ -10,12 +10,14 @@ export interface GlobalStateInterface {
   globalCategoryData: CardTypes[];
   URL: string;
   cart: any[];
+  drinkId: string; 
   setCart: () => void;
   setCategory: (itemCategory: string) => void;
   addToCart: (addItemToCart: any) => void;
   setGlobalCategoryData: (categoryData: CardTypes[]) => void;
   setGlobalArticleId: (aritcleId: string) => void;
   setGlobalArticle: (article: CardTypes) => void;
+  setDrinkId: (articleId: string) => void;
 }
 
 const GlobalState = create<GlobalStateInterface>((set) => ({
@@ -25,6 +27,7 @@ const GlobalState = create<GlobalStateInterface>((set) => ({
   globalCategoryData: [],
   URL: "https://sti-java-grupp3-mzba2l.reky.se",
   cart: [],
+  drinkId: "",
 
   setCategory: (itemCategory: string) => {
     set(() => ({
@@ -58,6 +61,10 @@ const GlobalState = create<GlobalStateInterface>((set) => ({
       cart: [...state.cart, addItemToCart],
     }));
   },
+  setDrinkId: (articleId: string) =>
+    set(() => ({
+      drinkId: articleId,
+    })),
 }));
 
 export default GlobalState;

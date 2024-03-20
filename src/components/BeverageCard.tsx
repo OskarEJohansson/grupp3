@@ -1,19 +1,29 @@
-import { DrinkDetails } from "../types";
+import { DrinkDetails, DrinkTypes } from "../types";
+import GlobalState,{GlobalStateInterface} from "./GlobalState";
 
 interface DrinkCardInterface{
-    CardProps:DrinkDetails;
+    clickedCard:DrinkDetails;
 }
 
-const BeverageCard = ({ CardProps }: DrinkCardInterface) => {
+const BeverageCard = ({ clickedCard }: DrinkCardInterface) => {
+  const useGlobalState = GlobalState<GlobalStateInterface>((state: any) => state);
+
+  const handleOnClick = () => {
+    useGlobalState.setDrinkId(clickedCard.idDrink)
+    console.log("working")
+  };
     return (
-      <>
-        <h1>Title: {CardProps.strDrink}</h1>
+      <><div onClick={handleOnClick}>
+        <h1>Title: {clickedCard.strDrink}</h1>
         <div>
-            Photo: {CardProps.strDrinkThumb}    
-            
+            Photo: {clickedCard.strDrinkThumb}    
+            Description: {clickedCard.strInstructions}
+        </div>
         </div>
       </>
     );
   };
+
+
 
 export default BeverageCard;
