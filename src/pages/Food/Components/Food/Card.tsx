@@ -14,7 +14,7 @@ const Card = ({ article }: CardInterface) => {
   const navigate = useNavigate();
 
   const handleOnClick = () => {
-    navigate(`/detailedmealpage`);
+    navigate("detailedmealpage");
     globalState.setGlobalArticleId(`${article._id}`);
     globalState.setGlobalArticle(article);
   };
