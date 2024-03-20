@@ -14,5 +14,6 @@ const CommentsPage: React.FC = () => {
       <CommentList comments={comments} />
     </div>
   );
+}
 
-export default CommentsPage;
+export default CommentsPage; 
