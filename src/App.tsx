@@ -5,6 +5,7 @@ import FoodRoutes from "./pages/Routes/FoodRoutes/FoodRoutes";
 import BeverageRoutes from "./pages/Routes/BeverageRoutes/BeverageRoutes";
 import UserRoutes from "./pages/Routes/UserRoutes/UserRoutes";
 import Footer from "./components/Footer";
+import CommentsPage from "./pages/CommentsPage";
 
 function App() {
   return (
