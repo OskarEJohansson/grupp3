@@ -12,7 +12,7 @@ const Subsection = ({ subsectionProps }: SubsectionInterface) => {
   const globalState = GlobalState<GlobalStateInterface>((state) => state);
 
   const handleOnClick = () => {
-    navigate(`/${subsectionProps.category} `);
+    navigate(`${subsectionProps.category} `);
     globalState.setCategory(subsectionProps.category);
     globalState.setGlobalCategoryData(
       globalState.URL,
