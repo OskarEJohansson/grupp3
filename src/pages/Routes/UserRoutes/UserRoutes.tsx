@@ -6,6 +6,7 @@ import AboutUs from '../../AboutUs';
 import HomePage from '../../Home/Homepage';
 import AddFoodItemPage from '../../AddFoodItemPage';
 import CommentsPage from '../../CommentsPage';
+import ContactForm from '../../../components/ContactForm';
 
 const UserRoutes = () => {
   return (
@@ -16,6 +17,7 @@ const UserRoutes = () => {
       <Route path="/" element={<HomePage />} />
       <Route path="/add-food-item-page" element={<AddFoodItemPage />} />
       <Route path="/add-comments-page" element={<CommentsPage />} />
+      <Route path="/contact-form" element={<ContactForm />} />
     </Routes>
   );
 };
