@@ -55,7 +55,7 @@ export interface DrinkDetails {
   strInstructionsIT: string | null;
   strInstructionsZH_HANS: string | null;
   strInstructionsZH_HANT: string | null;
-  strDrinkThumb: string | null;
+  strDrinkThumb: string;
   strImageSource: string | null;
   strImageAttribution: string | null;
   strCreativeCommonsConfirmed: string | null;
