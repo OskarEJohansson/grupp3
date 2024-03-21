@@ -1,4 +1,4 @@
-// UserRoutes.js
+
 import { Routes, Route } from 'react-router-dom';
 import LoginPage from '../../LoginPage';
 import CartPage from '../../CartPage';
@@ -18,6 +18,7 @@ const UserRoutes = () => {
       <Route path="/add-food-item-page" element={<AddFoodItemPage />} />
       <Route path="/add-comments-page" element={<CommentsPage />} />
       <Route path="/contact-form" element={<ContactForm />} />
+      <Route path="/rating-page" element={<RatingPage />}
     </Routes>
   );
 };

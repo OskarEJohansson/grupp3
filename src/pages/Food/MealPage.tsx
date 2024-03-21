@@ -7,7 +7,7 @@ const MealPage = () => {
   return (
     <div>
       <Category />
-      <button onClick={() => navigate(`/category-page`)}>Back</button>
+      <button className="back-button" onClick={() => navigate(`/category-page`)}>Back</button>
     </div>
   );
 };

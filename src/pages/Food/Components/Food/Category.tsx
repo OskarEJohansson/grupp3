@@ -3,6 +3,7 @@ import GlobalState, {
   GlobalStateInterface,
 } from "../../../../assets/Utilities/GlobalState";
 import { CategoryTypes } from "../../../../types";
+import "../../../../App.css"
 
 interface CategoryInterface {
   CategoryProps: CategoryTypes;
