@@ -3,6 +3,7 @@ import GlobalState, {
   GlobalStateInterface,
 } from "../../../../assets/Utilities/GlobalState";
 import { CategoryTypes } from "../../../../types";
+import "../../../../App.css"
 
 interface CategoryInterface {
   CategoryProps: CategoryTypes;
@@ -18,7 +19,7 @@ const Category = ({ CategoryProps }: CategoryInterface) => {
   };
 
   return (
-    <div>
+    <div className="category-item">
       <p>{CategoryProps.category}</p>
       <img
         src={CategoryProps.picture}

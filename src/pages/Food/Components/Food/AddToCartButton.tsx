@@ -1,11 +1,12 @@
 import GlobalState from "../../../../assets/Utilities/GlobalState";
+import "../../../../App.css"
 
 const AddToCartButton = (article: any) => {
   const addToCart = GlobalState((state: any) => state);
 
   return (
     <div>
-      <button
+      <button className="add-to-cart-button"
         onClick={() => {
           addToCart.addToCart(article),
             console.log(article),
