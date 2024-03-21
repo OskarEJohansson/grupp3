@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from 'react';
+import { CommentBox, CommentList } from '../components/Comment';
 
-const CommentsPage = () => {
-  return <div>CommentsPage</div>;
-};
+const CommentsPage: React.FC = () => {
+  const [comments, setComments] = useState<string[]>([]);
 
-export default CommentsPage;
+  const handleCommentSubmit = (comment: string) => {
+    setComments([...comments, comment]);
+  };
+
+  return (
+    <div>
+      <CommentBox onCommentSubmit={handleCommentSubmit} />
+      <CommentList comments={comments} />
+    </div>
+  );
+}
+
+export default CommentsPage; 
