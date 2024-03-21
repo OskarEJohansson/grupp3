@@ -1,8 +1,11 @@
-import React from 'react'
+import Rating from '../components/Rating'
 
 const RatingPage = () => {
   return (
-    <div>RatingPage</div>
+    <div>
+        <h1>Rating Page</h1>
+        <Rating />
+    </div>
   )
 }
 
