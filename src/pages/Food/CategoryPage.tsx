@@ -8,12 +8,14 @@ const CategoryPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <h1>FOOD CATEGORIES</h1>
+    <div className="category-container">
+      <h1 className="category-heading">FOOD CATEGORIES</h1>
+      <div className="category-content">
       {categoryList.map((foodCategory) => (
         <Category key={foodCategory._id} CategoryProps={foodCategory} />
       ))}
-      <button onClick={() => navigate(`/`)}>Back</button>
+      </div>
+      <button className="category-back-button" onClick={() => navigate(`/`)}>Back</button>
     </div>
   );
 };
