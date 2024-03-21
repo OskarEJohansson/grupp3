@@ -44,7 +44,7 @@ const CarouselPage = () => {
 
     return (
         <div>
-            <h1 className="page-header">Most recommended</h1>
+            <h1 className="carousel-page-header">Most recommended</h1>
             <div className="carousel-container">
               <Slider {...settings}>
                 <div>

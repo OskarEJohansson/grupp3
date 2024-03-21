@@ -15,9 +15,25 @@ const FoodGlobalState = create<FoodGlobalStateInterface>((set) => ({
   category: "",
   article: {},
   categoryData: [],
-  setCategory: () => {},
-  setArticle: () => {},
-  setCategoryData: () => {},
+
+  setCategory: (category: string) => {
+    set(() => ({
+      
+    }))
+
+  },
+
+  setArticle: (article: CardTypes) => {
+    set(() => ({
+      
+    }))
+  },
+
+  setCategoryData: (category: string) => {
+    set(() => ({
+
+    }))
+  },
 }));
 
 export default FoodGlobalState;

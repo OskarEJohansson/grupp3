@@ -198,6 +198,12 @@ button:hover {
     background-color: rgb(122, 122, 122);
 }
 
+.carousel-page-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Weird empty space between two of the img, if needs fixing check flexbox*/
 .carousel-container {
     max-width: 800px;
@@ -208,22 +214,10 @@ button:hover {
 }
 
 /* Adjust the img pixle size according to amount of slides */
-.carousel-container-img {
-    min-width: 240px;
-    min-height: 240px;
-
-}
-
 .slick-slide img {
     width: 100%;
     height: 200px;
     object-fit: contain;
-}
-
-.page-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .movie-details {
@@ -348,6 +342,46 @@ footer a:hover {
     justify-content: center;
 }
 
+fieldset {
+    border: 0;
+}
 
+
+.category-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.category-heading {
+    display: flex;
+
+}
+
+.category-content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    
+}
+
+.category-item {
+    flex: 0 0 auto; 
+    width: 25%; 
+    box-sizing: border-box; 
+    padding: 10px; 
+}
+
+.category-item:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 3);
+}
+
+.category-back-button {
+    padding: 8px 35px;
+    width: auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
 
 

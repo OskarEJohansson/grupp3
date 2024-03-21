@@ -18,7 +18,7 @@ const Category = ({ CategoryProps }: CategoryInterface) => {
   };
 
   return (
-    <div>
+    <div className="category-item">
       <p>{CategoryProps.category}</p>
       <img
         src={CategoryProps.picture}
