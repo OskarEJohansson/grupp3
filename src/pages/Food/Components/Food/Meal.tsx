@@ -9,7 +9,7 @@ const Meal = () => {
 
   return (
     <div>
-      <div className="movie-list">
+      <div>
         <h1>See all meals in category: {globalState.globalCategory}</h1>
       </div>
       {globalState.globalCategoryData.map(

@@ -4,6 +4,7 @@ import GlobalState, {
   GlobalStateInterface,
 } from "../../../../assets/Utilities/GlobalState";
 import AddToCartButton from "./AddToCartButton";
+import "../../../../App.css"
 
 const DetailedCard = () => {
   const navigate = useNavigate();
@@ -11,15 +12,15 @@ const DetailedCard = () => {
   const article = GlobalState((state) => state.globalArticle as CardTypes);
 
   return (
-    <div>
-      <h1>DETAILED CARD</h1>
-      <div>
+    <div className="detailed-card-container">
+      <h1 className="detailed-card-title">DETAILED CARD</h1>
+      <div className="detailed-card-info">
         Title: {article.title} <br />
         Category: {article.categories} <br />
         Description: {article.description} <br />
       </div>
       <AddToCartButton article={globalState.globalArticle} />
-      <button onClick={() => navigate(`/${globalState.globalCategory}`)}>
+      <button className="back-button" onClick={() => navigate(`/${globalState.globalCategory}`)}>
         Back
       </button>
     </div>

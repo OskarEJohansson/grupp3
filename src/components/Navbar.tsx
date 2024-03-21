@@ -66,6 +66,9 @@ const Navbar = () => {
           <li>
             <Link to="/add-comments-page">Add Comment</Link>
           </li>
+          <li>
+            <Link to="/rating-page">Rating page</Link>
+          </li>
         </ul>
       </div>
     </nav>
