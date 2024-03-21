@@ -23,7 +23,7 @@ export interface IngredientsTypes {
   _id: string;
 }
 
-export interface SubsectionTypes {
+export interface CategoryTypes {
   category: string;
   picture: string;
   description: string;

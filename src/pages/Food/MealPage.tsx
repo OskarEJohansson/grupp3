@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Category from "./Components/Food/Category";
-
+import Category from "./Components/Food/Meal";
 
 const MealPage = () => {
   const navigate = useNavigate();
@@ -8,7 +7,7 @@ const MealPage = () => {
   return (
     <div>
       <Category />
-      <button onClick={() => navigate(`/food-page`)}>Back</button>
+      <button onClick={() => navigate(`/category-page`)}>Back</button>
     </div>
   );
 };
