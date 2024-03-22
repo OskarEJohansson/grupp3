@@ -7,7 +7,7 @@ import axios from "axios";
 export interface GlobalStateInterface {
   globalCategory: string;
   globalArticleId: string;
-  globalArticle: object;
+  globalArticle: any;
   globalCategoryData: CardTypes[];
   URL: string;
   cart: object[];

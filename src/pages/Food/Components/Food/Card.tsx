@@ -1,22 +1,22 @@
-import { useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import GlobalState, {
   GlobalStateInterface,
 } from "../../../../assets/Utilities/GlobalState";
 import { CardTypes } from "../../../../types";
 import AddToCartButton from "./AddToCartButton";
-import "../../../../App.css"
+import "../../../../App.css";
 
 interface CardInterface {
   article: CardTypes;
 }
 
 const Card = ({ article }: CardInterface) => {
-  const globalState = GlobalState<GlobalStateInterface>((state: any) => state);
+  const { setGlobalArticle } = GlobalState();
   const navigate = useNavigate();
 
   const handleOnClick = () => {
     navigate(`${article.title}`);
-    globalState.setGlobalArticle(article);
+    setGlobalArticle(article);
   };
 
   return (

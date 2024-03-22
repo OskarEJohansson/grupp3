@@ -10,7 +10,8 @@ const AddFoodItem = () => {
       title: "",
       description: "",
       ratings: [],
-      imageUrl: "",
+      imageUrl: ""
+        
       categories: [],
       instructions: [],
       ingredients: [{ name: "", amount: 0, unit: "" }],

@@ -1,24 +1,20 @@
 import Card from "./Card";
 import { CardTypes } from "../../../../types";
-import GlobalState, {
-  GlobalStateInterface,
-} from "../../../../assets/Utilities/GlobalState";
+import GlobalState from "../../../../assets/Utilities/GlobalState";
 
 const Meal = () => {
-  const globalState = GlobalState<GlobalStateInterface>((state) => state);
+  const { globalCategory, globalCategoryData } = GlobalState();
 
   return (
     <div>
       <div>
-        <h1>See all meals in category: {globalState.globalCategory}</h1>
+        <h1>See all meals in category: {globalCategory}</h1>
       </div>
-      {globalState.globalCategoryData.map(
-        (article: CardTypes, index: number) => (
-          <div key={index}>
-            <Card article={article} />
-          </div>
-        )
-      )}
+      {globalCategoryData.map((article: CardTypes, index: number) => (
+        <div key={index}>
+          <Card article={article} />
+        </div>
+      ))}
     </div>
   );
 };

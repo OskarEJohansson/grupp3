@@ -3,19 +3,19 @@ import GlobalState, {
   GlobalStateInterface,
 } from "../../../../assets/Utilities/GlobalState";
 import { CategoryTypes } from "../../../../types";
-import "../../../../App.css"
+import "../../../../App.css";
 
 interface CategoryInterface {
   CategoryProps: CategoryTypes;
 }
 const Category = ({ CategoryProps }: CategoryInterface) => {
   const navigate = useNavigate();
-  const globalState = GlobalState<GlobalStateInterface>((state) => state);
+  const { setCategory, setGlobalCategoryData, URL } = GlobalState();
 
   const handleOnClick = () => {
     navigate(`${CategoryProps.category} `);
-    globalState.setCategory(CategoryProps.category);
-    globalState.setGlobalCategoryData(globalState.URL, CategoryProps.category);
+    setCategory(CategoryProps.category);
+    setGlobalCategoryData(URL, CategoryProps.category);
   };
 
   return (
