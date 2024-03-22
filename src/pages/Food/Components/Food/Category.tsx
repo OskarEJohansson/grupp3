@@ -1,21 +1,18 @@
 import { useNavigate } from "react-router-dom";
-import GlobalState, {
-  GlobalStateInterface,
-} from "../../../../assets/Utilities/GlobalState";
 import { CategoryTypes } from "../../../../types";
 import "../../../../App.css";
+import FoodGlobalState from "../../Utilities/FoodGlobalState";
 
 interface CategoryInterface {
   CategoryProps: CategoryTypes;
 }
 const Category = ({ CategoryProps }: CategoryInterface) => {
   const navigate = useNavigate();
-  const { setCategory, setGlobalCategoryData, URL } = GlobalState();
+  const { setCategory } = FoodGlobalState();
 
   const handleOnClick = () => {
     navigate(`${CategoryProps.category} `);
     setCategory(CategoryProps.category);
-    setGlobalCategoryData(URL, CategoryProps.category);
   };
 
   return (

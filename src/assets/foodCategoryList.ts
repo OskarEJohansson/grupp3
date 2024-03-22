@@ -21,7 +21,7 @@ export const foodCategoryList = [
     _id: 3,
   },
   {
-    category: "hamburgers",
+    category: "hamburger",
     picture:
       "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.W5A88VvmwibfNW2EqDynwwHaE0%26pid%3DApi&f=1&ipt=43d3b4d1c366535844fb29d5eafd678de6099201b37a85a24bc15cbb723d3ac6&ipo=images",
     description: "Hamburger section",

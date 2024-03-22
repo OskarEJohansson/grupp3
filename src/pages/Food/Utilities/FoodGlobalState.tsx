@@ -36,7 +36,7 @@ const FoodGlobalState = create<FoodGlobalStateInterface>((set) => ({
       if (response.status === 200) {
         console.log("SetCategoryData successful");
         set(() => ({
-          category: response.data,
+          categoryData: response.data,
         }));
       }
     } catch (error) {

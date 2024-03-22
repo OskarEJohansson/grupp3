@@ -1,31 +1,28 @@
 import { useNavigate } from "react-router-dom";
 import { CardTypes } from "../../../../types";
-import GlobalState, {
-  GlobalStateInterface,
-} from "../../../../assets/Utilities/GlobalState";
 import AddToCartButton from "./AddToCartButton";
 import "../../../../App.css";
+import FoodGlobalState from "../../Utilities/FoodGlobalState";
 
 const DetailedCard = () => {
   const navigate = useNavigate();
-  const globalArticle = GlobalState(
-    (state) => state.globalArticle as CardTypes
-  );
-  const { globalCategory } = GlobalState();
+  const article = FoodGlobalState((state) => state.article as CardTypes);
+  const { category } = FoodGlobalState();
+
+  const handleOnClick = () => {
+    navigate(`/category-page/${category}`);
+  };
 
   return (
     <div className="detailed-card-container">
       <h1 className="detailed-card-title">DETAILED CARD</h1>
       <div className="detailed-card-info">
-        Title: {globalArticle.title} <br />
-        Category: {globalArticle.categories} <br />
-        Description: {globalArticle.description} <br />
+        Title: {article.title} <br />
+        Category: {article.categories} <br />
+        Description: {article.description} <br />
       </div>
-      <AddToCartButton article={globalArticle} />
-      <button
-        className="back-button"
-        onClick={() => navigate(`/${globalCategory}`)}
-      >
+      <AddToCartButton article={article} />
+      <button className="back-button" onClick={handleOnClick}>
         Back
       </button>
     </div>
