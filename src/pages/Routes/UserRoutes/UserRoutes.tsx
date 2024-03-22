@@ -7,6 +7,7 @@ import HomePage from '../../Home/Homepage';
 import AddFoodItemPage from '../../AddFoodItemPage';
 import CommentsPage from '../../CommentsPage';
 import ContactForm from '../../../components/ContactForm';
+import RatingPage from '../../RatingPage';
 
 const UserRoutes = () => {
   return (
@@ -18,7 +19,7 @@ const UserRoutes = () => {
       <Route path="/add-food-item-page" element={<AddFoodItemPage />} />
       <Route path="/add-comments-page" element={<CommentsPage />} />
       <Route path="/contact-form" element={<ContactForm />} />
-      <Route path="/rating-page" element={<RatingPage />}
+      <Route path="/rating-page" element={<RatingPage />} />
     </Routes>
   );
 };
