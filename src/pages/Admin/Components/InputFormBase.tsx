@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState } from "react";
 import FormGlobalState from "../Utils/FormGlobalState";
 
 interface InputFormBaseProps {
@@ -6,17 +6,40 @@ interface InputFormBaseProps {
 }
 
 const InputFormBase = ({ inputLabel }: InputFormBaseProps) => {
-  const { setTitle, formData } = FormGlobalState();
+  const {
+    setTitle,
+    setDescription,
+    setCategories,
+    setImageUrl,
+    setInstructions,
+  } = FormGlobalState();
+  const [input, setInput] = useState("");
 
-  useEffect(() => {
-    console.log(formData.title);
-  }, [formData.title]);
+  const handleOnChange = (e: any) => {
+    setInput(e.target.value);
 
-  //ADD VALUE IN INPUT
+    switch (inputLabel) {
+      case "title":
+        setTitle(input);
+        break;
+      case "description":
+        setDescription(input);
+        break;
+      case "categories":
+        setCategories(input);
+        break;
+      case "image":
+        setImageUrl(input);
+        break;
+      case "instructions":
+        setInstructions(input);
+    }
+  };
+
   return (
     <>
-      <label htmlFor={inputLabel}>{inputLabel}</label>
-      <input type="text" onChange={(e) => setTitle(e.target.value)} />
+      <label>{inputLabel}</label>
+      <input type="text" onChange={handleOnChange} />
     </>
   );
 };
