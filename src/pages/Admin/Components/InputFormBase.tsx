@@ -1,13 +1,22 @@
-const InputFormBase = (value: string, id: string) => {
-  const { setTitle } = FormGlobalState();
+import { useEffect } from "react";
+import FormGlobalState from "../Utils/FormGlobalState";
+
+interface InputFormBaseProps {
+  inputLabel: string;
+}
+
+const InputFormBase = ({ inputLabel }: InputFormBaseProps) => {
+  const { setTitle, formData } = FormGlobalState();
+
+  useEffect(() => {
+    console.log(formData.title);
+  }, [formData.title]);
+
+  //ADD VALUE IN INPUT
   return (
     <>
-      <input
-        type="text"
-        value={value}
-        id={id}
-        onChange={(e) => setTitle(e.target.value)}
-      />
+      <label htmlFor={inputLabel}>{inputLabel}</label>
+      <input type="text" onChange={(e) => setTitle(e.target.value)} />
     </>
   );
 };
