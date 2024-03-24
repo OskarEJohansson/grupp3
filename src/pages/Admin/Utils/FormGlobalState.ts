@@ -1,18 +1,14 @@
-import axios from "axios";
 import { create } from "zustand";
-import { CardTypes } from "../../../types.ts";
 
 export interface FormGlobalStateInterface {
   formData: {
     title: string;
     description: string;
-    ratings: [];
     imageUrl: string;
     categories: [];
     instructions: [];
     ingredients: [];
   };
-
   formDataIngredients: [{ name: string; amount: number; unit: string }];
 
   setTitle: (inputValue: string) => void;
@@ -20,12 +16,9 @@ export interface FormGlobalStateInterface {
   setImageUrl: (inputValue: string) => void;
   setCategories: (inputValue: string) => void;
   setInstructions: (inputValue: string) => void;
-
   setIngredientsName: (inputValue: string) => void;
   setIngredientsAmout: (inputValue: number) => void;
   setIngredientsUnit: (inputValue: string) => void;
-
-  submitForm: (formData: CardTypes) => void;
 }
 
 const FormGlobalState = create<FormGlobalStateInterface>((set) => ({
@@ -80,24 +73,6 @@ const FormGlobalState = create<FormGlobalStateInterface>((set) => ({
     set((state) => ({
       formDataIngredients: { ...state.formDataIngredients, unit: inputValue },
     })),
-
-  submitForm: async (formData: CardTypes) => {
-    try {
-      const response = await axios.post(
-        "https://sti-java-grupp3-mzba2l.reky.se/recipes",
-        formData
-      );
-
-      if (response.status === 200) {
-        console.log("Submit form response status:", response.status);
-        console.log("Submit form response data:", response.data);
-      } else {
-        console.log("Error posting submitForm", response.status);
-      }
-    } catch (error) {
-      console.log("Error posting submitForm", error);
-    }
-  },
 }));
 
 export default FormGlobalState;

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import FormGlobalState from "../Utils/FormGlobalState";
 
 interface InputFormBaseProps {
@@ -6,33 +5,22 @@ interface InputFormBaseProps {
 }
 
 const InputFormBase = ({ inputLabel }: InputFormBaseProps) => {
-  const {
-    setTitle,
-    setDescription,
-    setCategories,
-    setImageUrl,
-    setInstructions,
-  } = FormGlobalState();
-  const [input, setInput] = useState("");
+  const { setTitle, setDescription, setImageUrl, setInstructions } =
+    FormGlobalState();
 
   const handleOnChange = (e: any) => {
-    setInput(e.target.value);
-
     switch (inputLabel) {
       case "title":
-        setTitle(input);
+        setTitle(e.target.value);
         break;
       case "description":
-        setDescription(input);
-        break;
-      case "categories":
-        setCategories(input);
+        setDescription(e.target.value);
         break;
       case "image":
-        setImageUrl(input);
+        setImageUrl(e.target.value);
         break;
       case "instructions":
-        setInstructions(input);
+        setInstructions(e.target.value);
     }
   };
 

@@ -1,18 +1,17 @@
 import InputFormBase from "./Components/InputFormBase";
-import FormGlobalState from "./Utils/FormGlobalState";
+import InputIngredients from "./Components/InputIngredients.tsx";
+import SubmitButton from "./Components/SubmitButton.tsx";
 
 const AdminPage = () => {
-  const { formData } = FormGlobalState();
-
-  console.log("title", formData.title);
-  console.log("description", formData.description);
-  console.log(formData);
-
   return (
     <div>
       <h1>INPUT FORM</h1>
       <InputFormBase inputLabel="title" />
       <InputFormBase inputLabel="description" />
+      <InputFormBase inputLabel="image" />
+      <InputFormBase inputLabel="instructions" />
+      <InputIngredients />
+      <SubmitButton />
     </div>
   );
 };
