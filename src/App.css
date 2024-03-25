@@ -270,6 +270,7 @@ footer a:hover {
 
 fieldset {
     border: 0;
+    display: grid;
 }
 
 .category-content {
@@ -543,7 +544,9 @@ card-container {
     color: #ccc; 
   }
   
-  
+  .select-option {
+    color: blue
+  }
 
 
 

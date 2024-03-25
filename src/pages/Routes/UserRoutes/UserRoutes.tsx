@@ -8,6 +8,7 @@ import AddFoodItemPage from '../../AddFoodItemPage';
 import CommentsPage from '../../CommentsPage';
 import ContactForm from '../../../components/ContactForm';
 import RatingPage from '../../RatingPage';
+import AdminPage from "../../Admin/AdminPage";
 
 const UserRoutes = () => {
   return (
@@ -16,6 +17,7 @@ const UserRoutes = () => {
       <Route path="/cart" element={<CartPage />} />
       <Route path="/about-us" element={<AboutUs />} />
       <Route path="/" element={<HomePage />} />
+      <Route path="/admin-page" element={<AdminPage />} />
       <Route path="/add-food-item-page" element={<AddFoodItemPage />} />
       <Route path="/add-comments-page" element={<CommentsPage />} />
       <Route path="/contact-form" element={<ContactForm />} />
