@@ -1,5 +1,6 @@
 import InputFormBase from "./Components/InputFormBase";
 import InputIngredients from "./Components/InputIngredients.tsx";
+import SelectCategory from "./Components/SelectCategory.tsx";
 import SubmitButton from "./Components/SubmitButton.tsx";
 
 const AdminPage = () => {
@@ -10,6 +11,7 @@ const AdminPage = () => {
       <InputFormBase inputLabel="description" />
       <InputFormBase inputLabel="image" />
       <InputFormBase inputLabel="instructions" />
+      <SelectCategory />
       <InputIngredients />
       <SubmitButton />
     </div>
