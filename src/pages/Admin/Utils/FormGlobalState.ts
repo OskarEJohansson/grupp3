@@ -11,7 +11,7 @@ export interface FormGlobalStateInterface {
     title: string;
     description: string;
     imageUrl: string;
-    categories: [];
+    categories: string[];
     instructions: [];
     ingredients: Ingredient[];
   };

@@ -26,7 +26,7 @@ const InputFormBase = ({ inputLabel }: InputFormBaseProps) => {
 
   return (
     <>
-      <label>{inputLabel}</label>
+      <label>{inputLabel.charAt(0).toUpperCase() + inputLabel.slice(1)}</label>
       <input type="text" onChange={handleOnChange} />
     </>
   );
