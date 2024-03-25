@@ -61,6 +61,9 @@ const Navbar = () => {
             <Link to="/login">Login</Link>
           </li>
           <li>
+            <Link to="/admin-page">ADMIN PAGE</Link>
+          </li>
+          <li>
             <Link to="/add-food-item-page">Add Food</Link>
           </li>
           <li>
