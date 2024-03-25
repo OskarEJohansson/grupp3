@@ -2,9 +2,14 @@ import axios from "axios";
 import FormGlobalState from "../Utils/FormGlobalState";
 
 const SubmitButton = () => {
-  const { formData } = FormGlobalState();
+  const { formData, formDataIngredients, addFormDataIngredients } =
+    FormGlobalState();
 
   const handleOnClick = async () => {
+    if (formData.categories.length === null) {
+      addFormDataIngredients(formDataIngredients);
+    }
+
     try {
       const response = await axios.post(
         "https://sti-java-grupp3-mzba2l.reky.se/recipes",

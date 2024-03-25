@@ -1,59 +1,22 @@
 import { useState } from "react";
+import IngredientComponent from "./IngredientComponent";
+import FormGlobalState from "../Utils/FormGlobalState";
 
-export const ingredientsComponent = () => {
-  const [ingredients, setIngredient] = useState({
-    name: "",
-    amount: 0,
-    unit: "",
-  });
-
-  const handleOnChange = (e: any) => {
-    const { name, value } = e.target;
-    setIngredient({ ...ingredients, [name]: value });
-  };
-
-  return (
-    <div>
-      <fieldset>
-        <label>Ingredient</label>
-        <input
-          type="text"
-          name="name"
-          value={ingredients.name}
-          onChange={handleOnChange}
-        />
-
-        <label>Amount</label>
-        <input
-          type="text"
-          name="amount"
-          value={ingredients.amount}
-          onChange={handleOnChange}
-        />
-
-        <label>Unit</label>
-        <input
-          type="text"
-          name="unit"
-          value={ingredients.unit}
-          onChange={handleOnChange}
-        />
-      </fieldset>
-    </div>
-  );
-};
-
-const InputIngredients = () => {
-  const [componentList, setComponentList] = useState([ingredientsComponent()]);
+export const InputIngredients = () => {
+  const [componentCount, setComponentList] = useState(1);
+  const { formDataIngredients, setFormDataIngredients } = FormGlobalState();
 
   const handleOnClick = () => {
-    setComponentList([...componentList, ingredientsComponent()]);
+    setComponentList(componentCount + 1);
+    setFormDataIngredients(formDataIngredients);
   };
 
   return (
     <div>
-      {componentList.map((component, index: number) => (
-        <div key={index}>{component}</div>
+      {[...Array(componentCount)].map((number, index: number) => (
+        <div key={index}>
+          <IngredientComponent />
+        </div>
       ))}
       <button onClick={handleOnClick}>Add Ingredient</button>
     </div>
