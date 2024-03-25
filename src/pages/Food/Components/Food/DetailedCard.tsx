@@ -31,9 +31,9 @@ const DetailedCard = ({ onClose }: DetailedCardProps) => {
           Category: {article.categories} <br />
           Description: {article.description} <br />
           Quantity: 
-          <QuantityInput value={quantity} onChange={handleQuantityChange} /> {/* Include QuantityInput */}
+          <QuantityInput value={quantity} onChange={handleQuantityChange} /> 
         </div>
-        <AddToCartButton article={{...article, quantity}} /> {/* Pass quantity when adding to cart */}
+        <AddToCartButton article={{...article, quantity}} /> 
         <button className="back-button">Back</button>
       </div>
     </div>

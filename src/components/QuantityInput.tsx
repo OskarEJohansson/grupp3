@@ -1,5 +1,3 @@
-import React from "react";
-
 interface QuantityInputProps {
   value: number;
   onChange: (newValue: number) => void;
