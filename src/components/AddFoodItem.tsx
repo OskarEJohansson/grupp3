@@ -3,16 +3,8 @@ import { CardTypes } from "../types";
 import "../App.css";
 import axios from "axios";
 
-/* if need to use, use here or in types?
-- would lead to change of useState(instructionFields), handleInstructionsChange, handleAddInstructionField and <div>
-type Instruction = {
-    step: number;
-    instruction: string;
-}; */
-
 const AddFoodItem = () => {
   const [foodData, setFoodData] = useState<CardTypes>({
-    // Must be added to cardTypes timeInMins: 0,
     title: "",
     description: "",
     ratings: [],
@@ -21,6 +13,8 @@ const AddFoodItem = () => {
     instructions: [],
     ingredients: [{ name: "", amount: 0, unit: "" }],
   });
+
+  const [submittedRecipe, setSubmittedRecipe] = useState(null);
 
   const [categoryFields, setCategoryFields] = useState<string[]>([""]);
 
@@ -38,10 +32,7 @@ const AddFoodItem = () => {
     }));
   };
 
-  const handleCategoriesChange = (
-    index: number, 
-    value: string
-    ) => {
+  const handleCategoriesChange = (index: number, value: string) => {
     const updatedCategories = [...foodData.categories];
     updatedCategories[index] = value;
     setFoodData((prevState) => ({
@@ -50,10 +41,7 @@ const AddFoodItem = () => {
     }));
   };
 
-  const handleInstructionsChange = (
-    index: number,
-    value: string
-    ) => {
+  const handleInstructionsChange = (index: number, value: string) => {
     const updatedInstructions = [...foodData.instructions];
     updatedInstructions[index] = value;
     setFoodData((prevState) => ({
@@ -85,29 +73,24 @@ const AddFoodItem = () => {
 
   const handleAddIngredientField = () => {
     setFoodData((prevData) => ({
-        ...prevData,
-        ingredients: [
-            ...prevData.ingredients,
-            { name: "", amount: 0, unit: "" }
-        ]
+      ...prevData,
+      ingredients: [...prevData.ingredients, { name: "", amount: 0, unit: "" }],
     }));
-};
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const response = await axios.post("https://sti-java-grupp3-mzba2l.reky.se/recipes", foodData);
-        console.log(response.data);
+      const response = await axios.post(
+        "https://sti-java-grupp3-mzba2l.reky.se/recipes",
+        foodData
+      );
+      console.log(response.data);
+      setSubmittedRecipe(response.data);
     } catch (error) {
-        console.error("Error", error);
+      console.error("Error", error);
     }
-};
-
-  /* Can be removed when POST is made sure to work
-  const handleSubmit = (e: React.FormEvent): void => {
-    e.preventDefault();
-    console.log(foodData);
-  }; */
+  };
 
   return (
     <div className="container">
@@ -145,44 +128,45 @@ const AddFoodItem = () => {
         </div>
         <div className="form-group">
           <label htmlFor="categories">Categories</label>
-          {categoryFields.map((_,index) => (
+          {categoryFields.map((_, index) => (
             <div key={index}>
-                <input 
-                type="text" 
+              <input
+                type="text"
                 value={foodData.categories[index] || ""}
                 onChange={(e) => handleCategoriesChange(index, e.target.value)}
-                />
+              />
             </div>
           ))}
           <button type="button" onClick={handleAddCategoryField}>
             Add another category
           </button>
-          </div>
-          <div className="form-group">
+        </div>
+        <div className="form-group">
           <label htmlFor="instruction">Instructions</label>
-          {instructionFields.map((_,index) => (
+          {instructionFields.map((_, index) => (
             <div key={index}>
-                <label htmlFor={`step${index + 1}`}>{`Step ${index + 1}:`}</label>
-                <textarea
+              <label htmlFor={`step${index + 1}`}>{`Step ${index + 1}:`}</label>
+              <textarea
                 id={`step${index + 1}`}
                 value={foodData.instructions[index] || ""}
-                onChange={(e) => handleInstructionsChange(index, e.target.value)}
-                >
-                </textarea>
+                onChange={(e) =>
+                  handleInstructionsChange(index, e.target.value)
+                }
+              ></textarea>
             </div>
           ))}
           <button type="button" onClick={handleAddInstructionField}>
             Add another step
           </button>
-          </div>
+        </div>
         <div className="form-group">
           <label htmlFor="ingredients">Ingredients</label>
           {foodData.ingredients.map((ingredient, index) => (
             <div key={index}>
-                <br />
-                <label htmlFor={`ingredient${index}`}>
-                    Ingredient {index +1}
-                </label>
+              <br />
+              <label htmlFor={`ingredient${index}`}>
+                Ingredient {index + 1}
+              </label>
               <input
                 type="text"
                 id={`ingredient${index}`}
@@ -219,6 +203,14 @@ const AddFoodItem = () => {
         </div>
         <button type="submit">Add Food Item</button>
       </form>
+
+      {submittedRecipe && (
+        <div className="form-group">
+          <h2>Added Food</h2>
+          <p>Title: {submittedRecipe.title}</p>
+          <p>Description: {submittedRecipe.description}</p>
+        </div>
+      )}
     </div>
   );
 };

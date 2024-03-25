@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-
 import Category from "./Components/Food/Category";
 import { foodCategoryList } from "../../assets/foodCategoryList";
+import "../../App.css"
 
 const CategoryPage = () => {
   const categoryList = foodCategoryList;
@@ -15,7 +15,7 @@ const CategoryPage = () => {
         <Category key={foodCategory._id} CategoryProps={foodCategory} />
       ))}
       </div>
-      <button className="category-back-button" onClick={() => navigate(`/`)}>Back</button>
+      <button className="back-button" onClick={() => navigate(`/`)}>Back</button>
     </div>
   );
 };

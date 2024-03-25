@@ -1,24 +1,25 @@
 import Card from "./Card";
 import { CardTypes } from "../../../../types";
-import GlobalState, {
-  GlobalStateInterface,
-} from "../../../../assets/Utilities/GlobalState";
+import FoodGlobalState from "../../Utilities/FoodGlobalState";
+import { useEffect } from "react";
 
 const Meal = () => {
-  const globalState = GlobalState<GlobalStateInterface>((state) => state);
+  const { category, categoryData, setCategoryData, URL } = FoodGlobalState();
+
+  useEffect(() => {
+    setCategoryData(URL, category);
+  }, [category]);
 
   return (
     <div>
-      <div className="movie-list">
-        <h1>See all meals in category: {globalState.globalCategory}</h1>
+      <div>
+        <h1>See all meals in category: {category}</h1>
       </div>
-      {globalState.globalCategoryData.map(
-        (article: CardTypes, index: number) => (
-          <div key={index}>
-            <Card article={article} />
-          </div>
-        )
-      )}
+      {categoryData.map((article: CardTypes, index: number) => (
+        <div key={index}>
+          <Card article={article} />
+        </div>
+      ))}
     </div>
   );
 };
