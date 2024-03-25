@@ -1,21 +1,18 @@
-import { DrinkDetails } from "../../../types";
 import BeverageGlobalState from "../Utilities/BeveragesGlobalState";
 
 const BeverageCard = () => {
-  const clickedCard = BeverageGlobalState((state:any) => state);
+  const clickedCard = BeverageGlobalState((state) => state);
   console.log("fetched drink", clickedCard.drink);
   return (
     <>
       <div>
-        {clickedCard.map((drink, index: number) => (
+        {clickedCard.drink.map((drink, index) => (
           <div key={index}>
             <h1>Titel:{drink.strDrink}</h1>
-            Photo:<img src={clickedCard.strDrinkThumb} alt={drink.strDrink} />
-            Description: {clickedCard.strInstructions}
+            Photo:<img src={drink.strDrinkThumb} alt={drink.strDrink} />
+            Description: {drink.strInstructions}
           </div>
         ))}
-        <h1>Title: {clickedCard.strDrink}</h1>
-        <div></div>
       </div>
     </>
   );

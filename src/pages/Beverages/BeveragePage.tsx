@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "../../App.css";
-import { DrinkTypes, ApiResponse } from "../../types";
+import {DrinkDetails, DrinkTypes, ApiResponse } from "../../types";
 import BeverageGlobalState from "./Utilities/BeveragesGlobalState";
 import { useNavigate } from "react-router-dom";
 
