@@ -1,16 +1,17 @@
+import { BeverageTypes } from "../../../types";
 import BeverageGlobalState from "../Utilities/BeveragesGlobalState";
 
 const BeverageCard = () => {
-  const { drinkList } = BeverageGlobalState();
+  const { beverageList } = BeverageGlobalState();
+
   return (
     <>
       <div>
-        {clickedCard.drink.map((drink, index) => (
+        {beverageList.map((beverage: BeverageTypes, index: number) => (
           <div key={index}>
-            <h1>Titel:{drink.strDrink}</h1>
+            <h1>Titel:{beverage.strDrink}</h1>
             Photo:
-            <img src={drink.strDrinkThumb} alt={drink.strDrink} />
-            Description: {drink.strInstructions}
+            <img src={beverage.strDrinkThumb} alt={beverage.strDrink} />
           </div>
         ))}
       </div>

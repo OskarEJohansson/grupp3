@@ -2,16 +2,16 @@ import { useNavigate } from "react-router-dom";
 import BeverageGlobalState from "../Utilities/BeveragesGlobalState";
 
 const BeverageButton = (category: any) => {
-  const { fetchAlcoholicDrinks, fetchNonAlcoholicDrinks } =
+  const { fetchAlcoholicBeverage, fetchNonAlcoholicBeverage } =
     BeverageGlobalState();
   const navigate = useNavigate();
 
   const handleOnClick = () => {
-    if (category.category === "alcoholic") {
-      fetchAlcoholicDrinks();
-    } else fetchNonAlcoholicDrinks();
+    if (category.category === "Alcoholic") {
+      fetchAlcoholicBeverage();
+    } else fetchNonAlcoholicBeverage();
 
-    navigate("/drink");
+    navigate("/beverage");
   };
 
   return <button onClick={handleOnClick}>{category.category}</button>;

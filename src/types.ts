@@ -29,7 +29,7 @@ export interface CategoryTypes {
   description: string;
   _id: number;
 }
-export interface DrinkTypes {
+export interface BeverageTypes {
   strDrink: string;
   strDrinkThumb: string;
   idDrink: string;
@@ -38,7 +38,7 @@ export interface ApiResponse {
   drinks: DrinkTypes[];
 }
 
-export interface DrinkDetails {
+export interface BeverageDetails {
   idDrink: string;
   strDrink: string;
   strDrinkAlternate: string | null;
