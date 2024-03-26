@@ -29,7 +29,7 @@ const Card = ({ article }: CardInterface) => {
       />
       <div className="card-categories">Categories: {article.categories}</div>
       <div className="card-ingredients-container">
-        {article.ingredients.map((ingredient: any, index: number) => {
+        {article.ingredients.map((ingredient, index) => {
           return (
             <div className="card-ingredient" key={index}>
               <p>Ingredient: {ingredient.name}</p>

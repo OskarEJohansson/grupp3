@@ -4,21 +4,18 @@ import ContactForm from "../../../components/ContactForm";
 import AboutUs from "../../AboutUs";
 import AddFoodItemPage from "../../AddFoodItemPage";
 import AdminPage from "../../Admin/AdminPage";
-import CartPage from "../../CartPage";
 import CommentsPage from "../../CommentsPage";
 import HomePage from "../../Home/Homepage";
 import RatingPage from "../../RatingPage";
 import BeverageRoutes from "../BeverageRoutes/BeverageRoutes";
-import Navbar from "../../../components/Navbar";
 
 
-const AdminRoutes = ({ isAdminView }) => {
+const AdminRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/category-page/*" element={<FoodRoutes />} />
       <Route path="/beverage-page/*" element={<BeverageRoutes />} />
-      <Route path="/cart" element={isAdminView ? null : <CartPage />} />
       <Route path="/about-us" element={<AboutUs />} />
       <Route path="/home" element={<HomePage />} />
       <Route path="/admin-page" element={<AdminPage />} />
