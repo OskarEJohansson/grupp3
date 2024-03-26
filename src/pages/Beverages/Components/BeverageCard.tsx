@@ -1,21 +1,33 @@
+import { useNavigate } from "react-router-dom";
 import { BeverageTypes } from "../../../types";
 import BeverageGlobalState from "../Utilities/BeveragesGlobalState";
 
 const BeverageCard = () => {
-  const { beverageList } = BeverageGlobalState();
+  const { beverageList, fetchBeverage } = BeverageGlobalState();
+  const navigate = useNavigate();
+  console.log("BeverageList", beverageList);
+
+  const handleOnClick = (beverage: BeverageTypesType) => {
+    fetchBeverage(beverage.drinkId);
+    navigate("/beverage-page/bev/id");
+  };
 
   return (
-    <>
-      <div>
-        {beverageList.map((beverage: BeverageTypes, index: number) => (
-          <div key={index}>
-            <h1>Titel:{beverage.strDrink}</h1>
-            Photo:
-            <img src={beverage.strDrinkThumb} alt={beverage.strDrink} />
-          </div>
-        ))}
-      </div>
-    </>
+    <div>
+      <h1>BEVERAGE CARD</h1>
+      {beverageList.map((beverage: BeverageTypes, index: number) => (
+        <div key={index}>
+          <h1>Titel:{beverage.strDrink}</h1>
+          Photo:
+          <img
+            src={beverage.strDrinkThumb}
+            alt={beverage.strDrink}
+            width={300}
+            onClick={() => handleOnClick(beverage)}
+          />
+        </div>
+      ))}
+    </div>
   );
 };
 

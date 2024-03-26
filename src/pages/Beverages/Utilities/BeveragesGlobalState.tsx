@@ -43,13 +43,14 @@ const BeverageGlobalState = create<BeverageGlobalStateInterface>((set) => ({
   fetchAlcoholicBeverage: async () => {
     try {
       const response = await axios.get(
-        "www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic"
+        "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic"
       );
 
       if (response.status === 200) {
         console.log("Fetch Alcoholic drinks successful", response.data.drinks);
         set(() => ({
           alcoholicBeverageList: response.data.drinks,
+          beverageList: response.data.drinks,
         }));
       } else {
         console.log("Error fetching alcoholic drinks", response.status);
@@ -62,16 +63,17 @@ const BeverageGlobalState = create<BeverageGlobalStateInterface>((set) => ({
   fetchNonAlcoholicBeverage: async () => {
     try {
       const response = await axios.get(
-        "www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic"
+        "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic"
       );
 
+      console.log(response);
+
       if (response.status === 200) {
-        console.log(
-          "Fetch Non Alcoholic drinks successful",
-          response.data.drinks
-        );
+        console.log("Fetch Non Alcoholic drinks successful");
+
         set(() => ({
           nonAlcoholicBeverageList: response.data.drinks,
+          beverageList: response.data.drinks,
         }));
       }
     } catch (error) {

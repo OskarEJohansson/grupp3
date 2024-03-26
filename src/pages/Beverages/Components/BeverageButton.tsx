@@ -11,7 +11,7 @@ const BeverageButton = (category: any) => {
       fetchAlcoholicBeverage();
     } else fetchNonAlcoholicBeverage();
 
-    navigate("/beverage");
+    navigate("/beverage-page/bev");
   };
 
   return <button onClick={handleOnClick}>{category.category}</button>;
