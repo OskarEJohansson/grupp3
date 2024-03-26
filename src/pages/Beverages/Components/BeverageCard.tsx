@@ -1,7 +1,7 @@
 import BeverageGlobalState from "../Utilities/BeveragesGlobalState";
 
 const BeverageCard = () => {
-  const clickedCard = BeverageGlobalState((state) => state);
+  const { drinkList } = BeverageGlobalState();
   return (
     <>
       <div>

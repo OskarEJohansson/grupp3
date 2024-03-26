@@ -3,25 +3,25 @@ import { DrinkDetails, DrinkTypes } from "../../../types";
 import axios from "axios";
 
 export interface BeverageGlobalStateInterface {
-  drink: DrinkDetails[];
-  drinkList: Object[];
-  alcoholicDrinkList: [];
-  nonAlcoholicDrinkList: [];
+  beverage: DrinkDetails[];
+  beverageList: Object[];
+  alcoholicBeverageList: [];
+  nonAlcoholicBeverageList: [];
   setDrink: (Object: DrinkDetails) => void;
   fetchDrink: (drinkId: string) => void;
-  fetchAlcoholicDrinks: () => void;
-  fetchNonAlcoholicDrinks: () => void;
+  fetchAlcoholicBeverageDrinks: () => void;
+  fetchNonAlcoholicBeverageDrinks: () => void;
 }
 
 const BeverageGlobalState = create<BeverageGlobalStateInterface>((set) => ({
-  drink: [],
-  drinkList: [],
-  alcoholicDrinkList: [],
-  nonAlcoholicDrinkList: [],
+  beverage: [],
+  beverageList: [],
+  alcoholicBeverageList: [],
+  nonAlcoholicBeverageList: [],
 
   setDrink: (article: any) => {
     set(() => ({
-      drink: article,
+      beverage: article,
     }));
   },
   fetchDrink: async (drinkId: string) => {
@@ -31,7 +31,7 @@ const BeverageGlobalState = create<BeverageGlobalStateInterface>((set) => ({
       if (response.status === 200) {
         console.log("response.data", response.data);
         set(() => ({
-          drink: response.data,
+          beverage: response.data,
         }));
       }
       console.log("url", `${url}${drinkId}`);
@@ -39,7 +39,7 @@ const BeverageGlobalState = create<BeverageGlobalStateInterface>((set) => ({
       console.error("Error fetching drink", error);
     }
   },
-  fetchAlcoholicDrinks: async () => {
+  fetchAlcoholicBeverageDrinks: async () => {
     try {
       const response = await axios.get(
         "www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic"
@@ -48,7 +48,7 @@ const BeverageGlobalState = create<BeverageGlobalStateInterface>((set) => ({
       if (response.status === 200) {
         console.log("Fetch Alcoholic drinks successful", response.data);
         set(() => ({
-          alcoholicDrinkList: response.data,
+          alcoholicBeverageList: response.data,
         }));
       } else {
         console.log("Error fetching alcoholic drinks", response.status);
@@ -58,7 +58,7 @@ const BeverageGlobalState = create<BeverageGlobalStateInterface>((set) => ({
     }
   },
 
-  fetchNonAlcoholicDrinks: async () => {
+  fetchNonAlcoholicBeverageDrinks: async () => {
     try {
       const response = await axios.get(
         "www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic"
@@ -67,7 +67,7 @@ const BeverageGlobalState = create<BeverageGlobalStateInterface>((set) => ({
       if (response.status === 200) {
         console.log("Fetch Non Alcoholic drinks successful", response.data);
         set(() => ({
-          nonAlcoholicDrinkList: response.data,
+          nonAlcoholicBeverageList: response.data,
         }));
       }
     } catch (error) {
