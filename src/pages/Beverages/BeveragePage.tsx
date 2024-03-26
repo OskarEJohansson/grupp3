@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
-import "../App.css";
-import { DrinkTypes, ApiResponse } from "../types";
+import "../../App.css";
+import {DrinkDetails, DrinkTypes, ApiResponse } from "../../types";
+import BeverageGlobalState from "./Utilities/BeveragesGlobalState";
+import { useNavigate } from "react-router-dom";
 
 const BeveragePage = () => {
   const [selectedType, setSelectedType] = useState("mixed");
   const [drinks, setDrinks] = useState<DrinkTypes[]>([]);
-
+  const navigate = useNavigate();
+  const useGlobalState = BeverageGlobalState((state) => state);
   //useEffect fetches drinks data when selectedType changes.
   useEffect(() => {
     //A function to fetch drinks based on selectedType.
@@ -13,9 +16,11 @@ const BeveragePage = () => {
       //Using -let- allows me to set the url trough an if()sats on selectedType.
       let url;
       if (type === "alcoholic") {
-        url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic";
+        url =
+          "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic";
       } else if (type === "nonAlcoholic") {
-        url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic";
+        url =
+          "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic";
       } else if (type === "mixed") {
         url = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
       }
@@ -37,6 +42,11 @@ const BeveragePage = () => {
     fetchDrinks(selectedType);
   }, [selectedType]);
 
+  const handleOnClick = (drink: DrinkTypes) => {
+    navigate("/drink");
+    useGlobalState.fetchDrink(drink.idDrink);
+  };
+
   return (
     <div>
       <h1>Beverages</h1>
@@ -48,7 +58,7 @@ const BeveragePage = () => {
       <div className="imageContainer">
         {drinks.map((drink, index) => (
           <div key={index}>
-            <button>
+            <button onClick={() => handleOnClick(drink)}>
               <h2>{drink.strDrink}</h2>
               <img src={drink.strDrinkThumb} alt={drink.strDrink} />
             </button>
