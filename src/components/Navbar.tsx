@@ -57,18 +57,6 @@ const Navbar = () => {
               />
             </Link>
           </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-          <li>
-            <Link to="/add-food-item-page">Add Food</Link>
-          </li>
-          <li>
-            <Link to="/add-comments-page">Add Comment</Link>
-          </li>
-          <li>
-            <Link to="/rating-page">Rating page</Link>
-          </li>
         </ul>
       </div>
     </nav>
