@@ -17,8 +17,9 @@ const SelectCategory = () => {
   };
 
   return (
-    <div>
-      <Select options={options} onChange={() => handleOnChange} />
+    <div className="container">
+      <Select options={options} onChange={() => handleOnChange} className="select-option"
+         />
     </div>
   );
 };
