@@ -1,5 +1,6 @@
-import Select from "react-select"
+import Select from "react-select";
 import FormGlobalState from "../Utils/FormGlobalState";
+
 const SelectCategory = () => {
   const { setCategories, formData } = FormGlobalState();
   const options = [
@@ -16,9 +17,8 @@ const SelectCategory = () => {
   };
 
   return (
-    <div className="container">
-      <Select options={options} onChange={() => handleOnChange} className="select-option"
-         />
+    <div>
+      <Select options={options} onChange={() => handleOnChange} />
     </div>
   );
 };

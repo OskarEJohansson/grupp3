@@ -14,11 +14,11 @@ export const InputIngredients = () => {
   return (
     <div className="container">
       <div className="form-group">
-      {[...Array(componentCount)].map((number, index: number) => (
-        <div key={index}>
+        {[...Array(componentCount)].map((number, index: number) => (
+          <div key={index}>
           <IngredientComponent />
-        </div>
-      ))}
+          </div>
+        ))}
       <button onClick={handleOnClick}>Add Ingredient</button>
       </div>
     </div>

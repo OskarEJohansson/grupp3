@@ -5,6 +5,7 @@ export const IngredientComponent = () => {
     FormGlobalState();
 
   return (
+    <div>
       <fieldset>
         <label>Ingredient</label>
         <input
@@ -14,6 +15,7 @@ export const IngredientComponent = () => {
             setIngredientsName(e.target.value);
           }}
         />
+
         <label>Amount</label>
         <input
           type="number"
@@ -28,6 +30,7 @@ export const IngredientComponent = () => {
           onChange={(e) => setIngredientsUnit(e.target.value)}
         />
       </fieldset>
+    </div>
   );
 };
 

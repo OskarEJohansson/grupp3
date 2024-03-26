@@ -1,4 +1,3 @@
-import App from "../../../App";
 import FormGlobalState from "../Utils/FormGlobalState";
 
 interface InputFormBaseProps {
@@ -26,12 +25,14 @@ const InputFormBase = ({ inputLabel }: InputFormBaseProps) => {
   };
 
   return (
+    <>
     <div className="container">
       <div className="form-group">
-      <label>{inputLabel.charAt(0).toUpperCase() + inputLabel.slice(1)}</label>
-      <input type="text" onChange={handleOnChange} />
+        <label>{inputLabel.charAt(0).toUpperCase() + inputLabel.slice(1)}</label>
+        <input type="text" onChange={handleOnChange} />
       </div>
     </div>
+    </>
   );
 };
 
