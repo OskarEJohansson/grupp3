@@ -1,28 +1,20 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { CardTypes } from "../../../../types";
 import AddToCartButton from "./AddToCartButton";
 import "../../../../App.css";
 import FoodGlobalState from "../../Utilities/FoodGlobalState";
 import QuantityInput from "../../../../components/QuantityInput";
 
-interface DetailedCardProps {
-  onClose: () => void;
-}
-
-const DetailedCard = ({ onClose }: DetailedCardProps) => {
+const DetailedCard = ({ onClose }: { onClose: () => void }) => {
   const article = FoodGlobalState((state) => state.article as CardTypes);
   const [quantity, setQuantity] = useState(1); 
-
-  const handleOnClick = () => {
-    onClose();
-  };
-
+  
   const handleQuantityChange = (newValue: number) => {
     setQuantity(newValue); 
   };
 
   return (
-    <div className="modal-backdrop" onClick={handleOnClick}>
+    <div className="modal-backdrop" onClick={onClose}>
       <div className="detailed-card-container">
         <h1 className="detailed-card-title">DETAILED CARD</h1>
         <div className="detailed-card-info">
