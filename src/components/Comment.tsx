@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-export const CommentBox: React.FC<{ onCommentSubmit?: (comment: string) => void }> = ({ onCommentSubmit }) => {
-  const [comment, setComment] = useState('');
+export const CommentBox: React.FC<{
+  onCommentSubmit?: (comment: string) => void;
+}> = ({ onCommentSubmit }) => {
+  const [comment, setComment] = useState("");
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (onCommentSubmit) {
       onCommentSubmit(comment);
     }
-    setComment('');
+    setComment("");
   };
 
   return (
@@ -29,9 +31,7 @@ export const CommentList: React.FC<{ comments: string[] }> = ({ comments }) => (
     <h3>Comments:</h3>
     <ul>
       {comments && comments.length > 0 ? (
-        comments.map((comment, index) => (
-          <li key={index}>{comment}</li>
-        ))
+        comments.map((comment, index) => <li key={index}>{comment}</li>)
       ) : (
         <li>No comments yet</li>
       )}
