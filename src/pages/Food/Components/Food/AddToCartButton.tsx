@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import GlobalState from "../../../../assets/Utilities/GlobalState";
 import "../../../../App.css";
 
