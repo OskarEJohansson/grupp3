@@ -1,8 +1,10 @@
 import { useEffect } from "react";
+import { useParams } from "react-router-dom"; 
 import BeverageGlobalState from "../Utilities/BeveragesGlobalState";
 
 const BeverageCard = () => {
-  const { beverageList, fetchAlcoholicBeverage, fetchNonAlcoholicBeverage, category } = BeverageGlobalState();
+  const { beverageList, fetchAlcoholicBeverage, fetchNonAlcoholicBeverage } = BeverageGlobalState();
+  const { category } = useParams(); 
 
   useEffect(() => {
     if (category === "Alcoholic") {
