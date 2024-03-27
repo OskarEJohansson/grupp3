@@ -1,18 +1,31 @@
 import { useNavigate } from "react-router-dom";
 import { BeverageTypes } from "../../../types";
 import BeverageGlobalState from "../Utilities/BeveragesGlobalState";
+import { useEffect } from "react";
 
 const BeverageCard = () => {
-  const { beverageList, fetchBeverage } = BeverageGlobalState();
+  const {
+    beverageList,
+    fetchBeverage,
+    fetchAlcoholicBeverage,
+    fetchNonAlcoholicBeverage,
+    category,
+  } = BeverageGlobalState();
+
   const navigate = useNavigate();
   console.log("BeverageList", beverageList);
 
   const handleOnClick = (beverage: BeverageTypesType) => {
     console.log(beverage.idDrink);
     fetchBeverage(beverage.idDrink);
-
     navigate("/beverage-page/id");
   };
+
+  useEffect(() => {
+    if (category === "Alcoholic") {
+      fetchAlcoholicBeverage();
+    } else fetchNonAlcoholicBeverage();
+  }, [category]);
 
   return (
     <div>

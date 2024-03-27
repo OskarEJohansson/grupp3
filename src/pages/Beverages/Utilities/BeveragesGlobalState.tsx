@@ -7,7 +7,9 @@ export interface BeverageGlobalStateInterface {
   beverageList: BeverageTypes[];
   alcoholicBeverageList: BeverageTypes[];
   nonAlcoholicBeverageList: BeverageTypes[];
+  category: string;
   setBeverage: (Object: BeverageDetails) => void;
+  setCategory: (object: string) => void;
   fetchBeverage: (drinkId: string) => void;
   fetchAlcoholicBeverage: () => void;
   fetchNonAlcoholicBeverage: () => void;
@@ -16,6 +18,7 @@ export interface BeverageGlobalStateInterface {
 const BeverageGlobalState = create<BeverageGlobalStateInterface>((set) => ({
   beverage: [],
   beverageList: [],
+  category: "",
   alcoholicBeverageList: [],
   nonAlcoholicBeverageList: [],
 
@@ -24,6 +27,13 @@ const BeverageGlobalState = create<BeverageGlobalStateInterface>((set) => ({
       beverage: article,
     }));
   },
+
+  setCategory: (category: string) => {
+    set(() => ({
+      category: category,
+    }));
+  },
+
   fetchBeverage: async (drinkId: string) => {
     let url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
 
