@@ -1,15 +1,16 @@
 import { useNavigate } from "react-router-dom";
-import FoodGlobalState from "../../Food/Utilities/FoodGlobalState";
+import BeverageGlobalState from "../Utilities/BeveragesGlobalState";
 
-const BeverageButton = (category: any) => {
-  const { setCategory } = FoodGlobalState();
+const BeverageButton = ({ category }: { category: string }) => {
+  const { setCategory } = BeverageGlobalState();
   const navigate = useNavigate();
 
   const handleOnClick = () => {
-    navigate(`/beverage-page/${category}`), setCategory(category);
+    navigate(`/beverage-page/${category}`);
+    setCategory(category);
   };
 
-  return <button onClick={handleOnClick}>{category.category}</button>;
+  return <button onClick={handleOnClick}>{category}</button>;
 };
 
 export default BeverageButton;

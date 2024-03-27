@@ -1,45 +1,24 @@
-import { useNavigate } from "react-router-dom";
-import { BeverageTypes } from "../../../types";
-import BeverageGlobalState from "../Utilities/BeveragesGlobalState";
 import { useEffect } from "react";
+import BeverageGlobalState from "../Utilities/BeveragesGlobalState";
 
 const BeverageCard = () => {
-  const {
-    beverageList,
-    fetchBeverage,
-    fetchAlcoholicBeverage,
-    fetchNonAlcoholicBeverage,
-    category,
-  } = BeverageGlobalState();
-
-  const navigate = useNavigate();
-  console.log("BeverageList", beverageList);
-
-  const handleOnClick = (beverage: BeverageTypesType) => {
-    console.log(beverage.idDrink);
-    fetchBeverage(beverage.idDrink);
-    navigate("/beverage-page/id");
-  };
+  const { beverageList, fetchAlcoholicBeverage, fetchNonAlcoholicBeverage, category } = BeverageGlobalState();
 
   useEffect(() => {
     if (category === "Alcoholic") {
       fetchAlcoholicBeverage();
-    } else fetchNonAlcoholicBeverage();
-  }, [category]);
+    } else {
+      fetchNonAlcoholicBeverage();
+    }
+  }, [category, fetchAlcoholicBeverage, fetchNonAlcoholicBeverage]);
 
   return (
     <div>
-      <h1>BEVERAGE CARD</h1>
-      {beverageList.map((beverage: BeverageTypes, index: number) => (
+      <h1>Beverage Card</h1>
+      {beverageList.map((beverage, index) => (
         <div key={index}>
-          <h1>Titel:{beverage.strDrink}</h1>
-          Photo:
-          <img
-            src={beverage.strDrinkThumb}
-            alt={beverage.strDrink}
-            width={300}
-            onClick={() => handleOnClick(beverage)}
-          />
+          <h2>{beverage.strDrink}</h2>
+          <img src={beverage.strDrinkThumb} alt={beverage.strDrink} width={300} />
         </div>
       ))}
     </div>
