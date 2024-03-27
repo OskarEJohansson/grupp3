@@ -1,14 +1,18 @@
-import Card from "./Card";
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { CardTypes } from "../../../../types";
+import Card from "./Card";
 import FoodGlobalState from "../../Utilities/FoodGlobalState";
-import { useEffect } from "react";
 
-const Meal = () => {
-  const { category, categoryData, setCategoryData, URL } = FoodGlobalState();
+const MealPage = () => {
+  const { category } = useParams<{ category: string }>(); // Add type annotation to ensure category is a string
+  const { categoryData, setCategoryData, URL } = FoodGlobalState();
 
   useEffect(() => {
-    setCategoryData(URL, category);
-  }, [category]);
+    if (category) {
+      setCategoryData(URL, category);
+    }
+  }, [URL, category, setCategoryData]);
 
   return (
     <div>
@@ -24,4 +28,4 @@ const Meal = () => {
   );
 };
 
-export default Meal;
+export default MealPage;
