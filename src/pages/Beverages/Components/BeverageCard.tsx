@@ -8,8 +8,10 @@ const BeverageCard = () => {
   console.log("BeverageList", beverageList);
 
   const handleOnClick = (beverage: BeverageTypesType) => {
-    fetchBeverage(beverage.drinkId);
-    navigate("/beverage-page/bev/id");
+    console.log(beverage.idDrink);
+    fetchBeverage(beverage.idDrink);
+
+    navigate("/beverage-page/id");
   };
 
   return (

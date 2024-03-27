@@ -34,9 +34,6 @@ export interface BeverageTypes {
   strDrinkThumb: string;
   idDrink: string;
 }
-export interface ApiResponse {
-  drinks: DrinkTypes[];
-}
 
 export interface BeverageDetails {
   idDrink: string;
