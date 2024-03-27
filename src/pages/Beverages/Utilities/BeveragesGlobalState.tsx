@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { create } from "zustand";
 import { BeverageDetails, BeverageTypes } from "../../../types";
 import axios from "axios";
@@ -9,7 +10,7 @@ export interface BeverageGlobalStateInterface {
   nonAlcoholicBeverageList: BeverageTypes[];
   category: string;
   setBeverage: (Object: BeverageDetails) => void;
-  setCategory: (object: string) => void;
+  setCategory: (category: string) => void;
   fetchBeverage: (drinkId: string) => void;
   fetchAlcoholicBeverage: () => void;
   fetchNonAlcoholicBeverage: () => void;

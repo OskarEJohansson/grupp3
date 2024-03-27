@@ -5,7 +5,7 @@ import Card from "./Card";
 import FoodGlobalState from "../../Utilities/FoodGlobalState";
 
 const MealPage = () => {
-  const { category } = useParams<{ category: string }>(); // Add type annotation to ensure category is a string
+  const { category } = useParams<{ category: string }>();
   const { categoryData, setCategoryData, URL } = FoodGlobalState();
 
   useEffect(() => {
