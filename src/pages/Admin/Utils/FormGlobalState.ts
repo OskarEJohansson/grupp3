@@ -12,11 +12,13 @@ export interface FormGlobalStateInterface {
     description: string;
     imageUrl: string;
     categories: string[];
-    instructions: [];
+    instructions: string[];
     ingredients: Ingredient[];
+    price: number;
+    timeInMins: number;
   };
 
-  formDataIngredients: { name: string; amount: number; unit: string };
+  formDataIngredients: Ingredient;
 
   setTitle: (inputValue: string) => void;
   setDescription: (inputValue: string) => void;
@@ -26,8 +28,8 @@ export interface FormGlobalStateInterface {
   setIngredientsName: (inputValue: string) => void;
   setIngredientsAmount: (inputValue: number) => void;
   setIngredientsUnit: (inputValue: string) => void;
-  setFormDataIngredients: (newIngredients: any) => void;
-  addFormDataIngredients: (newIngredients: any) => void;
+  setFormDataIngredients: (newIngredients: Ingredient) => void;
+  addFormDataIngredients: (newIngredients: Ingredient) => void;
 }
 
 const FormGlobalState = create<FormGlobalStateInterface>((set) => ({
@@ -60,12 +62,12 @@ const FormGlobalState = create<FormGlobalStateInterface>((set) => ({
 
   setCategories: (inputValue: string) =>
     set((state) => ({
-      formData: { ...state.formData, Categories: inputValue },
+      formData: { ...state.formData, categories: [...state.formData.categories, inputValue] },
     })),
 
   setInstructions: (inputValue: string) =>
     set((state) => ({
-      formData: { ...state.formData, Instructions: inputValue },
+      formData: { ...state.formData, instructions: [inputValue] },
     })),
 
   setIngredientsName: (inputValue: string) =>
