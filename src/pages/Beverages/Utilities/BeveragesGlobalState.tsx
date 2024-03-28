@@ -4,7 +4,7 @@ import { BeverageDetails, BeverageTypes } from "../../../types";
 import axios from "axios";
 
 export interface BeverageGlobalStateInterface {
-  beverage: BeverageDetails[];
+  beverage: Object;
   beverageList: BeverageTypes[];
   alcoholicBeverageList: BeverageTypes[];
   nonAlcoholicBeverageList: BeverageTypes[];
