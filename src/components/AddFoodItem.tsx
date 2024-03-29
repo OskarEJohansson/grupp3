@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CardTypes } from "../types";
 import "../App.css";
 import axios from "axios";
+import UpdateFoodButton from "./UpdateFoodButton";
 
 const AddFoodItem = () => {
   const [foodData, setFoodData] = useState<CardTypes>({
@@ -201,7 +202,7 @@ const AddFoodItem = () => {
             Add another ingredient
           </button>
         </div>
-        <button type="submit">Add Food Item</button>
+        <UpdateFoodButton />
       </form>
 
       {submittedRecipe && (
