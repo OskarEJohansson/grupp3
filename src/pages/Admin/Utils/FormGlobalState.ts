@@ -12,6 +12,8 @@ export interface FormGlobalStateInterface {
   setters: {
     [key: string]: (inputValue: string) => void; // Define setters as a dynamic object
   };
+
+  setData: (key: string, value: string) => void;
 }
 
 const FormGlobalState = create<FormGlobalStateInterface>((set) => ({
@@ -49,6 +51,11 @@ const FormGlobalState = create<FormGlobalStateInterface>((set) => ({
         formData: { ...state.formData, Instructions: inputValue },
       })),
   },
+
+  setData: (key: string, value: string) =>
+    set((state) => ({
+      formData: { ...state.formData, [key]: value },
+    })),
 }));
 
 export default FormGlobalState;
