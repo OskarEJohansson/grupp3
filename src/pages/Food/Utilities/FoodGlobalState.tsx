@@ -10,6 +10,7 @@ export interface FoodGlobalStateInterface {
   setCategory: (category: string) => void;
   setArticle: (article: CardTypes) => void;
   setCategoryData: (url: string, category: string) => void;
+  fetchFood: (url: string) => void;
 }
 
 const FoodGlobalState = create<FoodGlobalStateInterface>((set) => ({
@@ -42,6 +43,22 @@ const FoodGlobalState = create<FoodGlobalStateInterface>((set) => ({
     } catch (error) {
       console.log("SetCategoryData Failed");
       console.log("SetCategoryData error message", error);
+    }
+  },
+
+  fetchFood: async (url: string) => { 
+    try {
+      const response = await axios.get(`${url}/recipes`); 
+      if (response.status === 200) {
+        console.log("RESPONSE DATA:", response.data)
+        console.log("FetchFood successful");
+        set(() => ({
+          categoryData: response.data,
+        }));
+      }
+    } catch (error) {
+      console.log("FetchFood Failed");
+      console.log("FetchFood error message", error);
     }
   },
 }));
