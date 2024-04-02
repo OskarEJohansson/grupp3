@@ -7,8 +7,7 @@ import AdminPage from "../../Admin/AdminPage";
 import CommentsPage from "../../CommentsPage";
 import HomePage from "../../Home/Homepage";
 import RatingPage from "../../RatingPage";
-import BeverageRoutes from "../BeverageRoutes/BeverageRoutes";
-
+import BeverageRoutes from "../DrinkRoutes/DrinkRoutes";
 
 const AdminRoutes = () => {
   return (
@@ -23,7 +22,6 @@ const AdminRoutes = () => {
       <Route path="/add-comments-page" element={<CommentsPage />} />
       <Route path="/contact-form" element={<ContactForm />} />
       <Route path="/rating-page" element={<RatingPage />} />
-      
     </Routes>
   );
 };
