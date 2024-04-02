@@ -10,24 +10,22 @@ export interface FormGlobalStateInterface {
   formData: {
     title: string;
     description: string;
+    ratings: number[];
     imageUrl: string;
     categories: string[];
-    instructions: [];
+    instructions: string[];
     ingredients: Ingredient[];
+    price: number;
+    timeInMins: number;
   };
-
-  formDataIngredients: { name: string; amount: number; unit: string };
 
   setTitle: (inputValue: string) => void;
   setDescription: (inputValue: string) => void;
   setImageUrl: (inputValue: string) => void;
   setCategories: (inputValue: string) => void;
   setInstructions: (inputValue: string) => void;
-  setIngredientsName: (inputValue: string) => void;
-  setIngredientsAmount: (inputValue: number) => void;
-  setIngredientsUnit: (inputValue: string) => void;
-  setFormDataIngredients: (newIngredients: any) => void;
-  addFormDataIngredients: (newIngredients: any) => void;
+  addIngredients: (newIngredient: Ingredient) => void;
+  updateIngredients: (newIngredients: Ingredient[]) => void;
 }
 
 const FormGlobalState = create<FormGlobalStateInterface>((set) => ({
@@ -39,9 +37,9 @@ const FormGlobalState = create<FormGlobalStateInterface>((set) => ({
     categories: [],
     instructions: [],
     ingredients: [],
+    price: 0,
+    timeInMins: 0
   },
-
-  formDataIngredients: { name: "", amount: 0, unit: "" },
 
   setTitle: (inputValue: string) =>
     set((state) => ({
@@ -60,40 +58,22 @@ const FormGlobalState = create<FormGlobalStateInterface>((set) => ({
 
   setCategories: (inputValue: string) =>
     set((state) => ({
-      formData: { ...state.formData, Categories: inputValue },
+      formData: { ...state.formData, categories: [...state.formData.categories, inputValue] },
     })),
 
   setInstructions: (inputValue: string) =>
     set((state) => ({
-      formData: { ...state.formData, Instructions: inputValue },
+      formData: { ...state.formData, instructions: [inputValue] },
     })),
 
-  setIngredientsName: (inputValue: string) =>
+  updateIngredients: (newIngredients: Ingredient[]) =>
     set((state) => ({
-      formDataIngredients: { ...state.formDataIngredients, name: inputValue },
+      formData: { ...state.formData, ingredients: newIngredients },
     })),
 
-  setIngredientsAmount: (inputValue: number) =>
+  addIngredients: (newIngredient: Ingredient) =>
     set((state) => ({
-      formDataIngredients: { ...state.formDataIngredients, amount: inputValue },
-    })),
-
-  setIngredientsUnit: (inputValue: string) =>
-    set((state) => ({
-      formDataIngredients: { ...state.formDataIngredients, unit: inputValue },
-    })),
-
-  setFormDataIngredients: (newIngredient) =>
-    set((state) => ({
-      formData: {
-        ...state.formData,
-        ingredients: [...state.formData.ingredients, newIngredient],
-      },
-    })),
-
-  addFormDataIngredients: (newIngredient) =>
-    set((state) => ({
-      formData: {
+      formData: { 
         ...state.formData,
         ingredients: [...state.formData.ingredients, newIngredient],
       },
