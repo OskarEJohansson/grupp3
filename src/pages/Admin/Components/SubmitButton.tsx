@@ -2,8 +2,7 @@ import axios from "axios";
 import FormGlobalState, { Ingredient } from "../Utils/FormGlobalState";
 
 const SubmitButton = () => {
-  const { formData, formDataIngredients, addIngredient: addFormDataIngredients } =
-    FormGlobalState();
+  const { formData } = FormGlobalState();
 
   const handleOnClick = async () => {
     try {

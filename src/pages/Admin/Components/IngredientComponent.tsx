@@ -7,7 +7,7 @@ export interface Ingredient {
   unit: string;
 }
 
-export const IngredientComponent = ({index, onUpdateCompononent}) => {
+export const IngredientComponent = ({index, onUpdateComponent}) => {
     
     const [formData, setFormData] = useState({
       name: "",
@@ -15,22 +15,22 @@ export const IngredientComponent = ({index, onUpdateCompononent}) => {
       unit: ""
     })
     
-    const changeName = (e) => {
+    const changeName = (e: any) => {
       const newFormData = {...formData, name: e.target.value};
       setFormData(newFormData)
-      onUpdateCompononent(index, newFormData)
+      onUpdateComponent(index, newFormData)
     }
     
-    const changeAmount = (e) => {
+    const changeAmount = (e: any) => {
       const newFormData = {...formData, amount: e.target.value};
       setFormData(newFormData)
-      onUpdateCompononent(index, newFormData)
+      onUpdateComponent(index, newFormData)
     }
     
-    const changeUnit = (e) => {
+    const changeUnit = (e: any) => {
       const newFormData = {...formData, unit: e.target.value};
       setFormData(newFormData)
-      onUpdateCompononent(index, newFormData)
+      onUpdateComponent(index, newFormData)
     }
 
   return (

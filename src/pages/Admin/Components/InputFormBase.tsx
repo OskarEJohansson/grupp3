@@ -5,7 +5,7 @@ interface InputFormBaseProps {
 }
 
 const InputFormBase = ({ inputLabel }: InputFormBaseProps) => {
-  const { setTitle, setDescription, setImageUrl, setInstructions } =
+  const { setTitle, setDescription, setImageUrl } =
     FormGlobalState();
 
   const handleOnChange = (e: any) => {
@@ -19,8 +19,6 @@ const InputFormBase = ({ inputLabel }: InputFormBaseProps) => {
       case "image":
         setImageUrl(e.target.value);
         break;
-      case "instructions":
-        setInstructions(e.target.value);
     }
   };
 

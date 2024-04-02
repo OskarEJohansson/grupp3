@@ -8,7 +8,6 @@ export interface Ingredient {
   unit: string;
 }
 
-
 export const InputIngredients = () => {
   const { formData, addIngredients, updateIngredients } = FormGlobalState();
 
@@ -27,13 +26,13 @@ export const InputIngredients = () => {
       <div className="form-group">
         {formData.ingredients.map((_, index: number) => (
           <div key={index}>
-          <IngredientComponent
-           index={index}
-           onUpdateCompononent={handleUpdateCompononent}
-          />
+            <IngredientComponent
+              index={index}
+              onUpdateComponent={handleUpdateCompononent}
+            />
           </div>
         ))}
-      <button onClick={handleOnClick}>Add Ingredient</button>
+        <button onClick={handleOnClick}>Add Ingredient</button>
       </div>
     </div>
   );

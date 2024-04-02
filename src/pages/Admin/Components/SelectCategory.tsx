@@ -11,15 +11,17 @@ const SelectCategory = () => {
   ];
 
   const handleOnChange = (selectedOption: any) => {
-    /* console.log(selectedOption.value); category should be placed in array correctly now */
     setCategories(selectedOption.value);
     console.log(formData.categories);
   };
 
   return (
     <div className="container">
+      <div className="form-group">
+      <h3>Category</h3>
       <Select options={options} onChange={handleOnChange} className="select-option"
          />
+      </div>
     </div>
   );
 };

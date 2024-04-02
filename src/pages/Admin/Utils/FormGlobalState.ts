@@ -23,9 +23,12 @@ export interface FormGlobalStateInterface {
   setDescription: (inputValue: string) => void;
   setImageUrl: (inputValue: string) => void;
   setCategories: (inputValue: string) => void;
-  setInstructions: (inputValue: string) => void;
+  setInstructions: (inputValue: string[]) => void;
+  addInstructions: (newInstructions: string) => void;
   addIngredients: (newIngredient: Ingredient) => void;
   updateIngredients: (newIngredients: Ingredient[]) => void;
+  setPrice: (inputValue: number) => void;
+  setTimeInMins: (inputValue: number) => void;
 }
 
 const FormGlobalState = create<FormGlobalStateInterface>((set) => ({
@@ -35,8 +38,8 @@ const FormGlobalState = create<FormGlobalStateInterface>((set) => ({
     ratings: [],
     imageUrl: "",
     categories: [],
-    instructions: [],
-    ingredients: [],
+    instructions: [""],
+    ingredients: [{ name: "", amount: 0, unit: "" }],
     price: 0,
     timeInMins: 0
   },
@@ -61,9 +64,9 @@ const FormGlobalState = create<FormGlobalStateInterface>((set) => ({
       formData: { ...state.formData, categories: [...state.formData.categories, inputValue] },
     })),
 
-  setInstructions: (inputValue: string) =>
+  setInstructions: (newInstructions: string[]) =>
     set((state) => ({
-      formData: { ...state.formData, instructions: [inputValue] },
+      formData: { ...state.formData, instructions: newInstructions },
     })),
 
   updateIngredients: (newIngredients: Ingredient[]) =>
@@ -78,6 +81,25 @@ const FormGlobalState = create<FormGlobalStateInterface>((set) => ({
         ingredients: [...state.formData.ingredients, newIngredient],
       },
     })),
+
+    addInstructions: (newInstructions: string) =>
+      set((state) => ({
+        formData: {
+          ...state.formData,
+          instructions: [...state.formData.instructions, newInstructions],
+        },
+      })),
+
+      setPrice: (inputValue: number) =>
+  set((state) => ({
+    formData: { ...state.formData, price: inputValue },
+  })),
+
+setTimeInMins: (inputValue: number) =>
+  set((state) => ({
+    formData: { ...state.formData, timeInMins: inputValue },
+  })),
+
 }));
 
 export default FormGlobalState;
