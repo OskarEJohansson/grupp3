@@ -1,33 +1,21 @@
-import { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import ShoppingCartIcon from "../assets/ShoppingCart";
 
 const Navbar = () => {
+  const [isAdminView, setIsAdminView] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      if (scrollPosition > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const toggleAdminView = () => {
+    setIsAdminView(!isAdminView);
+  };
 
   return (
-    <nav className={`navbar ${isScrolled ? "navbar-scrolled" : ""}`}>
+    <nav className={`navbar ${isOpen ? "navbar-open" : ""}`}>
       <div className="navbar-container">
         <Link to="/" className="brand-link">
           <img
@@ -37,6 +25,10 @@ const Navbar = () => {
             height="100"
           />
         </Link>
+        <div className="search-bar">
+          <input type="text" placeholder="Search..." />
+          <button>Search</button>
+        </div>
         <button onClick={toggleMenu} className="menu-button">
           {isOpen ? "Close" : "Menu"}
         </button>
@@ -45,29 +37,35 @@ const Navbar = () => {
             <Link to="/category-page">Food</Link>
           </li>
           <li>
-            <Link to="/beverage-page">Beverages</Link>
+            <Link to="/drink-page">Beverages</Link>
           </li>
+          {!isAdminView && (
+            <li>
+              <Link to="/cart">
+                <ShoppingCartIcon />
+              </Link>
+            </li>
+          )}
+          {isAdminView && (
+            <>
+              <li>
+                <Link to="/admin-page">Admin Page</Link>
+              </li>
+              <li>
+                <Link to="/add-food-item-page">Add Food</Link>
+              </li>
+              <li>
+                <Link to="/add-comments-page">Add Comment</Link>
+              </li>
+              <li>
+                <Link to="/rating-page">Rating Page</Link>
+              </li>
+            </>
+          )}
           <li>
-            <Link to="/cart">
-              <img
-                src="https://t4.ftcdn.net/jpg/01/86/94/37/360_F_186943704_QJkLZaGKmymZuZLPLJrHDMUNpAwuHPjY.jpg"
-                alt="Cart"
-                width="60"
-                height="60"
-              />
-            </Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-          <li>
-            <Link to="/add-food-item-page">Add Food</Link>
-          </li>
-          <li>
-            <Link to="/add-comments-page">Add Comment</Link>
-          </li>
-          <li>
-            <Link to="/rating-page">Rating page</Link>
+            <button onClick={toggleAdminView}>
+              {isAdminView ? "Switch to User View" : "Switch to Admin View"}
+            </button>
           </li>
         </ul>
       </div>

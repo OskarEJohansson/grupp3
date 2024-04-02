@@ -1,8 +1,9 @@
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { CardTypes } from "../../../../types";
 import AddToCartButton from "./AddToCartButton";
 import "../../../../App.css";
 import FoodGlobalState from "../../Utilities/FoodGlobalState";
+import DetailedCard from "./DetailedCard"; 
 
 interface CardInterface {
   article: CardTypes;
@@ -10,11 +11,11 @@ interface CardInterface {
 
 const Card = ({ article }: CardInterface) => {
   const { setArticle } = FoodGlobalState();
-  const navigate = useNavigate();
+  const [showModal, setShowModal] = useState(false);
 
   const handleOnClick = () => {
-    navigate(`${article.title}`);
     setArticle(article);
+    setShowModal(true); 
   };
 
   return (
@@ -28,7 +29,7 @@ const Card = ({ article }: CardInterface) => {
       />
       <div className="card-categories">Categories: {article.categories}</div>
       <div className="card-ingredients-container">
-        {article.ingredients.map((ingredient: any, index: number) => {
+        {article.ingredients.map((ingredient, index) => {
           return (
             <div className="card-ingredient" key={index}>
               <p>Ingredient: {ingredient.name}</p>
@@ -36,7 +37,10 @@ const Card = ({ article }: CardInterface) => {
           );
         })}
       </div>
+
       <AddToCartButton article={article} />
+
+      {showModal && <DetailedCard onClose={() => setShowModal(false)} />}
     </>
   );
 };

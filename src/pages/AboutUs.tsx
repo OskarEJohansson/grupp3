@@ -1,4 +1,4 @@
-import '../App.css'; // Import your CSS file
+import '../App.css';
 
 const AboutUs = () => {
   return (

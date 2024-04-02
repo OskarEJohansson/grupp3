@@ -2,20 +2,20 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import FoodRoutes from "./pages/Routes/FoodRoutes/FoodRoutes";
-import BeverageRoutes from "./pages/Routes/BeverageRoutes/BeverageRoutes";
+import DrinkRoutes from "./pages/Routes/DrinkRoutes/DrinkRoutes";
 import UserRoutes from "./pages/Routes/UserRoutes/UserRoutes";
 import Footer from "./components/Footer";
-import CommentsPage from "./pages/CommentsPage";
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/category-page/*" element={<FoodRoutes />} />
-        <Route path="/beverage-page/*" element={<BeverageRoutes />} />
-        <Route path="/*" element={<UserRoutes />} />
-        <Route path="/comments" element={<CommentsPage />} />
+        <>
+          <Route path="/category-page/*" element={<FoodRoutes />} />
+          <Route path="/drink-page/*" element={<DrinkRoutes />} />
+          <Route path="/*" element={<UserRoutes />} />
+        </>
       </Routes>
       <Footer />
     </BrowserRouter>
