@@ -1,32 +1,3 @@
-/* import { useState } from "react";
-import IngredientComponent from "./IngredientComponent";
-import FormGlobalState, { Ingredient } from "../Utils/FormGlobalState";
-
-export const InputIngredients = () => {
-  const [componentCount, setComponentCount] = useState(1);
-  const { addIngredient } = FormGlobalState();
-
-  const handleAddIngredient = () => {
-    setComponentCount((prevCount) => prevCount + 1);
-  };
-
-  return (
-    <div className="container">
-      <div className="form-group">
-        {[...Array(componentCount)].map((_, index: number) => (
-          <div key={index}>
-          <IngredientComponent index={index} />
-          </div>
-        ))}
-      <button onClick={handleAddIngredient}>Add Ingredient</button>
-      </div>
-    </div>
-  );
-};
-
-export default InputIngredients;
- */
-
 import { useState } from "react";
 import IngredientComponent from "./IngredientComponent";
 import FormGlobalState from "../Utils/FormGlobalState";
