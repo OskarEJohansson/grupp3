@@ -10,7 +10,6 @@ export interface FoodGlobalStateInterface {
   setCategory: (category: string) => void;
   setArticle: (article: CardTypes) => void;
   setCategoryData: (url: string, category: string) => void;
-  patchArticle: (articleId: string, update: CardTypes, url: string) => void;
 }
 
 const FoodGlobalState = create<FoodGlobalStateInterface>((set) => ({
@@ -43,19 +42,6 @@ const FoodGlobalState = create<FoodGlobalStateInterface>((set) => ({
     } catch (error) {
       console.log("SetCategoryData Failed");
       console.log("SetCategoryData error message", error);
-    }
-  },
-
-patchArticle: async (articleId: string, update: CardTypes, url: string) => {
-    console.log("hejhej")
-    try {
-      const response = await axios.patch(`${url}/recipes/${articleId}`, update)
-      if(response.status === 200) {
-        console.log(response.data)
-      }
-
-    } catch (error) {
-      console.log("Patch article failed",error)
     }
   },
 }));

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import EditFoodButton from "./EditFoodButton";
 
 const RecipeList = () => {
   const [recipes, setRecipes] = useState([]);
@@ -26,13 +25,6 @@ const RecipeList = () => {
       console.error("Error deleting recipe", error);
     }
   };
-
-  const populateForm = (recipe) => {
-    document.getElementById("title").value=recipe.title
-    document.getElementById("description").value=recipe.description
-    document.getElementById("imageUrl").value=recipe.imageUrl
-  }
-
   return (
     <div className="recipe-list">
       <h1>All Recipes</h1>
@@ -52,7 +44,6 @@ const RecipeList = () => {
               </li>
             ))}
           </ul>
-          <button onClick={() => populateForm(recipe)} >Edit recipe</button>
           <button onClick={() => handleDeleteRecipe(recipe._id)}>Delete Recipe</button>
         </div>
       ))}
