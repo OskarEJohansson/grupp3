@@ -1,22 +1,20 @@
-import InputFormBase from "./Components/InputFormBase.tsx";
-import InputIngredients from "./Components/InputIngredients.tsx";
-import SelectCategory from "./Components/SelectCategory.tsx";
-import SubmitButton from "./Components/SubmitButton.tsx";
+import InputFormBase from "./Components/InputFormBase";
+import SubmitButton from "../Admin/Components/SubmitButton";
+import SelectCategory from "./Components/SelectCategory";
+import UpdateCard from "./Components/UpdateCard";
 
 const AdminPage = () => {
   return (
     <div>
       <div className="container">
         <h1>Add Recipe</h1>
-        <h1>Add Recipe</h1>
       </div>
       <div className="form-group">
-        <InputFormBase inputLabel="title" />
-        <InputFormBase inputLabel="description" />
-        <InputFormBase inputLabel="image" />
-        <InputFormBase inputLabel="instructions" />
-        <SelectCategory />
-        <InputIngredients />
+        {/* <InputFormBase setFunction="setTitle" lable="Title" />
+        <InputFormBase setFunction="setDescription" lable="Description" />
+        <InputFormBase setFunction="setImageUrl" lable="Image" />
+        <InputFormBase setFunction="setInstructions" lable="Instructions" /> */}
+        <UpdateCard />
         <SubmitButton />
       </div>
     </div>

@@ -10,16 +10,19 @@ const SelectCategory = () => {
     { value: "hamburger", label: "Hamburger" },
   ];
 
-  const handleOnChange = (selectedOption: any) => {
-    /* console.log(selectedOption.value); category should be placed in array correctly now */
-    setCategories(selectedOption.value);
+  const handleOnChange = (selectedOption: string) => {
+    console.log(selectedOption.valueOf());
+    setCategories(selectedOption.valueOf());
     console.log(formData.categories);
   };
 
   return (
     <div className="container">
-      <Select options={options} onChange={handleOnChange} className="select-option"
-         />
+      <Select
+        options={options}
+        onChange={() => handleOnChange}
+        className="select-option"
+      />
     </div>
   );
 };
