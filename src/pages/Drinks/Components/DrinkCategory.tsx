@@ -1,17 +1,17 @@
-import BeverageButton from "./BeverageButton";
+import DrinkButton from "./DrinkButton";
 
-const BeverageCategory = () => {
+const DrinkCategory = () => {
   const categories = ["Alcoholic", "NonAlcoholic"];
 
   return (
     <div>
       {categories.map((category, index: number) => (
         <div key={index}>
-          <BeverageButton category={category} /> 
+          <DrinkButton category={category} />
         </div>
       ))}
     </div>
   );
 };
 
-export default BeverageCategory;
+export default DrinkCategory;
