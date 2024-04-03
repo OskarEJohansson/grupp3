@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import { CategoryTypes } from "../../../../types";
-import "../../../../App.css";
-import FoodGlobalState from "../../utils/FoodGlobalState";
+import { CategoryTypes } from "../../../types";
+import "../../../App.css"
+import FoodGlobalState from "../utils/FoodGlobalState";
 
 interface CategoryInterface {
   CategoryProps: CategoryTypes;

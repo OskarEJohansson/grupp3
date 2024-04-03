@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import GlobalState from "../../../Cart/utils/CartGlobalState";
-import "../../../../App.css";
+import GlobalState from "../../Cart/utils/CartGlobalState";
+import "../../../App.css";
 
 const AddToCartButton = (article: any) => {
   const { addToCart, cart } = GlobalState();
