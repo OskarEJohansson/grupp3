@@ -1,9 +1,8 @@
-import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import FoodRoutes from "./pages/Routes/FoodRoutes/FoodRoutes";
-import BeverageRoutes from "./pages/Routes/BeverageRoutes/BeverageRoutes";
+import DrinkRoutes from "./pages/Routes/DrinkRoutes/DrinkRoutes";
 import UserRoutes from "./pages/Routes/UserRoutes/UserRoutes";
 import Footer from "./components/Footer";
 
@@ -14,7 +13,7 @@ function App() {
       <Routes>
         <>
           <Route path="/category-page/*" element={<FoodRoutes />} />
-          <Route path="/beverage-page/*" element={<BeverageRoutes />} />
+          <Route path="/drink-page/*" element={<DrinkRoutes />} />
           <Route path="/*" element={<UserRoutes />} />
         </>
       </Routes>

@@ -37,7 +37,7 @@ const Navbar = () => {
             <Link to="/category-page">Food</Link>
           </li>
           <li>
-            <Link to="/beverage-page">Beverages</Link>
+            <Link to="/drink-page">Beverages</Link>
           </li>
           {!isAdminView && (
             <li>

@@ -1,40 +1,41 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { create } from "zustand";
 import { BeverageDetails, BeverageTypes } from "../../../types";
 import axios from "axios";
 
-export interface BeverageGlobalStateInterface {
-  beverage: BeverageDetails[];
-  beverageList: BeverageTypes[];
-  alcoholicBeverageList: BeverageTypes[];
-  nonAlcoholicBeverageList: BeverageTypes[];
+export interface DrinkGlobalStateInterface {
+  drink: Object;
+  drinkList: BeverageTypes[];
+  alcoholicDrinkList: BeverageTypes[];
+  nonAlcoholicDrinkList: BeverageTypes[];
   category: string;
-  setBeverage: (Object: BeverageDetails) => void;
-  setCategory: (object: string) => void;
-  fetchBeverage: (drinkId: string) => void;
-  fetchAlcoholicBeverage: () => void;
-  fetchNonAlcoholicBeverage: () => void;
+  setDrink: (Object: BeverageDetails) => void;
+  setCategory: (category: string) => void;
+  fetchDrink: (drinkId: string) => void;
+  fetchAlcoholicDrink: () => void;
+  fetchNonAlcoholicDrink: () => void;
 }
 
-const BeverageGlobalState = create<BeverageGlobalStateInterface>((set) => ({
-  beverage: [],
-  beverageList: [],
+const DrinkGlobalState = create<DrinkGlobalStateInterface>((set) => ({
+  drink: [],
+  drinkList: [],
   category: "",
-  alcoholicBeverageList: [],
-  nonAlcoholicBeverageList: [],
+  alcoholicDrinkList: [],
+  nonAlcoholicDrinkList: [],
 
-  setBeverage: (article: any) => {
+  setDrink: (article: any) => {
     set(() => ({
-      beverage: article,
+      drink: article,
     }));
   },
 
   setCategory: (category: string) => {
     set(() => ({
-      category: category,
+      drink: category,
     }));
   },
 
-  fetchBeverage: async (drinkId: string) => {
+  fetchDrink: async (drinkId: string) => {
     let url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
 
     try {
@@ -42,7 +43,7 @@ const BeverageGlobalState = create<BeverageGlobalStateInterface>((set) => ({
       if (response.status === 200) {
         console.log("response.data", response.data.drinks);
         set(() => ({
-          beverage: response.data.drinks,
+          drink: response.data.drinks,
         }));
       }
       console.log("url", `${url}${drinkId}`);
@@ -50,7 +51,7 @@ const BeverageGlobalState = create<BeverageGlobalStateInterface>((set) => ({
       console.error("Error fetching drink", error);
     }
   },
-  fetchAlcoholicBeverage: async () => {
+  fetchAlcoholicDrink: async () => {
     try {
       const response = await axios.get(
         "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic"
@@ -59,8 +60,8 @@ const BeverageGlobalState = create<BeverageGlobalStateInterface>((set) => ({
       if (response.status === 200) {
         console.log("Fetch Alcoholic drinks successful", response.data.drinks);
         set(() => ({
-          alcoholicBeverageList: response.data.drinks,
-          beverageList: response.data.drinks,
+          alcoholicDrinkList: response.data.drinks,
+          drinkList: response.data.drinks,
         }));
       } else {
         console.log("Error fetching alcoholic drinks", response.status);
@@ -70,7 +71,7 @@ const BeverageGlobalState = create<BeverageGlobalStateInterface>((set) => ({
     }
   },
 
-  fetchNonAlcoholicBeverage: async () => {
+  fetchNonAlcoholicDrink: async () => {
     try {
       const response = await axios.get(
         "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic"
@@ -82,8 +83,8 @@ const BeverageGlobalState = create<BeverageGlobalStateInterface>((set) => ({
         console.log("Fetch Non Alcoholic drinks successful");
 
         set(() => ({
-          nonAlcoholicBeverageList: response.data.drinks,
-          beverageList: response.data.drinks,
+          nonAlcoholicDrinkList: response.data.drinks,
+          DrinkList: response.data.drinks,
         }));
       }
     } catch (error) {
@@ -92,4 +93,4 @@ const BeverageGlobalState = create<BeverageGlobalStateInterface>((set) => ({
   },
 }));
 
-export default BeverageGlobalState;
+export default DrinkGlobalState;

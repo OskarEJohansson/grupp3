@@ -10,7 +10,7 @@ const AdminPage = () => {
   return (
     <div>
       <div className="container">
-      <h1>Add Recipe</h1>
+        <h1>Add Recipe</h1>
       </div>
       <div className="form-group">
       <InputFormBase inputLabel="title" />
@@ -28,3 +28,4 @@ const AdminPage = () => {
 };
 
 export default AdminPage;
+
