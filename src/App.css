@@ -306,6 +306,7 @@ fieldset {
     height: 200px;
     object-fit: cover;
     border-radius: 8px 8px 0 0; 
+    position: relative;
 }
 
 .category-item:hover {
@@ -322,10 +323,11 @@ fieldset {
     }
 
     .category-allergen-icon{
-        display: flex;
         max-width: 35px;
         max-height: 35px;
-        
+        position: absolute;
+        top: -35px;
+        left: -132px;
 
     }
 
