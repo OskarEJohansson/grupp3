@@ -9,14 +9,6 @@ const ContactForm = () => {
         checkbox: false,
     });
 
-    // const handleChange = (e: any) => {
-    //     const { name, value } = e.target;
-    //     setFormData(prevState => ({
-    //         ...prevState,
-    //         [name]: value
-    //     }));
-    // };
-
     const handleSubmit = (e: any) => {
         e.preventDefault();
         if(formData.checkbox === true) {

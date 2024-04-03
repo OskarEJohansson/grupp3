@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BeverageDetails } from "../../../types";
 import AddToCartButton from "../../Food/Components/Food/AddToCartButton";
-import DrinkGlobalState from "../Utilities/DrinkGlobalState";
+import DrinkGlobalState from "../utils/DrinkGlobalState";
 import QuantityInput from "../../../components/QuantityInput";
 
 const DetailedDrinkCard = ({ onClose }: { onClose: () => void }) => {

@@ -1,5 +1,5 @@
 import "../../App.css";
-import DrinkCategory from "./Components/DrinkCategory";
+import DrinkCategory from "./components/DrinkCategory";
 
 const DrinkPage = () => {
   return (

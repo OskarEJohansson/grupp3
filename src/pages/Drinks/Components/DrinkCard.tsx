@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import DrinkGlobalState from "../Utilities/DrinkGlobalState";
+import DrinkGlobalState from "../utils/DrinkGlobalState";
 import AddToCartButton from "../../Food/Components/Food/AddToCartButton";
 import DetailedDrinkCard from "./DetailedDrinkCard";
 

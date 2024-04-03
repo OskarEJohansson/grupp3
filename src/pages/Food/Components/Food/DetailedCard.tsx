@@ -2,7 +2,7 @@ import { useState } from "react";
 import { CardTypes } from "../../../../types";
 import AddToCartButton from "./AddToCartButton";
 import "../../../../App.css";
-import FoodGlobalState from "../../Utilities/FoodGlobalState";
+import FoodGlobalState from "../../utils/FoodGlobalState";
 import QuantityInput from "../../../../components/QuantityInput";
 
 const DetailedCard = ({ onClose }: { onClose: () => void }) => {

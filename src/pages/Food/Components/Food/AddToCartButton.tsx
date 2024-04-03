@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import GlobalState from "../../../../assets/Utilities/GlobalState";
+import GlobalState from "../../../Cart/utils/CartGlobalState";
 import "../../../../App.css";
 
 const AddToCartButton = (article: any) => {

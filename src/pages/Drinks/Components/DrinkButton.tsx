@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import DrinkGlobalState from "../Utilities/DrinkGlobalState";
+import DrinkGlobalState from "../utils/DrinkGlobalState";
 
 const DrinkButton = ({ category }: { category: string }) => {
   const navigate = useNavigate();

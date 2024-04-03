@@ -1,12 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import FoodRoutes from "../FoodRoutes/FoodRoutes";
-import ContactForm from "../../../components/ContactForm";
+import ContactForm from "../../../Contact/components/ContactForm";
 import AboutUs from "../../AboutUs";
-import AddFoodItemPage from "../../AddFoodItemPage";
-import AdminPage from "../../Admin/AdminPage";
-import CommentsPage from "../../CommentsPage";
-import HomePage from "../../Home/Homepage";
-import RatingPage from "../../RatingPage";
+import AddFoodItemPage from "../../../AddFoodItemPage";
+import AdminPage from "../../../Admin/AddRecipePage";
+import CommentsPage from "../../../CommentsPage";
+import HomePage from "../../../Home/Homepage";
+import RatingPage from "../../../RatingPage";
 import BeverageRoutes from "../DrinkRoutes/DrinkRoutes";
 
 const AdminRoutes = () => {
