@@ -48,6 +48,8 @@ export interface CategoryTypes {
   picture: string;
   description: string;
   _id: number;
+  allergen: string;
+  allergenPicture: string;
 }
 export interface BeverageTypes {
   strDrink: string;
