@@ -21,10 +21,11 @@ const SearchBar = () => {
     fetchFood(URL);
     fetchAlcoholicDrink();
     fetchNonAlcoholicDrink();
-  }, []);
+  }, [URL, fetchAlcoholicDrink, fetchFood, fetchNonAlcoholicDrink]);
 
   const handleSearchInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
+    
   };
 
   const handleSearch = () => {
@@ -65,7 +66,8 @@ const SearchBar = () => {
       console.error('Error searching:', error);
       setSearchResultsFound(false);
     }
-  };
+    navigate('/search-result', { state: { searchResults, searchQuery }
+   });
 
   return (
     <div className="search-bar">
@@ -76,13 +78,6 @@ const SearchBar = () => {
         onChange={handleSearchInputChange}
       />
       <button onClick={handleSearch}>Search</button>
-      {!searchResultsFound && <p>Nothing matched your search.</p>}
-      {searchResults.map((result) => (
-        <div key={result.id}>
-          <img src={result.imageUrl} alt={result.name} />
-          <p>{result.name}</p>
-        </div>
-      ))}
     </div>
   );
 };
