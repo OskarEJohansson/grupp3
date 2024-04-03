@@ -5,7 +5,7 @@ const SelectCategory = () => {
   const { setCategories, formData } = FormGlobalState();
   const options = [
     { value: "meat", label: "Meat" },
-    { value: "veg", label: "Vegtarian" },
+    { value: "veg", label: "Vegetarian" },
     { value: "fish", label: "Fish" },
     { value: "hamburger", label: "Hamburger" },
   ];
