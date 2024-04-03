@@ -1,14 +1,12 @@
-import UpdateFoodGlobalState from "../UpdateFoodGlobalState";
+import UpdateFoodGlobalState from "../utils/UpdateFoodGlobalState";
 
-const UpdateFood = () => {
+const UpdateFood = ({ article }: any) => {
   const { formData, setChangedData } = UpdateFoodGlobalState();
-
-  console.log("FORMDATA IN UPDATEFOOD", formData);
-  console.log("FORMDATA TITLE", formData.title);
 
   const handleOnChange = (e: any) => {
     const { name, value } = e.target;
     setChangedData(name, value);
+    console.log(formData);
   };
 
   return (
@@ -17,13 +15,14 @@ const UpdateFood = () => {
         <label>Title</label>
         <input
           name="title"
-          value={formData.title}
+          placeholder={article.article.title}
           onChange={handleOnChange}
-        />{" "}
+        />
         <br />
         <label>Description</label>
         <input
           name="description"
+          placeholder={article.article.description}
           value={formData.description}
           onChange={handleOnChange}
         />
@@ -31,22 +30,25 @@ const UpdateFood = () => {
         <label>imageUrl</label>
         <input
           name="imageUrl"
-          value={formData.imageUrl}
           onChange={handleOnChange}
+          placeholder={article.article.imageUrl}
+          value={formData.imageUrl}
         />
         <br />
         <label>Categories</label>
         <input
           name="categories"
-          value={formData.categories}
           onChange={handleOnChange}
+          placeholder={article.article.categories}
+          value={formData.categories}
         />
         <br />
         <label>Instructions</label>
         <input
           name="instructions"
-          value={formData.instructions}
           onChange={handleOnChange}
+          placeholder={article.article.instructions}
+          value={formData.instructions}
         />
       </form>
     </div>

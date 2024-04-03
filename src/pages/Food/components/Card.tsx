@@ -3,7 +3,8 @@ import { CardTypes } from "../../../types";
 import AddToCartButton from "./AddToCartButton";
 import "../../../App.css";
 import FoodGlobalState from "../utils/FoodGlobalState";
-import DetailedCard from "./DetailedCard"; 
+import DetailedCard from "./DetailedCard";
+import UpdateFoodButton from "../../Update/component/UpdateFoodButton";
 
 interface CardInterface {
   article: CardTypes;
@@ -15,7 +16,7 @@ const Card = ({ article }: CardInterface) => {
 
   const handleOnClick = () => {
     setArticle(article);
-    setShowModal(true); 
+    setShowModal(true);
   };
 
   return (
@@ -37,8 +38,10 @@ const Card = ({ article }: CardInterface) => {
           );
         })}
       </div>
+      <div>price{article.price} :-</div>
+
       <div>
-        price{article.price} :-
+        <UpdateFoodButton article={article} />
       </div>
 
       <AddToCartButton article={article} />

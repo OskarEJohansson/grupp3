@@ -1,5 +1,5 @@
-import CartGlobalState from "../../../../Cart/utils/CartGlobalState";
-import UpdateFoodGlobalState from "../UpdateFoodGlobalState";
+import CartGlobalState from "../../Cart/utils/CartGlobalState";
+import UpdateFoodGlobalState from "../utils/UpdateFoodGlobalState";
 
 const PatchFoodButton = () => {
   const { updateRecipe } = UpdateFoodGlobalState();
