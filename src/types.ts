@@ -6,6 +6,7 @@ export interface CardTypes {
   imageUrl: string;
   categories: string[];
   instructions: string[];
+  price: number;
   ingredients: [
     {
       name: string;

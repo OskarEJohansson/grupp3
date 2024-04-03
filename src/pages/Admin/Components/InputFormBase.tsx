@@ -1,28 +1,35 @@
-import FormGlobalState, {
-  FormGlobalStateInterface,
-} from "../Utils/FormGlobalState";
+import FormGlobalState from "../Utils/FormGlobalState";
 
 interface InputFormBaseProps {
-  setFunction: keyof FormGlobalStateInterface["setters"];
-  lable: string;
+  inputLabel: string;
 }
 
-const InputFormBase = ({ setFunction, lable }: InputFormBaseProps) => {
-  const { setters } = FormGlobalState((state) => state);
-  const setter = setters[setFunction];
+const InputFormBase = ({ inputLabel }: InputFormBaseProps) => {
+  const { setTitle, setDescription, setImageUrl } =
+    FormGlobalState();
 
   const handleOnChange = (e: any) => {
-    setter(e.target.value);
+    switch (inputLabel) {
+      case "title":
+        setTitle(e.target.value);
+        break;
+      case "description":
+        setDescription(e.target.value);
+        break;
+      case "image":
+        setImageUrl(e.target.value);
+        break;
+    }
   };
 
   return (
     <>
-      <div className="container">
-        <div className="form-group">
-          <label>{lable}</label>
-          <input type="text" onChange={handleOnChange} />
-        </div>
+    <div className="container">
+      <div className="form-group">
+        <label>{inputLabel.charAt(0).toUpperCase() + inputLabel.slice(1)}</label>
+        <input type="text" onChange={handleOnChange} />
       </div>
+    </div>
     </>
   );
 };

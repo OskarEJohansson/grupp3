@@ -1,5 +1,5 @@
 import axios from "axios";
-import FormGlobalState from "../Utils/FormGlobalState";
+import FormGlobalState, { Ingredient } from "../Utils/FormGlobalState";
 
 const SubmitButton = () => {
   const { formData } = FormGlobalState();
@@ -22,7 +22,7 @@ const SubmitButton = () => {
     }
   };
 
-  return <button onClick={() => handleOnClick()}>Submit Form</button>;
+  return <button onClick={handleOnClick}>Submit Form</button>;
 };
 
 export default SubmitButton;

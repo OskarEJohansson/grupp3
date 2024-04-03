@@ -1,37 +1,64 @@
-// import FormGlobalState from "../Utils/FormGlobalState";
+import FormGlobalState from "../Utils/FormGlobalState";
+import { useState } from 'react'
 
-// export const IngredientComponent = () => {
-//   const { setIngredientsName, setIngredientsUnit, setIngredientsAmount } =
-//     FormGlobalState();
+export interface Ingredient {
+  name: string;
+  amount: number;
+  unit: string;
+}
 
-//   return (
-//     <div>
-//       <fieldset>
-//         <label>Ingredient</label>
-//         <input
-//           type="text"
-//           name="name"
-//           onChange={(e) => {
-//             setIngredientsName(e.target.value);
-//           }}
-//         />
+export const IngredientComponent = ({index, onUpdateComponent}) => {
+    
+    const [formData, setFormData] = useState({
+      name: "",
+      amount: 0,
+      unit: ""
+    })
+    
+    const changeName = (e: any) => {
+      const newFormData = {...formData, name: e.target.value};
+      setFormData(newFormData)
+      onUpdateComponent(index, newFormData)
+    }
+    
+    const changeAmount = (e: any) => {
+      const newFormData = {...formData, amount: e.target.value};
+      setFormData(newFormData)
+      onUpdateComponent(index, newFormData)
+    }
+    
+    const changeUnit = (e: any) => {
+      const newFormData = {...formData, unit: e.target.value};
+      setFormData(newFormData)
+      onUpdateComponent(index, newFormData)
+    }
 
-//         <label>Amount</label>
-//         <input
-//           type="number"
-//           name="amount"
-//           onChange={(e) => setIngredientsAmount(parseInt(e.target.value))}
-//         />
+  return (
+    <div>
+      <fieldset>
+        <label>Ingredient</label>
+        <input
+          type="text"
+          name="name"
+          onChange={changeName}
+        />
 
-//         <label>Unit</label>
-//         <input
-//           type="text"
-//           name="unit"
-//           onChange={(e) => setIngredientsUnit(e.target.value)}
-//         />
-//       </fieldset>
-//     </div>
-//   );
-// };
+        <label>Amount</label>
+        <input
+          type="number"
+          name="amount"
+          onChange={changeAmount}
+        />
 
-// export default IngredientComponent;
+        <label>Unit</label>
+        <input
+          type="text"
+          name="unit"
+          onChange={changeUnit}
+        />
+      </fieldset>
+    </div>
+  );
+};
+
+export default IngredientComponent;

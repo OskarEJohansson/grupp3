@@ -1,4 +1,4 @@
-import FormGlobalState from "../Utils/FormGlobalState";
+/* import FormGlobalState from "../Utils/FormGlobalState";
 import { CardTypes } from "../../../types";
 
 const UpdateCard = (objectToUpdate?: CardTypes) => {
@@ -31,3 +31,4 @@ const UpdateCard = (objectToUpdate?: CardTypes) => {
 };
 
 export default UpdateCard;
+ */
