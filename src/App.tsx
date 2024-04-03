@@ -5,6 +5,7 @@ import FoodRoutes from "./pages/Navigation/Routes/FoodRoutes/FoodRoutes";
 import DrinkRoutes from "./pages/Navigation/Routes/DrinkRoutes/DrinkRoutes";
 import UserRoutes from "./pages/Navigation/Routes/UserRoutes/UserRoutes";
 import Footer from "./pages/Navigation/components/Footer";
+import SearchResultsPage from "./pages/Navigation/SearchResultsPage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Navbar />
       <Routes>
         <>
+          <Route path="/search-result" element={<SearchResultsPage />} />
           <Route path="/category-page/*" element={<FoodRoutes />} />
           <Route path="/drink-page/*" element={<DrinkRoutes />} />
           <Route path="/*" element={<UserRoutes />} />
