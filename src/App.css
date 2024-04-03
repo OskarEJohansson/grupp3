@@ -306,6 +306,7 @@ fieldset {
     height: 200px;
     object-fit: cover;
     border-radius: 8px 8px 0 0; 
+    position: relative;
 }
 
 .category-item:hover {
@@ -319,6 +320,15 @@ fieldset {
     font-weight: bold;
     text-transform: uppercase;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .category-allergen-icon{
+        max-width: 35px;
+        max-height: 35px;
+        position: absolute;
+        top: -35px;
+        left: -132px;
+
     }
 
 .back-button {
