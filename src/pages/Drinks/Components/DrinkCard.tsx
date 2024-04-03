@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import DrinkGlobalState from "../utils/DrinkGlobalState";
-import AddToCartButton from "../../Food/Components/Food/AddToCartButton";
+import AddToCartButton from "../../Food/components/AddToCartButton";
 import DetailedDrinkCard from "./DetailedDrinkCard";
 
 const DrinkCard = () => {

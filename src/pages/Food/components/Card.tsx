@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { CardTypes } from "../../../../types";
+import { CardTypes } from "../../../types";
 import AddToCartButton from "./AddToCartButton";
-import "../../../../App.css";
-import FoodGlobalState from "../../utils/FoodGlobalState";
+import "../../../App.css";
+import FoodGlobalState from "../utils/FoodGlobalState";
 import DetailedCard from "./DetailedCard"; 
 
 interface CardInterface {
