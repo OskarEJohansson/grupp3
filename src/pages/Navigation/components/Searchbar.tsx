@@ -66,8 +66,12 @@ const SearchBar = () => {
       console.error('Error searching:', error);
       setSearchResultsFound(false);
     }
-    navigate('/search-result', { state: { searchResults, searchQuery }
-   });
+    navigate('/search-result', { state: { searchResults } });
+    
+    useEffect(() => {
+      setSearchQuery(''); 
+    }, [navigate]);
+  };
 
   return (
     <div className="search-bar">
