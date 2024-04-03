@@ -6,11 +6,8 @@ const AddFoodItemPage = () => {
     
   return (
     <div>
-      <h1>Add Food</h1>
-      <AddFoodItem />
       <hr />
       <RecipeList />
-      {/* < AddTitle /> */}
     </div>
   );
 }

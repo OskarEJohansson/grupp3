@@ -25,7 +25,6 @@ const RecipeList = () => {
       console.error("Error deleting recipe", error);
     }
   };
-
   return (
     <div className="recipe-list">
       <h1>All Recipes</h1>
