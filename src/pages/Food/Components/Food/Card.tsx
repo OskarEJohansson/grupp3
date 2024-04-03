@@ -37,6 +37,9 @@ const Card = ({ article }: CardInterface) => {
           );
         })}
       </div>
+      <div>
+        price{article.price} :-
+      </div>
 
       <AddToCartButton article={article} />
 

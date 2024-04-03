@@ -61,4 +61,4 @@ export const IngredientComponent = ({index, onUpdateComponent}) => {
   );
 };
 
-// export default IngredientComponent;
+export default IngredientComponent;

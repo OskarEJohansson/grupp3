@@ -1,5 +1,11 @@
 import { create } from "zustand";
 
+export interface Ingredient {
+  name: string;
+  amount: number;
+  unit: string;
+}
+
 export interface FormGlobalStateInterface {
   formData: {
     title: string;
@@ -29,6 +35,7 @@ const FormGlobalState = create<FormGlobalStateInterface>((set) => ({
   formData: {
     title: "",
     description: "",
+    ratings: [],
     imageUrl: "",
     categories: [],
     instructions: [""],
@@ -42,15 +49,15 @@ const FormGlobalState = create<FormGlobalStateInterface>((set) => ({
       formData: { ...state.formData, title: inputValue },
     })),
 
-    setDescription: (inputValue: string) =>
-      set((state) => ({
-        formData: { ...state.formData, description: inputValue },
-      })),
+  setDescription: (inputValue: string) =>
+    set((state) => ({
+      formData: { ...state.formData, description: inputValue },
+    })),
 
-    setImageUrl: (inputValue: string) =>
-      set((state) => ({
-        formData: { ...state.formData, imageUrl: inputValue },
-      })),
+  setImageUrl: (inputValue: string) =>
+    set((state) => ({
+      formData: { ...state.formData, imageUrl: inputValue },
+    })),
 
   setCategories: (inputValue: string) =>
     set((state) => ({

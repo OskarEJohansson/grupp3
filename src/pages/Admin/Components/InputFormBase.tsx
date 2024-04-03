@@ -1,10 +1,7 @@
-import FormGlobalState, {
-  FormGlobalStateInterface,
-} from "../Utils/FormGlobalState";
+import FormGlobalState from "../Utils/FormGlobalState";
 
 interface InputFormBaseProps {
-  setFunction: keyof FormGlobalStateInterface["setters"];
-  lable: string;
+  inputLabel: string;
 }
 
 const InputFormBase = ({ inputLabel }: InputFormBaseProps) => {
@@ -27,15 +24,14 @@ const InputFormBase = ({ inputLabel }: InputFormBaseProps) => {
 
   return (
     <>
-      <div className="container">
-        <div className="form-group">
-          <label>{lable}</label>
-          <input type="text" onChange={handleOnChange} />
-        </div>
+    <div className="container">
+      <div className="form-group">
+        <label>{inputLabel.charAt(0).toUpperCase() + inputLabel.slice(1)}</label>
+        <input type="text" onChange={handleOnChange} />
       </div>
+    </div>
     </>
   );
 };
 
 export default InputFormBase;
-
