@@ -24,6 +24,7 @@ const Category = ({ CategoryProps }: CategoryInterface) => {
         style={{ maxWidth: "300px" }}
         onClick={handleOnClick}
       />
+      {CategoryProps.allergen && <img src={CategoryProps.allergenPicture} alt={CategoryProps.allergen} className="category-allergen-icon" />}
     </div>
   );
 };
