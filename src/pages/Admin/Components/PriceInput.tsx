@@ -1,4 +1,4 @@
-import FormGlobalState from "../Utils/FormGlobalState";
+import FormGlobalState from "../utils/FormGlobalState";
 
 const PriceInput = () => {
   const { formData, setPrice } = FormGlobalState();

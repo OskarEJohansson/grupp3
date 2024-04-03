@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import ShoppingCartIcon from "../assets/ShoppingCart";
+import ShoppingCartIcon from "../../Cart/components/ShoppingCart";
 import SearchBar from "./Searchbar";
 
 const Navbar = () => {
@@ -37,7 +37,7 @@ const Navbar = () => {
             <Link to="/category-page">Food</Link>
           </li>
           <li>
-            <Link to="/drink-page">Beverages</Link>
+            <Link to="/drink-page">Drinks</Link>
           </li>
           {!isAdminView && (
             <li>
@@ -52,7 +52,7 @@ const Navbar = () => {
                 <Link to="/admin-page">Admin Page</Link>
               </li>
               <li>
-                <Link to="/add-food-item-page">Add Food</Link>
+                <Link to="/add-food-item-page">See all recipes</Link>
               </li>
               <li>
                 <Link to="/add-comments-page">Add Comment</Link>

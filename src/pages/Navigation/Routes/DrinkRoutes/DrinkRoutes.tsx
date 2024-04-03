@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import DrinkPage from "../../Drinks/DrinkPage";
-import DrinkCardPage from "../../Drinks/DrinkCardPage";
+import DrinkPage from "../../../Drinks/DrinkPage";
+import DrinkCardPage from "../../../Drinks/DrinkCardPage";
 
 const DrinkRoutes = () => {
   return (

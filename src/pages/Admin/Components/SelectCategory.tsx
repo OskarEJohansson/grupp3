@@ -1,5 +1,5 @@
 import Select from "react-select";
-import FormGlobalState from "../Utils/FormGlobalState";
+import FormGlobalState from "../utils/FormGlobalState";
 
 const SelectCategory = () => {
   const { setCategories, formData } = FormGlobalState();

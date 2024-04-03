@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import GlobalState from "../assets/Utilities/GlobalState";
+import GlobalState from "../utils/CartGlobalState";
 
 const Cart = () => {
   const cart = GlobalState((state) => state.cart);

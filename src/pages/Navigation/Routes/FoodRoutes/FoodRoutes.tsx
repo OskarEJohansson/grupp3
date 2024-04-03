@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import CategoryPage from "../../Food/CategoryPage";
-import MealPage from "../../Food/MealPage";
+import CategoryPage from "../../../Food/CategoryPage";
+import MealPage from "../../../Food/MealPage";
 
 const FoodRoutes = () => {
   return (

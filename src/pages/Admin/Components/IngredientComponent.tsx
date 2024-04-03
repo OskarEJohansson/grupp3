@@ -1,4 +1,4 @@
-import FormGlobalState from "../Utils/FormGlobalState";
+import FormGlobalState from "../utils/FormGlobalState";
 import { useState } from 'react'
 
 export interface Ingredient {
