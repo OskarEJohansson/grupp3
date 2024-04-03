@@ -25,7 +25,6 @@ const SearchBar = () => {
 
   const handleSearchInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(event.target.value);
-    
   };
 
   const handleSearch = () => {
@@ -62,15 +61,14 @@ const SearchBar = () => {
 
       setSearchResults(filteredResults);
       setSearchResultsFound(filteredResults.length > 0);
+
+      
+      navigate('/search-result', { state: { searchResults: filteredResults } });
+      setSearchQuery('');
     } catch (error) {
       console.error('Error searching:', error);
       setSearchResultsFound(false);
     }
-    navigate('/search-result', { state: { searchResults } });
-    
-    useEffect(() => {
-      setSearchQuery(''); 
-    }, [navigate]);
   };
 
   return (
