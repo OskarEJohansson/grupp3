@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { create } from "zustand";
-import { CardTypes } from "../../types";
+import { CardTypes } from "../../../types";
 
-export interface GlobalStateInterface {
+export interface CartGlobalStateInterface {
   globalCategory: string;
   globalArticleId: string;
   globalArticle: any;
@@ -16,7 +16,7 @@ export interface GlobalStateInterface {
   setGlobalArticle: (article: CardTypes) => void;
 }
 
-const GlobalState = create<GlobalStateInterface>((set) => ({
+const CartGlobalState = create<CartGlobalStateInterface>((set) => ({
   globalCategory: "",
   globalArticleId: "",
   globalArticle: {},
@@ -52,4 +52,4 @@ const GlobalState = create<GlobalStateInterface>((set) => ({
   },
 }));
 
-export default GlobalState;
+export default CartGlobalState;

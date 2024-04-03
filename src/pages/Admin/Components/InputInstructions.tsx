@@ -1,5 +1,5 @@
 import React from "react";
-import FormGlobalState from "../Utils/FormGlobalState";
+import FormGlobalState from "../utils/FormGlobalState";
 
 const InputInstructions = () => {
     const { formData, addInstructions, setInstructions } = FormGlobalState();

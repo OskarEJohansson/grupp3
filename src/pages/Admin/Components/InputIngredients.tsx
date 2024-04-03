@@ -1,6 +1,6 @@
 import { useState } from "react";
 import IngredientComponent from "./IngredientComponent";
-import FormGlobalState from "../Utils/FormGlobalState";
+import FormGlobalState from "../utils/FormGlobalState";
 
 export interface Ingredient {
   name: string;

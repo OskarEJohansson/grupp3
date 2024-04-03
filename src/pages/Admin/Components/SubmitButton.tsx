@@ -1,5 +1,5 @@
 import axios from "axios";
-import FormGlobalState, { Ingredient } from "../Utils/FormGlobalState";
+import FormGlobalState, { Ingredient } from "../utils/FormGlobalState";
 
 const SubmitButton = () => {
   const { formData } = FormGlobalState();

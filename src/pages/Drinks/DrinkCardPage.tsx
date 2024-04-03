@@ -1,4 +1,4 @@
-import DrinkCard from "./Components/DrinkCard";
+import DrinkCard from "./components/DrinkCard";
 
 const DrinkCardPage = () => {
   return (

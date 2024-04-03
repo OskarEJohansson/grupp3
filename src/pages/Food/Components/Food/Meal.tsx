@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { CardTypes } from "../../../../types";
 import Card from "./Card";
-import FoodGlobalState from "../../Utilities/FoodGlobalState";
+import FoodGlobalState from "../../utils/FoodGlobalState";
 
 const MealPage = () => {
   const { category } = useParams<{ category: string }>();
