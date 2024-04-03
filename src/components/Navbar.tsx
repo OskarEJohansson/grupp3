@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import ShoppingCartIcon from "../assets/ShoppingCart";
+import SearchBar from "./Searchbar";
 
 const Navbar = () => {
   const [isAdminView, setIsAdminView] = useState(false);
@@ -26,8 +27,7 @@ const Navbar = () => {
           />
         </Link>
         <div className="search-bar">
-          <input type="text" placeholder="Search..." />
-          <button>Search</button>
+          <SearchBar/>
         </div>
         <button onClick={toggleMenu} className="menu-button">
           {isOpen ? "Close" : "Menu"}
