@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { CardTypes } from "../../../../types";
+import { CardTypes } from "../../../types";
 import AddToCartButton from "./AddToCartButton";
-import "../../../../App.css";
-import FoodGlobalState from "../../utils/FoodGlobalState";
-import QuantityInput from "../../../../components/QuantityInput";
+import "../../../App.css";
+import FoodGlobalState from "../utils/FoodGlobalState";
+import QuantityInput from "../../../components/QuantityInput";
 
 const DetailedCard = ({ onClose }: { onClose: () => void }) => {
   const article = FoodGlobalState((state) => state.article as CardTypes);

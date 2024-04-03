@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import Meal from "./Components/Food/Meal";
+import Meal from "./components/Meal";
 
 const MealPage = () => {
   const navigate = useNavigate();
