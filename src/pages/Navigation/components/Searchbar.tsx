@@ -11,8 +11,8 @@ interface SearchItem {
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState<SearchItem[]>([]);
-  const [searchResultsFound, setSearchResultsFound] = useState(true);
+  const [, setSearchResults] = useState<SearchItem[]>([]);
+  const [, setSearchResultsFound] = useState(true);
   const navigate = useNavigate();
   const { fetchFood, categoryData, URL } = FoodGlobalState();
   const { alcoholicDrinkList, nonAlcoholicDrinkList, fetchAlcoholicDrink, fetchNonAlcoholicDrink } = DrinkGlobalState();

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useLocation } from 'react-router-dom';
 
 const SearchResultsPage = () => {
@@ -10,7 +11,7 @@ const SearchResultsPage = () => {
       {searchResults.length === 0 ? (
         <p>No results found</p>
       ) : (
-        searchResults.map((result) => (
+        searchResults.map((result: any) => (
           <div key={result.id}>
             <img src={result.imageUrl} alt={result.name} />
             <p>{result.name}</p>
