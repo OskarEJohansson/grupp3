@@ -11,13 +11,18 @@ const Cart = () => {
 
       {cart.map((cartItem: any, index: number) => (
         <div key={index} className="cart-item">
-          <div className="cart-item-title">CartItem: {cartItem.article.title}</div>
+          <div className="cart-item-title">
+            {cartItem.article.title || cartItem.article.strDrink}
+          </div>
           <img
-            src={cartItem.article.imageUrl}
+            src={cartItem.article.imageUrl || cartItem.article.strDrinkThumb}
             alt="PICTURE OF DISH"
             className="cart-item-image"
           />
-          <div className="cart-item-price">Price: {cartItem.article.price} :-</div>
+          <div className="cart-item-price">
+            Price:
+            {cartItem.article.price}
+          </div>
         </div>
       ))}
       <button>CHECK OUT</button>

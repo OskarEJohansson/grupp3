@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import CategoryPage from "../../../Food/RecipeCategoryPage";
 import MealPage from "../../../Food/RecipePage";
-import UpdateFoodPage from "../../../Update/UpdateFoodPage";
+import UpdateFoodPage from "../../../Update/UpdateRecipePage";
 
 const FoodRoutes = () => {
   return (
