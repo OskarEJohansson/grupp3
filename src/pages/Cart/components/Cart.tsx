@@ -17,7 +17,7 @@ const Cart = () => {
             alt="PICTURE OF DISH"
             className="cart-item-image"
           />
-          <div className="cart-item-price">Price: $$$</div>
+          <div className="cart-item-price">Price: {cartItem.article.price} :-</div>
         </div>
       ))}
       <button>CHECK OUT</button>
