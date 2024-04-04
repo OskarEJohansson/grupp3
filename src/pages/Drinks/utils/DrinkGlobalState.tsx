@@ -77,14 +77,14 @@ const DrinkGlobalState = create<DrinkGlobalStateInterface>((set) => ({
         "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic"
       );
 
-      console.log(response);
+      console.log(response.data.drinks);
 
       if (response.status === 200) {
         console.log("Fetch Non Alcoholic drinks successful");
 
         set(() => ({
           nonAlcoholicDrinkList: response.data.drinks,
-          DrinkList: response.data.drinks,
+          drinkList: response.data.drinks,
         }));
       }
     } catch (error) {

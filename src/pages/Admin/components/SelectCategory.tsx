@@ -3,6 +3,7 @@ import FormGlobalState from "../utils/FormGlobalState";
 
 const SelectCategory = () => {
   const { setCategories, formData } = FormGlobalState();
+
   const options = [
     { value: "meat", label: "Meat" },
     { value: "veg", label: "Vegitarian" },
@@ -18,9 +19,12 @@ const SelectCategory = () => {
   return (
     <div className="container">
       <div className="form-group">
-      <h3>Category</h3>
-      <Select options={options} onChange={handleOnChange} className="select-option"
-         />
+        <h3>Category</h3>
+        <Select
+          options={options}
+          onChange={handleOnChange}
+          className="select-option"
+        />
       </div>
     </div>
   );

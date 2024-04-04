@@ -1,21 +1,22 @@
 import { useState } from "react";
-import { CardTypes } from "../../../types";
-import AddToCartButton from "./AddToCartButton";
+import { RecipeTypes } from "../../../types";
+import AddToCartButton from "./RecipeAddToCartButton";
 import "../../../App.css";
-import FoodGlobalState from "../utils/FoodGlobalState";
-import DetailedCard from "./DetailedCard"; 
+import RecipeGlobalState from "../utils/RecipeGlobalState";
+import DetailedCard from "./RecipeDetailedCard";
+import UpdateFoodButton from "../../Update/component/UpdateRecipeButton";
 
-interface CardInterface {
-  article: CardTypes;
+interface RecipeCardInterface {
+  article: RecipeTypes;
 }
 
-const Card = ({ article }: CardInterface) => {
-  const { setArticle } = FoodGlobalState();
+const RecipeCard = ({ article }: RecipeCardInterface) => {
+  const { setArticle } = RecipeGlobalState();
   const [showModal, setShowModal] = useState(false);
 
   const handleOnClick = () => {
     setArticle(article);
-    setShowModal(true); 
+    setShowModal(true);
   };
 
   return (
@@ -37,8 +38,10 @@ const Card = ({ article }: CardInterface) => {
           );
         })}
       </div>
+      <div>Price: {article.price} :-</div>
+
       <div>
-        price{article.price} :-
+        <UpdateFoodButton article={article} />
       </div>
 
       <AddToCartButton article={article} />
@@ -48,4 +51,4 @@ const Card = ({ article }: CardInterface) => {
   );
 };
 
-export default Card;
+export default RecipeCard;

@@ -1,15 +1,12 @@
-import AddFoodItem from '../components/AddFoodItem';
-import RecipeList from './Admin/components/RecipeList';
-import AddTitle from './Food/components/AddFood/AddTitle';
+import RecipeList from "./Admin/components/RecipeList";
 
 const AddFoodItemPage = () => {
-    
   return (
     <div>
       <hr />
       <RecipeList />
     </div>
   );
-}
+};
 
-export default AddFoodItemPage
+export default AddFoodItemPage;

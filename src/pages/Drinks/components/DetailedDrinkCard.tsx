@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BeverageDetails } from "../../../types";
-import AddToCartButton from "../../Food/components/AddToCartButton";
+import AddToCartButton from "../../Food/components/RecipeAddToCartButton";
 import DrinkGlobalState from "../utils/DrinkGlobalState";
 import QuantityInput from "../../../components/QuantityInput";
 
