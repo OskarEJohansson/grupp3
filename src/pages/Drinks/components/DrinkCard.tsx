@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import DrinkGlobalState from "../utils/DrinkGlobalState";
-import AddToCartButton from "../../Food/components/AddToCartButton";
+import AddToCartButton from "../../Food/components/RecipeAddToCartButton";
 import DetailedDrinkCard from "./DetailedDrinkCard";
 
 const DrinkCard = () => {
@@ -16,12 +16,13 @@ const DrinkCard = () => {
   };
 
   useEffect(() => {
+    console.log("USE EFFECT", category);
     if (category === "Alcoholic") {
       fetchAlcoholicDrink();
     } else {
       fetchNonAlcoholicDrink();
     }
-  }, [category, fetchAlcoholicDrink, fetchNonAlcoholicDrink]);
+  }, [category]);
 
   return (
     <div>

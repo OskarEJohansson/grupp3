@@ -1,6 +1,7 @@
 import { create } from "zustand";
-import { IngredientsTypes, RecipeType } from "../../../../types";
+
 import axios from "axios";
+import { IngredientsTypes } from "../../../types";
 
 export interface UpdateFormGlobalState {
   formData: {
@@ -21,7 +22,7 @@ export interface UpdateFormGlobalState {
 
   setIngredients: (key: string, value: string) => void;
 
-  setData: (formData: RecipeType) => void;
+  setData: (formData: any) => void;
 
   setChangedData: (key: string, value: string) => void;
 

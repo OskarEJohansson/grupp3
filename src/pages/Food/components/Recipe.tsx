@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { CardTypes } from "../../../types";
-import Card from "./Card";
-import FoodGlobalState from "../utils/FoodGlobalState";
+import { RecipeTypes } from "../../../types";
+import Card from "./RecipeCard";
+import RecipeGlobalState from "../utils/RecipeGlobalState";
 
-const MealPage = () => {
+const Recipe = () => {
   const { category } = useParams<{ category: string }>();
-  const { categoryData, setCategoryData, URL } = FoodGlobalState();
+  const { categoryData, setCategoryData, URL } = RecipeGlobalState();
 
   useEffect(() => {
     if (category) {
@@ -19,7 +19,7 @@ const MealPage = () => {
       <div>
         <h1>See all meals in category: {category}</h1>
       </div>
-      {categoryData.map((article: CardTypes, index: number) => (
+      {categoryData.map((article: RecipeTypes, index: number) => (
         <div key={index}>
           <Card article={article} />
         </div>
@@ -28,4 +28,4 @@ const MealPage = () => {
   );
 };
 
-export default MealPage;
+export default Recipe;
