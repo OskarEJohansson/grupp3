@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import DrinkGlobalState from "../utils/DrinkGlobalState";
-import AddToCartButton from "../../Food/components/AddToCartButton";
+import AddToCartButton from "../../Food/components/RecipeAddToCartButton";
 import DetailedDrinkCard from "./DetailedDrinkCard";
 
 const DrinkCard = () => {
@@ -21,7 +21,7 @@ const DrinkCard = () => {
     } else {
       fetchNonAlcoholicDrink();
     }
-  }, [category, fetchAlcoholicDrink, fetchNonAlcoholicDrink]);
+  }, [category]);
 
   return (
     <div>

@@ -2,7 +2,7 @@
 import GlobalState from "../../Cart/utils/CartGlobalState";
 import "../../../App.css";
 
-const AddToCartButton = (article: any) => {
+const RecipeAddToCartButton = (article: any) => {
   const { addToCart, cart } = GlobalState();
 
   return (
@@ -19,4 +19,4 @@ const AddToCartButton = (article: any) => {
   );
 };
 
-export default AddToCartButton;
+export default RecipeAddToCartButton;

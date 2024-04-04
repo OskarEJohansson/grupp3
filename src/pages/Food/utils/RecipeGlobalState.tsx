@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { CardTypes } from "../../../types";
 import axios from "axios";
 
-export interface FoodGlobalStateInterface {
+export interface RecipeGlobalStateInterface {
   category: string;
   article: Object;
   categoryData: CardTypes[];
@@ -10,10 +10,10 @@ export interface FoodGlobalStateInterface {
   setCategory: (category: string) => void;
   setArticle: (article: CardTypes) => void;
   setCategoryData: (url: string, category: string) => void;
-  fetchFood: (url: string) => void;
+  fetchRecipe: (url: string) => void;
 }
 
-const FoodGlobalState = create<FoodGlobalStateInterface>((set) => ({
+const RecipeGlobalState = create<RecipeGlobalStateInterface>((set) => ({
   category: "",
   article: {},
   categoryData: [],
@@ -46,21 +46,21 @@ const FoodGlobalState = create<FoodGlobalStateInterface>((set) => ({
     }
   },
 
-  fetchFood: async (url: string) => { 
+  fetchRecipe: async (url: string) => {
     try {
-      const response = await axios.get(`${url}/recipes`); 
+      const response = await axios.get(`${url}/recipes`);
       if (response.status === 200) {
-        console.log("RESPONSE DATA:", response.data)
-        console.log("FetchFood successful");
+        console.log("RESPONSE DATA:", response.data);
+        console.log("FetchRecipe successful");
         set(() => ({
           categoryData: response.data,
         }));
       }
     } catch (error) {
-      console.log("FetchFood Failed");
-      console.log("FetchFood error message", error);
+      console.log("FetchRecipe Failed");
+      console.log("FetchRecipe error message", error);
     }
   },
 }));
 
-export default FoodGlobalState;
+export default RecipeGlobalState;
