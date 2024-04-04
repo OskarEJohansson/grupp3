@@ -1,19 +1,22 @@
-import React, { useState } from 'react';
-import { CommentBox, CommentList } from '../components/Comment';
+import React from "react";
+import { useParams } from "react-router-dom";
+import CommentBox from "../components/CommentBox";
+import CommentList from "../components/CommentList";
+import { CommentsProvider } from "./CommentsGlobalState";
 
-const CommentsPage: React.FC = () => {
-  const [comments, setComments] = useState<string[]>([]);
+const CommentsPage = () => {
+  const { articleId } = useParams<{ articleId: string }>();
 
-  const handleCommentSubmit = (comment: string) => {
-    setComments([...comments, comment]);
+  const handleSubmit = (name: string, comment: string) => {
+    console.log("Comment submitted:", name, comment);
   };
 
   return (
-    <div>
-      <CommentBox onCommentSubmit={handleCommentSubmit} />
-      <CommentList comments={comments} />
-    </div>
+    <CommentsProvider>
+      <CommentBox onSubmit={handleSubmit} />
+      {articleId && <CommentList articleId={articleId} />}
+    </CommentsProvider>
   );
-}
+};
 
-export default CommentsPage; 
+export default CommentsPage;

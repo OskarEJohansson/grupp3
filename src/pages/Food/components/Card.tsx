@@ -4,6 +4,7 @@ import AddToCartButton from "./AddToCartButton";
 import "../../../App.css";
 import FoodGlobalState from "../utils/FoodGlobalState";
 import DetailedCard from "./DetailedCard"; 
+import { CommentsProvider } from "../../../pages/CommentsGlobalState";
 
 interface CardInterface {
   article: CardTypes;
@@ -19,7 +20,7 @@ const Card = ({ article }: CardInterface) => {
   };
 
   return (
-    <>
+    <CommentsProvider>
       <div className="card-container">Title: {article.title}</div>
       <img
         onClick={handleOnClick}
@@ -40,12 +41,12 @@ const Card = ({ article }: CardInterface) => {
       <div>
         price{article.price} :-
       </div>
-
+  
       <AddToCartButton article={article} />
-
+  
       {showModal && <DetailedCard onClose={() => setShowModal(false)} />}
-    </>
+    </CommentsProvider>
   );
-};
-
+      };
+      
 export default Card;
