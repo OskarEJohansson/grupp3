@@ -1,4 +1,4 @@
-import Select from "react-select/base";
+import Select from "react-select";
 import UpdateRecipeGlobalState from "../utils/UpdateRecipeGlobalState";
 
 const UpdateRecipe = () => {
@@ -9,6 +9,17 @@ const UpdateRecipe = () => {
     const { name, value } = e.target;
     setChangedData(name, value);
   };
+
+  const handleOnChangeCategory = (selectedOption: any) => {
+    setChangedData("categories", selectedOption.value);
+  };
+
+  const options = [
+    { value: "meat", label: "Meat" },
+    { value: "veg", label: "Vegitarian" },
+    { value: "fish", label: "Fish" },
+    { value: "hamburger", label: "Hamburger" },
+  ];
 
   return (
     <div>
@@ -36,6 +47,7 @@ const UpdateRecipe = () => {
           value={formData.imageUrl}
         />
         <br />
+        <Select options={options} onChange={handleOnChangeCategory} />
         <label>Instructions</label>
         <input
           name="instructions"
@@ -48,7 +60,7 @@ const UpdateRecipe = () => {
         <input
           name="price"
           onChange={handleOnChange}
-          placeholder={formData.price}
+          placeholder={formData.price.toString()}
           value={formData.price}
         />
       </form>
