@@ -38,7 +38,7 @@ const RecipeCard = ({ article }: RecipeCardInterface) => {
           );
         })}
       </div>
-      <div>price{article.price} :-</div>
+      <div>Price: {article.price} :-</div>
 
       <div>
         <UpdateFoodButton article={article} />
