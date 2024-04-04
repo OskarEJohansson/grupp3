@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router-dom";
-import Meal from "./components/Meal";
+import Recipe from "./components/Recipe";
 
-const MealPage = () => {
+const RecipePage = () => {
   const navigate = useNavigate();
 
   return (
     <div>
-      <Meal />
+      <Recipe />
       <button
         className="back-button"
         onClick={() => navigate(`/category-page`)}
@@ -17,4 +17,4 @@ const MealPage = () => {
   );
 };
 
-export default MealPage;
+export default RecipePage;

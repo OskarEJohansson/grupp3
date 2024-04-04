@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import DrinkGlobalState from '../../Drinks/utils/DrinkGlobalState';
-import FoodGlobalState from '../../Food/utils/FoodGlobalState';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import DrinkGlobalState from "../../Drinks/utils/DrinkGlobalState";
+import RecipeGlobalState from "../../Food/utils/RecipeGlobalState";
 
 interface SearchItem {
   id: string;
@@ -10,22 +10,28 @@ interface SearchItem {
 }
 
 const SearchBar = () => {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState<SearchItem[]>([]);
   const [searchResultsFound, setSearchResultsFound] = useState(true);
   const navigate = useNavigate();
-  const { fetchFood, categoryData, URL } = FoodGlobalState();
-  const { alcoholicDrinkList, nonAlcoholicDrinkList, fetchAlcoholicDrink, fetchNonAlcoholicDrink } = DrinkGlobalState();
+  const { fetchRecipe, categoryData, URL } = RecipeGlobalState();
+  const {
+    alcoholicDrinkList,
+    nonAlcoholicDrinkList,
+    fetchAlcoholicDrink,
+    fetchNonAlcoholicDrink,
+  } = DrinkGlobalState();
 
   useEffect(() => {
-    fetchFood(URL);
+    fetchRecipe(URL);
     fetchAlcoholicDrink();
     fetchNonAlcoholicDrink();
-  }, [URL, fetchAlcoholicDrink, fetchFood, fetchNonAlcoholicDrink]);
+  }, [URL, fetchAlcoholicDrink, fetchRecipe, fetchNonAlcoholicDrink]);
 
-  const handleSearchInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearchInputChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     setSearchQuery(event.target.value);
-    
   };
 
   const handleSearch = () => {
@@ -63,13 +69,13 @@ const SearchBar = () => {
       setSearchResults(filteredResults);
       setSearchResultsFound(filteredResults.length > 0);
     } catch (error) {
-      console.error('Error searching:', error);
+      console.error("Error searching:", error);
       setSearchResultsFound(false);
     }
-    navigate('/search-result', { state: { searchResults } });
-    
+    navigate("/search-result", { state: { searchResults } });
+
     useEffect(() => {
-      setSearchQuery(''); 
+      setSearchQuery("");
     }, [navigate]);
   };
 
