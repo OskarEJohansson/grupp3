@@ -1,8 +1,10 @@
 import Select from "react-select";
 import UpdateRecipeGlobalState from "../utils/UpdateRecipeGlobalState";
+import { IngredientsTypes } from "../../../types";
 
 const UpdateRecipe = () => {
-  const { formData, setChangedData } = UpdateRecipeGlobalState();
+  const { formData, setChangedData, setIngredients } =
+    UpdateRecipeGlobalState();
   console.log("UPDATE RECIPE FORM DATA", formData);
 
   const handleOnChange = (e: any) => {
@@ -12,6 +14,13 @@ const UpdateRecipe = () => {
 
   const handleOnChangeCategory = (selectedOption: any) => {
     setChangedData("categories", selectedOption.value);
+  };
+
+  const handleOnChangeIngredients = (e: any) => {
+    const { name, value } = e.target;
+    setIngredients(name, value);
+    console.log("FORMDATA E", name, value);
+    console.log("FORMDATA INGREDIENTS", formData.ingredients);
   };
 
   const options = [
@@ -60,9 +69,32 @@ const UpdateRecipe = () => {
         <input
           name="price"
           onChange={handleOnChange}
-          placeholder={formData.price.toString()}
+          placeholder={formData.price}
           value={formData.price}
         />
+        <label>Price</label>
+        {formData.ingredients.map((ingredient: IngredientsTypes) => (
+          <div key={ingredient._id}>
+            <label>Name</label>
+            <input
+              placeholder={ingredient.name}
+              name="name"
+              onChange={handleOnChangeIngredients}
+            />
+            <label>Amount</label>
+            <input
+              name="amount"
+              placeholder={ingredient.amount.toString()}
+              onChange={handleOnChangeIngredients}
+            />
+            <label>Unit</label>
+            <input
+              name="unit"
+              placeholder={ingredient.unit}
+              onChange={handleOnChangeIngredients}
+            />
+          </div>
+        ))}
       </form>
     </div>
   );

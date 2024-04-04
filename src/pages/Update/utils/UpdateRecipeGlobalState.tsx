@@ -19,6 +19,7 @@ export interface UpdateRecipeGlobalStateInterface {
     name: string;
     amount: number;
     unit: string;
+    _id: string;
   };
 
   id: number;
@@ -27,7 +28,7 @@ export interface UpdateRecipeGlobalStateInterface {
 
   setIngredients: (key: string, value: string) => void;
 
-  setData: (formData: any) => void;
+  setData: (formData: RecipeTypes) => void;
 
   setChangedData: (key: string, value: string) => void;
 
@@ -53,6 +54,7 @@ const UpdateRecipeGlobalState = create<UpdateRecipeGlobalStateInterface>(
       name: "",
       amount: 0,
       unit: "",
+      _id: "",
     },
 
     id: 0,
