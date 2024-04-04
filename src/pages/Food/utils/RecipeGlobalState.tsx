@@ -1,14 +1,14 @@
 import { create } from "zustand";
-import { CardTypes } from "../../../types";
+import { CardTypes, RecipeTypes } from "../../../types";
 import axios from "axios";
 
 export interface RecipeGlobalStateInterface {
   category: string;
   article: Object;
-  categoryData: CardTypes[];
+  categoryData: RecipeTypes[];
   URL: string;
   setCategory: (category: string) => void;
-  setArticle: (article: CardTypes) => void;
+  setArticle: (article: RecipeTypes) => void;
   setCategoryData: (url: string, category: string) => void;
   fetchRecipe: (url: string) => void;
 }
@@ -25,7 +25,7 @@ const RecipeGlobalState = create<RecipeGlobalStateInterface>((set) => ({
     }));
   },
 
-  setArticle: (article: CardTypes) => {
+  setArticle: (article: RecipeTypes) => {
     set(() => ({
       article: article,
     }));
