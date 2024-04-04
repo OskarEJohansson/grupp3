@@ -16,6 +16,7 @@ const DrinkCard = () => {
   };
 
   useEffect(() => {
+    console.log("USE EFFECT", category);
     if (category === "Alcoholic") {
       fetchAlcoholicDrink();
     } else {

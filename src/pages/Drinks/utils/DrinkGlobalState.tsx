@@ -84,7 +84,7 @@ const DrinkGlobalState = create<DrinkGlobalStateInterface>((set) => ({
 
         set(() => ({
           nonAlcoholicDrinkList: response.data.drinks,
-          DrinkList: response.data.drinks,
+          drinkList: response.data.drinks,
         }));
       }
     } catch (error) {
