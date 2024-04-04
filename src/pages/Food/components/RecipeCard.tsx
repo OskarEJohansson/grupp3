@@ -4,7 +4,7 @@ import AddToCartButton from "./RecipeAddToCartButton";
 import "../../../App.css";
 import RecipeGlobalState from "../utils/RecipeGlobalState";
 import DetailedCard from "./RecipeDetailedCard";
-import UpdateFoodButton from "../../Update/component/UpdateFoodButton";
+import UpdateFoodButton from "../../Update/component/UpdateRecipeButton";
 
 interface RecipeCardInterface {
   article: RecipeTypes;
