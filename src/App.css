@@ -306,6 +306,7 @@ fieldset {
     height: 200px;
     object-fit: cover;
     border-radius: 8px 8px 0 0; 
+    position: relative;
 }
 
 .category-item:hover {
@@ -319,6 +320,15 @@ fieldset {
     font-weight: bold;
     text-transform: uppercase;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .category-allergen-icon{
+        max-width: 35px;
+        max-height: 35px;
+        position: absolute;
+        top: -35px;
+        left: -132px;
+
     }
 
 .back-button {
@@ -362,15 +372,6 @@ fieldset {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
     margin-bottom: 20px;
 }
-card-container {
-    background-color: #333; 
-    color: #ffffff; 
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1); 
-    padding: 20px;
-    margin-bottom: 20px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
 
 .card-container:hover {
     transform: translateY(-2px);
@@ -413,47 +414,6 @@ card-container {
 .card-ingredient {
     font-size: 16px;
     margin-bottom: 5px;
-}
-
-.detailed-card-container {
-    background-color: #1a1a1a; 
-    color: #ffffff; 
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.detailed-card-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.detailed-card-info {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.detailed-card-description {
-    font-size: 16px;
-    color: #666666;
-    margin-bottom: 20px;
-}
-
-.detailed-card-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.detailed-card-button:hover {
-    background-color: #0056b3;
 }
 
 .about-us-container {
@@ -567,13 +527,45 @@ card-container {
   
   .detailed-card-container {
     background-color: rgb(104, 104, 104); 
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
     max-width: 80%;
     max-height: 80%;
     overflow: auto;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); 
   }
+
+.detailed-card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.detailed-card-info {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.detailed-card-description {
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+.detailed-card-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.detailed-card-button:hover {
+    background-color: #0056b3;
+}
   
   .search-bar {
     flex-grow: 1;
@@ -592,5 +584,56 @@ card-container {
     color: blue
   }
 
+  .recipe-container {
+    background-image: ('assets/images/recipepage.png');
+    height: 100vh;
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .recipe-items {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+  }
+
+  .recipe-item {
+    min-width: 250px;
+    flex: 1;
+    width: calc(22% - 20px);
+    margin: 10px;
+    padding: 30px;
+    background-color: rgba(32, 32, 32, 0.9);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .recipe-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    
+  }
+
+  .recipe-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+.recipe-item-text {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
 

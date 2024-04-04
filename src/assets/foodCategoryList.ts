@@ -6,7 +6,7 @@ export const foodCategoryList = [
     description: "Meat section",
     _id: 1,
     allergen: "meat",
-    allergenPicture: "",
+    allergenPicture: "src/assets/images/meat.png",
   },
   {
     category: "veg",
@@ -15,7 +15,7 @@ export const foodCategoryList = [
     description: "Veg section",
     _id: 2,
     allergen: "veg",
-    allergenPicture: "",
+    allergenPicture: "src/assets/images/veg.png",
   },
   {
     category: "fish",
@@ -24,7 +24,7 @@ export const foodCategoryList = [
     description: "Fish section",
     _id: 3,
     allergen: "fish",
-    allergenPicture: "",
+    allergenPicture: "src/assets/images/fish.png",
   },
   {
     category: "hamburger",
@@ -33,6 +33,6 @@ export const foodCategoryList = [
     description: "Hamburger section",
     _id: 4,
     allergen: "hamburger",
-    allergenPicture: "",
+    allergenPicture: "src/assets/images/hamburger.png",
   },
 ];
