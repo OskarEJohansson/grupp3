@@ -112,7 +112,7 @@ export interface BeverageDetails {
 }
 
 export interface CommentTypes {
+  _id?: string;
   comment: string;
   name: string;
-  _id?: string;
 }

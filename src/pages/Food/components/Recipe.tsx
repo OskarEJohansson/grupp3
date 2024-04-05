@@ -20,11 +20,11 @@ const Recipe = () => {
         <h1>See all meals in category: {category}</h1>
       </div>
       <div className="recipe-items">
-      {categoryData.map((article: RecipeTypes, index: number) => (
-        <div className="recipe-item" key={index}>
-          <Card article={article} />
-        </div>
-      ))}
+        {categoryData.map((article: RecipeTypes, index: number) => (
+          <div className="recipe-item" key={index}>
+            <Card article={article} />
+          </div>
+        ))}
       </div>
     </div>
   );

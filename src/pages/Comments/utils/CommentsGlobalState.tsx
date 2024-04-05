@@ -1,34 +1,63 @@
 import { create } from "zustand";
 import axios from "axios";
-import { CommentTypes } from "../../../types";
+import { CommentTypes, RecipeTypes } from "../../../types";
 
 export interface CommentsGlobalStateInterface {
-  comment: any;
+  comment: CommentTypes;
   comments: CommentTypes[];
+  recipeId: string;
+  article: object;
   URL: string;
-  setComment: (newComment: CommentTypes) => void;
-  postComment: (URL: string, recipeId: string) => void;
+  setComment: (key: string, value: string) => void;
+  setRecipeId: (id: string) => void;
+  setRecipe: (article: RecipeTypes) => void;
+  postComment: (URL: string, recipeId: string, comment: CommentTypes) => void;
   fetchComments: (url: string, recipeId: string) => void;
 }
 
 const CommentsGlobalState = create<CommentsGlobalStateInterface>((set) => ({
-  comment: {},
+  comment: {
+    name: "",
+    comment: "",
+  },
   comments: [],
+  recipeId: "",
+  article: {},
   URL: "https://sti-java-grupp3-mzba2l.reky.se",
 
-  setComment: (newComment: any) => {
-    set(() => ({
-      comment: newComment,
+  setComment: (key: string, value: string) => {
+    set((state) => ({
+      comment: { ...state.comment, [key]: value },
     }));
   },
 
-  postComment: async (URL: string, recipeId: string) => {
+  setRecipeId: (id: string) => {
+    set(() => ({
+      recipeId: id,
+    }));
+  },
+
+  setRecipe: (article: RecipeTypes) => {
+    set(() => ({
+      article: article,
+    }));
+  },
+
+  postComment: async (URL: string, recipeId: string, comment: CommentTypes) => {
+    console.log("POSTCOMMENT URL", `${URL}/recipes/${recipeId}/comments`);
+    console.log(comment);
     try {
-      const response = await axios.post(`${URL}/recipes/${recipeId}/comments`);
+      const response = await axios.post(
+        `${URL}/recipes/${recipeId}/comments`,
+        comment
+      );
 
       if (response.status === 200) {
         console.log("PostComment RESPONSE DATA", response.data);
         console.log("postComment RESPONSE STATUS", response.status);
+        set((state) => ({
+          comments: [...state.comments, response.data],
+        }));
       }
     } catch (error) {
       console.log(error);
@@ -40,8 +69,7 @@ const CommentsGlobalState = create<CommentsGlobalStateInterface>((set) => ({
       const response = await axios.get(`${URL}/recipes/${recipeId}/comments`);
 
       if (response.status === 200) {
-        console.log("FetchComments successfull", response.status);
-        console.log("FetchComments DATA", response.data);
+        console.log("FetchComments successfull", response.data);
 
         set(() => ({
           comments: response.data,
