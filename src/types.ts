@@ -110,3 +110,9 @@ export interface BeverageDetails {
   strMeasure14: string | null;
   strMeasure15: string | null;
 }
+
+export interface CommentTypes {
+  comment: string;
+  name: string;
+  _id?: string;
+}

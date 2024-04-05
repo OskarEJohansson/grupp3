@@ -5,6 +5,7 @@ import "../../../App.css";
 import RecipeGlobalState from "../utils/RecipeGlobalState";
 import DetailedCard from "./RecipeDetailedCard";
 import UpdateFoodButton from "../../Update/component/UpdateRecipeButton";
+import CommentsPage from "../../CommentsPage";
 
 interface RecipeCardInterface {
   article: RecipeTypes;
@@ -29,15 +30,6 @@ const RecipeCard = ({ article }: RecipeCardInterface) => {
         width={300}
       />
       <div className="card-categories">Categories: {article.categories}</div>
-      <div className="card-ingredients-container">
-        {article.ingredients.map((ingredient, index) => {
-          return (
-            <div className="card-ingredient" key={index}>
-              <p>Ingredient: {ingredient.name}</p>
-            </div>
-          );
-        })}
-      </div>
       <div>Price: {article.price} :-</div>
 
       <div>
@@ -45,6 +37,8 @@ const RecipeCard = ({ article }: RecipeCardInterface) => {
       </div>
 
       <AddToCartButton article={article} />
+
+      <CommentsPage />
 
       {showModal && <DetailedCard onClose={() => setShowModal(false)} />}
     </>

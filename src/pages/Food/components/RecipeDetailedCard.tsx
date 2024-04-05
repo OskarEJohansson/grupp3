@@ -4,6 +4,7 @@ import AddToCartButton from "./RecipeAddToCartButton";
 import "../../../App.css";
 import FoodGlobalState from "../utils/RecipeGlobalState";
 import QuantityInput from "../../../components/QuantityInput";
+import CommentsPage from "../../CommentsPage";
 
 const RecipeDetailedCard = ({ onClose }: { onClose: () => void }) => {
   const article = FoodGlobalState((state) => state.article as CardTypes);

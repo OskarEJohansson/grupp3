@@ -27,7 +27,7 @@ const Navbar = () => {
           />
         </Link>
         <div className="search-bar">
-          <SearchBar/>
+          <SearchBar />
         </div>
         <button onClick={toggleMenu} className="menu-button">
           {isOpen ? "Close" : "Menu"}
@@ -50,15 +50,6 @@ const Navbar = () => {
             <>
               <li>
                 <Link to="/admin-page">Admin Page</Link>
-              </li>
-              <li>
-                <Link to="/add-food-item-page">See all recipes</Link>
-              </li>
-              <li>
-                <Link to="/add-comments-page">Add Comment</Link>
-              </li>
-              <li>
-                <Link to="/rating-page">Rating Page</Link>
               </li>
             </>
           )}

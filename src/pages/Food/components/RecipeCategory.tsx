@@ -17,7 +17,6 @@ const RecipeCategory = ({ RecipeCategoryProps }: RecipeCategoryInterface) => {
 
   return (
     <div className="category-item">
-      <p>{RecipeCategoryProps.category}</p>
       <img
         src={RecipeCategoryProps.picture}
         alt={RecipeCategoryProps.description}
