@@ -304,10 +304,10 @@ fieldset {
   position: relative;
 }
 
-.category-item {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-}
+/* .category-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+} */
 
 .category-item-text {
   padding: 10px;
@@ -367,10 +367,10 @@ fieldset {
   margin-bottom: 20px;
 }
 
-.card-container {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
-}
+/* .card-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); 
+} */
 
 .card-title {
   font-size: 20px;
@@ -387,9 +387,9 @@ fieldset {
   transition: transform 0.3s ease;
 }
 
-.card-image {
-  transform: scale(1.2);
-}
+/* .card-image:hover {
+    transform: scale(1.2);
+} */
 
 .card-categories {
   font-size: 14px;
@@ -614,10 +614,10 @@ fieldset {
   border-radius: 8px 8px 0 0;
 }
 
-.recipe-item {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
-}
+/*   .recipe-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+} */
 
 .recipe-item-text {
   padding: 10px;
@@ -631,4 +631,8 @@ fieldset {
   background-image: url("src/assets/images/background-drink.png");
   height: 100vh;
   background-size: cover;
+}
+
+.drink-category-container h1 {
+  text-align: center;
 }
