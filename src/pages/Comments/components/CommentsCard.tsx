@@ -15,6 +15,7 @@ const CommentsCard = ({ id }: { id: string }) => {
       <div>{article.title}</div>
       <img src={article.imageUrl} alt="" width={300} />
       <div>{article.description}</div>
+      <div>AVG RATING: {article.avgRating}</div>
 
       {comments.map((comment: CommentTypes, index: number) => (
         <div key={index}>
