@@ -1,7 +1,7 @@
 import axios from "axios";
-import FormGlobalState, { Ingredient } from "../utils/FormGlobalState";
+import FormGlobalState from "../utils/FormGlobalState";
 
-const SubmitButton = () => {
+const SubmitButton = ({ resetFormData }) => {
   const { formData } = FormGlobalState();
 
   const handleOnClick = async () => {
@@ -14,6 +14,9 @@ const SubmitButton = () => {
       if (response.status === 200) {
         console.log("Submit form response status:", response.status);
         console.log("Submit form response data:", response.data);
+        
+        /* resetFormData(); */
+
       } else {
         console.log("Error posting submitForm", response.status);
       }

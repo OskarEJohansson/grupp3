@@ -29,11 +29,11 @@ export interface FormGlobalStateInterface {
   updateIngredients: (newIngredients: Ingredient[]) => void;
   setPrice: (inputValue: number) => void;
   setTimeInMins: (inputValue: number) => void;
+  resetFormData: () => void;
 }
 
-const FormGlobalState = create<FormGlobalStateInterface>((set) => ({
-  formData: {
-    title: "",
+const initialFormData = {
+  title: "",
     description: "",
     ratings: [],
     imageUrl: "",
@@ -42,7 +42,10 @@ const FormGlobalState = create<FormGlobalStateInterface>((set) => ({
     ingredients: [{ name: "", amount: 0, unit: "" }],
     price: 0,
     timeInMins: 0
-  },
+};
+
+const FormGlobalState = create<FormGlobalStateInterface>((set) => ({
+  formData: { ...initialFormData },
 
   setTitle: (inputValue: string) =>
     set((state) => ({
@@ -82,23 +85,32 @@ const FormGlobalState = create<FormGlobalStateInterface>((set) => ({
       },
     })),
 
-    addInstructions: (newInstructions: string) =>
-      set((state) => ({
-        formData: {
-          ...state.formData,
-          instructions: [...state.formData.instructions, newInstructions],
-        },
-      })),
+  addInstructions: (newInstructions: string) =>
+    set((state) => ({
+      formData: {
+        ...state.formData,
+        instructions: [...state.formData.instructions, newInstructions],
+      },
+    })),
 
-      setPrice: (inputValue: number) =>
-  set((state) => ({
-    formData: { ...state.formData, price: inputValue },
-  })),
+  setPrice: (inputValue: number) =>
+    set((state) => ({
+      formData: { ...state.formData, price: inputValue },
+    })),
 
-setTimeInMins: (inputValue: number) =>
-  set((state) => ({
-    formData: { ...state.formData, timeInMins: inputValue },
-  })),
+  setTimeInMins: (inputValue: number) =>
+    set((state) => ({
+      formData: { ...state.formData, timeInMins: inputValue },
+    })),
+
+  resetFormData: () => {
+    console.log("Resetting form data...");
+    set(() => ({
+      formData: {
+        ...initialFormData,
+      }, 
+    }));
+  },
 
 }));
 

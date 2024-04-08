@@ -1,12 +1,14 @@
-import InputFormBase from "./components/InputFormBase.tsx";
+import InputFormBase from "./components/InputBasicInfo.tsx";
 import InputInstructions from "./components/InputInstructions.tsx";
 import InputIngredients from "./components/InputIngredients.tsx";
 import SelectCategory from "./components/SelectCategory.tsx";
 import SubmitButton from "./components/SubmitButton.tsx";
 import PriceInput from "./components/PriceInput.tsx";
 import TimeInMinsInput from "./components/TimeInMinsInput.tsx";
+import FormGlobalState from "./utils/FormGlobalState.ts";
 
 const AddRecipePage = () => {
+
   return (
     <div>
       <div className="container">
@@ -21,11 +23,10 @@ const AddRecipePage = () => {
       <InputIngredients />
       <TimeInMinsInput />
       <PriceInput />
-      <SubmitButton />
+      <SubmitButton resetFormData={FormGlobalState().resetFormData} />
       </div>
     </div>
   );
 };
 
 export default AddRecipePage;
-

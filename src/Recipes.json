@@ -1,0 +1,830 @@
+[
+    {
+        "_id": "660c7e0229f983c33c42e3e9",
+        "title": "Spaghetti Carbonara",
+        "description": "Spaghetti Carbonara is a classic Italian pasta dish originating from Rome. It's made with simple ingredients like eggs, cheese, pancetta (or guanciale), and black pepper. This creamy and flavorful pasta is a favorite among pasta lovers worldwide.",
+        "imageUrl": "https://www.sipandfeast.com/wp-content/uploads/2019/02/spaghetti-carbonara-recipe-6.jpg",
+        "timeInMins": 30,
+        "price": 165,
+        "categories": [
+            "meat"
+        ],
+        "instructions": [
+            "Boil water in a large pot and cook spaghetti according to package instructions until al dente.",
+            "In a separate pan, fry the pancetta (or guanciale) until crispy.",
+            "In a bowl, whisk together eggs, grated cheese, and black pepper.",
+            "Once the spaghetti is cooked, drain it and add it to the pan with the pancetta. Remove from heat.",
+            "Quickly pour the egg and cheese mixture over the hot pasta, tossing continuously to coat the spaghetti and create a creamy sauce. The residual heat will cook the eggs but be careful not to scramble them.",
+            "Serve immediately with additional grated cheese and black pepper on top. Enjoy your authentic Spaghetti Carbonara!"
+        ],
+        "ingredients": [
+            {
+                "name": "Spaghetti",
+                "amount": 400,
+                "unit": "grams",
+                "_id": "660c7e0229f983c33c42e3ea"
+            },
+            {
+                "name": "Pancetta",
+                "amount": 150,
+                "unit": "grams",
+                "_id": "660c7e0229f983c33c42e3eb"
+            },
+            {
+                "name": "Eggs",
+                "amount": 4,
+                "unit": "pieces",
+                "_id": "660c7e0229f983c33c42e3ec"
+            },
+            {
+                "name": "Grated Pecorino Romano Cheese",
+                "amount": 100,
+                "unit": "grams",
+                "_id": "660c7e0229f983c33c42e3ed"
+            },
+            {
+                "name": "Black Pepper",
+                "amount": 1,
+                "unit": "teaspoon",
+                "_id": "660c7e0229f983c33c42e3ee"
+            },
+            {
+                "name": "Salt",
+                "amount": 1,
+                "unit": "pinch",
+                "_id": "660c7e0229f983c33c42e3ef"
+            }
+        ],
+        "avgRating": null
+    },
+    {
+        "_id": "660e614729f983c33cd943b2",
+        "title": "Caprese Salad",
+        "description": "Caprese Salad is a classic Italian dish that celebrates the flavors of fresh tomatoes, creamy mozzarella cheese, fragrant basil, and rich olive oil. It's a simple yet elegant dish that is perfect for showcasing the best of summer produce.",
+        "imageUrl": "https://www.lilvienna.com/wp-content/uploads/Recipe-Italian-Caprese-Salad.jpg",
+        "timeInMins": 15,
+        "price": 85,
+        "categories": [
+            "veg"
+        ],
+        "instructions": [
+            "Slice fresh tomatoes and fresh mozzarella cheese into thick slices.",
+            "Arrange the tomato and mozzarella slices on a serving platter, alternating between them.",
+            "Tear fresh basil leaves and sprinkle them over the tomato and mozzarella slices.",
+            "Drizzle extra virgin olive oil over the salad.",
+            "Season with salt and freshly ground black pepper to taste.",
+            "Serve immediately as a refreshing and flavorful appetizer or side dish. Enjoy your delicious Caprese Salad!"
+        ],
+        "ingredients": [
+            {
+                "name": "Ripe Tomatoes",
+                "amount": 4,
+                "unit": "pieces",
+                "_id": "660e614729f983c33cd943b3"
+            },
+            {
+                "name": "Fresh Mozzarella Cheese",
+                "amount": 1,
+                "unit": "ball",
+                "_id": "660e614729f983c33cd943b4"
+            },
+            {
+                "name": "Fresh Basil Leaves",
+                "amount": 1,
+                "unit": "bunch",
+                "_id": "660e614729f983c33cd943b5"
+            },
+            {
+                "name": "Extra Virgin Olive Oil",
+                "amount": 2,
+                "unit": "tablespoons",
+                "_id": "660e614729f983c33cd943b6"
+            },
+            {
+                "name": "Salt",
+                "amount": 1,
+                "unit": "pinch",
+                "_id": "660e614729f983c33cd943b7"
+            },
+            {
+                "name": "Black Pepper",
+                "amount": 1,
+                "unit": "pinch",
+                "_id": "660e614729f983c33cd943b8"
+            }
+        ],
+        "avgRating": null
+    },
+    {
+        "_id": "660e684129f983c33cd982bf",
+        "title": "Vegetarian Pasta Primavera",
+        "description": "Vegetarian Pasta Primavera is a delightful and colorful dish that celebrates the freshness of seasonal vegetables. It's a light yet satisfying pasta dish perfect for spring or summer dinners.",
+        "imageUrl": "https://i.pinimg.com/736x/e2/4d/7e/e24d7e9606a893413a2c6a3520ac3efd.jpg",
+        "timeInMins": 30,
+        "price": 150,
+        "categories": [
+            "veg"
+        ],
+        "instructions": [
+            "Cook pasta according to package instructions until al dente.",
+            "In a large skillet, sauté a variety of colorful vegetables such as bell peppers, zucchini, cherry tomatoes, and broccoli in olive oil until tender-crisp.",
+            "Add cooked pasta to the skillet with the vegetables.",
+            "Toss with a light sauce made from olive oil, garlic, lemon juice, and fresh herbs like basil and parsley.",
+            "Season with salt and pepper to taste.",
+            "Serve hot, garnished with grated Parmesan cheese and additional fresh herbs, if desired. Enjoy your Vegetarian Pasta Primavera!"
+        ],
+        "ingredients": [
+            {
+                "name": "Pasta",
+                "amount": 12,
+                "unit": "ounces",
+                "_id": "660e684129f983c33cd982c0"
+            },
+            {
+                "name": "Assorted Vegetables",
+                "amount": 1,
+                "unit": "portion",
+                "_id": "660e684129f983c33cd982c1"
+            },
+            {
+                "name": "Olive Oil",
+                "amount": 2,
+                "unit": "tablespoons",
+                "_id": "660e684129f983c33cd982c2"
+            },
+            {
+                "name": "Garlic",
+                "amount": 2,
+                "unit": "cloves",
+                "_id": "660e684129f983c33cd982c3"
+            },
+            {
+                "name": "Lemon Juice",
+                "amount": 2,
+                "unit": "tablespoons",
+                "_id": "660e684129f983c33cd982c4"
+            },
+            {
+                "name": "Fresh Herbs (basil, parsley)",
+                "amount": 0.25,
+                "unit": "cups",
+                "_id": "660e684129f983c33cd982c5"
+            },
+            {
+                "name": "Parmesan Cheese (optional)",
+                "amount": 0.25,
+                "unit": "cups",
+                "_id": "660e684129f983c33cd982c6"
+            }
+        ],
+        "avgRating": null
+    },
+    {
+        "_id": "660e6b9529f983c33cd9ca23",
+        "title": "Vegetarian Quinoa Bowl with Avocado and Black Beans",
+        "description": "Vegetarian Quinoa Bowl with Avocado and Black Beans is a nutritious and satisfying meal-in-a-bowl packed with protein, fiber, and flavor. It's perfect for a quick and healthy lunch or dinner.",
+        "imageUrl": "https://i.pinimg.com/originals/16/c8/af/16c8af50042dfda386fee19d64cdda87.png",
+        "timeInMins": 25,
+        "price": 89,
+        "categories": [
+            "veg"
+        ],
+        "instructions": [
+            "Cook quinoa according to package instructions and let it cool.",
+            "In a large bowl, combine cooked quinoa, black beans, diced avocado, cherry tomatoes, red onion, and fresh cilantro.",
+            "Drizzle with a dressing made from lime juice, olive oil, cumin, and garlic powder.",
+            "Season with salt and pepper to taste and toss well to combine.",
+            "Divide the quinoa mixture into bowls and top with additional avocado slices and a sprinkle of feta cheese, if desired.",
+            "Serve immediately and enjoy your Vegetarian Quinoa Bowl with Avocado and Black Beans!"
+        ],
+        "ingredients": [
+            {
+                "name": "Quinoa",
+                "amount": 1,
+                "unit": "cup",
+                "_id": "660e6b9529f983c33cd9ca24"
+            },
+            {
+                "name": "Black Beans",
+                "amount": 1,
+                "unit": "can",
+                "_id": "660e6b9529f983c33cd9ca25"
+            },
+            {
+                "name": "Avocado",
+                "amount": 2,
+                "unit": "pieces",
+                "_id": "660e6b9529f983c33cd9ca26"
+            },
+            {
+                "name": "Cherry Tomatoes",
+                "amount": 1,
+                "unit": "cup",
+                "_id": "660e6b9529f983c33cd9ca27"
+            },
+            {
+                "name": "Red Onion",
+                "amount": 0.25,
+                "unit": "cup",
+                "_id": "660e6b9529f983c33cd9ca28"
+            },
+            {
+                "name": "Fresh Cilantro",
+                "amount": 0.25,
+                "unit": "cup",
+                "_id": "660e6b9529f983c33cd9ca29"
+            },
+            {
+                "name": "Lime Juice",
+                "amount": 2,
+                "unit": "tablespoons",
+                "_id": "660e6b9529f983c33cd9ca2a"
+            },
+            {
+                "name": "Olive Oil",
+                "amount": 2,
+                "unit": "tablespoons",
+                "_id": "660e6b9529f983c33cd9ca2b"
+            },
+            {
+                "name": "Cumin",
+                "amount": 1,
+                "unit": "teaspoon",
+                "_id": "660e6b9529f983c33cd9ca2c"
+            },
+            {
+                "name": "Garlic Powder",
+                "amount": 1,
+                "unit": "teaspoon",
+                "_id": "660e6b9529f983c33cd9ca2d"
+            },
+            {
+                "name": "Feta Cheese (optional)",
+                "amount": 0.25,
+                "unit": "cup",
+                "_id": "660e6b9529f983c33cd9ca2e"
+            }
+        ],
+        "avgRating": null
+    },
+    {
+        "_id": "660e705f29f983c33cdbd6c9",
+        "title": "Entrecote with Hasselback Potatoes",
+        "description": "Entrecote with Hasselback Potatoes is a classic and indulgent dish that combines tender grilled steak with crispy and flavorful hasselback potatoes. It's a perfect choice for a special dinner or a weekend treat.",
+        "imageUrl": "https://www.scan.se/contentassets/c3e23b981103478796461ac75ee69473/grillad-entrecote22.jpg?preset=scan-1:1",
+        "timeInMins": 60,
+        "price": 230,
+        "categories": [
+            "meat"
+        ],
+        "instructions": [
+            "Preheat the oven to 425°F (220°C).",
+            "Scrub the potatoes and make thin slices across the width, being careful not to cut all the way through.",
+            "Place the potatoes on a baking sheet, drizzle with olive oil, and season with salt and pepper.",
+            "Bake the potatoes for about 45-50 minutes, until crispy and golden brown.",
+            "Meanwhile, season the entrecote steaks with salt and pepper and grill them to desired doneness, about 4-5 minutes per side for medium-rare.",
+            "Once the potatoes are done, serve them alongside the grilled entrecote steaks.",
+            "Garnish with fresh herbs like parsley or thyme, and enjoy your delicious Entrecote with Hasselback Potatoes!"
+        ],
+        "ingredients": [
+            {
+                "name": "Entrecote",
+                "amount": 400,
+                "unit": "grams",
+                "_id": "660e705f29f983c33cdbd6ca"
+            },
+            {
+                "name": "Large Potatoes",
+                "amount": 4,
+                "unit": "pieces",
+                "_id": "660e705f29f983c33cdbd6cb"
+            },
+            {
+                "name": "Olive Oil",
+                "amount": 2,
+                "unit": "tablespoons",
+                "_id": "660e705f29f983c33cdbd6cc"
+            },
+            {
+                "name": "Salt",
+                "amount": 1,
+                "unit": "teaspoon",
+                "_id": "660e705f29f983c33cdbd6cd"
+            },
+            {
+                "name": "Black Pepper",
+                "amount": 1,
+                "unit": "teaspoon",
+                "_id": "660e705f29f983c33cdbd6ce"
+            },
+            {
+                "name": "Fresh Herbs (optional)",
+                "amount": 1,
+                "unit": "bunch",
+                "_id": "660e705f29f983c33cdbd6cf"
+            }
+        ],
+        "avgRating": null
+    },
+    {
+        "_id": "660e781629f983c33cf13a93",
+        "title": "Beef Stroganoff",
+        "description": "Beef Stroganoff is a classic and comforting dish featuring tender strips of beef cooked in a creamy sauce with mushrooms and onions. It's a hearty and flavorful meal perfect for a cozy dinner.",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fgreedy-panda.com%2Fwp-content%2Fuploads%2F2021%2F11%2FBeef-Stroganoff-adjusted-e1636188563749-1600x1067.png&f=1&nofb=1&ipt=30b7605bb50cf0e4599af94af44a404ff874beb5faed67b18a4943116423a538&ipo=images",
+        "timeInMins": 45,
+        "price": 175,
+        "categories": [
+            "meat"
+        ],
+        "instructions": [
+            "Heat oil in a large skillet over medium-high heat. Add sliced onions and cook until softened.",
+            "Add beef strips to the skillet and cook until browned on all sides. Remove beef and onions from skillet and set aside.",
+            "In the same skillet, melt butter and add sliced mushrooms. Cook until mushrooms are golden brown.",
+            "Sprinkle flour over mushrooms and cook, stirring constantly, for 1-2 minutes.",
+            "Slowly pour in beef broth and bring to a simmer, stirring constantly until the sauce thickens.",
+            "Stir in sour cream, Dijon mustard, and Worcestershire sauce. Season with salt and pepper to taste.",
+            "Return beef and onions to the skillet and simmer for an additional 5-10 minutes, until beef is cooked through and the sauce is thickened.",
+            "Serve hot over cooked egg noodles or rice. Garnish with chopped parsley, if desired. Enjoy your Beef Stroganoff!"
+        ],
+        "ingredients": [
+            {
+                "name": "Beef Sirloin Steak",
+                "amount": 500,
+                "unit": "grams",
+                "_id": "660e781629f983c33cf13a94"
+            },
+            {
+                "name": "Onion",
+                "amount": 1,
+                "unit": "piece",
+                "_id": "660e781629f983c33cf13a95"
+            },
+            {
+                "name": "Mushrooms",
+                "amount": 200,
+                "unit": "grams",
+                "_id": "660e781629f983c33cf13a96"
+            },
+            {
+                "name": "Butter",
+                "amount": 2,
+                "unit": "tablespoons",
+                "_id": "660e781629f983c33cf13a97"
+            },
+            {
+                "name": "All-Purpose Flour",
+                "amount": 2,
+                "unit": "tablespoons",
+                "_id": "660e781629f983c33cf13a98"
+            },
+            {
+                "name": "Beef Broth",
+                "amount": 1,
+                "unit": "cup",
+                "_id": "660e781629f983c33cf13a99"
+            },
+            {
+                "name": "Sour Cream",
+                "amount": 1,
+                "unit": "cup",
+                "_id": "660e781629f983c33cf13a9a"
+            },
+            {
+                "name": "Dijon Mustard",
+                "amount": 1,
+                "unit": "tablespoon",
+                "_id": "660e781629f983c33cf13a9b"
+            },
+            {
+                "name": "Worcestershire Sauce",
+                "amount": 1,
+                "unit": "tablespoon",
+                "_id": "660e781629f983c33cf13a9c"
+            },
+            {
+                "name": "Salt",
+                "amount": 0.25,
+                "unit": "cup",
+                "_id": "660e781629f983c33cf13a9d"
+            },
+            {
+                "name": "Black Pepper",
+                "amount": 0.25,
+                "unit": "cup",
+                "_id": "660e781629f983c33cf13a9e"
+            },
+            {
+                "name": "Chopped Parsley",
+                "amount": 0.25,
+                "unit": "cup",
+                "_id": "660e781629f983c33cf13a9f"
+            }
+        ],
+        "avgRating": null
+    },
+    {
+        "_id": "660e7ce629f983c33cf1694e",
+        "title": "Grilled Salmon with Lemon Herb Butter",
+        "description": "Grilled Salmon with Lemon Herb Butter is a delicious and healthy dish that's perfect for summer grilling. The salmon is seasoned with herbs, grilled to perfection, and topped with a flavorful lemon herb butter.",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.desktopcookbook.com%2Fimages-recipe%2F166667.jpg&f=1&nofb=1&ipt=1b395dbd16572741b9f81b00be069748214fc260f6e4e6072ff96d3e05dc0015&ipo=images",
+        "timeInMins": 20,
+        "price": 180,
+        "categories": [
+            "fish"
+        ],
+        "instructions": [
+            "Preheat grill to medium-high heat.",
+            "Season salmon fillets with salt, pepper, and your favorite herbs.",
+            "Grill salmon for about 4-5 minutes per side, or until cooked through.",
+            "Meanwhile, prepare the lemon herb butter by mixing softened butter with chopped fresh herbs and lemon zest.",
+            "Once the salmon is cooked, serve hot with a dollop of lemon herb butter on top.",
+            "Garnish with additional herbs and lemon slices, if desired. Enjoy your Grilled Salmon with Lemon Herb Butter!"
+        ],
+        "ingredients": [
+            {
+                "name": "Salmon Fillets",
+                "amount": 4,
+                "unit": "pieces",
+                "_id": "660e7ce629f983c33cf1694f"
+            },
+            {
+                "name": "Butter",
+                "amount": 4,
+                "unit": "tablespoons",
+                "_id": "660e7ce629f983c33cf16950"
+            },
+            {
+                "name": "Fresh Herbs (parsley, dill, chives)",
+                "amount": 0.25,
+                "unit": "cup",
+                "_id": "660e7ce629f983c33cf16951"
+            },
+            {
+                "name": "Lemon Zest",
+                "amount": 1,
+                "unit": "teaspoon",
+                "_id": "660e7ce629f983c33cf16952"
+            },
+            {
+                "name": "Salt",
+                "amount": 0.25,
+                "unit": "cup",
+                "_id": "660e7ce629f983c33cf16953"
+            },
+            {
+                "name": "Black Pepper",
+                "amount": 1,
+                "unit": "pinch",
+                "_id": "660e7ce629f983c33cf16954"
+            }
+        ],
+        "avgRating": null
+    },
+    {
+        "_id": "660e7f0629f983c33cfca507",
+        "title": "Baked Lemon Garlic Tilapia",
+        "description": "Baked Lemon Garlic Tilapia is a light and flavorful dish that's quick and easy to make. Tilapia fillets are seasoned with garlic, lemon, and herbs, then baked to perfection. It's a healthy and delicious meal for any occasion.",
+        "imageUrl": "https://www.heinens.com/wp-content/uploads/2020/01/Garlic-Lemon-Tilapia-Header_800x550.jpg",
+        "timeInMins": 25,
+        "price": 125,
+        "categories": [
+            "fish"
+        ],
+        "instructions": [
+            "Preheat oven to 400°F (200°C).",
+            "Place tilapia fillets on a baking sheet lined with parchment paper.",
+            "Season tilapia with minced garlic, lemon juice, olive oil, salt, pepper, and your favorite herbs.",
+            "Bake tilapia for 12-15 minutes, or until fish flakes easily with a fork.",
+            "Serve hot with additional lemon wedges and fresh herbs for garnish. Enjoy your Baked Lemon Garlic Tilapia!"
+        ],
+        "ingredients": [
+            {
+                "name": "Tilapia Fillets",
+                "amount": 4,
+                "unit": "pieces",
+                "_id": "660e7f0629f983c33cfca508"
+            },
+            {
+                "name": "Garlic",
+                "amount": 3,
+                "unit": "cloves",
+                "_id": "660e7f0629f983c33cfca509"
+            },
+            {
+                "name": "Lemon Juice",
+                "amount": 2,
+                "unit": "tablespoons",
+                "_id": "660e7f0629f983c33cfca50a"
+            },
+            {
+                "name": "Olive Oil",
+                "amount": 2,
+                "unit": "tablespoons",
+                "_id": "660e7f0629f983c33cfca50b"
+            },
+            {
+                "name": "Salt",
+                "amount": 0.25,
+                "unit": "cup",
+                "_id": "660e7f0629f983c33cfca50c"
+            },
+            {
+                "name": "Black Pepper",
+                "amount": 1,
+                "unit": "pinch",
+                "_id": "660e7f0629f983c33cfca50d"
+            }
+        ],
+        "avgRating": null
+    },
+    {
+        "_id": "660e824d29f983c33c13f851",
+        "title": "Crispy Baked Cod with Herb Crust",
+        "description": "Crispy Baked Cod with Herb Crust is a delicious and healthy seafood dish that's easy to make and bursting with flavor. The cod fillets are coated in a crunchy herb-infused crust and baked to perfection, resulting in tender and flaky fish with a crispy exterior.",
+        "imageUrl": "https://foodie.sysco.com/wp-content/uploads/2019/06/cod-two-ways_950x850.jpg",
+        "timeInMins": 25,
+        "price": 149,
+        "categories": [
+            "fish"
+        ],
+        "instructions": [
+            "Preheat oven to 400°F (200°C).",
+            "In a shallow dish, combine breadcrumbs, chopped herbs, grated Parmesan cheese, garlic powder, salt, and pepper.",
+            "Dip each cod fillet into beaten egg, then dredge in the breadcrumb mixture, pressing gently to adhere.",
+            "Place the coated cod fillets on a greased baking sheet.",
+            "Bake in the preheated oven for 15-20 minutes, or until the fish is opaque and flakes easily with a fork, and the crust is golden brown and crispy.",
+            "Serve hot, garnished with lemon wedges and additional chopped herbs, if desired. Enjoy your Crispy Baked Cod with Herb Crust!"
+        ],
+        "ingredients": [
+            {
+                "name": "Cod Fillets",
+                "amount": 4,
+                "unit": "pieces",
+                "_id": "660e824d29f983c33c13f852"
+            },
+            {
+                "name": "Breadcrumbs",
+                "amount": 1,
+                "unit": "cup",
+                "_id": "660e824d29f983c33c13f853"
+            },
+            {
+                "name": "Fresh Herbs (parsley, dill, chives)",
+                "amount": 0.25,
+                "unit": "cup",
+                "_id": "660e824d29f983c33c13f854"
+            },
+            {
+                "name": "Parmesan Cheese",
+                "amount": 0.25,
+                "unit": "cup",
+                "_id": "660e824d29f983c33c13f855"
+            },
+            {
+                "name": "Garlic Powder",
+                "amount": 1,
+                "unit": "teaspoon",
+                "_id": "660e824d29f983c33c13f856"
+            },
+            {
+                "name": "Egg",
+                "amount": 1,
+                "unit": "pieces",
+                "_id": "660e824d29f983c33c13f857"
+            },
+            {
+                "name": "Salt",
+                "amount": 0.5,
+                "unit": "teaspoon",
+                "_id": "660e824d29f983c33c13f858"
+            },
+            {
+                "name": "Black Pepper",
+                "amount": 0.25,
+                "unit": "teaspoon",
+                "_id": "660e824d29f983c33c13f859"
+            },
+            {
+                "name": "Lemon Wedges",
+                "amount": 2,
+                "unit": "pieces",
+                "_id": "660e824d29f983c33c13f85a"
+            }
+        ],
+        "avgRating": null
+    },
+    {
+        "_id": "660e87f029f983c33c3c7bf5",
+        "title": "Crispy Comté Frico Cheeseburger",
+        "description": "Salty, buttery, and slightly sharp, Comté cheese crisps similarly to Parmesan, adding an irresistibly crunchy frico layer to this cheeseburger.",
+        "imageUrl": "https://www.foodandwine.com/thmb/jldKZBYIoXJWXodRE9ut87K8Mag=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/crispy-comte-cheesburgers-FT-RECIPE0921-6166c6552b7148e8a8561f7765ddf20b.jpg",
+        "timeInMins": 30,
+        "price": 89,
+        "categories": [
+            "hamburger"
+        ],
+        "instructions": [
+            "Heat a non-stick skillet over medium heat.",
+            "Sprinkle a thin layer of shredded Comté cheese into the skillet, forming a circle the size of your hamburger bun.",
+            "Cook the cheese until it begins to melt and turn golden brown and crispy, about 2-3 minutes per side.",
+            "Remove the cheese crisp from the skillet and let it cool on a paper towel-lined plate.",
+            "In the same skillet, cook the hamburger patty to your desired doneness, seasoning with black pepper.",
+            "Toast the hamburger bun until golden brown.",
+            "Spread mayonnaise on the bottom half of the bun, then layer with the cooked hamburger patty, red onion slices, and crispy Comté frico.",
+            "Top with the remaining bun half and serve hot. Enjoy your Crispy Comté Frico Cheeseburger!"
+        ],
+        "ingredients": [
+            {
+                "name": "Comté Cheese",
+                "amount": 50,
+                "unit": "grams",
+                "_id": "660e87f029f983c33c3c7bf6"
+            },
+            {
+                "name": "Ground Beef Patty",
+                "amount": 1,
+                "unit": "piece",
+                "_id": "660e87f029f983c33c3c7bf7"
+            },
+            {
+                "name": "Hamburger Bun",
+                "amount": 1,
+                "unit": "piece",
+                "_id": "660e87f029f983c33c3c7bf8"
+            },
+            {
+                "name": "Red Onion",
+                "amount": 0.25,
+                "unit": "piece",
+                "_id": "660e87f029f983c33c3c7bf9"
+            },
+            {
+                "name": "Mayonnaise",
+                "amount": 1,
+                "unit": "tabespoon",
+                "_id": "660e87f029f983c33c3c7bfa"
+            },
+            {
+                "name": "Black Pepper",
+                "amount": 1,
+                "unit": "pinch",
+                "_id": "660e87f029f983c33c3c7bfb"
+            }
+        ],
+        "avgRating": null
+    },
+    {
+        "_id": "660e8d3a29f983c33c6363d8",
+        "title": "Mushroom Swiss Burger",
+        "description": "Indulge in the savory goodness of a Mushroom Swiss Burger, featuring juicy beef patties topped with sautéed mushrooms and melted Swiss cheese.",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.recipetineats.com%2Fwp-content%2Fuploads%2F2020%2F08%2FEasy-Swiss-Mushroom-Burgers_4.jpg&f=1&nofb=1&ipt=dd7b1e2f3aa37967bbcedf91725847105a4d12b6ed161e729c63180ab5df8df5&ipo=images",
+        "timeInMins": 25,
+        "price": 79,
+        "categories": [
+            "hamburger"
+        ],
+        "instructions": [
+            "Heat a skillet over medium heat and add a drizzle of olive oil.",
+            "Sauté sliced mushrooms until golden brown and tender. Set aside.",
+            "Season beef patties with salt and pepper, then grill to desired doneness.",
+            "During the last minute of grilling, top each patty with Swiss cheese slices to melt.",
+            "Toast the hamburger buns on the grill or in a toaster until lightly golden.",
+            "Assemble the burgers with the beef patties, sautéed mushrooms, and any desired condiments.",
+            "Serve hot and enjoy your Mushroom Swiss Burger!"
+        ],
+        "ingredients": [
+            {
+                "name": "Ground Beef",
+                "amount": 150,
+                "unit": "grams",
+                "_id": "660e8d3a29f983c33c6363d9"
+            },
+            {
+                "name": "Mushrooms",
+                "amount": 50,
+                "unit": "grams",
+                "_id": "660e8d3a29f983c33c6363da"
+            },
+            {
+                "name": "Swiss Cheese",
+                "amount": 2,
+                "unit": "slices",
+                "_id": "660e8d3a29f983c33c6363db"
+            },
+            {
+                "name": "Hamburger Bun",
+                "amount": 1,
+                "unit": "piece",
+                "_id": "660e8d3a29f983c33c6363dc"
+            },
+            {
+                "name": "Olive Oil",
+                "amount": 1,
+                "unit": "tablespoon",
+                "_id": "660e8d3a29f983c33c6363dd"
+            },
+            {
+                "name": "Salt",
+                "amount": 1,
+                "unit": "pinch",
+                "_id": "660e8d3a29f983c33c6363de"
+            },
+            {
+                "name": "Black pepper",
+                "amount": 1,
+                "unit": "pinch",
+                "_id": "660e8d3a29f983c33c6363df"
+            },
+            {
+                "name": "Condiments (ketchup, mustard, mayonnaise)",
+                "amount": 1,
+                "unit": "tablespoon",
+                "_id": "660e8d3a29f983c33c6363e0"
+            }
+        ],
+        "avgRating": null
+    },
+    {
+        "_id": "660e8f9e29f983c33c7c5e26",
+        "title": "Bacon Cheeseburger",
+        "description": "A classic bacon cheeseburger with all the fixings, perfect for a satisfying meal.",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fembed.widencdn.net%2Fimg%2Fmccormick%2Fuavgzojzpj%2F840x840px%2FFrank%25E2%2580%2599s%2520Bacon%2520Cheeseburger_2019-01-30_9355_TSUCALAS.jpg%3Fcrop%3Dtrue%26q%3D80%26u%3Do2hyef&f=1&nofb=1&ipt=df3cee7a95375e946cf469c5f0da848922584b6e43fc8604c84935f4dd9c0fec&ipo=images",
+        "timeInMins": 30,
+        "price": 69,
+        "categories": [
+            "hamburger"
+        ],
+        "instructions": [
+            "Preheat the grill to medium-high heat.",
+            "Season the ground beef with salt and pepper, then shape into burger patties.",
+            "Grill the burgers for 4-5 minutes on each side, or until desired doneness.",
+            "Place cheese slices on each burger during the last minute of grilling.",
+            "Toast the hamburger buns on the grill until lightly browned.",
+            "Assemble the burgers with lettuce, tomato, onion, bacon, and your favorite condiments.",
+            "Serve hot and enjoy your Bacon Cheeseburger!"
+        ],
+        "ingredients": [
+            {
+                "name": "Ground Beef",
+                "amount": 100,
+                "unit": "grams",
+                "_id": "660e8f9e29f983c33c7c5e27"
+            },
+            {
+                "name": "Bacon",
+                "amount": 2,
+                "unit": "slices",
+                "_id": "660e8f9e29f983c33c7c5e28"
+            },
+            {
+                "name": "Cheddar Cheese",
+                "amount": 2,
+                "unit": "slices",
+                "_id": "660e8f9e29f983c33c7c5e29"
+            },
+            {
+                "name": "Hamburger Bun",
+                "amount": 1,
+                "unit": "piece",
+                "_id": "660e8f9e29f983c33c7c5e2a"
+            },
+            {
+                "name": "Lettuce",
+                "amount": 1,
+                "unit": "piece",
+                "_id": "660e8f9e29f983c33c7c5e2b"
+            },
+            {
+                "name": "Tomato",
+                "amount": 1,
+                "unit": "slice",
+                "_id": "660e8f9e29f983c33c7c5e2c"
+            },
+            {
+                "name": "Onion",
+                "amount": 1,
+                "unit": "slice",
+                "_id": "660e8f9e29f983c33c7c5e2d"
+            },
+            {
+                "name": "Salt",
+                "amount": 1,
+                "unit": "pinch",
+                "_id": "660e8f9e29f983c33c7c5e2e"
+            },
+            {
+                "name": "Black pepper",
+                "amount": 1,
+                "unit": "pinch",
+                "_id": "660e8f9e29f983c33c7c5e2f"
+            },
+            {
+                "name": "Condiments (ketchup, mustard, mayonnaise)",
+                "amount": 1,
+                "unit": "tablespoon",
+                "_id": "660e8f9e29f983c33c7c5e30"
+            }
+        ],
+        "avgRating": null
+    }
+]
