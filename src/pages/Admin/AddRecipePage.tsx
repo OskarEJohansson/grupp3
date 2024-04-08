@@ -5,6 +5,7 @@ import SelectCategory from "./components/SelectCategory.tsx";
 import SubmitButton from "./components/SubmitButton.tsx";
 import PriceInput from "./components/PriceInput.tsx";
 import TimeInMinsInput from "./components/TimeInMinsInput.tsx";
+import DeleteAllRecipes from "./components/DeleteAllRecipes.tsx";
 
 const AddRecipePage = () => {
   return (
@@ -22,6 +23,9 @@ const AddRecipePage = () => {
       <TimeInMinsInput />
       <PriceInput />
       <SubmitButton />
+      </div>
+      <div className="danger-zone">
+        <DeleteAllRecipes />
       </div>
     </div>
   );
