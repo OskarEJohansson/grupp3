@@ -1,5 +1,6 @@
 import Select from "react-select";
 import UpdateRecipeGlobalState from "../utils/UpdateRecipeGlobalState";
+import UpdateRecipeIngredientCard from "./UpdateRecipeIngredientCard";
 
 const UpdateRecipe = () => {
   const { formData, setChangedData } = UpdateRecipeGlobalState();
@@ -64,6 +65,7 @@ const UpdateRecipe = () => {
           value={formData.price}
         />
       </form>
+      <UpdateRecipeIngredientCard />
     </div>
   );
 };

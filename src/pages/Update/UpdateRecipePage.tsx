@@ -1,4 +1,4 @@
-import PatchRecipeButton from "./component/PatchRecipeButton";
+import PatchRecipeButton from "./component/UpdateRecipePatchButton";
 import UpdateRecipe from "./component/UpdateRecipe";
 
 const UpdateRecipePage = () => {

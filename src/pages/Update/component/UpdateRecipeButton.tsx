@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import UpdateRecipeGlobalState from "../utils/UpdateRecipeGlobalState";
 
-const UpdateRecipeButton = (formData: any) => {
+const UpdateRecipeButton = ({ article }: { article: any }) => {
   const { setData } = UpdateRecipeGlobalState();
   const navigate = useNavigate();
 
   const handleOnClick = () => {
     navigate("/category-page/update-food");
-    setData(formData.article);
+    setData(article);
   };
 
   return (

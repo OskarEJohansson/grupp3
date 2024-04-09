@@ -4,7 +4,7 @@ import AddToCartButton from "./RecipeAddToCartButton";
 import "../../../App.css";
 import RecipeGlobalState from "../utils/RecipeGlobalState";
 import DetailedCard from "./RecipeDetailedCard";
-import UpdateFoodButton from "../../Update/component/UpdateRecipeButton";
+import UpdateRecipeButton from "../../Update/component/UpdateRecipeButton";
 import { useNavigate } from "react-router-dom";
 import CommentsGlobalState from "../../Comments/utils/CommentsGlobalState";
 
@@ -41,7 +41,7 @@ const RecipeCard = ({ article }: RecipeCardInterface) => {
       <div className="card-categories">Categories: {article.categories}</div>
       <div>Price: {article.price} :-</div>
 
-      <UpdateFoodButton article={article} />
+      <UpdateRecipeButton article={article} />
       <AddToCartButton article={article} />
 
       <button onClick={buttonOnClick}>See all comments</button>
