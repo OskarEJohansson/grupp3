@@ -22,7 +22,14 @@ const SubmitButton = () => {
     }
   };
 
-  return <button onClick={handleOnClick}>Submit Form</button>;
+  return (
+    <button
+      onClick={handleOnClick}
+      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    >
+      Submit Form
+    </button>
+  );
 };
 
 export default SubmitButton;

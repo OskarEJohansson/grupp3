@@ -15,17 +15,15 @@ const Recipe = () => {
   }, [URL, category, setCategoryData]);
 
   return (
-    <div className="recipe-container">
-      <div className="recipe-title">
-        <h1>See all meals in category: {category}</h1>
-      </div>
-      <div className="recipe-items">
-        {categoryData.map((article: RecipeTypes, index: number) => (
-          <div className="recipe-item" key={index}>
-            <Card article={article} />
-          </div>
-        ))}
-      </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {categoryData.map((article: RecipeTypes, index: number) => (
+       <div
+       key={index}
+       className="rounded-lg shadow-md overflow-hidden border border-gray-300"
+     >
+       <Card article={article} />
+     </div>
+      ))}
     </div>
   );
 };

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { create } from "zustand";
 import { BeverageDetails, BeverageTypes } from "../../../types";
@@ -36,7 +37,7 @@ const DrinkGlobalState = create<DrinkGlobalStateInterface>((set) => ({
   },
 
   fetchDrink: async (drinkId: string) => {
-    let url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
+    const url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
 
     try {
       const response = await axios.get(`${url}${drinkId}`);
