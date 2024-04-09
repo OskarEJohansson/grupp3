@@ -1,7 +1,7 @@
-import FormGlobalState from "../utils/FormGlobalState";
+import AdminGlobalState from "../utils/AdminGlobalState";
 
-const PriceInput = () => {
-  const { formData, setPrice } = FormGlobalState();
+const AdminPriceInput = () => {
+  const { formData, setPrice } = AdminGlobalState();
 
   const handleOnChange = (e: any) => {
     const value = parseFloat(e.target.value);
@@ -23,4 +23,4 @@ const PriceInput = () => {
   );
 };
 
-export default PriceInput;
+export default AdminPriceInput;

@@ -6,7 +6,7 @@ import MealPage from "../../../Food/RecipePage";
 import UpdateFoodPage from "../../../Update/UpdateRecipePage";
 import CommentsPageOskar from "../../../Comments/CommentsPage";
 
-const FoodRoutes = () => {
+const RecipeRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<CategoryPage />} />
@@ -19,4 +19,4 @@ const FoodRoutes = () => {
   );
 };
 
-export default FoodRoutes;
+export default RecipeRoutes;

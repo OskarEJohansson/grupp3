@@ -1,9 +1,9 @@
-import RecipeList from "./components/RecipeList";
+import AdminRecipeList from "./components/AdminRecipeList";
 
 const AdminAllRecipes = () => {
   return (
     <div>
-      <RecipeList />
+      <AdminRecipeList />
     </div>
   );
 };

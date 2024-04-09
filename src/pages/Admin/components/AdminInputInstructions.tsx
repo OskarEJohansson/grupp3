@@ -1,7 +1,7 @@
-import FormGlobalState from "../utils/FormGlobalState";
+import AdminGlobalState from "../utils/AdminGlobalState";
 
-const InputInstructions = () => {
-  const { formData, addInstructions, setInstructions } = FormGlobalState();
+const AdminInputInstructions = () => {
+  const { formData, addInstructions, setInstructions } = AdminGlobalState();
 
   const handleAddInstructions = (index: number, newInstructions: string) => {
     const instructions = [...formData.instructions];
@@ -41,4 +41,4 @@ const InputInstructions = () => {
   );
 };
 
-export default InputInstructions;
+export default AdminInputInstructions;

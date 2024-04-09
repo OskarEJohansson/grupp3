@@ -1,7 +1,7 @@
-import FormGlobalState from "../utils/FormGlobalState";
+import AdminGlobalState from "../utils/AdminGlobalState";
 
-const TimeInMinsInput = () => {
-  const { formData, setTimeInMins } = FormGlobalState();
+const AdminTimeInMinsInput = () => {
+  const { formData, setTimeInMins } = AdminGlobalState();
 
   const handleOnChange = (e: any) => {
     const value = parseInt(e.target.value);
@@ -23,4 +23,4 @@ const TimeInMinsInput = () => {
   );
 };
 
-export default TimeInMinsInput;
+export default AdminTimeInMinsInput;
