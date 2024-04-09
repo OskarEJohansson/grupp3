@@ -1,20 +1,21 @@
 import { Route, Routes } from "react-router-dom";
-import FoodRoutes from "../RecipeRoutes/RecipeRoutes";
 import AboutUs from "../../AboutUs";
 import AdminPage from "../../../Admin/AdminPage";
 import HomePage from "../../../Home/Homepage";
-import BeverageRoutes from "../DrinkRoutes/DrinkRoutes";
+import DrinkRoutes from "../DrinkRoutes/DrinkRoutes";
 import ContactFormPage from "../../../Contact/ContactFormPage";
+import AdminAddRecipePage from "../../../Admin/AdminAddRecipePage";
+import AdminAllRecipesPage from "../../../Admin/AdminAllRecipesPage";
 
 const AdminRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/category-page/*" element={<FoodRoutes />} />
-      <Route path="/beverage-page/*" element={<BeverageRoutes />} />
+      <Route path="/" element={<AdminPage />} />
+      <Route path="/add-recipe" element={<AdminAddRecipePage />} />
+      <Route path="/all-recipes" element={<AdminAllRecipesPage />} />
+      <Route path="/drink-page/*" element={<DrinkRoutes />} />
       <Route path="/about-us" element={<AboutUs />} />
       <Route path="/home" element={<HomePage />} />
-      <Route path="/admin-page" element={<AdminPage />} />
       <Route path="/contact-form" element={<ContactFormPage />} />
     </Routes>
   );

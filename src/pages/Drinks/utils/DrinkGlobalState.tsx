@@ -1,16 +1,16 @@
 /* eslint-disable @typescript-eslint/ban-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { create } from "zustand";
-import { BeverageDetails, BeverageTypes } from "../../../types";
+import { DrinkDetails, DrinkTypes } from "../../../types";
 import axios from "axios";
 
 export interface DrinkGlobalStateInterface {
-  drink: Object;
-  drinkList: BeverageTypes[];
-  alcoholicDrinkList: BeverageTypes[];
-  nonAlcoholicDrinkList: BeverageTypes[];
+  drink: object;
+  drinkList: DrinkTypes[];
+  alcoholicDrinkList: DrinkTypes[];
+  nonAlcoholicDrinkList: DrinkTypes[];
   category: string;
-  setDrink: (Object: BeverageDetails) => void;
+  setDrink: (Object: DrinkDetails) => void;
   setCategory: (category: string) => void;
   fetchDrink: (drinkId: string) => void;
   fetchAlcoholicDrink: () => void;
@@ -18,7 +18,7 @@ export interface DrinkGlobalStateInterface {
 }
 
 const DrinkGlobalState = create<DrinkGlobalStateInterface>((set) => ({
-  drink: [],
+  drink: {},
   drinkList: [],
   category: "",
   alcoholicDrinkList: [],
@@ -32,7 +32,7 @@ const DrinkGlobalState = create<DrinkGlobalStateInterface>((set) => ({
 
   setCategory: (category: string) => {
     set(() => ({
-      drink: category,
+      category: category,
     }));
   },
 
@@ -44,7 +44,7 @@ const DrinkGlobalState = create<DrinkGlobalStateInterface>((set) => ({
       if (response.status === 200) {
         console.log("response.data", response.data.drinks);
         set(() => ({
-          drink: response.data.drinks,
+          drink: response.data.drinks[0],
         }));
       }
       console.log("url", `${url}${drinkId}`);
