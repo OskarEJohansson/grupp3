@@ -1,5 +1,5 @@
-import IngredientComponent from "./IngredientComponent";
-import FormGlobalState from "../utils/FormGlobalState";
+import IngredientComponent from "./AdminIngredientComponent";
+import AdminGlobalState from "../utils/AdminGlobalState";
 
 export interface Ingredient {
   name: string;
@@ -7,8 +7,8 @@ export interface Ingredient {
   unit: string;
 }
 
-export const InputIngredients = () => {
-  const { formData, addIngredients, updateIngredients } = FormGlobalState();
+export const AdminInputIngredients = () => {
+  const { formData, addIngredients, updateIngredients } = AdminGlobalState();
 
   const handleOnClick = () => {
     addIngredients({ name: "", amount: 0, unit: "" });
@@ -43,4 +43,4 @@ export const InputIngredients = () => {
   );
 };
 
-export default InputIngredients;
+export default AdminInputIngredients;

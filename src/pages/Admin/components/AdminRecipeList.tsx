@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { RecipeTypes } from "../../../types";
 
-const RecipeList = () => {
+const AdminRecipeList = () => {
   const [recipes, setRecipes] = useState([]);
 
   const fetchRecipes = async () => {
@@ -60,4 +60,4 @@ const RecipeList = () => {
   );
 };
 
-export default RecipeList;
+export default AdminRecipeList;

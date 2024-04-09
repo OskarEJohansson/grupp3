@@ -3,9 +3,10 @@ import { RecipeTypes } from "../../../types";
 import AddToCartButton from "./RecipeAddToCartButton";
 import RecipeGlobalState from "../utils/RecipeGlobalState";
 import DetailedCard from "./RecipeDetailedCard";
-import UpdateFoodButton from "../../Update/component/UpdateRecipeButton";
+import UpdateRecipeButton from "../../Update/component/UpdateRecipeButton";
 import { useNavigate } from "react-router-dom";
 import CommentsGlobalState from "../../Comments/utils/CommentsGlobalState";
+import CommentsPage from "../../Comments/CommentsPage";
 
 interface RecipeCardInterface {
   article: RecipeTypes;
@@ -22,7 +23,7 @@ const RecipeCard = ({ article }: RecipeCardInterface) => {
     setShowModal(true);
   };
 
-  const buttonOnClick = () => {
+  const commentHandleOnClick = () => {
     setRecipeId(article._id);
     setRecipe(article);
     navigate("/category-page/comments");
@@ -44,8 +45,9 @@ const RecipeCard = ({ article }: RecipeCardInterface) => {
       <div className="mt-2">Price: {article.price} :-</div>
       <div className="mt-4 flex justify-between items-center">
         <div className="flex space-x-4">
-          <UpdateFoodButton article={article} />
+          <UpdateRecipeButton article={article} />
           <AddToCartButton article={article} />
+          <button onClick={commentHandleOnClick}>Comments</button>
         </div>
       </div>
       {showModal && <DetailedCard onClose={() => setShowModal(false)} />}

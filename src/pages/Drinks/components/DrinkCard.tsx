@@ -1,21 +1,24 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import DrinkGlobalState from '../utils/DrinkGlobalState';
-import AddToCartButton from '../../Drinks/components/DrinkAddToCartButton';
-import DrinkDetailedCard from './DetailedDrinkCard';
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import DrinkGlobalState from "../utils/DrinkGlobalState";
+import AddToCartButton from "../../Drinks/components/DrinkAddToCartButton";
+import DrinkDetailedCard from "./DrinkDetailedCard";
+import { DrinkTypes } from "../../../types";
 
 const DrinkCardPage = () => {
-  const { drinkList, fetchAlcoholicDrink, fetchNonAlcoholicDrink, setDrink } = DrinkGlobalState();
+  const { drinkList, fetchAlcoholicDrink, fetchNonAlcoholicDrink, fetchDrink } =
+    DrinkGlobalState();
   const { category } = useParams();
   const [showModal, setShowModal] = useState(false);
 
-  const handleOnClick = (drink: any) => {
-    setDrink(drink);
+  const handleOnClick = (drink: DrinkTypes) => {
+    console.log("Handle on click to detailed card", drink);
+    fetchDrink(drink.idDrink);
     setShowModal(true);
   };
 
   useEffect(() => {
-    if (category === 'Alcoholic') {
+    if (category === "Alcoholic") {
       fetchAlcoholicDrink();
     } else {
       fetchNonAlcoholicDrink();
@@ -31,7 +34,11 @@ const DrinkCardPage = () => {
             className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-300 cursor-pointer flex flex-col"
             onClick={() => handleOnClick(drink)}
           >
-            <img src={drink.strDrinkThumb} alt={drink.strDrink} className="w-full" />
+            <img
+              src={drink.strDrinkThumb}
+              alt={drink.strDrink}
+              className="w-full"
+            />
             <div className="p-4 flex-grow">
               <h2 className="text-xl font-bold mb-2">{drink.strDrink}</h2>
             </div>
