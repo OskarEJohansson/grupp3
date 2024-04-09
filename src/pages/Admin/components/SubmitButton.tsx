@@ -15,7 +15,7 @@ const SubmitButton = ({ resetFormData }) => {
         console.log("Submit form response status:", response.status);
         console.log("Submit form response data:", response.data);
         
-        /* resetFormData(); */
+        resetFormData();
 
       } else {
         console.log("Error posting submitForm", response.status);
