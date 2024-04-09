@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 
-const DeleteAllRecipesButton = () => {
+const AdminDeleteAllRecipesButton = () => {
   const url = "https://sti-java-grupp3-mzba2l.reky.se";
   const [showConfirmation, setShowConfirmation] = useState(false);
 
@@ -61,4 +61,4 @@ const DeleteAllRecipesButton = () => {
   );
 };
 
-export default DeleteAllRecipesButton;
+export default AdminDeleteAllRecipesButton;

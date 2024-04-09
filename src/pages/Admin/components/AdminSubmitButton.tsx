@@ -1,8 +1,8 @@
 import axios from "axios";
-import FormGlobalState from "../utils/FormGlobalState";
+import AdminGlobalState from "../utils/AdminGlobalState";
 
-const SubmitButton = ({ resetFormData }) => {
-  const { formData } = FormGlobalState();
+const AdminSubmitButton = ({ resetFormData }) => {
+  const { formData } = AdminGlobalState();
 
   const handleOnClick = async () => {
     try {
@@ -35,4 +35,4 @@ const SubmitButton = ({ resetFormData }) => {
   );
 };
 
-export default SubmitButton;
+export default AdminSubmitButton;

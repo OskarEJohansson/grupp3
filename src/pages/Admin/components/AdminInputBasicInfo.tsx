@@ -1,11 +1,11 @@
-import FormGlobalState from "../utils/FormGlobalState";
+import AdminGlobalState from "../utils/AdminGlobalState";
 
 interface InputFormBaseProps {
   inputLabel: string;
 }
 
-const InputFormBase = ({ inputLabel }: InputFormBaseProps) => {
-  const { setTitle, setDescription, setImageUrl } = FormGlobalState();
+const AdminInputBasicInfo = ({ inputLabel }: InputFormBaseProps) => {
+  const { setTitle, setDescription, setImageUrl } = AdminGlobalState();
 
   const handleOnChange = (e: any) => {
     switch (inputLabel) {
@@ -35,4 +35,4 @@ const InputFormBase = ({ inputLabel }: InputFormBaseProps) => {
   );
 };
 
-export default InputFormBase;
+export default AdminInputBasicInfo;

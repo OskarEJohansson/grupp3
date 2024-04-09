@@ -1,8 +1,8 @@
 import Select from "react-select";
-import FormGlobalState from "../utils/FormGlobalState";
+import AdminGlobalState from "../utils/AdminGlobalState";
 
-const SelectCategory = () => {
-  const { setCategories, formData } = FormGlobalState();
+const AdminSelectCategory = () => {
+  const { setCategories, formData } = AdminGlobalState();
 
   const options = [
     { value: "meat", label: "Meat" },
@@ -47,4 +47,4 @@ const SelectCategory = () => {
   );
 };
 
-export default SelectCategory;
+export default AdminSelectCategory;

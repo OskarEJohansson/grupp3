@@ -6,7 +6,7 @@ export interface Ingredient {
   unit: string;
 }
 
-export interface FormGlobalStateInterface {
+export interface AdminGlobalStateInterface {
   formData: {
     title: string;
     description: string;
@@ -44,7 +44,7 @@ const initialFormData = {
     timeInMins: 0
 };
 
-const FormGlobalState = create<FormGlobalStateInterface>((set) => ({
+const AdminGlobalState = create<AdminGlobalStateInterface>((set) => ({
   formData: { ...initialFormData },
 
   setTitle: (inputValue: string) =>
@@ -114,4 +114,4 @@ const FormGlobalState = create<FormGlobalStateInterface>((set) => ({
 
 }));
 
-export default FormGlobalState;
+export default AdminGlobalState;

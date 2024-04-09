@@ -1,8 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-import FoodRoutes from "../FoodRoutes/FoodRoutes";
+import FoodRoutes from "../RecipeRoutes/RecipeRoutes";
 import AboutUs from "../../AboutUs";
-import AddFoodItemPage from "../../../AddFoodItemPage";
-import AdminPage from "../../../Admin/AddRecipePage";
+import AdminPage from "../../../Admin/AdminPage";
 import HomePage from "../../../Home/Homepage";
 import BeverageRoutes from "../DrinkRoutes/DrinkRoutes";
 import ContactFormPage from "../../../Contact/ContactFormPage";
@@ -16,7 +15,6 @@ const AdminRoutes = () => {
       <Route path="/about-us" element={<AboutUs />} />
       <Route path="/home" element={<HomePage />} />
       <Route path="/admin-page" element={<AdminPage />} />
-      <Route path="/add-food-item-page" element={<AddFoodItemPage />} />
       <Route path="/contact-form" element={<ContactFormPage />} />
     </Routes>
   );
