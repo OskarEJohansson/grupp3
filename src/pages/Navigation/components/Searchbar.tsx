@@ -26,11 +26,11 @@ const SearchBar: React.FC<SearchBarProps> = ({ isSearchOpen }) => {
     fetchNonAlcoholicDrink,
   } = DrinkGlobalState();
 
-  useEffect(() => {
-    fetchRecipe(URL);
-    fetchAlcoholicDrink();
-    fetchNonAlcoholicDrink();
-  }, [URL, fetchAlcoholicDrink, fetchRecipe, fetchNonAlcoholicDrink]);
+  // useEffect(() => {
+  //   fetchRecipe(URL);
+  //   fetchAlcoholicDrink();
+  //   fetchNonAlcoholicDrink();
+  // }, [URL, fetchAlcoholicDrink, fetchRecipe, fetchNonAlcoholicDrink]);
 
   const handleSearchInputChange = (
     event: React.ChangeEvent<HTMLInputElement>

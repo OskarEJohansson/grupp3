@@ -4,6 +4,8 @@ import AddToCartButton from "./RecipeAddToCartButton";
 import RecipeGlobalState from "../utils/RecipeGlobalState";
 import DetailedCard from "./RecipeDetailedCard";
 import UpdateFoodButton from "../../Update/component/UpdateRecipeButton";
+import { useNavigate } from "react-router-dom";
+import CommentsGlobalState from "../../Comments/utils/CommentsGlobalState";
 
 interface RecipeCardInterface {
   article: RecipeTypes;
@@ -11,11 +13,19 @@ interface RecipeCardInterface {
 
 const RecipeCard = ({ article }: RecipeCardInterface) => {
   const { setArticle } = RecipeGlobalState();
+  const { setRecipeId, setRecipe } = CommentsGlobalState();
   const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
 
   const handleOnClick = () => {
     setArticle(article);
     setShowModal(true);
+  };
+
+  const buttonOnClick = () => {
+    setRecipeId(article._id);
+    setRecipe(article);
+    navigate("/category-page/comments");
   };
 
   return (
