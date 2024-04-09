@@ -9,13 +9,14 @@ const PriceInput = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container mx-auto px-4">
       <div className="form-group">
-        <label>Price</label>
+        <label className="block text-sm mb-1">Price</label>
         <input
           type="number"
           value={formData.price}
           onChange={handleOnChange}
+          className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500"
         />
       </div>
     </div>

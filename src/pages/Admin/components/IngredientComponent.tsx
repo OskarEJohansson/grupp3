@@ -32,16 +32,31 @@ export const IngredientComponent = ({ index, onUpdateComponent }) => {
   };
 
   return (
-    <div>
+    <div className="bg-gray-100 p-4 rounded-md shadow-md">
       <fieldset>
-        <label>Ingredient</label>
-        <input type="text" name="name" onChange={changeName} />
+        <label className="block mb-2 text-gray-800">Ingredient</label>
+        <input
+          type="text"
+          name="name"
+          onChange={changeName}
+          className="w-full bg-white border border-gray-300 rounded-md px-3 py-2 mb-4 focus:outline-none focus:border-gray-500"
+        />
 
-        <label>Amount</label>
-        <input type="number" name="amount" onChange={changeAmount} />
+        <label className="block mb-2 text-gray-800">Amount</label>
+        <input
+          type="number"
+          name="amount"
+          onChange={changeAmount}
+          className="w-full bg-white border border-gray-300 rounded-md px-3 py-2 mb-4 focus:outline-none focus:border-gray-500"
+        />
 
-        <label>Unit</label>
-        <input type="text" name="unit" onChange={changeUnit} />
+        <label className="block mb-2 text-gray-800">Unit</label>
+        <input
+          type="text"
+          name="unit"
+          onChange={changeUnit}
+          className="w-full bg-white border border-gray-300 rounded-md px-3 py-2 mb-4 focus:outline-none focus:border-gray-500"
+        />
       </fieldset>
     </div>
   );

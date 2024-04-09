@@ -3,7 +3,6 @@ import CartPage from "../../../Cart/CartPage";
 import AboutUs from "../../AboutUs";
 import HomePage from "../../../Home/Homepage";
 import AddFoodItemPage from "../../../AddFoodItemPage";
-import ContactForm from "../../../Contact/components/ContactForm";
 import AdminPage from "../../../Admin/AddRecipePage";
 import ContactFormPage from "../../../Contact/ContactFormPage";
 

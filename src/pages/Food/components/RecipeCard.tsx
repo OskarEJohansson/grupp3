@@ -43,8 +43,10 @@ const RecipeCard = ({ article }: RecipeCardInterface) => {
       </div>
       <div className="mt-2">Price: {article.price} :-</div>
       <div className="mt-4 flex justify-between items-center">
-        <UpdateFoodButton article={article} />
-        <AddToCartButton article={article} />
+        <div className="flex space-x-4">
+          <UpdateFoodButton article={article} />
+          <AddToCartButton article={article} />
+        </div>
       </div>
       {showModal && <DetailedCard onClose={() => setShowModal(false)} />}
     </div>

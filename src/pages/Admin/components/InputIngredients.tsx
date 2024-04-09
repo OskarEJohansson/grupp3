@@ -14,27 +14,30 @@ export const InputIngredients = () => {
     addIngredients({ name: "", amount: 0, unit: "" });
   };
 
-  const handleUpdateCompononent = (
-    index: number,
-    newIngredient: Ingredient
-  ) => {
-    const ingredients = formData.ingredients;
-    ingredients[index] = newIngredient;
+  const handleUpdateComponent = (index: number, newIngredient: Ingredient) => {
+    const ingredients = formData.ingredients.map((ingredient, i) =>
+      i === index ? newIngredient : ingredient
+    );
     updateIngredients(ingredients);
   };
 
   return (
-    <div className="container">
+    <div className="container mx-auto px-4">
       <div className="form-group">
         {formData.ingredients.map((_, index: number) => (
-          <div key={index}>
+          <div key={index} className="mb-4">
             <IngredientComponent
               index={index}
-              onUpdateComponent={handleUpdateCompononent}
+              onUpdateComponent={handleUpdateComponent}
             />
           </div>
         ))}
-        <button onClick={handleOnClick}>Add Ingredient</button>
+        <button
+          onClick={handleOnClick}
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Add Ingredient
+        </button>
       </div>
     </div>
   );
