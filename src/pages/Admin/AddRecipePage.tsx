@@ -6,6 +6,7 @@ import SubmitButton from "./components/SubmitButton.tsx";
 import PriceInput from "./components/PriceInput.tsx";
 import TimeInMinsInput from "./components/TimeInMinsInput.tsx";
 import DeleteAllRecipes from "./components/DeleteAllRecipes.tsx";
+import FormGlobalState from "./utils/FormGlobalState.ts";
 
 const AddRecipePage = () => {
 
@@ -23,7 +24,7 @@ const AddRecipePage = () => {
       <InputIngredients />
       <TimeInMinsInput />
       <PriceInput />
-      <SubmitButton />
+      <SubmitButton resetFormData={FormGlobalState().resetFormData} />
       </div>
       <div className="danger-zone">
         <DeleteAllRecipes />
@@ -33,4 +34,3 @@ const AddRecipePage = () => {
 };
 
 export default AddRecipePage;
-

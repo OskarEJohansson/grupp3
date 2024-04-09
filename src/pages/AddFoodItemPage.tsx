@@ -1,4 +1,4 @@
-import RecipeList from "./Admin/components/RecipeList";
+/* import RecipeList from "./Admin/components/RecipeList";
 
 const AddFoodItemPage = () => {
   return (
@@ -10,3 +10,4 @@ const AddFoodItemPage = () => {
 };
 
 export default AddFoodItemPage;
+ */
