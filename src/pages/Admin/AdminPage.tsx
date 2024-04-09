@@ -5,8 +5,12 @@ const AdminPage = () => {
 
   return (
     <div>
-      <button onClick={() => navigate("/add-recipe")}> Add Recipe</button>
-      <button onClick={() => navigate("/all-recipes")}>See all recipes</button>
+      <button onClick={() => navigate("/admin-page/add-recipe")}>
+        Add Recipe
+      </button>
+      <button onClick={() => navigate("/admin-page/all-recipes")}>
+        See all recipes
+      </button>
     </div>
   );
 };

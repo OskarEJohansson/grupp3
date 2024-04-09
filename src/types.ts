@@ -1,21 +1,21 @@
-export interface CardTypes {
-  _id: string;
-  title: string;
-  description: string;
-  ratings: number[];
-  imageUrl: string;
-  categories: string[];
-  instructions: string[];
-  price: number;
-  ingredients: [
-    {
-      name: string;
-      amount: number;
-      unit: string;
-      _id: string;
-    }
-  ];
-}
+// export interface CardTypes {
+//   _id: string;
+//   title: string;
+//   description: string;
+//   ratings: number[];
+//   imageUrl: string;
+//   categories: string[];
+//   instructions: string[];
+//   price: number;
+//   ingredients: [
+//     {
+//       name: string;
+//       amount: number;
+//       unit: string;
+//       _id: string;
+//     }
+//   ];
+// }
 
 export interface RecipeTypes {
   _id: string;
@@ -52,13 +52,13 @@ export interface CategoryTypes {
   allergen: string;
   allergenPicture: string;
 }
-export interface BeverageTypes {
+export interface DrinkTypes {
   strDrink: string;
   strDrinkThumb: string;
   idDrink: string;
 }
 
-export interface BeverageDetails {
+export interface DrinkDetails {
   idDrink: string;
   strDrink: string;
   strDrinkAlternate: string | null;

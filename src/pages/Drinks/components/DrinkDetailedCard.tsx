@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { BeverageDetails } from "../../../types";
-import AddToCartButton from "../../Drinks/components/DrinkAddToCartButton";
+import AddToCartButton from "./DrinkAddToCartButton";
 import DrinkGlobalState from "../utils/DrinkGlobalState";
 import QuantityInput from "../../../components/QuantityInput";
+import { DrinkDetails } from "../../../types";
 
 const DrinkDetailedCard = ({ onClose }: { onClose: () => void }) => {
-  const drink = DrinkGlobalState((state) => state.drink as BeverageDetails);
-  console.log(drink);
+  const drink = DrinkGlobalState((state) => state.drink as DrinkDetails);
+  console.log("DRINK INSIDE DETAILED DRINK CARD", drink);
   const [quantity, setQuantity] = useState(1);
 
   const handleQuantityChange = (newValue: number) => {
@@ -24,6 +24,7 @@ const DrinkDetailedCard = ({ onClose }: { onClose: () => void }) => {
             className="w-full md:w-auto h-auto mb-4 md:mb-0"
           />
           <div>
+            <div>BAJSKORV</div>
             <div className="mb-2">Beverage: {drink.strAlcoholic}</div>
             <div className="mb-2">Category: {drink.strCategory}</div>
             <div className="mb-2">Served in: {drink.strGlass}</div>
