@@ -8,17 +8,23 @@ import CompanyLogo from "../../../assets/images/companylogo.png";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [isAdminView, setIsAdminView] = useState(false);
 
   const handleMenuToggle = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleResize = () => {
-    setWindowWidth(window.innerWidth);
+  const toggleAdminView = () => {
+    setIsAdminView(!isAdminView);
   };
 
   useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
     window.addEventListener("resize", handleResize);
+
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -38,10 +44,10 @@ const Navbar = () => {
               className="h-10 w-auto pr-5"
             />
           </NavLink>
-          {windowWidth > 768 && <SearchBar isSearchOpen={true} />}
+          {windowWidth > 1050 && <SearchBar isSearchOpen={true} />}
         </div>
         <div className="flex items-center justify-end md:justify-start w-full md:w-auto">
-          {windowWidth <= 768 && (
+          {windowWidth <= 1050 && (
             <button
               onClick={handleMenuToggle}
               className="search-icon md:hidden flex items-center focus:outline-none"
@@ -75,6 +81,19 @@ const Navbar = () => {
               <NavLink to="/cart">
                 <ShoppingCartIcon />
               </NavLink>
+            </li>
+            {isAdminView && (
+              <li>
+                <NavLink to="/admin-page">Admin</NavLink>
+              </li>
+            )}
+            <li>
+              <button
+                onClick={toggleAdminView}
+                className="text-white hover:text-gray-200"
+              >
+                {isAdminView ? "Switch to User View" : "Switch to Admin View"}
+              </button>
             </li>
           </ul>
         </div>
@@ -126,6 +145,25 @@ const Navbar = () => {
               >
                 <ShoppingCartIcon />
               </NavLink>
+            </li>
+            {isAdminView && (
+              <li>
+                <NavLink
+                  to="/admin-page"
+                  className="text-white hover:text-gray-200 block py-2 px-4"
+                  onClick={handleMenuToggle}
+                >
+                  Admin
+                </NavLink>
+              </li>
+            )}
+            <li>
+              <button
+                onClick={toggleAdminView}
+                className="text-white hover:text-gray-200 block py-2 px-4"
+              >
+                {isAdminView ? "Switch to User View" : "Switch to Admin View"}
+              </button>
             </li>
           </ul>
         </div>
