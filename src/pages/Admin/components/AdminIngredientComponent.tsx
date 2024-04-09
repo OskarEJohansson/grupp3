@@ -6,7 +6,7 @@ export interface Ingredient {
   unit: string;
 }
 
-export const IngredientComponent = ({ index, onUpdateComponent }) => {
+export const AdminIngredientComponent = ({ index, onUpdateComponent }) => {
   const [formData, setFormData] = useState({
     name: "",
     amount: 0,
@@ -62,4 +62,4 @@ export const IngredientComponent = ({ index, onUpdateComponent }) => {
   );
 };
 
-export default IngredientComponent;
+export default AdminIngredientComponent;
