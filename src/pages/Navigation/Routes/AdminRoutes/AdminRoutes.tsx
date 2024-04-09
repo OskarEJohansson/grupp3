@@ -1,13 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import FoodRoutes from "../FoodRoutes/FoodRoutes";
-import ContactForm from "../../../Contact/components/ContactForm";
 import AboutUs from "../../AboutUs";
 import AddFoodItemPage from "../../../AddFoodItemPage";
 import AdminPage from "../../../Admin/AddRecipePage";
-import CommentsPage from "../../../CommentsPage";
 import HomePage from "../../../Home/Homepage";
-import RatingPage from "../../../RatingPage";
 import BeverageRoutes from "../DrinkRoutes/DrinkRoutes";
+import ContactFormPage from "../../../Contact/ContactFormPage";
 
 const AdminRoutes = () => {
   return (
@@ -19,9 +17,7 @@ const AdminRoutes = () => {
       <Route path="/home" element={<HomePage />} />
       <Route path="/admin-page" element={<AdminPage />} />
       <Route path="/add-food-item-page" element={<AddFoodItemPage />} />
-      <Route path="/add-comments-page" element={<CommentsPage />} />
-      <Route path="/contact-form" element={<ContactForm />} />
-      <Route path="/rating-page" element={<RatingPage />} />
+      <Route path="/contact-form" element={<ContactFormPage />} />
     </Routes>
   );
 };

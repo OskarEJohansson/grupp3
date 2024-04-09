@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { create } from "zustand";
 import { CardTypes } from "../../../types";
 
@@ -12,7 +11,8 @@ export interface CartGlobalStateInterface {
   setCart: () => void;
   setCategory: (itemCategory: string) => void;
   addToCart: (addItemToCart: any) => void;
-  setGlobalArticleId: (aritcleId: string) => void;
+  removeFromCart: (itemToRemove: any) => void; 
+  setGlobalArticleId: (articleId: string) => void;
   setGlobalArticle: (article: CardTypes) => void;
 }
 
@@ -48,6 +48,12 @@ const CartGlobalState = create<CartGlobalStateInterface>((set) => ({
   addToCart: (addItemToCart: any) => {
     set((state) => ({
       cart: [...state.cart, addItemToCart],
+    }));
+  },
+
+  removeFromCart: (itemToRemove: any) => {
+    set((state) => ({
+      cart: state.cart.filter((item) => item !== itemToRemove),
     }));
   },
 }));

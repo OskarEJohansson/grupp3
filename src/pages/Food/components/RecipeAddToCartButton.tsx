@@ -8,7 +8,7 @@ const RecipeAddToCartButton = (article: any) => {
   return (
     <div>
       <button
-        className="add-to-cart-button"
+        className="add-to-cart-button bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded"
         onClick={() => {
           addToCart(article), console.log(article), console.log(cart);
         }}

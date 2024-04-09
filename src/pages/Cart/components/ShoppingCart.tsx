@@ -1,5 +1,3 @@
-import React from 'react';
-
 const ShoppingCartIcon = () => {
   return (
     <svg
@@ -35,7 +33,7 @@ const ShoppingCartIcon = () => {
             strokeLinecap: 'butt',
             strokeLinejoin: 'miter',
             strokeMiterlimit: '10',
-            fill: 'rgba(0,209,205,255)',
+            fill: 'rgb(255, 255, 255)',
             fillRule: 'nonzero',
             opacity: '1'
           }}
@@ -53,7 +51,7 @@ const ShoppingCartIcon = () => {
             strokeLinecap: 'butt',
             strokeLinejoin: 'miter',
             strokeMiterlimit: '10',
-            fill: 'cyan',
+            fill: 'white',
             fillRule: 'nonzero',
             opacity: '1'
           }}
@@ -70,7 +68,7 @@ const ShoppingCartIcon = () => {
             strokeLinecap: 'butt',
             strokeLinejoin: 'miter',
             strokeMiterlimit: '10',
-            fill: 'rgba(0,209,205,255)',
+            fill: 'rgba(255, 255, 255)',
             fillRule: 'nonzero',
             opacity: '1'
           }}
@@ -85,7 +83,7 @@ const ShoppingCartIcon = () => {
             strokeLinecap: 'butt',
             strokeLinejoin: 'miter',
             strokeMiterlimit: '10',
-            fill: 'rgba(0,209,205,255)',
+            fill: 'rgba(255, 255, 255)',
             fillRule: 'nonzero',
             opacity: '1'
           }}

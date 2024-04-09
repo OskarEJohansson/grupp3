@@ -9,16 +9,14 @@ interface SearchItem {
   imageUrl: string;
 }
 
-const SearchBar = () => {
-<<<<<<< HEAD
-  const [searchQuery, setSearchQuery] = useState('');
+interface SearchBarProps {
+  isSearchOpen?: boolean;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ isSearchOpen }) => {
+  const [searchQuery, setSearchQuery] = useState("");
   const [, setSearchResults] = useState<SearchItem[]>([]);
   const [, setSearchResultsFound] = useState(true);
-=======
-  const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState<SearchItem[]>([]);
-  const [searchResultsFound, setSearchResultsFound] = useState(true);
->>>>>>> 0e919eedd7605fcddfb6f68215780d2becd38fc5
   const navigate = useNavigate();
   const { fetchRecipe, categoryData, URL } = RecipeGlobalState();
   const {
@@ -69,30 +67,34 @@ const SearchBar = () => {
       );
 
       const filteredResults = mergedResults.filter((item) =>
-        item.name.toLowerCase().includes(searchQuery.toLowerCase())
+        item && item.name && item.name.toLowerCase().includes(searchQuery.toLowerCase())
       );
 
       setSearchResults(filteredResults);
       setSearchResultsFound(filteredResults.length > 0);
 
-      
-      navigate('/search-result', { state: { searchResults: filteredResults } });
-      setSearchQuery('');
+      navigate("/search-result", { state: { searchResults: filteredResults } });
     } catch (error) {
       console.error("Error searching:", error);
       setSearchResultsFound(false);
     }
   };
 
+  const searchBarWidth = isSearchOpen ? "100%" : "0";
+
   return (
-    <div className="search-bar">
+    <div className={`search-bar ${isSearchOpen ? "block" : "hidden"} md:flex md:items-center`} style={{ width: searchBarWidth }}>
       <input
         type="text"
         placeholder="Search..."
         value={searchQuery}
         onChange={handleSearchInputChange}
+        className="bg-white border border-gray-300 rounded-lg py-2 px-4 focus:outline-none focus:border-gray-500 flex-grow mr-2"
+        style={{ width: searchBarWidth }}
       />
-      <button onClick={handleSearch}>Search</button>
+      <button onClick={handleSearch} className="bg-yellow-500 text-white py-2 px-4 rounded-lg shadow-md hover:bg-yellow-600 transition duration-300 ease-in-out text-sm focus:outline-none">
+        Search
+      </button>
     </div>
   );
 };

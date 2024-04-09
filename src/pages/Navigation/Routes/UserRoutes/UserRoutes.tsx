@@ -3,10 +3,9 @@ import CartPage from "../../../Cart/CartPage";
 import AboutUs from "../../AboutUs";
 import HomePage from "../../../Home/Homepage";
 import AddFoodItemPage from "../../../AddFoodItemPage";
-import CommentsPage from "../../../CommentsPage";
 import ContactForm from "../../../Contact/components/ContactForm";
-import RatingPage from "../../../RatingPage";
 import AdminPage from "../../../Admin/AddRecipePage";
+import ContactFormPage from "../../../Contact/ContactFormPage";
 
 const UserRoutes = () => {
   return (
@@ -16,9 +15,7 @@ const UserRoutes = () => {
       <Route path="/" element={<HomePage />} />
       <Route path="/admin-page" element={<AdminPage />} />
       <Route path="/add-food-item-page" element={<AddFoodItemPage />} />
-      <Route path="/add-comments-page" element={<CommentsPage />} />
-      <Route path="/contact-form" element={<ContactForm />} />
-      <Route path="/rating-page" element={<RatingPage />} />
+      <Route path="/contact-form" element={<ContactFormPage />} />
     </Routes>
   );
 };
