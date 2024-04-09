@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import RecipeGlobalState from "../Food/utils/RecipeGlobalState";
+import RecipeGlobalState from "../Recipe/utils/RecipeGlobalState";
 import CommentsAddCommentCard from "./components/CommentsAddCommentCard";
 import CommentsCard from "./components/CommentsCard";
 import CommentsGlobalState from "./utils/CommentsGlobalState";
