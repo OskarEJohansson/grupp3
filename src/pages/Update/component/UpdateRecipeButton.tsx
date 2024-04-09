@@ -7,7 +7,7 @@ const UpdateRecipeButton = ({ formData }: any) => {
 
   const handleOnClick = () => {
     navigate("/category-page/update-food");
-    setData(formData.article);
+    setData(article);
   };
 
   return (

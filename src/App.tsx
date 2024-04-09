@@ -11,8 +11,8 @@ import AdminRoutes from "./pages/Navigation/Routes/AdminRoutes/AdminRoutes";
 function App() {
   return (
     <BrowserRouter>
-    <div className="pb-20">
-      <Navbar />
+      <div className="pb-20">
+        <Navbar />
       </div>
       <Routes>
         <>
@@ -23,7 +23,7 @@ function App() {
           <Route path="/admin-page/*" element={<AdminRoutes />} />
         </>
       </Routes>
-      
+
       <Footer />
     </BrowserRouter>
   );

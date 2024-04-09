@@ -1,7 +1,8 @@
 import { create } from "zustand";
+import { produce } from "immer";
 
 import axios from "axios";
-import { IngredientsTypes, RecipeTypes } from "../../../types";
+import { RecipeTypes } from "../../../types";
 
 export interface UpdateRecipeGlobalStateInterface {
   formData: {
@@ -26,13 +27,11 @@ export interface UpdateRecipeGlobalStateInterface {
 
   setId: (id: number) => void;
 
-  setIngredients: (key: string, value: string) => void;
+  setIngredients: (id: string, key: string, value: string) => void;
 
   setData: (formData: RecipeTypes) => void;
 
   setChangedData: (key: string, value: string) => void;
-
-  addIngredients: (newIngredients: IngredientsTypes) => void;
 
   updateRecipe: (URL: string, recipeId: number, formData: object) => void;
 }
@@ -65,10 +64,15 @@ const UpdateRecipeGlobalState = create<UpdateRecipeGlobalStateInterface>(
       }));
     },
 
-    setIngredients: (key: string, value: string) => {
-      set((state) => ({
-        ingredients: { ...state.ingredients, [key]: value },
-      }));
+    setIngredients: (id: string, key: string, value: string) => {
+      set(
+        produce((state) => {
+          const index = state.formData.ingredients.findIndex(
+            (ingredient: RecipeTypes) => ingredient._id === id
+          );
+          state.formData.ingredients[index][key] = value;
+        })
+      );
     },
 
     setData: (formData: any) => {
@@ -81,12 +85,6 @@ const UpdateRecipeGlobalState = create<UpdateRecipeGlobalStateInterface>(
       set((state) => ({
         formData: { ...state.formData, [key]: value },
       }));
-    },
-
-    addIngredients: (newIngredients: IngredientsTypes) => {
-      (state: any) => ({
-        formData: { ...state.formData, ingredients: newIngredients },
-      });
     },
 
     updateRecipe: async (URL: string, recipeId: number, formData: object) => {

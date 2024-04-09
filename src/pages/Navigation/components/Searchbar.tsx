@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import DrinkGlobalState from "../../Drinks/utils/DrinkGlobalState";
-import RecipeGlobalState from "../../Food/utils/RecipeGlobalState";
+import RecipeGlobalState from "../../Recipe/utils/RecipeGlobalState";
 
 interface SearchItem {
   id: string;
