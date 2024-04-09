@@ -10,7 +10,9 @@ import SearchResultsPage from "./pages/Navigation/SearchResultsPage";
 function App() {
   return (
     <BrowserRouter>
+    <div className="pb-20">
       <Navbar />
+      </div>
       <Routes>
         <>
           <Route path="/search-result" element={<SearchResultsPage />} />
@@ -19,6 +21,7 @@ function App() {
           <Route path="/*" element={<UserRoutes />} />
         </>
       </Routes>
+      
       <Footer />
     </BrowserRouter>
   );
