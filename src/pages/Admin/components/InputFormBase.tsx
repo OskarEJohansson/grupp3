@@ -5,8 +5,7 @@ interface InputFormBaseProps {
 }
 
 const InputFormBase = ({ inputLabel }: InputFormBaseProps) => {
-  const { setTitle, setDescription, setImageUrl } =
-    FormGlobalState();
+  const { setTitle, setDescription, setImageUrl } = FormGlobalState();
 
   const handleOnChange = (e: any) => {
     switch (inputLabel) {
@@ -23,14 +22,16 @@ const InputFormBase = ({ inputLabel }: InputFormBaseProps) => {
   };
 
   return (
-    <>
-    <div className="container">
+    <div className="container mx-auto px-4">
       <div className="form-group">
-        <label>{inputLabel.charAt(0).toUpperCase() + inputLabel.slice(1)}</label>
-        <input type="text" onChange={handleOnChange} />
+        <label className="block text-gray-700">{inputLabel.charAt(0).toUpperCase() + inputLabel.slice(1)}</label>
+        <input
+          type="text"
+          onChange={handleOnChange}
+          className="block w-full bg-white border border-gray-300 rounded-md px-3 py-2 mt-1 focus:outline-none focus:border-blue-500"
+        />
       </div>
     </div>
-    </>
   );
 };
 

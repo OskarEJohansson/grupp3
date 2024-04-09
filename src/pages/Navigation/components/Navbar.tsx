@@ -1,13 +1,16 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import ShoppingCartIcon from "../../Cart/components/ShoppingCart";
+import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import { FiMenu } from "react-icons/fi";
 import SearchBar from "./Searchbar";
+import ShoppingCartIcon from "../../Cart/components/ShoppingCart";
+import CompanyLogo from "../../../assets/images/companylogo.png";
 
 const Navbar = () => {
-  const [isAdminView, setIsAdminView] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [isAdminView, setIsAdminView] = useState(false);
 
-  const toggleMenu = () => {
+  const handleMenuToggle = () => {
     setIsOpen(!isOpen);
   };
 
@@ -15,51 +18,156 @@ const Navbar = () => {
     setIsAdminView(!isAdminView);
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <nav className={`navbar ${isOpen ? "navbar-open" : ""}`}>
-      <div className="navbar-container">
-        <Link to="/" className="brand-link">
-          <img
-            src="https://media.discordapp.net/attachments/1213110126446125117/1214503813306785852/companylogo.png?ex=65f959d1&is=65e6e4d1&hm=75f4b22d314a9030a11ee13c0ad32d1d22fad479cb6cd1f42b43ceab29ad6c8a&=&format=webp&quality=lossless&width=1390&height=464"
-            alt="Group icon"
-            width="auto"
-            height="100"
-          />
-        </Link>
-        <div className="search-bar">
-          <SearchBar />
+    <nav
+      className={`bg-gradient-to-r from-backgroundColor to-brightColor py-4 px-6 flex justify-between items-center fixed w-full transition duration-300`}
+      style={{ zIndex: "9999" }}
+    >
+      <div className="flex items-center w-full justify-between">
+        <div className="flex items-center">
+          <NavLink to="/" className="brand-link flex items-center">
+            <img
+              src={CompanyLogo}
+              alt="Taste Trails logga"
+              className="h-10 w-auto pr-5"
+            />
+          </NavLink>
+          {windowWidth > 1050 && <SearchBar isSearchOpen={true} />}
         </div>
-        <button onClick={toggleMenu} className="menu-button">
-          {isOpen ? "Close" : "Menu"}
-        </button>
-        <ul className={`nav-list ${isOpen ? "open" : ""}`}>
-          <li>
-            <Link to="/category-page">Food</Link>
-          </li>
-          <li>
-            <Link to="/drink-page">Drinks</Link>
-          </li>
-          {!isAdminView && (
-            <li>
-              <Link to="/cart">
-                <ShoppingCartIcon />
-              </Link>
-            </li>
-          )}
-          {isAdminView && (
-            <>
-              <li>
-                <Link to="/admin-page">Admin Page</Link>
-              </li>
-            </>
-          )}
-          <li>
-            <button onClick={toggleAdminView}>
-              {isAdminView ? "Switch to User View" : "Switch to Admin View"}
+        <div className="flex items-center justify-end md:justify-start w-full md:w-auto">
+          {windowWidth <= 1050 && (
+            <button
+              onClick={handleMenuToggle}
+              className="search-icon md:hidden flex items-center focus:outline-none"
+            >
+              <FiMenu className="text-white text-xl" />
             </button>
-          </li>
-        </ul>
+          )}
+          <ul className="hidden md:flex space-x-6 items-center">
+            <li>
+              <NavLink to="/" className="text-white hover:text-gray-200">
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/category-page"
+                className="text-white hover:text-gray-200"
+              >
+                Food
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/drink-page"
+                className="text-white hover:text-gray-200"
+              >
+                Drinks
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/cart">
+                <ShoppingCartIcon />
+              </NavLink>
+            </li>
+            {isAdminView && (
+              <li>
+                <NavLink to="/admin-page">Admin</NavLink>
+              </li>
+            )}
+            <li>
+              <button
+                onClick={toggleAdminView}
+                className="text-white hover:text-gray-200"
+              >
+                {isAdminView ? "Switch to User View" : "Switch to Admin View"}
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
+      {isOpen && (
+        <div
+          className="fixed top-0 left-0 h-full w-full bg-black bg-opacity-50 z-50"
+          onClick={handleMenuToggle}
+        ></div>
+      )}
+      {isOpen && (
+        <div className="fixed top-0 left-0 h-full w-64 bg-[#e3c499] z-50 opacity-90">
+          <ul>
+            <li>
+              <SearchBar isSearchOpen={true} />
+            </li>
+            <li>
+              <NavLink
+                to="/"
+                className="text-white hover:text-gray-200 block py-2 px-4"
+                onClick={handleMenuToggle}
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/category-page"
+                className="text-white hover:text-gray-200 block py-2 px-4"
+                onClick={handleMenuToggle}
+              >
+                Food
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/drink-page"
+                className="text-white hover:text-gray-200 block py-2 px-4"
+                onClick={handleMenuToggle}
+              >
+                Drinks
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/cart"
+                className="text-white hover:text-gray-200 block py-2 px-4"
+                onClick={handleMenuToggle}
+              >
+                <ShoppingCartIcon />
+              </NavLink>
+            </li>
+            {isAdminView && (
+              <li>
+                <NavLink
+                  to="/admin-page"
+                  className="text-white hover:text-gray-200 block py-2 px-4"
+                  onClick={handleMenuToggle}
+                >
+                  Admin
+                </NavLink>
+              </li>
+            )}
+            <li>
+              <button
+                onClick={toggleAdminView}
+                className="text-white hover:text-gray-200 block py-2 px-4"
+              >
+                {isAdminView ? "Switch to User View" : "Switch to Admin View"}
+              </button>
+            </li>
+          </ul>
+        </div>
+      )}
     </nav>
   );
 };

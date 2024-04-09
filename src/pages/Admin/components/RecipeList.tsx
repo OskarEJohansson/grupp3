@@ -32,32 +32,28 @@ const RecipeList = () => {
       console.error("Error deleting recipe", error);
     }
   };
+
   return (
-    <div className="recipe-list">
-      <h1>All Recipes</h1>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-4">All Recipes</h1>
       {recipes.map((recipe: RecipeTypes, index) => (
-        <div key={index} className="recipe">
-          <h3>{recipe.title}</h3>
-          <p>Description: {recipe.description}</p>
-          <p>Ratings: {recipe.ratings && recipe.ratings.join(", ")}</p>
-          <p>ImageUrl: {recipe.imageUrl}</p>
-          <p>Categories: {recipe.categories && recipe.categories.join(", ")}</p>
-          <p>
-            Instructions:{" "}
-            {recipe.instructions && recipe.instructions.join(", ")}
-          </p>
-          <p>Ingredients: </p>
-          <ul>
+        <div key={index} className="bg-white rounded-lg shadow-md p-6 mb-4">
+          <h3 className="text-xl font-semibold mb-2">{recipe.title}</h3>
+          <p className="text-gray-700 mb-2">Description: {recipe.description}</p>
+          <p className="text-gray-700 mb-2">Ratings: {recipe.ratings && recipe.ratings.join(", ")}</p>
+          <p className="text-gray-700 mb-2">ImageUrl: {recipe.imageUrl}</p>
+          <p className="text-gray-700 mb-2">Categories: {recipe.categories && recipe.categories.join(", ")}</p>
+          <p className="text-gray-700 mb-2">Instructions: {recipe.instructions && recipe.instructions.join(", ")}</p>
+          <p className="text-gray-700 mb-2">Ingredients:</p>
+          <ul className="list-disc pl-4">
             {recipe.ingredients &&
               recipe.ingredients.map((ingredient, idx) => (
-                <li key={idx}>
+                <li key={idx} className="text-gray-700">
                   {ingredient.name} - {ingredient.amount} {ingredient.unit}
                 </li>
               ))}
           </ul>
-          <button onClick={() => handleDeleteRecipe(recipe._id)}>
-            Delete Recipe
-          </button>
+          <button className="mt-4 bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition duration-300 ease-in-out" onClick={() => handleDeleteRecipe(recipe._id)}>Delete Recipe</button>
         </div>
       ))}
     </div>
