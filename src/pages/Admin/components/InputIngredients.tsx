@@ -1,4 +1,3 @@
-import { useState } from "react";
 import IngredientComponent from "./IngredientComponent";
 import FormGlobalState from "../utils/FormGlobalState";
 
@@ -14,11 +13,14 @@ export const InputIngredients = () => {
   const handleOnClick = () => {
     addIngredients({ name: "", amount: 0, unit: "" });
   };
-  
-  const handleUpdateCompononent = (index: number, newIngredient: Ingredient) => {
+
+  const handleUpdateCompononent = (
+    index: number,
+    newIngredient: Ingredient
+  ) => {
     const ingredients = formData.ingredients;
     ingredients[index] = newIngredient;
-    updateIngredients( ingredients );
+    updateIngredients(ingredients);
   };
 
   return (

@@ -21,11 +21,11 @@ export interface RecipeTypes {
   _id: string;
   title: string;
   description: string;
-  ratings: number[];
   imageUrl: string;
+  timeInMins: number;
+  price: number;
   categories: string[];
   instructions: string[];
-  price: number;
   ingredients: [
     {
       name: string;
@@ -34,6 +34,7 @@ export interface RecipeTypes {
       _id: string;
     }
   ];
+  avgRating: number;
 }
 
 export interface IngredientsTypes {
@@ -109,4 +110,10 @@ export interface BeverageDetails {
   strMeasure13: string | null;
   strMeasure14: string | null;
   strMeasure15: string | null;
+}
+
+export interface CommentTypes {
+  _id?: string;
+  comment: string;
+  name: string;
 }
