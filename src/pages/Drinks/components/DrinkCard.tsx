@@ -2,16 +2,18 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import DrinkGlobalState from "../utils/DrinkGlobalState";
 import AddToCartButton from "../../Drinks/components/DrinkAddToCartButton";
-import DrinkDetailedCard from "./DetailedDrinkCard";
+import DrinkDetailedCard from "./DrinkDetailedCard";
+import { DrinkTypes } from "../../../types";
 
 const DrinkCardPage = () => {
-  const { drinkList, fetchAlcoholicDrink, fetchNonAlcoholicDrink, setDrink } =
+  const { drinkList, fetchAlcoholicDrink, fetchNonAlcoholicDrink, fetchDrink } =
     DrinkGlobalState();
   const { category } = useParams();
   const [showModal, setShowModal] = useState(false);
 
-  const handleOnClick = (drink: any) => {
-    setDrink(drink);
+  const handleOnClick = (drink: DrinkTypes) => {
+    console.log("Handle on click to detailed card", drink);
+    fetchDrink(drink.idDrink);
     setShowModal(true);
   };
 

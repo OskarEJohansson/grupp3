@@ -6,12 +6,13 @@ import DrinkRoutes from "./pages/Navigation/Routes/DrinkRoutes/DrinkRoutes";
 import UserRoutes from "./pages/Navigation/Routes/UserRoutes/UserRoutes";
 import Footer from "./pages/Navigation/components/Footer";
 import SearchResultsPage from "./pages/Navigation/SearchResultsPage";
+import AdminRoutes from "./pages/Navigation/Routes/AdminRoutes/AdminRoutes";
 
 function App() {
   return (
     <BrowserRouter>
-    <div className="pb-20">
-      <Navbar />
+      <div className="pb-20">
+        <Navbar />
       </div>
       <Routes>
         <>
@@ -19,9 +20,10 @@ function App() {
           <Route path="/category-page/*" element={<RecipeRoutes />} />
           <Route path="/drink-page/*" element={<DrinkRoutes />} />
           <Route path="/*" element={<UserRoutes />} />
+          <Route path="/admin-page/*" element={<AdminRoutes />} />
         </>
       </Routes>
-      
+
       <Footer />
     </BrowserRouter>
   );
