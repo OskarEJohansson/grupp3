@@ -1,6 +1,6 @@
 import AdminRecipeList from "./components/AdminRecipeList";
 
-const AdminAllRecipes = () => {
+const AdminAllRecipesPage = () => {
   return (
     <div>
       <AdminRecipeList />
@@ -8,4 +8,4 @@ const AdminAllRecipes = () => {
   );
 };
 
-export default AdminAllRecipes;
+export default AdminAllRecipesPage;

@@ -1,14 +1,14 @@
-import InputFormBase from "./components/AdminInputBasicInfo.tsx";
-import InputInstructions from "./components/AdminInputInstructions.tsx";
-import InputIngredients from "./components/AdminInputIngredients.tsx";
-import SelectCategory from "./components/AdminSelectCategory.tsx";
-import SubmitButton from "./components/AdminSubmitButton.tsx";
-import PriceInput from "./components/AdminPriceInput.tsx";
-import TimeInMinsInput from "./components/AdminTimeInMinsInput.tsx";
-import DeleteAllRecipes from "./components/AdminDeleteAllRecipes.tsx";
+import AdminInputBasicInfo from "./components/AdminInputBasicInfo.tsx";
+import AdminInputInstructions from "./components/AdminInputInstructions.tsx";
+import AdminInputIngredients from "./components/AdminInputIngredients.tsx";
+import AdminSelectCategory from "./components/AdminSelectCategory.tsx";
+import AdminSubmitButton from "./components/AdminSubmitButton.tsx";
+import AdminPriceInput from "./components/AdminPriceInput.tsx";
+import AdminTimeInMinsInput from "./components/AdminTimeInMinsInput.tsx";
+import AdminDeleteAllRecipesButton from "./components/AdminDeleteAllRecipesButton.tsx";
 import AdminGlobalState from "./utils/AdminGlobalState.ts";
 
-const AddRecipePage = () => {
+const AdminAddRecipePage = () => {
 
   return (
     <div>
@@ -16,21 +16,21 @@ const AddRecipePage = () => {
         <h1>Add Recipe</h1>
       </div>
       <div className="form-group">
-      <InputFormBase inputLabel="title" />
-      <InputFormBase inputLabel="description" />
-      <InputFormBase inputLabel="image" />
-      <InputInstructions />
-      <SelectCategory />
-      <InputIngredients />
-      <TimeInMinsInput />
-      <PriceInput />
-      <SubmitButton resetFormData={AdminGlobalState().resetFormData} />
+      <AdminInputBasicInfo inputLabel="title" />
+      <AdminInputBasicInfo inputLabel="description" />
+      <AdminInputBasicInfo inputLabel="image" />
+      <AdminInputInstructions />
+      <AdminSelectCategory />
+      <AdminInputIngredients />
+      <AdminTimeInMinsInput />
+      <AdminPriceInput />
+      <AdminSubmitButton resetFormData={AdminGlobalState().resetFormData} />
       </div>
       <div className="danger-zone">
-        <DeleteAllRecipes />
+        <AdminDeleteAllRecipesButton />
       </div>
     </div>
   );
 };
 
-export default AddRecipePage;
+export default AdminAddRecipePage;
