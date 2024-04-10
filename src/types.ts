@@ -1,22 +1,3 @@
-// export interface CardTypes {
-//   _id: string;
-//   title: string;
-//   description: string;
-//   ratings: number[];
-//   imageUrl: string;
-//   categories: string[];
-//   instructions: string[];
-//   price: number;
-//   ingredients: [
-//     {
-//       name: string;
-//       amount: number;
-//       unit: string;
-//       _id: string;
-//     }
-//   ];
-// }
-
 export interface RecipeTypes {
   _id: string;
   title: string;
