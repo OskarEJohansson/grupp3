@@ -1,19 +1,26 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { useState } from "react";
 import GlobalState from "../../Cart/utils/CartGlobalState";
 import "../../../App.css";
 
 const RecipeAddToCartButton = (article: any) => {
-  const { addToCart, cart } = GlobalState();
+  const { addToCart } = GlobalState();
+  const [addedToCart, setAddedToCart] = useState(false);
+
+  const handleAddToCart = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e.stopPropagation(); 
+    addToCart(article);
+    setAddedToCart(true);
+    setTimeout(() => setAddedToCart(false), 1000);
+  };
 
   return (
     <div>
       <button
-        className="recipe-button bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded"
-        onClick={() => {
-          addToCart(article), console.log(article), console.log(cart);
-        }}
+        className={`bg-${addedToCart ? "green" : "yellow"}-500 hover:bg-${addedToCart ? "green" : "yellow"}-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-colors`}
+        onClick={handleAddToCart}
+        disabled={addedToCart}
       >
-        Add to cart
+        {addedToCart ? "Added to cart" : "Add to cart"}
       </button>
     </div>
   );
