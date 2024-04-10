@@ -1,7 +1,7 @@
-import GlobalState from "../utils/CartGlobalState";
+import CartGlobalState from "../utils/CartGlobalState";
 
 const Cart = () => {
-  const { cart, removeFromCart } = GlobalState<CartGlobalStateInterface>();
+  const { cart, removeFromCart } = CartGlobalState();
 
   return (
     <div className="cart-container">

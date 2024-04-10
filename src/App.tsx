@@ -5,7 +5,7 @@ import RecipeRoutes from "./pages/Navigation/Routes/RecipeRoutes/RecipeRoutes";
 import DrinkRoutes from "./pages/Navigation/Routes/DrinkRoutes/DrinkRoutes";
 import UserRoutes from "./pages/Navigation/Routes/UserRoutes/UserRoutes";
 import Footer from "./pages/Navigation/components/Footer";
-import SearchResultsPage from "./pages/Navigation/SearchResultsPage";
+import SearchResultsPage from "./pages/Navigation/Searchbar/SearchResultsPage";
 import AdminRoutes from "./pages/Navigation/Routes/AdminRoutes/AdminRoutes";
 
 function App() {

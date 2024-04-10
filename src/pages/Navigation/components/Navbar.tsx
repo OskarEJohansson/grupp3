@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { FiMenu } from "react-icons/fi";
-import SearchBar from "./Searchbar";
+import SearchBar from "../Searchbar/components/SearchbarHampus1";
 import ShoppingCartIcon from "../../Cart/components/ShoppingCart";
 import CompanyLogo from "../../../assets/images/companylogo.png";
+import SearchbarInput from "../Searchbar/components/SearchbarInput";
+import SearchbarButton from "../Searchbar/components/SearchbarButton";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,7 +46,8 @@ const Navbar = () => {
               className="h-10 w-auto pr-5"
             />
           </NavLink>
-          {windowWidth > 1050 && <SearchBar isSearchOpen={true} />}
+          
+          <SearchbarInput />  <SearchbarButton />
         </div>
         <div className="flex items-center justify-end md:justify-start w-full md:w-auto">
           {windowWidth <= 1050 && (
