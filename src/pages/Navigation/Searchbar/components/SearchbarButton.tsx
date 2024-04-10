@@ -1,24 +1,21 @@
-
-import SearchbarGlobalState from '../utils/SearchbarGlobalState'
-import { useNavigate } from 'react-router-dom';
+import SearchbarGlobalState from "../utils/SearchbarGlobalState";
+import { useNavigate } from "react-router-dom";
 
 const SearchbarButton = () => {
+  const { searchInput, allRecipes, fetchDrinkByName, filterRecipes } =
+    SearchbarGlobalState();
+  const navigate = useNavigate();
 
-    const {fetchDrinkByName, searchInput} = SearchbarGlobalState();
-    const navigate = useNavigate();
-
-    const handleOnClick = () => {
-        console.log("INSIDE SEARCHBARBUTTON")
-        fetchDrinkByName(searchInput);
-        navigate('/search-result')
-    }
+  const handleOnClick = () => {
+    fetchDrinkByName(searchInput);
+    filterRecipes(searchInput, allRecipes);
+    navigate("/search-result");
+  };
   return (
     <div>
-
-<button onClick={handleOnClick}>Search</button>
-
+      <button onClick={handleOnClick}>Search</button>
     </div>
-  )
-}
+  );
+};
 
-export default SearchbarButton
+export default SearchbarButton;

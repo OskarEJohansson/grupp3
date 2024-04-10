@@ -1,26 +1,28 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import SearchbarGlobalState from '../utils/SearchbarGlobalState';
+import { useEffect } from "react";
+import SearchbarGlobalState from "../utils/SearchbarGlobalState";
 
 const SearchbarInput = () => {
+  const { setSearchbarInput, fetchRecipes, allRecipes } =
+    SearchbarGlobalState();
 
-    const {setSearchbarInput, searchInput} = SearchbarGlobalState();
-
-    const handleOnChange = (e: any) => {
-    const {value} = e.target;
+  const handleOnChange = (e: any) => {
+    const { value } = e.target;
     setSearchbarInput(value);
-    console.log("INSIDE SEARCHBARINPUT:", searchInput)
+  };
+
+  useEffect(() => {
+    if (allRecipes.length === 0) {
+      fetchRecipes();
     }
+  });
 
   return (
-
     <div>
-
-<input type="text" onChange={handleOnChange} />
-
-
+      <input type="text" onChange={handleOnChange} />
     </div>
-  )
-}
+  );
+};
 
-export default SearchbarInput
+export default SearchbarInput;

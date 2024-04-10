@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { create } from "zustand";
-import { CardTypes } from "../../../types";
+import { RecipeTypes } from "../../../types";
 
 export interface CartGlobalStateInterface {
   globalCategory: string;
@@ -11,9 +11,9 @@ export interface CartGlobalStateInterface {
   setCart: () => void;
   setCategory: (itemCategory: string) => void;
   addToCart: (addItemToCart: any) => void;
-  removeFromCart: (itemToRemove: any) => void; 
+  removeFromCart: (itemToRemove: any) => void;
   setGlobalArticleId: (articleId: string) => void;
-  setGlobalArticle: (article: CardTypes) => void;
+  setGlobalArticle: (article: RecipeTypes) => void;
 }
 
 const CartGlobalState = create<CartGlobalStateInterface>((set) => ({
@@ -35,7 +35,7 @@ const CartGlobalState = create<CartGlobalStateInterface>((set) => ({
       globalArticleId: articleId,
     })),
 
-  setGlobalArticle: (article: CardTypes) =>
+  setGlobalArticle: (article: RecipeTypes) =>
     set(() => ({
       globalArticle: article,
     })),

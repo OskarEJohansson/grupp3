@@ -3,7 +3,6 @@ import { RecipeTypes } from "../../../types";
 import AddToCartButton from "./RecipeAddToCartButton";
 import RecipeGlobalState from "../utils/RecipeGlobalState";
 import DetailedCard from "./RecipeDetailedCard";
-import UpdateRecipeButton from "../../Update/component/UpdateRecipeButton";
 import { useNavigate } from "react-router-dom";
 import CommentsGlobalState from "../../Comments/utils/CommentsGlobalState";
 

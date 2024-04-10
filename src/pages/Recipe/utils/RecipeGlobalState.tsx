@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { CardTypes, RecipeTypes } from "../../../types";
+import { RecipeTypes } from "../../../types";
 import axios from "axios";
 
 export interface RecipeGlobalStateInterface {
