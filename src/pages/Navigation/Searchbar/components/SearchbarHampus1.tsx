@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import DrinkGlobalState from "../../Drinks/utils/DrinkGlobalState";
-import RecipeGlobalState from "../../Recipe/utils/RecipeGlobalState";
+import DrinkGlobalState from "../../../Drinks/utils/DrinkGlobalState";
+import RecipeGlobalState from "../../../Recipe/utils/RecipeGlobalState";
 
 interface SearchItem {
   id: string;
@@ -13,24 +13,13 @@ interface SearchBarProps {
   isSearchOpen?: boolean;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ isSearchOpen }) => {
+const SearchBar = ({ isSearchOpen }: SearchBarProps) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [, setSearchResults] = useState<SearchItem[]>([]);
   const [, setSearchResultsFound] = useState(true);
   const navigate = useNavigate();
-  const { fetchRecipe, categoryData, URL } = RecipeGlobalState();
-  const {
-    alcoholicDrinkList,
-    nonAlcoholicDrinkList,
-    fetchAlcoholicDrink,
-    fetchNonAlcoholicDrink,
-  } = DrinkGlobalState();
-
-  useEffect(() => {
-     fetchRecipe(URL);
-     fetchAlcoholicDrink();
-     fetchNonAlcoholicDrink();
-   }, [URL, fetchAlcoholicDrink, fetchRecipe, fetchNonAlcoholicDrink]);
+  const { categoryData, URL } = RecipeGlobalState();
+  const { alcoholicDrinkList, nonAlcoholicDrinkList } = DrinkGlobalState();
 
   const handleSearchInputChange = (
     event: React.ChangeEvent<HTMLInputElement>

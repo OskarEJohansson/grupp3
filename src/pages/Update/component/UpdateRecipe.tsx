@@ -5,12 +5,12 @@ import UpdateRecipeIngredientCard from "./UpdateRecipeIngredientCard";
 const UpdateRecipe = () => {
   const { formData, setChangedData } = UpdateRecipeGlobalState();
 
-  const handleOnChange = (e) => {
+  const handleOnChange = (e: any) => {
     const { name, value } = e.target;
     setChangedData(name, value);
   };
 
-  const handleOnChangeCategory = (selectedOption) => {
+  const handleOnChangeCategory = (selectedOption: any) => {
     setChangedData("categories", selectedOption.value);
   };
 
@@ -75,7 +75,9 @@ const UpdateRecipe = () => {
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />
         <br />
-        <label className="block text-gray-700 text-sm font-bold mb-2">Price</label>
+        <label className="block text-gray-700 text-sm font-bold mb-2">
+          Price
+        </label>
         <input
           name="price"
           onChange={handleOnChange}

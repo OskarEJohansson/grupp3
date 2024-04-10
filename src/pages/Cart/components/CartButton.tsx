@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ShoppingCartIcon from "./ShoppingCart";
 import CartSidebar from "./CartSidebar";
 import CartGlobalState from "../utils/CartGlobalState";
