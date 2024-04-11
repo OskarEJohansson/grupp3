@@ -2,6 +2,7 @@
 import AddToCartButton from "./RecipeAddToCartButton";
 import RecipeGlobalState from "../utils/RecipeGlobalState";
 import { RecipeTypes } from "../../../types";
+import DrinkSuggestion from "../../Drinks/components/DrinkSuggestion";
 
 const RecipeDetailedCard = ({ onClose }: { onClose: () => void }) => {
   const article = RecipeGlobalState((state) => state.article as RecipeTypes);
@@ -31,9 +32,12 @@ const RecipeDetailedCard = ({ onClose }: { onClose: () => void }) => {
             {ingredientsList}
           </ul>
         </div>
+        <div className="text-lg mb-4 text-gray-800">
+          <p>Quantity:</p>
+          <QuantityInput value={quantity} onChange={handleQuantityChange} />
+        </div>
       </div>
       <div className="fixed bottom-4 left-0 w-full flex justify-center">
-        <AddToCartButton article={{ ...article }} />
         <button
           className="ml-4 px-4 py-2 text-white bg-gray-300 rounded hover:bg-gray-600"
           onClick={onClose}
