@@ -22,7 +22,7 @@ const RecipeDetailedCard = ({ onClose }: { onClose: () => void }) => {
         className="bg-white p-8 rounded-lg max-w-md overflow-y-auto"
         style={{ width: "80%", maxHeight: "80%" }}
       >
-        <h1 className="text-3xl font-bold mb-4 text-indigo-600">
+        <h1 className="text-3xl font-bold mb-4 text-black">
           {article.title}
         </h1>
         <img
@@ -40,13 +40,15 @@ const RecipeDetailedCard = ({ onClose }: { onClose: () => void }) => {
         <div className="text-lg mb-4 text-gray-800">
           <p>Ingredients:</p>
           <ul className="list-disc pl-4">{ingredientsList}</ul>
+          <div className="mt-4 mb-4">
+          <AddToCartButton article={{ ...article }} />
+          </div>
         </div>
         <div>
           <DrinkSuggestion />
         </div>
       </div>
       <div className="fixed bottom-4 left-0 w-full flex justify-center">
-        <AddToCartButton article={{ ...article }} />
         <button
           className="ml-4 px-4 py-2 text-white bg-gray-300 rounded hover:bg-gray-600"
           onClick={onClose}
