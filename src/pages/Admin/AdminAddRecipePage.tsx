@@ -6,8 +6,6 @@ import AdminSubmitButton from "./components/AdminSubmitButton.tsx";
 import AdminPriceInput from "./components/AdminPriceInput.tsx";
 import AdminTimeInMinsInput from "./components/AdminTimeInMinsInput.tsx";
 import AdminDeleteAllRecipesButton from "./components/AdminDeleteAllRecipesButton.tsx";
-import AdminGlobalState from "./utils/AdminGlobalState.ts";
-import UpdateRecipe from "../Update/component/UpdateRecipe.tsx";
 
 const AdminAddRecipePage = () => {
   return (
@@ -24,7 +22,7 @@ const AdminAddRecipePage = () => {
         <AdminInputIngredients />
         <AdminTimeInMinsInput />
         <AdminPriceInput />
-        <AdminSubmitButton resetFormData={AdminGlobalState().resetFormData} />
+        <AdminSubmitButton />
       </div>
       <div className="danger-zone">
         <AdminDeleteAllRecipesButton />
