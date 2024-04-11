@@ -3,11 +3,12 @@ import CommentsGlobalState from "../../Comments/utils/CommentsGlobalState";
 
 const RatingAddCard = () => {
   const { recipeId } = CommentsGlobalState();
-  const { postRating } = RatingGlobalState();
+  const { postRating, fetchAverageRating } = RatingGlobalState();
 
-  const handleOnClick = (e: any) => {
+  const handleOnClick = async (e: any) => {
     const { value } = e.target;
-    postRating(recipeId, value);
+    await postRating(recipeId, value);
+    await fetchAverageRating(recipeId);
   };
 
   return (
