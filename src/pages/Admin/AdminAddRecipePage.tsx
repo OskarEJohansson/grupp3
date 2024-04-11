@@ -26,7 +26,7 @@ const AdminAddRecipePage = () => {
             <AdminInputIngredients />
             <AdminTimeInMinsInput />
             <AdminPriceInput />
-            <AdminSubmitButton resetFormData={AdminGlobalState().resetFormData} />
+            <AdminSubmitButton />
           </div>
         </div>
       </div>
