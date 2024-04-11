@@ -826,5 +826,154 @@
             }
         ],
         "avgRating": null
+    },
+    {
+        "title": "Sweet Potato Fries",
+        "description": "Sweet potato fries are a healthy and flavorful side that pairs perfectly with carbonara. They're made from sweet potatoes cut into sticks and then baked to perfection.",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.dinneratthezoo.com%2Fwp-content%2Fuploads%2F2019%2F07%2Fsweet-potato-fries-5.jpg&f=1&nofb=1&ipt=e9542fe6909406bd0586f38106eb76e3bb4a6096e1e6cc0b71526bf5393b2efd&ipo=images",
+        "timeInMins": 25,
+        "price": 69,
+        "ratings": [],
+        "categories": [
+            "sides"
+        ],
+        "instructions": [
+            "Preheat the oven to 425°F (220°C).",
+            "Peel the sweet potatoes and cut them into thin fries.",
+            "Toss the sweet potato fries with olive oil, salt, and pepper until evenly coated.",
+            "Spread the fries out in a single layer on a baking sheet lined with parchment paper.",
+            "Bake for 20-25 minutes, flipping halfway through, until the fries are golden brown and crispy.",
+            "Serve hot and enjoy your Sweet Potato Fries!"
+        ],
+        "ingredients": [
+            {
+                "name": "Sweet potatoes",
+                "amount": 2,
+                "unit": "pieces",
+                "_id": "660c7e0229f983c33c42e3f6"
+            },
+            {
+                "name": "Olive oil",
+                "amount": 2,
+                "unit": "tablespoons",
+                "_id": "660c7e0229f983c33c42e3f7"
+            },
+            {
+                "name": "Salt",
+                "amount": 1,
+                "unit": "pinch",
+                "_id": "660c7e0229f983c33c42e3f8"
+            },
+            {
+                "name": "Pepper",
+                "amount": 1,
+                "unit": "pinch",
+                "_id": "660c7e0229f983c33c42e3f9"
+            }
+        ],
+        "comments": [],
+        "_id": "660c7e0229f983c33c42e3f5",
+        "__v": 0
+    },
+    {
+        "title": "Grilled Asparagus",
+        "description": "Grilled asparagus is a healthy and delicious side that complements carbonara with its distinct flavor and crunchy texture. It's easy to make and provides a fresh contrast to the rich pasta.",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftherecipecritic.com%2Fwp-content%2Fuploads%2F2019%2F06%2Fgrilledasparagus3.jpg&f=1&nofb=1&ipt=844252cecbe3b7618820b00fbb3c779f2c3e465c227e9124e7ec2d628d5546f3&ipo=images",
+        "timeInMins": 15,
+        "price": 45,
+        "ratings": [],
+        "categories": [
+            "sides"
+        ],
+        "instructions": [
+            "Preheat the grill to medium-high heat.",
+            "Trim the tough ends off the asparagus spears.",
+            "Drizzle the asparagus with olive oil and season with salt and pepper.",
+            "Grill the asparagus for 5-7 minutes, turning occasionally, until tender and lightly charred.",
+            "Remove from the grill and squeeze fresh lemon juice over the asparagus before serving.",
+            "Enjoy your Grilled Asparagus!"
+        ],
+        "ingredients": [
+            {
+                "name": "Asparagus",
+                "amount": 400,
+                "unit": "grams",
+                "_id": "660c7e0229f983c33c42e3f0"
+            },
+            {
+                "name": "Olive oil",
+                "amount": 2,
+                "unit": "tablespoons",
+                "_id": "660c7e0229f983c33c42e3f1"
+            },
+            {
+                "name": "Salt",
+                "amount": 1,
+                "unit": "pinch",
+                "_id": "660c7e0229f983c33c42e3f2"
+            },
+            {
+                "name": "Pepper",
+                "amount": 1,
+                "unit": "pinch",
+                "_id": "660c7e0229f983c33c42e3f3"
+            },
+            {
+                "name": "Lemon juice",
+                "amount": 1,
+                "unit": "tablespoon",
+                "_id": "660c7e0229f983c33c42e3f4"
+            }
+        ],
+        "comments": [],
+        "_id": "660c7e0229f983c33c42e3ef",
+        "__v": 0
+    },
+    {
+        "title": "Garlic Bread",
+        "description": "Garlic bread is a simple but flavorful side that pairs perfectly with creamy pasta like carbonara. It's made with fresh bread flavored with garlic, butter, and herbs.",
+        "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Frealhousemoms.com%2Fwp-content%2Fuploads%2FGrilled-Parmesan-Garlic-Bread-Easy-Side-Dish-Recipe-IG.jpg&f=1&nofb=1&ipt=0fd0779c1eb82dfd5f96d47bedde3f408d4394c56928401c88bd154829148475&ipo=images",
+        "timeInMins": 15,
+        "price": 55,
+        "ratings": [],
+        "categories": [
+            "sides"
+        ],
+        "instructions": [
+            "Slice the bread into thick slices.",
+            "In a small bowl, mix together softened butter, minced garlic, and chopped parsley.",
+            "Spread the garlic butter mixture onto each slice of bread.",
+            "Wrap the bread in foil and bake in a preheated oven at 375°F (190°C) for 10-15 minutes, until the bread is heated through and the edges are crispy.",
+            "Serve hot and enjoy your Garlic Bread!"
+        ],
+        "ingredients": [
+            {
+                "name": "Fresh bread",
+                "amount": 1,
+                "unit": "baguette",
+                "_id": "660c7e0229f983c33c42e3eb"
+            },
+            {
+                "name": "Butter",
+                "amount": 100,
+                "unit": "grams",
+                "_id": "660c7e0229f983c33c42e3ec"
+            },
+            {
+                "name": "Garlic",
+                "amount": 3,
+                "unit": "cloves",
+                "_id": "660c7e0229f983c33c42e3ed"
+            },
+            {
+                "name": "Fresh parsley",
+                "amount": 2,
+                "unit": "tablespoons",
+                "_id": "660c7e0229f983c33c42e3ee"
+            }
+        ],
+        "comments": [],
+        "_id": "660c7e0229f983c33c42e3ea",
+        "__v": 0
     }
 ]

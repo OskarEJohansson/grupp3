@@ -19,6 +19,7 @@ const DrinkSuggestion = () => {
                 case "Veg":
                 case "Fish":
                 case "Hamburger":
+                case "Sides":
                     await fetchAndSetDrink(getDrinkIdForCategory(category));
                     break;
                 default:
@@ -39,6 +40,8 @@ const DrinkSuggestion = () => {
             case "Fish":
                 return "12560";
             case "Hamburger":
+                return "17831";
+            case "Sides":
                 return "17831";
             default:
                 return null;
