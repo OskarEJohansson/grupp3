@@ -5,10 +5,8 @@ describe('Route Testing', () => {
   
     cy.visit('http://localhost:5173/');
 
-   
-    cy.get('.nav-list').contains('Food').click();
-
-   
+    cy.get('.hidden.md\\:flex.space-x-6.items-center').contains('Food').click();
+    
     cy.url().should('include', '/category-page');
   });
 });
