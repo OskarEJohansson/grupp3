@@ -11,14 +11,25 @@ const CommentsPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <CommentsCard id={recipeId} />
-      <RatingPage />
-      <CommentsAddCommentCard id={recipeId} />
+    <div className="container mx-auto p-4">
+      <div >
+        <CommentsCard id={recipeId} />
+      </div>
+      <div className="mb-8">
+        <RatingPage />
+      </div>
+      <div className="mb-8">
+        <CommentsAddCommentCard id={recipeId} />
+      </div>
 
-      <button onClick={() => navigate(`/category-page/${category}`)}>
-        Back
-      </button>
+      <div className="flex justify-center">
+        <button
+          onClick={() => navigate(`/category-page/${category}`)}
+          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+        >
+          Back
+        </button>
+      </div>
     </div>
   );
 };

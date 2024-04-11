@@ -14,7 +14,6 @@ const DrinkSuggestion = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            console.log("Category:", category);
             switch (category) {
                 case "Meat":
                 case "Veg":
@@ -60,12 +59,21 @@ const DrinkSuggestion = () => {
     };
 
     return (
-        <div className="suggested-drink">
-            <p>
-                Recommended Drink: {suggestedDrink}
-                {drinkImage && <img src={drinkImage} alt={suggestedDrink} />}
-            </p>
-            <AddToCartButton article={{ ...drink }} />
+        <div>
+            <p className="text-gray-600 font-semibold mb-2">Recommended Drink</p>
+            <div className="flex items-center justify-between bg-gray-100 p-4 rounded-lg mb-4">
+                <div className="flex items-center">
+                    <div>
+                        {drinkImage && <img className="w-16 h-16 mr-4 rounded-full" src={drinkImage} alt={suggestedDrink} />}
+                    </div>
+                    <div>
+                        <p className="text-gray-800 font-bold">{suggestedDrink}</p>
+                    </div>
+                </div>
+                <div>
+                    <AddToCartButton article={{ ...drink }} />
+                </div>
+            </div>
         </div>
     );
 };

@@ -23,7 +23,7 @@ const DrinkDetailedCard = ({ onClose }: { onClose: () => void }) => {
           className="w-full md:w-auto h-auto mb-6 md:mb-0 rounded-lg"
         />
         <div className="text-lg mb-2 mt-2 text-gray-800">This is a {drink.strAlcoholic} drink!</div>
-        <div className="text-lg mb-2 text-gray-800">It is a {drink.strCategory?.toLowerCase()}, to be served in {drink.strGlass?.toLocaleLowerCase()}. Containing {drink.strIngredient1}, {drink.strIngredient2}, {drink.strIngredient3}, {drink.strIngredient4}, {drink.strIngredient5}.</div>
+        <div className="text-lg mb-2 text-gray-800">It is a {drink.strCategory?.toLowerCase()}, to be served in {drink.strGlass?.toLocaleLowerCase()}.</div>
         <div className="text-lg mb-2 text-gray-800" style={{ overflowY: "auto" }}>
           <div className="text-lg mb-4 text-gray-800">
           <p>Ingredients:</p>

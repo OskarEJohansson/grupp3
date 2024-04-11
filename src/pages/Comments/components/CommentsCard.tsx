@@ -14,20 +14,27 @@ const CommentsCard = ({ id }: { id: string }) => {
   }, [id]);
 
   return (
-    <div>
-      <div>{article.title}</div>
-      <img src={article.imageUrl} alt="" width={300} />
-      <div>{article.description}</div>
-      <div>
-        AVG RATING: {averageRating !== 0 ? averageRating : "Loading..."}
-      </div>
-
-      {comments.map((comment: CommentTypes, index: number) => (
-        <div key={index}>
-          <div>NAME: {comment.name} </div>
-          <div>COMMENT: {comment.comment} </div>
+    <div className=" p-4 border rounded-lg bg-gray-100 flex flex-col">
+      <div className="flex items-start">
+        <div className="mr-4">
+          <img src={article.imageUrl} alt={article.title} className="rounded-lg mb-4" width={300} />
         </div>
-      ))}
+        <div>
+          <h2 className="text-2xl font-bold mb-2">{article.title}</h2>
+          <p className="mb-4">{article.description}</p>
+          {comments.map((comment: CommentTypes, index: number) => (
+            <div key={index} className="border-t border-gray-300 pt-2">
+              <div className="font-semibold">{comment.name}</div>
+              <div>{comment.comment}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="flex justify-center items-center">
+        <div className="bg-blue-500 text-white font-bold rounded-full h-10 w-10 flex items-center justify-center">
+          {averageRating !== 0 ? averageRating.toFixed(1) : "Loading..."}
+        </div>
+      </div>
     </div>
   );
 };
