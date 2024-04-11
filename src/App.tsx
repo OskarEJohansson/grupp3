@@ -7,6 +7,7 @@ import UserRoutes from "./pages/Navigation/Routes/UserRoutes/UserRoutes";
 import Footer from "./pages/Navigation/components/Footer";
 import SearchResultsPage from "./pages/Navigation/Searchbar/SearchResultsPage";
 import AdminRoutes from "./pages/Navigation/Routes/AdminRoutes/AdminRoutes";
+import CheckoutPage from "./pages/Cart/CheckoutPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <>
           <Route path="/search-result" element={<SearchResultsPage />} />
+          <Route path="/checkoutpage" element={<CheckoutPage />} />
           <Route path="/category-page/*" element={<RecipeRoutes />} />
           <Route path="/drink-page/*" element={<DrinkRoutes />} />
           <Route path="/*" element={<UserRoutes />} />
