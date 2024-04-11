@@ -5,29 +5,30 @@ import AdminSelectCategory from "./components/AdminSelectCategory.tsx";
 import AdminSubmitButton from "./components/AdminSubmitButton.tsx";
 import AdminPriceInput from "./components/AdminPriceInput.tsx";
 import AdminTimeInMinsInput from "./components/AdminTimeInMinsInput.tsx";
-import AdminDeleteAllRecipesButton from "./components/AdminDeleteAllRecipesButton.tsx";
 import AdminGlobalState from "./utils/AdminGlobalState.ts";
-import UpdateRecipe from "../Update/component/UpdateRecipe.tsx";
 
 const AdminAddRecipePage = () => {
   return (
-    <div>
-      <div className="container">
-        <h1>Add Recipe</h1>
-      </div>
-      <div className="form-group">
-        <AdminInputBasicInfo inputLabel="title" />
-        <AdminInputBasicInfo inputLabel="description" />
-        <AdminInputBasicInfo inputLabel="image" />
-        <AdminInputInstructions />
-        <AdminSelectCategory />
-        <AdminInputIngredients />
-        <AdminTimeInMinsInput />
-        <AdminPriceInput />
-        <AdminSubmitButton resetFormData={AdminGlobalState().resetFormData} />
-      </div>
-      <div className="danger-zone">
-        <AdminDeleteAllRecipesButton />
+    <div className="container mx-auto">
+      <h1 className="text-3xl font-bold mb-8 text-center">Add Recipe</h1>
+      <div className="grid gap-6">
+        <div className="bg-gray-100 p-6 rounded-md shadow-md">
+          <div className="space-y-6">
+            <AdminInputBasicInfo inputLabel="title" />
+            <AdminInputBasicInfo inputLabel="description" />
+            <AdminInputBasicInfo inputLabel="image" />
+            <AdminInputInstructions />
+          </div>
+        </div>
+        <div className="bg-gray-100 p-6 rounded-md shadow-md">
+          <div className="space-y-6">
+            <AdminSelectCategory />
+            <AdminInputIngredients />
+            <AdminTimeInMinsInput />
+            <AdminPriceInput />
+            <AdminSubmitButton resetFormData={AdminGlobalState().resetFormData} />
+          </div>
+        </div>
       </div>
     </div>
   );

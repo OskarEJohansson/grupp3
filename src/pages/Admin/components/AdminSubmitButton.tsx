@@ -26,12 +26,14 @@ const AdminSubmitButton = ({ resetFormData }) => {
   };
 
   return (
-    <button
-      onClick={handleOnClick}
-      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-    >
-      Submit Form
-    </button>
+    <div className="flex justify-center">
+      <button
+        onClick={handleOnClick}
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Submit Form
+      </button>
+    </div>
   );
 };
 
