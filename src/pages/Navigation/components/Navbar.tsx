@@ -35,7 +35,7 @@ const Navbar = () => {
       <div className="flex items-center w-full justify-between">
         <div className="flex items-center">
           <NavLink to="/" className="brand-link flex items-center">
-            <img src={CompanyLogo} alt="Taste Trails logga" className="h-10 w-auto pr-5" />
+            <img src={CompanyLogo} alt="Taste Trails logga" className="h-10 w-auto pr-5" style={{ cursor: "pointer" }} />
           </NavLink>
           {windowWidth > 768 && ( 
             <div className="flex items-start px-4">
@@ -77,7 +77,7 @@ const Navbar = () => {
             )}
             <li>
               <button onClick={toggleAdminView} className="text-white hover:text-gray-200">
-                {isAdminView ? "Switch to User View" : "Switch to Admin View"}
+                {isAdminView ? "User View" : "Admin View"}
               </button>
             </li>
           </ul>
@@ -121,7 +121,7 @@ const Navbar = () => {
             )}
             <li>
               <button onClick={toggleAdminView} className="text-white hover:text-gray-200 block py-2 px-4">
-                {isAdminView ? "Switch to User View" : "Switch to Admin View"}
+                {isAdminView ? "User View" : "Admin View"}
               </button>
             </li>
           </ul>

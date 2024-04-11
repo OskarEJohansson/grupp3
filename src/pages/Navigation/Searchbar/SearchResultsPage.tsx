@@ -2,16 +2,28 @@ import { useState } from "react";
 import { DrinkDetails, RecipeTypes } from "../../../types";
 import { useNavigate } from "react-router-dom";
 import SearchbarGlobalState from "./utils/SearchbarGlobalState";
-import  RecipeAddToCartButton  from "../../Recipe/components/RecipeAddToCartButton";
-import DrinkAddToCartButton  from "../../Drinks/components/DrinkAddToCartButton";
+import RecipeAddToCartButton from "../../Recipe/components/RecipeAddToCartButton";
+import DrinkAddToCartButton from "../../Drinks/components/DrinkAddToCartButton";
+import RecipeDetailedCard from "../../Recipe/components/RecipeDetailedCard";
+import DrinkDetailedCard from "../../Drinks/components/DrinkDetailedCard";
 
 const SearchResultsPage = () => {
   const { drinks, filteredRecipes } = SearchbarGlobalState();
   const navigate = useNavigate();
   const [isRecipeSelected, setIsRecipeSelected] = useState(true);
+  const [selectedRecipe, setSelectedRecipe] = useState<RecipeTypes | null>(null);
+  const [selectedDrink, setSelectedDrink] = useState<DrinkDetails | null>(null);
 
-  const handleTabChange = (value) => {
+  const handleTabChange = (value: boolean) => {
     setIsRecipeSelected(value);
+  };
+
+  const handleRecipeClick = (recipe: RecipeTypes) => {
+    setSelectedRecipe(recipe);
+  };
+
+  const handleDrinkClick = (drink: DrinkDetails) => {
+    setSelectedDrink(drink);
   };
 
   return (
@@ -19,13 +31,17 @@ const SearchResultsPage = () => {
       <div className="flex space-x-4 mb-4">
         <button
           onClick={() => handleTabChange(true)}
-          className={`px-4 py-2 rounded-md focus:outline-none ${isRecipeSelected ? 'bg-yellow-500 text-white' : 'bg-yellow-200 text-black'}`}
+          className={`px-4 py-2 rounded-md focus:outline-none ${
+            isRecipeSelected ? "bg-yellow-500 text-white" : "bg-yellow-200 text-black"
+          }`}
         >
           Recipes
         </button>
         <button
           onClick={() => handleTabChange(false)}
-          className={`px-4 py-2 rounded-md focus:outline-none ${isRecipeSelected ? 'bg-yellow-200 text-black' : 'bg-yellow-500 text-white'}`}
+          className={`px-4 py-2 rounded-md focus:outline-none ${
+            isRecipeSelected ? "bg-yellow-200 text-black" : "bg-yellow-500 text-white"
+          }`}
         >
           Drinks
         </button>
@@ -38,7 +54,11 @@ const SearchResultsPage = () => {
             </div>
           ) : (
             filteredRecipes.map((recipe: RecipeTypes, index: number) => (
-              <div key={index} className="border border-gray-300 rounded p-4">
+              <div
+                key={index}
+                className="border border-gray-300 rounded p-4 cursor-pointer"
+                onClick={() => handleRecipeClick(recipe)}
+              >
                 <h2 className="text-xl font-semibold mb-2">{recipe.title}</h2>
                 <img
                   src={recipe.imageUrl}
@@ -50,7 +70,9 @@ const SearchResultsPage = () => {
                 <div className="mt-4 flex justify-between items-center">
                   <div className="flex space-x-4">
                     <RecipeAddToCartButton article={recipe} />
-                    <button onClick={() => navigate("/category-page/comments")}>Comments</button>
+                    <button onClick={() => navigate("/category-page/comments")}>
+                      Comments
+                    </button>
                   </div>
                 </div>
               </div>
@@ -63,14 +85,24 @@ const SearchResultsPage = () => {
             </div>
           ) : (
             drinks.map((drink: DrinkDetails, index: number) => (
-              <div key={index} className="border border-gray-300 rounded p-4">
+              <div
+                key={index}
+                className="border border-gray-300 rounded p-4 cursor-pointer"
+                onClick={() => handleDrinkClick(drink)}
+              >
                 <h2 className="text-xl font-semibold mb-2">{drink.strDrink}</h2>
-                <img
-                  src={drink.strDrinkThumb}
-                  alt="Drink Picture"
-                  className="cursor-pointer rounded-md mb-2"
-                  style={{ width: "100%", maxHeight: "200px", objectFit: "cover" }}
-                />
+                <div className="image-container" style={{ aspectRatio: "16/9", overflow: "hidden" }}>
+                  <img
+                    src={drink.strDrinkThumb}
+                    alt="Drink Picture"
+                    className="rounded-md mb-2"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                    }}
+                  />
+                </div>
                 <div className="mt-4 flex justify-end">
                   <DrinkAddToCartButton article={drink} />
                 </div>
@@ -79,6 +111,8 @@ const SearchResultsPage = () => {
           )
         )}
       </div>
+      {selectedRecipe && <RecipeDetailedCard onClose={() => setSelectedRecipe(null)} />}
+      {selectedDrink && <DrinkDetailedCard onClose={() => setSelectedDrink(null)} />}
     </div>
   );
 };
