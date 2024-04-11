@@ -1,22 +1,18 @@
-import { useState } from "react";
+
 import AddToCartButton from "./RecipeAddToCartButton";
-import QuantityInput from "../../../components/QuantityInput";
 import RecipeGlobalState from "../utils/RecipeGlobalState";
 import { RecipeTypes } from "../../../types";
-import DrinkSuggestion from "../../Drinks/components/DrinkSuggestion";
 
 const RecipeDetailedCard = ({ onClose }: { onClose: () => void }) => {
   const article = RecipeGlobalState((state) => state.article as RecipeTypes);
-  const [quantity, setQuantity] = useState(1);
 
-  const handleQuantityChange = (newValue: number) => {
-    setQuantity(newValue);
-  };
-
-  const ingredients = article.ingredients.filter(Boolean);
-  const ingredientsList = ingredients.map((ingredient, index) => (
-    <li key={index} className="text-sm">{ingredient.name}</li>
-  ));
+  let ingredientsList = null;
+  if (article.ingredients) {
+    const ingredients = article.ingredients.filter(Boolean);
+    ingredientsList = ingredients.map((ingredient, index) => (
+      <li key={index} className="text-sm">{ingredient.name}</li>
+    ));
+  }
 
   return (
     <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center">
@@ -37,14 +33,9 @@ const RecipeDetailedCard = ({ onClose }: { onClose: () => void }) => {
             {ingredientsList}
           </ul>
         </div>
-        <div className="text-lg mb-4 text-gray-800">
-          <p>Quantity:</p>
-          <QuantityInput value={quantity} onChange={handleQuantityChange} />
-          <AddToCartButton article={{ ...article, quantity }} />
-        </div>
-          <DrinkSuggestion />
       </div>
       <div className="fixed bottom-4 left-0 w-full flex justify-center">
+        <AddToCartButton article={{ ...article}} />
         <button
           className="ml-4 px-4 py-2 text-white bg-gray-300 rounded hover:bg-gray-600"
           onClick={onClose}

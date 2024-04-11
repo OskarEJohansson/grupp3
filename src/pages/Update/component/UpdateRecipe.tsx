@@ -85,8 +85,10 @@ const UpdateRecipe = () => {
           value={formData.price}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />
+        <h2 className="text-xl font-bold text-center my-4">Update ingredients</h2>
+        <UpdateRecipeIngredientCard />
       </form>
-      <UpdateRecipeIngredientCard />
+      
     </div>
   );
 };

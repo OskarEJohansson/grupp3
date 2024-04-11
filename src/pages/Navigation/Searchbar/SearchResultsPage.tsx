@@ -6,24 +6,31 @@ import RecipeAddToCartButton from "../../Recipe/components/RecipeAddToCartButton
 import DrinkAddToCartButton from "../../Drinks/components/DrinkAddToCartButton";
 import RecipeDetailedCard from "../../Recipe/components/RecipeDetailedCard";
 import DrinkDetailedCard from "../../Drinks/components/DrinkDetailedCard";
+import RecipeGlobalState from "../../Recipe/utils/RecipeGlobalState";
+import DrinkGlobalState from "../../Drinks/utils/DrinkGlobalState";
 
 const SearchResultsPage = () => {
   const { drinks, filteredRecipes } = SearchbarGlobalState();
   const navigate = useNavigate();
   const [isRecipeSelected, setIsRecipeSelected] = useState(true);
-  const [selectedRecipe, setSelectedRecipe] = useState<RecipeTypes | null>(null);
-  const [selectedDrink, setSelectedDrink] = useState<DrinkDetails | null>(null);
+  const [showRecipeModal, setShowRecipeModal] = useState(false);
+  const [showDrinkModal, setShowDrinkModal] = useState(false);
+  const {setArticle} = RecipeGlobalState(); 
+  const {setDrink} = DrinkGlobalState();
+
 
   const handleTabChange = (value: boolean) => {
     setIsRecipeSelected(value);
   };
 
   const handleRecipeClick = (recipe: RecipeTypes) => {
-    setSelectedRecipe(recipe);
+    setArticle(recipe)
+    setShowRecipeModal(true);
   };
 
   const handleDrinkClick = (drink: DrinkDetails) => {
-    setSelectedDrink(drink);
+    setDrink(drink)
+    setShowDrinkModal(true);
   };
 
   return (
@@ -57,10 +64,11 @@ const SearchResultsPage = () => {
               <div
                 key={index}
                 className="border border-gray-300 rounded p-4 cursor-pointer"
-                onClick={() => handleRecipeClick(recipe)}
+                
               >
                 <h2 className="text-xl font-semibold mb-2">{recipe.title}</h2>
                 <img
+                onClick={() => handleRecipeClick(recipe)}
                   src={recipe.imageUrl}
                   alt="Recipe Picture"
                   className="w-40 h-40 object-cover"
@@ -75,6 +83,7 @@ const SearchResultsPage = () => {
                     </button>
                   </div>
                 </div>
+                
               </div>
             ))
           )
@@ -88,11 +97,12 @@ const SearchResultsPage = () => {
               <div
                 key={index}
                 className="border border-gray-300 rounded p-4 cursor-pointer"
-                onClick={() => handleDrinkClick(drink)}
+                
               >
                 <h2 className="text-xl font-semibold mb-2">{drink.strDrink}</h2>
                 <div className="image-container" style={{ aspectRatio: "16/9", overflow: "hidden" }}>
                   <img
+                  onClick={() => handleDrinkClick(drink)}
                     src={drink.strDrinkThumb}
                     alt="Drink Picture"
                     className="rounded-md mb-2"
@@ -111,8 +121,8 @@ const SearchResultsPage = () => {
           )
         )}
       </div>
-      {selectedRecipe && <RecipeDetailedCard onClose={() => setSelectedRecipe(null)} />}
-      {selectedDrink && <DrinkDetailedCard onClose={() => setSelectedDrink(null)} />}
+      {showDrinkModal && <DrinkDetailedCard onClose={() => setShowDrinkModal(false)} />}
+      {showRecipeModal && <RecipeDetailedCard onClose={() => setShowRecipeModal(false)} />}
     </div>
   );
 };
