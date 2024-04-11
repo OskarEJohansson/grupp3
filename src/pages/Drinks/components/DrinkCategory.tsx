@@ -12,6 +12,7 @@ const DrinkCategory = () => {
   };
 
   return (
+<<<<<<< HEAD
     <div className="flex justify-center items-center gap-8">
       {categories.map((category, index) => (
         <div key={index} className="category-item relative">
@@ -26,6 +27,16 @@ const DrinkCategory = () => {
               {category}
             </div>
           </div>
+=======
+    <div className="drink-category-container">
+<<<<<<< HEAD
+=======
+      <h1>Drinks</h1>
+>>>>>>> a89725dd9a986280e6fec112b40162ba0de420a5
+      {categories.map((category, index: number) => (
+        <div key={index}>
+          <DrinkButton category={category} />
+>>>>>>> f56aec646aed03dd4fcef800c47bd30232f5a7c5
         </div>
       ))}
     </div>
