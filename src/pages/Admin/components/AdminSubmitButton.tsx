@@ -1,11 +1,34 @@
 import axios from "axios";
 import AdminGlobalState from "../utils/AdminGlobalState";
+import { useState } from "react";
 
 const AdminSubmitButton = () => {
   const { formData } = AdminGlobalState();
+  const [error, setError] = useState("");
+
+  const validateForm = () => {
+    if (
+      !formData.title ||
+      !formData.description ||
+      !formData.imageUrl ||
+      formData.categories.length === 0 ||
+      formData.instructions.length === 0 ||
+      formData.ingredients.length === 0 ||
+      formData.price === 0 ||
+      formData.timeInMins === 0
+    ) {
+      setError("All fields are required before you can submit form");
+      return false;
+    }
+    return true;
+  };
 
   const handleOnClick = async (event: any) => {
     event.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
 
     try {
       const response = await axios.post(
@@ -37,6 +60,7 @@ const AdminSubmitButton = () => {
       Submit Form
     </button>
     </div>
+    {error && <p className="text-red-500">{error}</p>}
     </form>
   );
 };
