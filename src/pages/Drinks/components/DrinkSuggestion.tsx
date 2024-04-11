@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import DrinkGlobalState, { DrinkGlobalStateInterface } from "../utils/DrinkGlobalState";
 import { useParams } from "react-router-dom";
-import DrinkAddToCartButton from "./DrinkAddToCartButton";
+import { DrinkDetails } from "../../../types";
+import AddToCartButton from "./DrinkAddToCartButton";
 
 const DrinkSuggestion = () => {
+    const drink = DrinkGlobalState((state) => state.drink as DrinkDetails);
     const [suggestedDrink, setSuggestedDrink] = useState("Test");
     const [drinkImage, setDrinkImage] = useState("");
 
@@ -63,7 +65,7 @@ const DrinkSuggestion = () => {
                 Recommended Drink: {suggestedDrink}
                 {drinkImage && <img src={drinkImage} alt={suggestedDrink} />}
             </p>
-            <DrinkAddToCartButton />
+            <AddToCartButton article={{ ...drink }} />
         </div>
     );
 };
