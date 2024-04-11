@@ -6,7 +6,7 @@ const Cart = () => {
   const navigate = useNavigate();
 
   const totalPrice = cart
-    .reduce((acc, cartItem) => {
+    .reduce((acc, cartItem: any) => {
       const price = parseFloat(cartItem.article.price);
       if (!isNaN(price)) {
         return acc + price;
@@ -32,7 +32,7 @@ const Cart = () => {
         </div>
       ) : (
         <>
-          {cart.map((cartItem, index) => (
+          {cart.map((cartItem: any, index) => (
             <div
               key={index}
               className="cart-item flex items-center border-b border-gray-200 py-4"
