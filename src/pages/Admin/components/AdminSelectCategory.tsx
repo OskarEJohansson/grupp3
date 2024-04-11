@@ -9,6 +9,7 @@ const AdminSelectCategory = () => {
     { value: "veg", label: "Vegetarian" },
     { value: "fish", label: "Fish" },
     { value: "hamburger", label: "Hamburger" },
+    { value: "sides", label: "Sides" },
   ];
 
   const customStyles = {

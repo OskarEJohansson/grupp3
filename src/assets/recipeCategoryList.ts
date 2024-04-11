@@ -1,4 +1,4 @@
-export const foodCategoryList = [
+export const recipeCategoryList = [
   {
     category: "Meat",
     picture:
@@ -33,6 +33,15 @@ export const foodCategoryList = [
     description: "Hamburger section",
     _id: 4,
     allergen: "hamburger",
+    allergenPicture: "src/assets/images/hamburger.png",
+  },
+  {
+    category: "Sides",
+    picture:
+      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.mashed.com%2Fimg%2Fgallery%2F13-best-southern-side-dishes-you-need-to-try-at-least-once%2Fintro-1682093504.jpg&f=1&nofb=1&ipt=c71f81f43f7ee4695fcf73c2080ae26d4e21a3d677385d26bd8e59e4a3646f8e&ipo=images",
+    description: "Sides section",
+    _id: 5,
+    allergen: "sides",
     allergenPicture: "src/assets/images/hamburger.png",
   },
 ];

@@ -1,4 +1,4 @@
-import IngredientComponent from "./AdminIngredientComponent";
+import AdminIngredientComponent from "./AdminIngredientComponent";
 import AdminGlobalState from "../utils/AdminGlobalState";
 
 export interface Ingredient {
@@ -26,7 +26,7 @@ export const AdminInputIngredients = () => {
       <div className="form-group">
         {formData.ingredients.map((_, index: number) => (
           <div key={index} className="mb-4">
-            <IngredientComponent
+            <AdminIngredientComponent
               index={index}
               onUpdateComponent={handleUpdateComponent}
             />

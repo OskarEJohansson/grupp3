@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import RecipeCategory from "./components/RecipeCategory";
-import { foodCategoryList } from "../../assets/foodCategoryList";
+import { recipeCategoryList } from "../../assets/recipeCategoryList";
 import { FaUtensils } from "react-icons/fa";
 
 const RecipeCategoryPage = () => {
-  const categoryList = foodCategoryList;
+  const categoryList = recipeCategoryList;
   const navigate = useNavigate();
 
   return (
