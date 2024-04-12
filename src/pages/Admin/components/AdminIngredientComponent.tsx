@@ -39,6 +39,7 @@ export const AdminIngredientComponent = ({ index, onUpdateComponent }) => {
           type="text"
           id={`name${index}`}
           name={`name${index}`}
+          placeholder="name"
           onChange={changeName}
           className="w-full bg-white border border-gray-300 rounded-md px-3 py-2 mb-4 focus:outline-none focus:border-gray-500"
         />
@@ -48,6 +49,7 @@ export const AdminIngredientComponent = ({ index, onUpdateComponent }) => {
           type="number"
           id={`amount${index}`}
           name={`amount${index}`}
+          placeholder="amount"
           onChange={changeAmount}
           className="w-full bg-white border border-gray-300 rounded-md px-3 py-2 mb-4 focus:outline-none focus:border-gray-500"
         />
@@ -57,6 +59,7 @@ export const AdminIngredientComponent = ({ index, onUpdateComponent }) => {
           type="text"
           id={`unit${index}`}
           name={`unit${index}`}
+          placeholder="unit"
           onChange={changeUnit}
           className="w-full bg-white border border-gray-300 rounded-md px-3 py-2 mb-4 focus:outline-none focus:border-gray-500"
         />
