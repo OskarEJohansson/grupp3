@@ -5,7 +5,6 @@ import AdminSelectCategory from "./components/AdminSelectCategory.tsx";
 import AdminSubmitButton from "./components/AdminSubmitButton.tsx";
 import AdminPriceInput from "./components/AdminPriceInput.tsx";
 import AdminTimeInMinsInput from "./components/AdminTimeInMinsInput.tsx";
-import AdminGlobalState from "./utils/AdminGlobalState.ts";
 
 const AdminAddRecipePage = () => {
   return (
