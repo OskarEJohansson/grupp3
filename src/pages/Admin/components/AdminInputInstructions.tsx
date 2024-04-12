@@ -16,13 +16,15 @@ const AdminInputInstructions = () => {
   return (
     <div className="container mx-auto px-4">
       <div className="form-group">
-        <h3 className="text-lg font-semibold mb-2">Instructions</h3>
+        <h3 className="text-lg font-semibold mb-2" style={{ cursor: "default" }}>Instructions</h3>
         {formData.instructions.map((instruction, index) => (
           <div key={index} className="mb-4">
             <fieldset>
-              <label className="block text-sm mb-1">Step {index + 1}</label>
+              <label htmlFor={`step${index}`} className="block text-sm mb-1">Step {index + 1}</label>
               <input
                 type="text"
+                id={`step${index}`}
+                placeholder="instructions"
                 value={instruction}
                 onChange={(e) => handleAddInstructions(index, e.target.value)}
                 className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500"

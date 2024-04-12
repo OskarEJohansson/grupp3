@@ -11,9 +11,10 @@ const AdminPriceInput = () => {
   return (
     <div className="container mx-auto px-4">
       <div className="form-group">
-        <label className="block text-sm mb-1">Price</label>
+        <label htmlFor="price" className="block text-sm mb-1">Price</label>
         <input
           type="number"
+          id="price"
           value={formData.price}
           onChange={handleOnChange}
           className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500"

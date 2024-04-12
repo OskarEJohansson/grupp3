@@ -35,7 +35,7 @@ const AdminSelectCategory = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="form-group">
-        <h3 className="text-lg font-semibold mb-2">Category</h3>
+        <h3 className="text-lg font-semibold mb-2" style={{ cursor: "default" }}>Category</h3>
         <Select
           options={options}
           onChange={handleOnChange}
