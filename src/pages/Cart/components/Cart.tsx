@@ -19,7 +19,7 @@ const Cart = () => {
 
   return (
     <div className="cart-container">
-      <h2 className="cart-heading text-xl font-semibold mb-4">
+      <h2 className="cart-heading text-xl font-semibold mb-4 text-center">
         Your shopping cart
       </h2>
 
@@ -44,6 +44,7 @@ const Cart = () => {
                   }
                   alt="PICTURE OF DISH"
                   className="w-full h-auto"
+                  style={{ maxHeight: "80px" }}
                 />
               </div>
               <div className="ml-4">
