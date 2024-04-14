@@ -17,7 +17,12 @@ const CommentsCard = ({ id }: { id: string }) => {
     <div className=" p-4 border rounded-lg bg-gray-100 flex flex-col">
       <div className="flex items-start">
         <div className="mr-4">
-          <img src={article.imageUrl} alt={article.title} className="rounded-lg mb-4" width={300} />
+          <img
+            src={article.imageUrl}
+            alt={article.title}
+            className="rounded-lg mb-4"
+            width={300}
+          />
         </div>
         <div>
           <h2 className="text-2xl font-bold mb-2">{article.title}</h2>
@@ -32,7 +37,7 @@ const CommentsCard = ({ id }: { id: string }) => {
       </div>
       <div className="flex justify-center items-center">
         <div className="bg-blue-500 text-white font-bold rounded-full h-10 w-10 flex items-center justify-center">
-          {averageRating !== 0 ? averageRating.toFixed(1) : "Loading..."}
+          {averageRating !== 0 ? averageRating : 1}
         </div>
       </div>
     </div>
