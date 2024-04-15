@@ -8,9 +8,10 @@ import CommentsGlobalState from "../../Comments/utils/CommentsGlobalState";
 
 interface RecipeCardInterface {
   article: RecipeTypes;
+  index: number;
 }
 
-const RecipeCard = ({ article }: RecipeCardInterface) => {
+const RecipeCard = ({ article, index }: RecipeCardInterface) => {
   const { setArticle } = RecipeGlobalState();
   const { setRecipeId, setRecipe } = CommentsGlobalState();
   const [showModal, setShowModal] = useState(false);
@@ -52,7 +53,9 @@ const RecipeCard = ({ article }: RecipeCardInterface) => {
           </button>
         </div>
       </div>
-      {showModal && <DetailedCard onClose={() => setShowModal(false)} />}
+      {showModal && (
+        <DetailedCard onClose={() => setShowModal(false)} index={index} />
+      )}
     </div>
   );
 };

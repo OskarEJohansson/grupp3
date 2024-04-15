@@ -3,7 +3,15 @@ import RecipeGlobalState from "../utils/RecipeGlobalState";
 import { RecipeTypes } from "../../../types";
 import DrinkSuggestion from "../../Drinks/components/DrinkSuggestion";
 
-const RecipeDetailedCard = ({ onClose }: { onClose: () => void }) => {
+interface DetailedRecipeCardInterface {
+  onClose: () => void;
+  index: number;
+}
+
+const RecipeDetailedCard = ({
+  onClose,
+  index,
+}: DetailedRecipeCardInterface) => {
   const article = RecipeGlobalState((state) => state.article as RecipeTypes);
 
   let ingredientsList = null;
@@ -22,9 +30,7 @@ const RecipeDetailedCard = ({ onClose }: { onClose: () => void }) => {
         className="bg-white p-8 rounded-lg max-w-md overflow-y-auto"
         style={{ width: "80%", maxHeight: "80%" }}
       >
-        <h1 className="text-3xl font-bold mb-4 text-black">
-          {article.title}
-        </h1>
+        <h1 className="text-3xl font-bold mb-4 text-black">{article.title}</h1>
         <img
           src={article.imageUrl}
           alt="Picture of recipe"
@@ -41,11 +47,11 @@ const RecipeDetailedCard = ({ onClose }: { onClose: () => void }) => {
           <p>Ingredients:</p>
           <ul className="list-disc pl-4">{ingredientsList}</ul>
           <div className="mt-4 mb-4">
-          <AddToCartButton article={{ ...article }} />
+            <AddToCartButton article={{ ...article }} />
           </div>
         </div>
         <div>
-          <DrinkSuggestion />
+          <DrinkSuggestion categories={article.categories[0]} index={index} />
         </div>
       </div>
       <div className="fixed bottom-4 left-0 w-full flex justify-center">
