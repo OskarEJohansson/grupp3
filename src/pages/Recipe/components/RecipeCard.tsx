@@ -2,7 +2,7 @@ import { useState } from "react";
 import { RecipeTypes } from "../../../types";
 import AddToCartButton from "./RecipeAddToCartButton";
 import RecipeGlobalState from "../utils/RecipeGlobalState";
-import DetailedCard from "./RecipeDetailedCard";
+import RecipeDetailedCard from "./RecipeDetailedCard";
 import { useNavigate } from "react-router-dom";
 import CommentsGlobalState from "../../Comments/utils/CommentsGlobalState";
 
@@ -25,7 +25,7 @@ const RecipeCard = ({ article, index }: RecipeCardInterface) => {
   const commentHandleOnClick = () => {
     setRecipeId(article._id);
     setRecipe(article);
-    navigate("/category-page/comments");
+    navigate("/recipe-page/comments");
   };
 
   return (
@@ -54,7 +54,7 @@ const RecipeCard = ({ article, index }: RecipeCardInterface) => {
         </div>
       </div>
       {showModal && (
-        <DetailedCard onClose={() => setShowModal(false)} index={index} />
+        <RecipeDetailedCard onClose={() => setShowModal(false)} index={index} />
       )}
     </div>
   );

@@ -31,13 +31,21 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`bg-gradient-to-r from-backgroundColor to-brightColor py-4 px-6 flex justify-between items-center fixed w-full transition duration-300`} style={{ zIndex: "9999" }}>
+    <nav
+      className={`bg-gradient-to-r from-backgroundColor to-brightColor py-4 px-6 flex justify-between items-center fixed w-full transition duration-300`}
+      style={{ zIndex: "9999" }}
+    >
       <div className="flex items-center w-full justify-between">
         <div className="flex items-center">
           <NavLink to="/" className="brand-link flex items-center">
-            <img src={CompanyLogo} alt="Taste Trails logga" className="h-10 w-auto pr-5" style={{ cursor: "pointer" }} />
+            <img
+              src={CompanyLogo}
+              alt="Taste Trails logga"
+              className="h-10 w-auto pr-5"
+              style={{ cursor: "pointer" }}
+            />
           </NavLink>
-          {windowWidth > 768 && ( 
+          {windowWidth > 768 && (
             <div className="flex items-start px-4">
               <SearchBar />
             </div>
@@ -45,7 +53,10 @@ const Navbar = () => {
         </div>
         <div className="flex items-center justify-end md:justify-start w-full md:w-auto">
           {windowWidth <= 1050 && (
-            <button onClick={handleMenuToggle} className="search-icon md:hidden flex items-center focus:outline-none">
+            <button
+              onClick={handleMenuToggle}
+              className="search-icon md:hidden flex items-center focus:outline-none"
+            >
               <FiMenu className="text-white text-xl" />
             </button>
           )}
@@ -56,12 +67,18 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/category-page" className="text-white hover:text-gray-200">
+              <NavLink
+                to="/recipe-page"
+                className="text-white hover:text-gray-200"
+              >
                 Food
               </NavLink>
             </li>
             <li>
-              <NavLink to="/drink-page" className="text-white hover:text-gray-200">
+              <NavLink
+                to="/drink-page"
+                className="text-white hover:text-gray-200"
+              >
                 Drinks
               </NavLink>
             </li>
@@ -76,7 +93,10 @@ const Navbar = () => {
               </li>
             )}
             <li>
-              <button onClick={toggleAdminView} className="text-white hover:text-gray-200">
+              <button
+                onClick={toggleAdminView}
+                className="text-white hover:text-gray-200"
+              >
                 {isAdminView ? "User View" : "Admin View"}
               </button>
             </li>
@@ -84,7 +104,10 @@ const Navbar = () => {
         </div>
       </div>
       {isOpen && (
-        <div className="fixed top-0 left-0 h-full w-full bg-black bg-opacity-50 z-50" onClick={handleMenuToggle}></div>
+        <div
+          className="fixed top-0 left-0 h-full w-full bg-black bg-opacity-50 z-50"
+          onClick={handleMenuToggle}
+        ></div>
       )}
       {isOpen && (
         <div className="fixed top-0 left-0 h-full w-72 bg-[#e3c499] z-50 opacity-90">
@@ -93,34 +116,57 @@ const Navbar = () => {
               <SearchBar />
             </li>
             <li>
-              <NavLink to="/" className="text-white hover:text-gray-200 block py-2 px-4" onClick={handleMenuToggle}>
+              <NavLink
+                to="/"
+                className="text-white hover:text-gray-200 block py-2 px-4"
+                onClick={handleMenuToggle}
+              >
                 Home
               </NavLink>
             </li>
             <li>
-              <NavLink to="/category-page" className="text-white hover:text-gray-200 block py-2 px-4" onClick={handleMenuToggle}>
+              <NavLink
+                to="/recipe-page"
+                className="text-white hover:text-gray-200 block py-2 px-4"
+                onClick={handleMenuToggle}
+              >
                 Food
               </NavLink>
             </li>
             <li>
-              <NavLink to="/drink-page" className="text-white hover:text-gray-200 block py-2 px-4" onClick={handleMenuToggle}>
+              <NavLink
+                to="/drink-page"
+                className="text-white hover:text-gray-200 block py-2 px-4"
+                onClick={handleMenuToggle}
+              >
                 Drinks
               </NavLink>
             </li>
             <li>
-              <NavLink to="/cart" className="text-white hover:text-gray-200 block py-2 px-4" onClick={handleMenuToggle}>
+              <NavLink
+                to="/cart"
+                className="text-white hover:text-gray-200 block py-2 px-4"
+                onClick={handleMenuToggle}
+              >
                 <ShoppingCartIcon />
               </NavLink>
             </li>
             {isAdminView && (
               <li>
-                <NavLink to="/admin-page" className="text-white hover:text-gray-200 block py-2 px-4" onClick={handleMenuToggle}>
+                <NavLink
+                  to="/admin-page"
+                  className="text-white hover:text-gray-200 block py-2 px-4"
+                  onClick={handleMenuToggle}
+                >
                   Admin
                 </NavLink>
               </li>
             )}
             <li>
-              <button onClick={toggleAdminView} className="text-white hover:text-gray-200 block py-2 px-4">
+              <button
+                onClick={toggleAdminView}
+                className="text-white hover:text-gray-200 block py-2 px-4"
+              >
                 {isAdminView ? "User View" : "Admin View"}
               </button>
             </li>

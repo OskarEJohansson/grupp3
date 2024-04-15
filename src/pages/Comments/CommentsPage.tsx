@@ -12,7 +12,7 @@ const CommentsPage = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <div >
+      <div>
         <CommentsCard id={recipeId} />
       </div>
       <div className="mb-8">
@@ -24,7 +24,7 @@ const CommentsPage = () => {
 
       <div className="flex justify-center">
         <button
-          onClick={() => navigate(`/category-page/${category}`)}
+          onClick={() => navigate(`/recipe-page/${category}`)}
           className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
         >
           Back
