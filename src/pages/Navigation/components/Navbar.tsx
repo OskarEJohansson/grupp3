@@ -4,11 +4,14 @@ import { FiMenu } from "react-icons/fi";
 import SearchBar from "../Searchbar/components/Searchbar";
 import ShoppingCartIcon from "../../Cart/components/ShoppingCart";
 import CompanyLogo from "../../../assets/images/companylogo.png";
+import CartGlobalState from "../../Cart/utils/CartGlobalState";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [isAdminView, setIsAdminView] = useState(false);
+  const { cart } = CartGlobalState();
+  const totalItems = cart.length;
 
   const handleMenuToggle = () => {
     setIsOpen(!isOpen);
@@ -83,8 +86,13 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/cart">
+              <NavLink to="/cart" className="relative">
                 <ShoppingCartIcon />
+                {totalItems > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-yellow-500 text-white text-xs font-semibold rounded-full w-5 h-5 flex items-center justify-center">
+                    {totalItems}
+                  </span>
+                )}
               </NavLink>
             </li>
             {isAdminView && (
@@ -149,6 +157,11 @@ const Navbar = () => {
                 onClick={handleMenuToggle}
               >
                 <ShoppingCartIcon />
+                {totalItems > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-yellow-500 text-white text-xs font-semibold rounded-full w-5 h-5 flex items-center justify-center">
+                    {totalItems}
+                  </span>
+                )}
               </NavLink>
             </li>
             {isAdminView && (
