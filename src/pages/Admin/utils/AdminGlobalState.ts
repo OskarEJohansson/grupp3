@@ -1,4 +1,6 @@
+import axios from "axios";
 import { create } from "zustand";
+import { fetchCategoryTypes } from "../../../types";
 
 export interface Ingredient {
   name: string;
@@ -7,6 +9,7 @@ export interface Ingredient {
 }
 
 export interface AdminGlobalStateInterface {
+  categoryData: fetchCategoryTypes[];
   formData: {
     title: string;
     description: string;
@@ -18,7 +21,6 @@ export interface AdminGlobalStateInterface {
     price: number;
     timeInMins: number;
   };
-
   setTitle: (inputValue: string) => void;
   setDescription: (inputValue: string) => void;
   setImageUrl: (inputValue: string) => void;
@@ -30,21 +32,24 @@ export interface AdminGlobalStateInterface {
   setPrice: (inputValue: number) => void;
   setTimeInMins: (inputValue: number) => void;
   resetFormData: () => void;
+  fetchCategoryData: () => void;
 }
 
 const initialFormData = {
   title: "",
-    description: "",
-    ratings: [],
-    imageUrl: "",
-    categories: [],
-    instructions: [""],
-    ingredients: [{ name: "", amount: 0, unit: "" }],
-    price: 0,
-    timeInMins: 0
+  description: "",
+  ratings: [],
+  imageUrl: "",
+  categories: [],
+  instructions: [""],
+  ingredients: [{ name: "", amount: 0, unit: "" }],
+  price: 0,
+  timeInMins: 0,
 };
 
 const AdminGlobalState = create<AdminGlobalStateInterface>((set) => ({
+  categoryData: [],
+
   formData: { ...initialFormData },
 
   setTitle: (inputValue: string) =>
@@ -64,7 +69,10 @@ const AdminGlobalState = create<AdminGlobalStateInterface>((set) => ({
 
   setCategories: (inputValue: string) =>
     set((state) => ({
-      formData: { ...state.formData, categories: [...state.formData.categories, inputValue] },
+      formData: {
+        ...state.formData,
+        categories: [...state.formData.categories, inputValue],
+      },
     })),
 
   setInstructions: (newInstructions: string[]) =>
@@ -79,7 +87,7 @@ const AdminGlobalState = create<AdminGlobalStateInterface>((set) => ({
 
   addIngredients: (newIngredient: Ingredient) =>
     set((state) => ({
-      formData: { 
+      formData: {
         ...state.formData,
         ingredients: [...state.formData.ingredients, newIngredient],
       },
@@ -108,10 +116,29 @@ const AdminGlobalState = create<AdminGlobalStateInterface>((set) => ({
     set(() => ({
       formData: {
         ...initialFormData,
-      }, 
+      },
     }));
   },
 
+  fetchCategoryData: async () => {
+    try {
+      const response = await axios.get(
+        "https://sti-java-grupp3-mzba2l.reky.se/categories"
+      );
+
+      if (response.status === 200) {
+        console.log("Fetch categories successful", response.data);
+
+        set(() => ({
+          categoryData: response.data,
+        }));
+      } else {
+        console.log("Fetch categories failed", response.status);
+      }
+    } catch (error) {
+      console.log("Fetch category data catch error", error);
+    }
+  },
 }));
 
 export default AdminGlobalState;
