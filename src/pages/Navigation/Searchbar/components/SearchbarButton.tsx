@@ -6,10 +6,14 @@ const SearchbarButton = () => {
   const navigate = useNavigate();
 
   const handleOnClick = () => {
+    if (searchInput.trim() !== "") { 
     fetchDrinkByName(searchInput);
     filterRecipes(searchInput, allRecipes);
     navigate("/search-result");
-    setSearchbarInput("");
+    setSearchbarInput(""); 
+    }else {
+      console.log("Search input is empty. Please enter a search query."); // Optionally provide feedback to the user
+    }
   };
 
   return (

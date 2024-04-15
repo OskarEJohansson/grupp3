@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { RecipeTypes } from "../../../types";
 import CarouselGlobalState from "../utils/CarouselGlobalState";
 import { FaStar } from "react-icons/fa";
+import RecipeAddToCartButton from "../../Recipe/components/RecipeAddToCartButton";
 
 const Carousel = () => {
   const { ratingList, filterRatingList } = CarouselGlobalState();
@@ -73,6 +74,7 @@ const Carousel = () => {
                       </div>
                     </div>
                   </div>
+                  <div className="text-center"><RecipeAddToCartButton article={recipe} /></div>
                 </div>
               </div>
             </div>
