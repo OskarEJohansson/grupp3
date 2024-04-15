@@ -8,6 +8,7 @@ export interface CartGlobalStateInterface {
   globalArticle: any;
   URL: string;
   cart: object[];
+  totalItems: number;
   setCart: () => void;
   setCategory: (itemCategory: string) => void;
   addToCart: (addItemToCart: any) => void;
@@ -22,6 +23,7 @@ const CartGlobalState = create<CartGlobalStateInterface>((set) => ({
   globalArticle: {},
   URL: "https://sti-java-grupp3-mzba2l.reky.se",
   cart: [],
+  totalItems: 0,
 
   setCategory: (itemCategory: string) => {
     set((state) => ({
@@ -43,6 +45,7 @@ const CartGlobalState = create<CartGlobalStateInterface>((set) => ({
   setCart: () =>
     set((state) => ({
       cart: [...state.cart],
+      totalItems: state.cart.length,
     })),
 
   addToCart: (addItemToCart: any) => {

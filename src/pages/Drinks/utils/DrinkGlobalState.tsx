@@ -10,7 +10,7 @@ export interface DrinkGlobalStateInterface {
   alcoholicDrinkList: DrinkTypes[];
   nonAlcoholicDrinkList: DrinkTypes[];
   category: string;
-  drinkSuggestions: DrinkTypes;
+  drinkSuggestion: DrinkTypes;
   setDrink: (Object: DrinkDetails) => void;
   setCategory: (category: string) => void;
   fetchDrink: (drinkId: string) => void;
@@ -25,7 +25,7 @@ const DrinkGlobalState = create<DrinkGlobalStateInterface>((set) => ({
   category: "",
   alcoholicDrinkList: [],
   nonAlcoholicDrinkList: [],
-  drinkSuggestions: { strDrink: "", strDrinkThumb: "", idDrink: "" },
+  drinkSuggestion: { strDrink: "", strDrinkThumb: "", idDrink: "" },
 
   setDrink: (article: any) => {
     set(() => ({
@@ -108,7 +108,7 @@ const DrinkGlobalState = create<DrinkGlobalStateInterface>((set) => ({
           response.data.drinks[index]
         );
         set(() => ({
-          drinkSuggestions: response.data.drinks[index],
+          drinkSuggestion: response.data.drinks[index],
         }));
       } else {
         console.log("FetchDrinkByCategory failed", response.status);

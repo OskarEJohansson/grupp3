@@ -8,7 +8,7 @@ interface DrinkSuggestionInterface {
 }
 
 const DrinkSuggestion = ({ categories, index }: DrinkSuggestionInterface) => {
-  const { fetchDrinkByRecipeCategory, drinkSuggestions } = DrinkGlobalState();
+  const { fetchDrinkByRecipeCategory, drinkSuggestion } = DrinkGlobalState();
 
   useEffect(() => {
     switch (categories) {
@@ -35,8 +35,6 @@ const DrinkSuggestion = ({ categories, index }: DrinkSuggestionInterface) => {
     }
   }, [categories]);
 
-  console.log("Index inside drink sug", drinkSuggestions);
-
   return (
     <div>
       <p className="text-gray-600 font-semibold mb-2">Recommended Drink</p>
@@ -46,17 +44,17 @@ const DrinkSuggestion = ({ categories, index }: DrinkSuggestionInterface) => {
           <div>
             <img
               className="w-16 h-16 mr-4 rounded-full"
-              src={drinkSuggestions.strDrinkThumb}
+              src={drinkSuggestion.strDrinkThumb}
               alt="picture of drink"
             />
-            <div>{drinkSuggestions.strDrink}</div>
+            <div>{drinkSuggestion.strDrink}</div>
           </div>
           <div>
             <p className="text-gray-800 font-bold">{}</p>
           </div>
         </div>
         <div>
-          <DrinkAddToCartButton article={{ ...drinkSuggestions }} />
+          <DrinkAddToCartButton article={{ ...drinkSuggestion }} />
         </div>
       </div>
     </div>
