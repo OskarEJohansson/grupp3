@@ -9,7 +9,7 @@ const SearchbarButton = () => {
     fetchDrinkByName(searchInput);
     filterRecipes(searchInput, allRecipes);
     navigate("/search-result");
-    setSearchbarInput("");
+    setSearchbarInput(""); 
   };
 
   return (
