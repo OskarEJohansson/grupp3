@@ -6,7 +6,7 @@ export interface CommentsGlobalStateInterface {
   comment: CommentTypes;
   comments: CommentTypes[];
   recipeId: string;
-  article: object;
+  article: RecipeTypes;
   URL: string;
   setComment: (key: string, value: string) => void;
   setRecipeId: (id: string) => void;
@@ -21,8 +21,9 @@ const CommentsGlobalState = create<CommentsGlobalStateInterface>((set) => ({
     comment: "",
   },
   comments: [],
-  recipeId: "",
-  article: {},
+  recipeId: localStorage.getItem("recipeId") || "",
+  article: JSON.parse(localStorage.getItem("article") || "{}") as RecipeTypes,
+
   URL: "https://sti-java-grupp3-mzba2l.reky.se",
 
   setComment: (key: string, value: string) => {
@@ -32,14 +33,16 @@ const CommentsGlobalState = create<CommentsGlobalStateInterface>((set) => ({
   },
 
   setRecipeId: (id: string) => {
+    localStorage.setItem("recipeId", id);
     set(() => ({
       recipeId: id,
     }));
   },
 
   setRecipe: (article: RecipeTypes) => {
+    localStorage.setItem("article", JSON.stringify(article));
     set(() => ({
-      article: article,
+      article,
     }));
   },
 

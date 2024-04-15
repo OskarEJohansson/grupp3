@@ -33,6 +33,12 @@ export interface CategoryTypes {
   allergen: string;
   allergenPicture: string;
 }
+
+export interface fetchCategoryTypes {
+  name: string;
+  count: number;
+}
+
 export interface DrinkTypes {
   strDrink: string;
   strDrinkThumb: string;
