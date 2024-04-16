@@ -37,7 +37,7 @@ const CommentsCard = ({ id }: { id: string }) => {
       </div>
       <div className="flex justify-center items-center">
         <div className="bg-blue-500 text-white font-bold rounded-full h-10 w-10 flex items-center justify-center">
-          {averageRating !== 0 ? averageRating : 1}
+        {averageRating !== null && averageRating !== undefined ? Number(averageRating).toFixed(1) : "1"}
         </div>
       </div>
     </div>
