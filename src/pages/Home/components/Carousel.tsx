@@ -24,16 +24,7 @@ const Carousel = () => {
     slidesToScroll: 2,
     responsive: [
       {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -66,11 +57,13 @@ const Carousel = () => {
                       src={recipe.imageUrl}
                       alt={recipe.title} 
                     />
-                    <div className="absolute bottom-0 left-0 bg-white bg-opacity-70 text-black font-semibold rounded-b-lg h-16 w-full flex items-center justify-between px-10">
-                      <p className="pl-4">{recipe.title}</p>
-                      <div className="flex items-center">
-                        <FaStar className="text-yellow-500 mr-1" />
-                        <span>{recipe.avgRating.toFixed(1)}</span>
+                    <div className="absolute bottom-0 left-0 bg-white bg-opacity-70 text-black font-semibold rounded-b-lg w-full">
+                      <div className="p-4 flex justify-between items-center">
+                        <p>{recipe.title}</p>
+                        <div className="flex items-center">
+                          <FaStar className="text-yellow-500 mr-1" />
+                          <span>{recipe.avgRating.toFixed(1)}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
