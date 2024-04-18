@@ -7,17 +7,23 @@ const AdminSubmitButton = () => {
   const [error, setError] = useState("");
 
   const validateForm = () => {
-    if (
-      !formData.title ||
-      !formData.description ||
-      !formData.imageUrl ||
-      formData.categories.length === 0 ||
-      formData.instructions.length === 0 ||
-      formData.ingredients.length === 0 ||
-      formData.price === 0 ||
-      formData.timeInMins === 0
-    ) {
-      setError("All fields are required before you can submit form");
+    if (!formData.title) {
+      setError("Title field is required");
+      return false;
+    } else if (!formData.description) {
+      setError("Description field is required");
+      return false;
+    } else if (!formData.imageUrl) {
+      setError("Image URL field is required");
+      return false;
+    } else if (formData.categories.length === 0) {
+      setError("At least one category must be selected");
+      return false;
+    } else if (formData.instructions.length === 0) {
+      setError("At least one instruction must be provided");
+      return false;
+    } else if (formData.ingredients.length === 0) {
+      setError("At least one ingredient must be provided");
       return false;
     }
     return true;
