@@ -63,7 +63,7 @@ const Navbar = () => {
               <FiMenu className="text-white text-xl" />
             </button>
           )}
-          <ul className="hidden md:flex space-x-6 items-center">
+          <ul className="hidden md:flex space-x-6 items-center relative">
             <li>
               <NavLink to="/" className="text-white hover:text-gray-200">
                 Home
@@ -86,10 +86,10 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/cart" className="relative">
+              <NavLink to="/cart" className="relative flex items-center">
                 <ShoppingCartIcon />
                 {totalItems > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-yellow-500 text-white text-xs font-semibold rounded-full w-5 h-5 flex items-center justify-center">
+                 <span className="absolute -top-1 -right-1 bg-yellow-500 text-white text-xs font-semibold rounded-full w-5 h-5 flex items-center justify-center">
                     {totalItems}
                   </span>
                 )}
@@ -153,12 +153,12 @@ const Navbar = () => {
             <li>
               <NavLink
                 to="/cart"
-                className="text-white hover:text-gray-200 block py-2 px-4"
+                className="text-white hover:text-gray-200 py-2 px-4 relative flex items-center"
                 onClick={handleMenuToggle}
               >
                 <ShoppingCartIcon />
                 {totalItems > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-yellow-500 text-white text-xs font-semibold rounded-full w-5 h-5 flex items-center justify-center">
+                  <span className="absolute -top-0 left-8 bg-yellow-500 text-white text-xs font-semibold rounded-full w-5 h-5 flex items-center justify-center">
                     {totalItems}
                   </span>
                 )}

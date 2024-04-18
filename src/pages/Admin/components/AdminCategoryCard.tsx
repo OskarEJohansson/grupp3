@@ -1,20 +1,19 @@
 import AdminGlobalState from "../utils/AdminGlobalState";
 import { fetchCategoryTypes } from "../../../types";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const AdminCategoryCard = () => {
   const { fetchCategoryData, categoryData } = AdminGlobalState();
   const navigate = useNavigate();
-
-  let fetchData = true;
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    if (fetchData === true) {
+    if (loading) {
       fetchCategoryData();
-      fetchData = false;
+      setLoading(false);
     }
-  }, [fetchData]);
+  }, [fetchCategoryData, loading]);
 
   return (
     <div className="container mx-auto px-4 py-8">
