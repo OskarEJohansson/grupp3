@@ -101,10 +101,10 @@ const AdminGlobalState = create<AdminGlobalStateInterface>((set) => ({
       },
     })),
 
-  setPrice: (inputValue: number) =>
-    set((state) => ({
-      formData: { ...state.formData, price: inputValue },
-    })),
+    setPrice: (inputValue: number) =>
+  set((state) => ({
+    formData: { ...state.formData, price: inputValue },
+  })),
 
   setTimeInMins: (inputValue: number) =>
     set((state) => ({
