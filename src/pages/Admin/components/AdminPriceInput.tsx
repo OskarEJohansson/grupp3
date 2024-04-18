@@ -18,7 +18,6 @@ const AdminPriceInput = () => {
           placeholder="Enter Price"
           value={formData.price}
           min={0}
-          onClick={() => setPrice({ ...formData, price: null })} //Only way to make zero dissapear when field is active
           onChange={handleOnChange}
           className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500"
         />

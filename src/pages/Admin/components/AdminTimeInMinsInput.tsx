@@ -18,7 +18,6 @@ const AdminTimeInMinsInput = () => {
           placeholder="Cooking Time"
           value={formData.timeInMins}
           min={0}
-          onClick={() => setTimeInMins({ ...formData, price: null })} //Only way to make zero dissapear when field is active
           onChange={handleOnChange}
           className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:border-blue-500"
         />
