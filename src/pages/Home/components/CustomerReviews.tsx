@@ -33,7 +33,7 @@ const CustomerReviews = () => {
               </div>
             </blockquote>
             <blockquote className="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
-              <p className="text-xl font-semibold mb-4">"Fantastic Experience"</p>
+              <p className="text-xl font-semibold mb-4">"The diversity!"</p>
               <p className="text-lg text-gray-700">"Absolutely mouthwatering! The food selection is diverse and caters to all tastes. From savory burgers to refreshing drinks, every item is a delight to the palate. Ordering was a breeze, and my meal arrived promptly, exceeding my expectations. A definite go-to for my culinary cravings!"</p>
               <p className="mt-4 text-gray-600">- Mark S.</p>
               <div className="flex mt-2">

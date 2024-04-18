@@ -10,11 +10,13 @@ export interface DrinkGlobalStateInterface {
   alcoholicDrinkList: DrinkTypes[];
   nonAlcoholicDrinkList: DrinkTypes[];
   category: string;
+  drinkSuggestion: DrinkTypes;
   setDrink: (Object: DrinkDetails) => void;
   setCategory: (category: string) => void;
   fetchDrink: (drinkId: string) => void;
   fetchAlcoholicDrink: () => void;
   fetchNonAlcoholicDrink: () => void;
+  fetchDrinkByRecipeCategory: (category: string, index: number) => void;
 }
 
 const DrinkGlobalState = create<DrinkGlobalStateInterface>((set) => ({
@@ -23,6 +25,7 @@ const DrinkGlobalState = create<DrinkGlobalStateInterface>((set) => ({
   category: "",
   alcoholicDrinkList: [],
   nonAlcoholicDrinkList: [],
+  drinkSuggestion: { strDrink: "", strDrinkThumb: "", idDrink: "" },
 
   setDrink: (article: any) => {
     set(() => ({
@@ -90,6 +93,28 @@ const DrinkGlobalState = create<DrinkGlobalStateInterface>((set) => ({
       }
     } catch (error) {
       console.log("Error fetching Non Alcoholic drinks", error);
+    }
+  },
+
+  fetchDrinkByRecipeCategory: async (category: string, index: number) => {
+    try {
+      const response = await axios.get(
+        `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${category}`
+      );
+
+      if (response.status === 200) {
+        console.log(
+          "fetchDrinkByCategory successful",
+          response.data.drinks[index]
+        );
+        set(() => ({
+          drinkSuggestion: response.data.drinks[index],
+        }));
+      } else {
+        console.log("FetchDrinkByCategory failed", response.status);
+      }
+    } catch (error) {
+      console.log("FetchDrinkByCategory catch error", error);
     }
   },
 }));

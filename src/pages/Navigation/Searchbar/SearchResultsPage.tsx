@@ -15,21 +15,20 @@ const SearchResultsPage = () => {
   const [isRecipeSelected, setIsRecipeSelected] = useState(true);
   const [showRecipeModal, setShowRecipeModal] = useState(false);
   const [showDrinkModal, setShowDrinkModal] = useState(false);
-  const {setArticle} = RecipeGlobalState(); 
-  const {setDrink} = DrinkGlobalState();
-
+  const { setArticle } = RecipeGlobalState();
+  const { setDrink } = DrinkGlobalState();
 
   const handleTabChange = (value: boolean) => {
     setIsRecipeSelected(value);
   };
 
   const handleRecipeClick = (recipe: RecipeTypes) => {
-    setArticle(recipe)
+    setArticle(recipe);
     setShowRecipeModal(true);
   };
 
   const handleDrinkClick = (drink: DrinkDetails) => {
-    setDrink(drink)
+    setDrink(drink);
     setShowDrinkModal(true);
   };
 
@@ -39,7 +38,9 @@ const SearchResultsPage = () => {
         <button
           onClick={() => handleTabChange(true)}
           className={`px-4 py-2 rounded-md focus:outline-none ${
-            isRecipeSelected ? "bg-yellow-500 text-white" : "bg-yellow-200 text-black"
+            isRecipeSelected
+              ? "bg-yellow-500 text-white"
+              : "bg-yellow-200 text-black"
           }`}
         >
           Recipes
@@ -47,7 +48,9 @@ const SearchResultsPage = () => {
         <button
           onClick={() => handleTabChange(false)}
           className={`px-4 py-2 rounded-md focus:outline-none ${
-            isRecipeSelected ? "bg-yellow-200 text-black" : "bg-yellow-500 text-white"
+            isRecipeSelected
+              ? "bg-yellow-200 text-black"
+              : "bg-yellow-500 text-white"
           }`}
         >
           Drinks
@@ -64,65 +67,74 @@ const SearchResultsPage = () => {
               <div
                 key={index}
                 className="border border-gray-300 rounded p-4 cursor-pointer"
-                
               >
                 <h2 className="text-xl font-semibold mb-2">{recipe.title}</h2>
                 <img
-                onClick={() => handleRecipeClick(recipe)}
+                  onClick={() => handleRecipeClick(recipe)}
                   src={recipe.imageUrl}
                   alt="Recipe Picture"
                   className="w-40 h-40 object-cover"
                 />
-                <div className="text-lg mb-2">Categories: {recipe.categories}</div>
+                <div className="text-lg mb-2">
+                  Categories: {recipe.categories}
+                </div>
                 <div className="mt-2">Price: {recipe.price} :-</div>
                 <div className="mt-4 flex justify-between items-center">
                   <div className="flex space-x-4">
                     <RecipeAddToCartButton article={recipe} />
-                    <button onClick={() => navigate("/category-page/comments")}>
+                    <button className="bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-colors" onClick={() => navigate("/recipe-page/comments")}>
                       Comments
                     </button>
                   </div>
                 </div>
-                
               </div>
             ))
           )
+        ) : drinks === null || drinks.length === 0 ? (
+          <div className="text-center">
+            <h1>No search results found for drinks</h1>
+          </div>
         ) : (
-          drinks === null || drinks.length === 0 ? (
-            <div className="text-center">
-              <h1>No search results found for drinks</h1>
-            </div>
-          ) : (
-            drinks.map((drink: DrinkDetails, index: number) => (
+          drinks.map((drink: DrinkDetails, index: number) => (
+            <div
+              key={index}
+              className="border border-gray-300 rounded p-4 cursor-pointer"
+            >
+              <h2 className="text-xl font-semibold mb-2">{drink.strDrink}</h2>
               <div
-                key={index}
-                className="border border-gray-300 rounded p-4 cursor-pointer"
-                
+                className="image-container"
+                style={{ aspectRatio: "16/9", overflow: "hidden" }}
               >
-                <h2 className="text-xl font-semibold mb-2">{drink.strDrink}</h2>
-                <div className="image-container" style={{ aspectRatio: "16/9", overflow: "hidden" }}>
-                  <img
+                <img
                   onClick={() => handleDrinkClick(drink)}
-                    src={drink.strDrinkThumb}
-                    alt="Drink Picture"
-                    className="rounded-md mb-2"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "contain",
-                    }}
-                  />
-                </div>
-                <div className="mt-4 flex justify-end">
-                  <DrinkAddToCartButton article={drink} />
-                </div>
+                  src={drink.strDrinkThumb}
+                  alt="Drink Picture"
+                  className="rounded-md mb-2"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                  }}
+                />
               </div>
-            ))
-          )
+              <div className="mt-4 flex justify-end">
+                <DrinkAddToCartButton article={drink} />
+              </div>
+            </div>
+          ))
         )}
+        <div>
+          {showDrinkModal && (
+            <DrinkDetailedCard onClose={() => setShowDrinkModal(false)} />
+          )}
+          {showRecipeModal && (
+            <RecipeDetailedCard
+              onClose={() => setShowRecipeModal(false)}
+              index={1}
+            />
+          )}
+        </div>
       </div>
-      {showDrinkModal && <DrinkDetailedCard onClose={() => setShowDrinkModal(false)} />}
-      {showRecipeModal && <RecipeDetailedCard onClose={() => setShowRecipeModal(false)} />}
     </div>
   );
 };

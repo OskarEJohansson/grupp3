@@ -19,7 +19,7 @@ function App() {
         <>
           <Route path="/search-result" element={<SearchResultsPage />} />
           <Route path="/checkoutpage" element={<CheckoutPage />} />
-          <Route path="/category-page/*" element={<RecipeRoutes />} />
+          <Route path="/recipe-page/*" element={<RecipeRoutes />} />
           <Route path="/drink-page/*" element={<DrinkRoutes />} />
           <Route path="/*" element={<UserRoutes />} />
           <Route path="/admin-page/*" element={<AdminRoutes />} />

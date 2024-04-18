@@ -6,7 +6,7 @@ const UpdateRecipeButton = ({ article }: any) => {
   const navigate = useNavigate();
 
   const handleOnClick = () => {
-    navigate("/category-page/update-food");
+    navigate("/recipe-page/update-food");
     setData(article);
   };
 

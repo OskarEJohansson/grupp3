@@ -2,15 +2,16 @@ import { useState } from "react";
 import { RecipeTypes } from "../../../types";
 import AddToCartButton from "./RecipeAddToCartButton";
 import RecipeGlobalState from "../utils/RecipeGlobalState";
-import DetailedCard from "./RecipeDetailedCard";
+import RecipeDetailedCard from "./RecipeDetailedCard";
 import { useNavigate } from "react-router-dom";
 import CommentsGlobalState from "../../Comments/utils/CommentsGlobalState";
 
 interface RecipeCardInterface {
   article: RecipeTypes;
+  index: number;
 }
 
-const RecipeCard = ({ article }: RecipeCardInterface) => {
+const RecipeCard = ({ article, index }: RecipeCardInterface) => {
   const { setArticle } = RecipeGlobalState();
   const { setRecipeId, setRecipe } = CommentsGlobalState();
   const [showModal, setShowModal] = useState(false);
@@ -24,7 +25,7 @@ const RecipeCard = ({ article }: RecipeCardInterface) => {
   const commentHandleOnClick = () => {
     setRecipeId(article._id);
     setRecipe(article);
-    navigate("/category-page/comments");
+    navigate("/recipe-page/comments");
   };
 
   return (
@@ -44,10 +45,17 @@ const RecipeCard = ({ article }: RecipeCardInterface) => {
       <div className="mt-4 flex justify-between items-center">
         <div className="flex space-x-4">
           <AddToCartButton article={article} />
-          <button onClick={commentHandleOnClick}>Comments</button>
+          <button
+            onClick={commentHandleOnClick}
+            className="bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition-colors"
+          >
+            Comments
+          </button>
         </div>
       </div>
-      {showModal && <DetailedCard onClose={() => setShowModal(false)} />}
+      {showModal && (
+        <RecipeDetailedCard onClose={() => setShowModal(false)} index={index} />
+      )}
     </div>
   );
 };
