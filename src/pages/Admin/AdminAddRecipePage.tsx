@@ -5,7 +5,6 @@ import AdminSelectCategory from "./components/AdminSelectCategory.tsx";
 import AdminSubmitButton from "./components/AdminSubmitButton.tsx";
 import AdminPriceInput from "./components/AdminPriceInput.tsx";
 import AdminTimeInMinsInput from "./components/AdminTimeInMinsInput.tsx";
-import AdminGlobalState from "./utils/AdminGlobalState.ts";
 
 const AdminAddRecipePage = () => {
   return (
@@ -16,7 +15,7 @@ const AdminAddRecipePage = () => {
           <div className="space-y-6">
             <AdminInputBasicInfo inputLabel="title" />
             <AdminInputBasicInfo inputLabel="description" />
-            <AdminInputBasicInfo inputLabel="image" />
+            <AdminInputBasicInfo inputLabel="image URL" />
             <AdminInputInstructions />
           </div>
         </div>
