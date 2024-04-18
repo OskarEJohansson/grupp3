@@ -15,7 +15,9 @@ const AdminTimeInMinsInput = () => {
         <input
           type="number"
           id="timeInMins"
+          placeholder="Cooking Time"
           value={formData.timeInMins}
+          min={0}
           onChange={handleOnChange}
           className="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:border-blue-500"
         />

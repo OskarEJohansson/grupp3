@@ -15,7 +15,9 @@ const AdminPriceInput = () => {
         <input
           type="number"
           id="price"
+          placeholder="Enter Price"
           value={formData.price}
+          min={0}
           onChange={handleOnChange}
           className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-500"
         />

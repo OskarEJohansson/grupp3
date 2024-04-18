@@ -15,7 +15,7 @@ const AdminAddRecipePage = () => {
           <div className="space-y-6">
             <AdminInputBasicInfo inputLabel="title" />
             <AdminInputBasicInfo inputLabel="description" />
-            <AdminInputBasicInfo inputLabel="image" />
+            <AdminInputBasicInfo inputLabel="image URL" />
             <AdminInputInstructions />
           </div>
         </div>
