@@ -6,7 +6,8 @@ import DrinkDetailedCard from "./DrinkDetailedCard";
 import { DrinkTypes } from "../../../types";
 
 const DrinkCardPage = () => {
-  const { drinkList, fetchAlcoholicDrink, fetchNonAlcoholicDrink, fetchDrink } = DrinkGlobalState();
+  const { drinkList, fetchAlcoholicDrink, fetchNonAlcoholicDrink, fetchDrink } =
+    DrinkGlobalState();
   const { category } = useParams();
   const [showModal, setShowModal] = useState(false);
 

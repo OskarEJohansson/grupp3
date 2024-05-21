@@ -13,6 +13,7 @@ export interface DrinkGlobalStateInterface {
   drinkSuggestions: DrinkTypes;
   setDrink: (Object: DrinkDetails) => void;
   setCategory: (category: string) => void;
+  setDrinkList: (filteredDrinkList: DrinkTypes[]) => void;
   fetchDrink: (drinkId: string) => void;
   fetchAlcoholicDrink: () => void;
   fetchNonAlcoholicDrink: () => void;
@@ -36,6 +37,12 @@ const DrinkGlobalState = create<DrinkGlobalStateInterface>((set) => ({
   setCategory: (category: string) => {
     set(() => ({
       category: category,
+    }));
+  },
+
+  setDrinkList: (filterdDrinkList: DrinkTypes[]) => {
+    set(() => ({
+      drinkList: filterdDrinkList,
     }));
   },
 
